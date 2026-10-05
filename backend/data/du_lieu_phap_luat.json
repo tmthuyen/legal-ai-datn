@@ -3168,7 +3168,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Cá nhân có quyền yêu cầu cơ quan nhà nước có thẩm quyền công nhận việc thay đổi họ trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -3235,7 +3235,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Cá nhân có quyền yêu cầu cơ quan nhà nước có thẩm quyền công nhận việc thay đổi tên trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -3309,7 +3309,7 @@
                         {
                           "loai": "khoan",
                           "so": 3,
-                          "noi_dung": null,
+                          "noi_dung": "Cá nhân có quyền yêu cầu cơ quan nhà nước có thẩm quyền xác định lại dân tộc trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -3410,7 +3410,7 @@
                         {
                           "loai": "khoan",
                           "so": 2,
-                          "noi_dung": null,
+                          "noi_dung": "Việc sử dụng hình ảnh trong trường hợp sau đây không cần có sự đồng ý của người có hình ảnh hoặc người đại diện theo pháp luật của họ:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -3459,7 +3459,7 @@
                         {
                           "loai": "khoan",
                           "so": 4,
-                          "noi_dung": null,
+                          "noi_dung": "Việc khám nghiệm tử thi được thực hiện khi thuộc một trong các trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -3793,7 +3793,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Người được giám hộ bao gồm:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -3930,7 +3930,7 @@
                         {
                           "loai": "khoan",
                           "so": 4,
-                          "noi_dung": null,
+                          "noi_dung": "Người giám sát việc giám hộ có quyền và nghĩa vụ sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -4102,7 +4102,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Người giám hộ của người mất năng lực hành vi dân sự có các nghĩa vụ sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -4143,7 +4143,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Người giám hộ của người chưa thành niên, người mất năng lực hành vi dân sự có các quyền sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -4199,7 +4199,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Người giám hộ được thay đổi trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -4272,7 +4272,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Việc giám hộ chấm dứt trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -4360,7 +4360,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Theo yêu cầu của người có quyền, lợi ích liên quan, Tòa án giao tài sản của người vắng mặt tại nơi cư trú cho người sau đây quản lý:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -4519,7 +4519,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Người có quyền, lợi ích liên quan có thể yêu cầu Tòa án ra quyết định tuyên bố một người là đã chết trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -4592,7 +4592,7 @@
                         {
                           "loai": "khoan",
                           "so": 2,
-                          "noi_dung": null,
+                          "noi_dung": "Quan hệ nhân thân của người bị tuyên bố là đã chết được khôi phục khi Tòa án ra quyết định hủy bỏ quyết định tuyên bố người đó là đã chết, trừ trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -4648,7 +4648,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Một tổ chức được công nhận là pháp nhân khi có đủ các điều kiện sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -4747,7 +4747,7 @@
                     {
                       "loai": "khoan",
                       "so": 2,
-                      "noi_dung": null,
+                      "noi_dung": "Điều lệ của pháp nhân có những nội dung chủ yếu sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -5132,7 +5132,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Pháp nhân giải thể trong trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -5173,7 +5173,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Tài sản của pháp nhân bị giải thể được thanh toán theo thứ tự sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -5222,7 +5222,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Pháp nhân chấm dứt tồn tại trong trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -5314,7 +5314,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam, cơ quan nhà nước ở Trung ương, ở địa phương chịu trách nhiệm về nghĩa vụ dân sự do mình xác lập với nhà nước, pháp nhân, cá nhân nước ngoài trong trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -5506,7 +5506,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Bất động sản bao gồm:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -5553,7 +5553,7 @@
                     {
                       "loai": "khoan",
                       "so": 2,
-                      "noi_dung": null,
+                      "noi_dung": "Tài sản hình thành trong tương lai bao gồm:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -5714,7 +5714,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Giao dịch dân sự có hiệu lực khi có đủ các điều kiện sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -5797,7 +5797,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Giao dịch dân sự có nội dung không rõ ràng, khó hiểu, được hiểu theo nhiều nghĩa khác nhau và không thuộc quy định tại khoản 2 Điều này thì việc giải thích giao dịch dân sự đó được thực hiện theo thứ tự sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -5873,7 +5873,7 @@
                     {
                       "loai": "khoan",
                       "so": 2,
-                      "noi_dung": null,
+                      "noi_dung": "Giao dịch dân sự của người quy định tại khoản 1 Điều này không bị vô hiệu trong trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -6002,7 +6002,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Thời hiệu yêu cầu Tòa án tuyên bố giao dịch dân sự vô hiệu quy định tại các Điều 125, 126, 127, 128 và 129 của Bộ luật này là 02 năm, kể từ ngày:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -6154,7 +6154,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Người đại diện theo pháp luật của pháp nhân bao gồm:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -6248,7 +6248,7 @@
                     {
                       "loai": "khoan",
                       "so": 2,
-                      "noi_dung": null,
+                      "noi_dung": "Trường hợp không xác định được thời hạn đại diện theo quy định tại khoản 1 Điều này thì thời hạn đại diện được xác định như sau:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -6265,7 +6265,7 @@
                     {
                       "loai": "khoan",
                       "so": 3,
-                      "noi_dung": null,
+                      "noi_dung": "Đại diện theo ủy quyền chấm dứt trong trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -6307,7 +6307,7 @@
                     {
                       "loai": "khoan",
                       "so": 4,
-                      "noi_dung": null,
+                      "noi_dung": "Đại diện theo pháp luật chấm dứt trong trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -6342,7 +6342,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Người đại diện chỉ được xác lập, thực hiện giao dịch dân sự trong phạm vi đại diện theo căn cứ sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -6395,7 +6395,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Giao dịch dân sự do người không có quyền đại diện xác lập, thực hiện không làm phát sinh quyền, nghĩa vụ đối với người được đại diện, trừ một trong các trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -6443,7 +6443,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Giao dịch dân sự do người đại diện xác lập, thực hiện vượt quá phạm vi đại diện không làm phát sinh quyền, nghĩa vụ của người được đại diện đối với phần giao dịch được thực hiện vượt quá phạm vi đại diện, trừ một trong các trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -6544,7 +6544,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Trường hợp các bên có thỏa thuận về thời hạn là một năm, nửa năm, một tháng, nửa tháng, một tuần, một ngày, một giờ, một phút mà khoảng thời gian diễn ra không liền nhau thì thời hạn đó được tính như sau:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -6591,7 +6591,7 @@
                         {
                           "loai": "khoan",
                           "so": 2,
-                          "noi_dung": null,
+                          "noi_dung": "Trường hợp các bên thỏa thuận về thời điểm đầu tháng, giữa tháng, cuối tháng thì thời điểm đó được quy định như sau:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -6613,7 +6613,7 @@
                         {
                           "loai": "khoan",
                           "so": 3,
-                          "noi_dung": null,
+                          "noi_dung": "Trường hợp các bên thỏa thuận về thời điểm đầu năm, giữa năm, cuối năm thì thời điểm đó được quy định như sau:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -6793,7 +6793,7 @@
                         {
                           "loai": "khoan",
                           "so": 2,
-                          "noi_dung": null,
+                          "noi_dung": "Thời hiệu hưởng quyền dân sự, miễn trừ nghĩa vụ dân sự bị gián đoạn khi có một trong các sự kiện sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -6888,7 +6888,7 @@
                         {
                           "loai": "khoan",
                           "so": 3,
-                          "noi_dung": null,
+                          "noi_dung": "Người chưa thành niên, người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi, người bị hạn chế năng lực hành vi dân sự chưa có người đại diện khác thay thế trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -6913,7 +6913,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Thời hiệu khởi kiện vụ án dân sự bắt đầu lại trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -6987,7 +6987,7 @@
                         {
                           "loai": "khoan",
                           "so": 2,
-                          "noi_dung": null,
+                          "noi_dung": "Quyền khác đối với tài sản bao gồm:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -7131,7 +7131,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Chiếm hữu có căn cứ pháp luật là việc chiếm hữu tài sản trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -8251,7 +8251,7 @@
                             {
                               "loai": "khoan",
                               "so": 2,
-                              "noi_dung": null,
+                              "noi_dung": "Khi một người sáp nhập tài sản là động sản của người khác vào tài sản là động sản của mình, mặc dù đã biết hoặc phải biết tài sản đó không phải là của mình và cũng không được sự đồng ý của chủ sở hữu tài sản bị sáp nhập thì chủ sở hữu tài sản bị sáp nhập có một trong các quyền sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -8273,7 +8273,7 @@
                             {
                               "loai": "khoan",
                               "so": 3,
-                              "noi_dung": null,
+                              "noi_dung": "Khi một người sáp nhập tài sản là động sản của người khác vào tài sản là bất động sản của mình, mặc dù đã biết hoặc phải biết tài sản đó không phải là của mình và cũng không được sự đồng ý của chủ sở hữu tài sản bị sáp nhập thì chủ sở hữu tài sản bị sáp nhập có một trong các quyền sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -8310,7 +8310,7 @@
                             {
                               "loai": "khoan",
                               "so": 2,
-                              "noi_dung": null,
+                              "noi_dung": "Khi một người đã trộn lẫn tài sản của người khác vào tài sản của mình, mặc dù đã biết hoặc phải biết tài sản đó không phải của mình và không được sự đồng ý của chủ sở hữu tài sản bị trộn lẫn thì chủ sở hữu tài sản bị trộn lẫn có một trong các quyền sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -8387,7 +8387,7 @@
                             {
                               "loai": "khoan",
                               "so": 2,
-                              "noi_dung": null,
+                              "noi_dung": "Tài sản bị chôn, giấu, bị vùi lấp, chìm đắm được tìm thấy mà không có hoặc không xác định được ai là chủ sở hữu thì sau khi trừ chi phí tìm kiếm, bảo quản, quyền sở hữu đối với tài sản này được xác định như sau:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -8418,7 +8418,7 @@
                             {
                               "loai": "khoan",
                               "so": 2,
-                              "noi_dung": null,
+                              "noi_dung": "Sau 01 năm, kể từ ngày thông báo công khai về tài sản do người khác đánh rơi, bỏ quên mà không xác định được chủ sở hữu hoặc chủ sở hữu không đến nhận thì quyền sở hữu đối với tài sản này được xác định như sau:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -9280,7 +9280,7 @@
                         {
                           "loai": "khoan",
                           "so": 2,
-                          "noi_dung": null,
+                          "noi_dung": "Trường hợp không có thỏa thuận thì địa điểm thực hiện nghĩa vụ được xác định như sau:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -9853,7 +9853,7 @@
                             {
                               "loai": "khoan",
                               "so": 1,
-                              "noi_dung": null,
+                              "noi_dung": "Bên bảo đảm và bên nhận bảo đảm có quyền thỏa thuận một trong các phương thức xử lý tài sản cầm cố, thế chấp sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -9900,7 +9900,7 @@
                             {
                               "loai": "khoan",
                               "so": 2,
-                              "noi_dung": null,
+                              "noi_dung": "Việc tự bán tài sản cầm cố, thế chấp của bên nhận bảo đảm được thực hiện theo quy định về bán tài sản trong Bộ luật này và quy định sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -10009,7 +10009,7 @@
                             {
                               "loai": "khoan",
                               "so": 1,
-                              "noi_dung": null,
+                              "noi_dung": "Khi một tài sản được dùng để bảo đảm thực hiện nhiều nghĩa vụ thì thứ tự ưu tiên thanh toán giữa các bên cùng nhận bảo đảm được xác định như sau:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -10489,7 +10489,7 @@
                             {
                               "loai": "khoan",
                               "so": 1,
-                              "noi_dung": null,
+                              "noi_dung": "Người thứ ba giữ tài sản thế chấp có các quyền sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -10506,7 +10506,7 @@
                             {
                               "loai": "khoan",
                               "so": 2,
-                              "noi_dung": null,
+                              "noi_dung": "Người thứ ba giữ tài sản thế chấp có các nghĩa vụ sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -11353,7 +11353,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Bên có quyền yêu cầu thực hiện nghĩa vụ có thể chuyển giao quyền yêu cầu đó cho người thế quyền theo thỏa thuận, trừ trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -11772,7 +11772,7 @@
                             {
                               "loai": "khoan",
                               "so": 1,
-                              "noi_dung": null,
+                              "noi_dung": "Thời điểm đề nghị giao kết hợp đồng có hiệu lực được xác định như sau:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -11789,7 +11789,7 @@
                             {
                               "loai": "khoan",
                               "so": 2,
-                              "noi_dung": null,
+                              "noi_dung": "Các trường hợp sau đây được coi là đã nhận được đề nghị giao kết hợp đồng:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -11819,7 +11819,7 @@
                             {
                               "loai": "khoan",
                               "so": 1,
-                              "noi_dung": null,
+                              "noi_dung": "Bên đề nghị giao kết hợp đồng có thể thay đổi, rút lại đề nghị giao kết hợp đồng trong trường hợp sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -11981,7 +11981,7 @@
                             {
                               "loai": "khoan",
                               "so": 2,
-                              "noi_dung": null,
+                              "noi_dung": "Hợp đồng có thể có các nội dung sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -12463,7 +12463,7 @@
                             {
                               "loai": "khoan",
                               "so": 1,
-                              "noi_dung": null,
+                              "noi_dung": "Hoàn cảnh thay đổi cơ bản khi có đủ các điều kiện sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -12501,7 +12501,7 @@
                             {
                               "loai": "khoan",
                               "so": 3,
-                              "noi_dung": null,
+                              "noi_dung": "Trường hợp các bên không thể thỏa thuận được về việc sửa đổi hợp đồng trong một thời hạn hợp lý, một trong các bên có thể yêu cầu Tòa án:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -12615,7 +12615,7 @@
                             {
                               "loai": "khoan",
                               "so": 1,
-                              "noi_dung": null,
+                              "noi_dung": "Một bên có quyền hủy bỏ hợp đồng và không phải bồi thường thiệt hại trong trường hợp sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -12926,7 +12926,7 @@
                         {
                           "loai": "khoan",
                           "so": 2,
-                          "noi_dung": null,
+                          "noi_dung": "Trường hợp bên bán giao ít hơn số lượng đã thỏa thuận thì bên mua có một trong các quyền sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -12956,7 +12956,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Trường hợp vật được giao không đồng bộ làm cho mục đích sử dụng của vật không đạt được thì bên mua có một trong các quyền sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -13136,7 +13136,7 @@
                         {
                           "loai": "khoan",
                           "so": 3,
-                          "noi_dung": null,
+                          "noi_dung": "Bên bán không chịu trách nhiệm về khuyết tật của vật trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -13539,7 +13539,7 @@
                         {
                           "loai": "khoan",
                           "so": 5,
-                          "noi_dung": null,
+                          "noi_dung": "Trường hợp vay có lãi mà khi đến hạn bên vay không trả hoặc trả không đầy đủ thì bên vay phải trả lãi như sau:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -13755,7 +13755,7 @@
                             {
                               "loai": "khoan",
                               "so": 2,
-                              "noi_dung": null,
+                              "noi_dung": "Trường hợp tài sản thuê bị giảm sút giá trị sử dụng mà không do lỗi của bên thuê thì bên thuê có quyền yêu cầu bên cho thuê thực hiện một hoặc một số biện pháp sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -14446,7 +14446,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Thành viên có quyền rút khỏi hợp đồng hợp tác trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -14490,7 +14490,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Hợp đồng hợp tác chấm dứt trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -14810,7 +14810,7 @@
                             {
                               "loai": "khoan",
                               "so": 2,
-                              "noi_dung": null,
+                              "noi_dung": "Từ chối chuyên chở hành khách trong trường hợp sau đây:",
                               "cac_diem": [
                                 {
                                   "loai": "diem",
@@ -15702,7 +15702,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Bên được ủy quyền được ủy quyền lại cho người khác trong trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -16351,7 +16351,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Thiệt hại do sức khỏe bị xâm phạm bao gồm:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -16392,7 +16392,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Thiệt hại do tính mạng bị xâm phạm bao gồm:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -16433,7 +16433,7 @@
                         {
                           "loai": "khoan",
                           "so": 1,
-                          "noi_dung": null,
+                          "noi_dung": "Thiệt hại do danh dự, nhân phẩm, uy tín bị xâm phạm bao gồm:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -16475,7 +16475,7 @@
                         {
                           "loai": "khoan",
                           "so": 2,
-                          "noi_dung": null,
+                          "noi_dung": "Trường hợp người bị thiệt hại chết thì những người mà người này có nghĩa vụ cấp dưỡng khi còn sống được hưởng tiền cấp dưỡng từ thời điểm người có tính mạng bị xâm phạm chết trong thời hạn sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -16620,7 +16620,7 @@
                         {
                           "loai": "khoan",
                           "so": 3,
-                          "noi_dung": null,
+                          "noi_dung": "Chủ sở hữu, người chiếm hữu, sử dụng nguồn nguy hiểm cao độ phải bồi thường thiệt hại cả khi không có lỗi, trừ trường hợp sau đây:",
                           "cac_diem": [
                             {
                               "loai": "diem",
@@ -16897,7 +16897,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Người quản lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có nghĩa vụ sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -16929,7 +16929,7 @@
                     {
                       "loai": "khoan",
                       "so": 2,
-                      "noi_dung": null,
+                      "noi_dung": "Người đang chiếm hữu, sử dụng, quản lý di sản quy định tại khoản 2 Điều 616 của Bộ luật này có nghĩa vụ sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -16964,7 +16964,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Người quản lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có quyền sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -16986,7 +16986,7 @@
                     {
                       "loai": "khoan",
                       "so": 2,
-                      "noi_dung": null,
+                      "noi_dung": "Người đang chiếm hữu, sử dụng, quản lý di sản quy định tại khoản 2 Điều 616 của Bộ luật này có quyền sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -17055,7 +17055,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Những người sau đây không được quyền hưởng di sản:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -17103,7 +17103,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Thời hiệu để người thừa kế yêu cầu chia di sản là 30 năm đối với bất động sản, 10 năm đối với động sản, kể từ thời điểm mở thừa kế. Hết thời hạn này thì di sản thuộc về người thừa kế đang quản lý di sản đó. Trường hợp không có người thừa kế đang quản lý di sản thì di sản được giải quyết như sau:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -17273,7 +17273,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Di chúc hợp pháp phải có đủ các điều kiện sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -17322,7 +17322,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Di chúc gồm các nội dung chủ yếu sau:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -17564,7 +17564,7 @@
                     {
                       "loai": "khoan",
                       "so": 3,
-                      "noi_dung": null,
+                      "noi_dung": "Người giữ bản di chúc có nghĩa vụ sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -17626,7 +17626,7 @@
                     {
                       "loai": "khoan",
                       "so": 2,
-                      "noi_dung": null,
+                      "noi_dung": "Di chúc không có hiệu lực toàn bộ hoặc một phần trong trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -17669,7 +17669,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Những người sau đây vẫn được hưởng phần di sản bằng hai phần ba suất của một người thừa kế theo pháp luật nếu di sản được chia theo pháp luật, trong trường hợp họ không được người lập di chúc cho hưởng di sản hoặc chỉ cho hưởng phần di sản ít hơn hai phần ba suất đó:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -17807,7 +17807,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Thừa kế theo pháp luật được áp dụng trong trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -17834,7 +17834,7 @@
                     {
                       "loai": "khoan",
                       "so": 2,
-                      "noi_dung": null,
+                      "noi_dung": "Thừa kế theo pháp luật cũng được áp dụng đối với các phần di sản sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -17864,7 +17864,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Những người thừa kế theo pháp luật được quy định theo thứ tự sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -17962,7 +17962,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Sau khi có thông báo về việc mở thừa kế hoặc di chúc được công bố, những người thừa kế có thể họp mặt để thỏa thuận những việc sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -18183,7 +18183,7 @@
                     {
                       "loai": "khoan",
                       "so": 2,
-                      "noi_dung": null,
+                      "noi_dung": "Quan hệ dân sự có yếu tố nước ngoài là quan hệ dân sự thuộc một trong các trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -18312,7 +18312,7 @@
                     {
                       "loai": "khoan",
                       "so": 1,
-                      "noi_dung": null,
+                      "noi_dung": "Pháp luật nước ngoài được dẫn chiếu đến không được áp dụng trong trường hợp sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -18540,7 +18540,7 @@
                     {
                       "loai": "khoan",
                       "so": 2,
-                      "noi_dung": null,
+                      "noi_dung": "Hình thức của di chúc được xác định theo pháp luật của nước nơi di chúc được lập. Hình thức của di chúc cũng được công nhận tại Việt Nam nếu phù hợp với pháp luật của một trong các nước sau đây:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -18583,7 +18583,7 @@
                     {
                       "loai": "khoan",
                       "so": 2,
-                      "noi_dung": null,
+                      "noi_dung": "Pháp luật của nước sau đây được coi là pháp luật của nước có mối liên hệ gắn bó nhất với hợp đồng:",
                       "cac_diem": [
                         {
                           "loai": "diem",
@@ -18705,7 +18705,7 @@
                 {
                   "loai": "khoan",
                   "so": 1,
-                  "noi_dung": null,
+                  "noi_dung": "Đối với giao dịch dân sự được xác lập trước ngày Bộ luật này có hiệu lực thì việc áp dụng pháp luật được quy định như sau:",
                   "cac_diem": [
                     {
                       "loai": "diem",
