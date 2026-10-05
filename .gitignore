@@ -1,0 +1,6 @@
+.env
+.agents/
+
+__pycache__/
+.venv/
+**/data/van_ban/
