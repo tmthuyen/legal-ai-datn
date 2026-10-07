@@ -1,0 +1,68 @@
+{
+  "default": {
+    "description": "Profile chuẩn cho Bộ luật và Hiến pháp (có Phần / Chương La Mã / Mục / Tiểu mục / Điều / Khoản / Điểm)",
+    "patterns": {
+      "phan": "^Phần\\s+(?P<so>.+?)(?:\\.\\s*(?P<ten>.*))?$",
+      "chuong": "^Chương\\s+(?P<so>[IVXLCDM]+)(?:\\.\\s*(?P<ten>.*))?$",
+      "muc": "^Mục\\s+(?P<so>\\d+)(?:\\.\\s*(?P<ten>.*))?$",
+      "tieu_muc": "^Tiểu mục\\s+(?P<so>\\d+)(?:\\.\\s*(?P<ten>.*))?$",
+      "dieu": "^Điều\\s+(?P<so>\\d+)(?:\\.\\s*(?P<tieu_de>.*))?$",
+      "khoan": "^(?P<so>\\d+)\\.\\s+(?P<noi_dung>.+)$",
+      "diem": "^(?P<so>[a-zđ])\\)\\s+(?P<noi_dung>.+)$"
+    },
+    "title_on_next_line": [
+      "phan",
+      "chuong"
+    ],
+    "hierarchy": [
+      "phan",
+      "chuong",
+      "muc",
+      "tieu_muc",
+      "dieu",
+      "khoan",
+      "diem"
+    ]
+  },
+  "nghi_dinh": {
+    "description": "Profile cho Nghị định (không có Phần; có Chương La Mã hoặc Arabic, Mục, Tiểu mục, Điều, Khoản, Điểm)",
+    "patterns": {
+      "phan": null,
+      "chuong": "^Chương\\s+(?P<so>[IVXLCDM]+|\\d+)(?:\\.\\s*(?P<ten>.*))?$",
+      "muc": "^Mục\\s+(?P<so>\\d+)(?:[:.]\\s*(?P<ten>.*))?$",
+      "tieu_muc": "^Tiểu mục\\s+(?P<so>\\d+)(?:[:.]\\s*(?P<ten>.*))?$",
+      "dieu": "^Điều\\s+(?P<so>\\d+)(?:\\.\\s*(?P<tieu_de>.*))?$",
+      "khoan": "^(?P<so>\\d+)\\.\\s+(?P<noi_dung>.+)$",
+      "diem": "^(?P<so>[a-zđ])\\)\\s+(?P<noi_dung>.+)$"
+    },
+    "title_on_next_line": [
+      "chuong"
+    ],
+    "hierarchy": [
+      "chuong",
+      "muc",
+      "tieu_muc",
+      "dieu",
+      "khoan",
+      "diem"
+    ]
+  },
+  "nghi_quyet": {
+    "description": "Profile cho Nghị quyết (không có Phần hay Chương, đi trực tiếp từ Điều -> Khoản -> Điểm)",
+    "patterns": {
+      "phan": null,
+      "chuong": null,
+      "muc": null,
+      "tieu_muc": null,
+      "dieu": "^Điều\\s+(?P<so>\\d+)(?:\\.\\s*(?P<tieu_de>.*))?$",
+      "khoan": "^(?P<so>\\d+)\\.\\s+(?P<noi_dung>.+)$",
+      "diem": "^(?P<so>[a-zđ])\\)\\s+(?P<noi_dung>.+)$"
+    },
+    "title_on_next_line": [],
+    "hierarchy": [
+      "dieu",
+      "khoan",
+      "diem"
+    ]
+  }
+}

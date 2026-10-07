@@ -23112,6 +23112,4630 @@
     "confidence": 1.0
   },
   {
+    "source_id": "ND_21_2021",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH1",
+    "evidence": "ND_21_2021 CONTAINS ND_21_2021_CH1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D1",
+    "evidence": "ND_21_2021_CH1 CONTAINS ND_21_2021_D1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D2",
+    "evidence": "ND_21_2021_CH1 CONTAINS ND_21_2021_D2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D2_K1",
+    "evidence": "ND_21_2021_D2 CONTAINS ND_21_2021_D2_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D2_K2",
+    "evidence": "ND_21_2021_D2 CONTAINS ND_21_2021_D2_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D3",
+    "evidence": "ND_21_2021_CH1 CONTAINS ND_21_2021_D3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D3_K1",
+    "evidence": "ND_21_2021_D3 CONTAINS ND_21_2021_D3_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D3_K2",
+    "evidence": "ND_21_2021_D3 CONTAINS ND_21_2021_D3_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D3_K3",
+    "evidence": "ND_21_2021_D3 CONTAINS ND_21_2021_D3_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D3_K4",
+    "evidence": "ND_21_2021_D3 CONTAINS ND_21_2021_D3_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D3_K5",
+    "evidence": "ND_21_2021_D3 CONTAINS ND_21_2021_D3_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D3_K6",
+    "evidence": "ND_21_2021_D3 CONTAINS ND_21_2021_D3_K6",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D3_K7",
+    "evidence": "ND_21_2021_D3 CONTAINS ND_21_2021_D3_K7",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D4",
+    "evidence": "ND_21_2021_CH1 CONTAINS ND_21_2021_D4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D4_K1",
+    "evidence": "ND_21_2021_D4 CONTAINS ND_21_2021_D4_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D4_K2",
+    "evidence": "ND_21_2021_D4 CONTAINS ND_21_2021_D4_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D4_K3",
+    "evidence": "ND_21_2021_D4 CONTAINS ND_21_2021_D4_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D4_K4",
+    "evidence": "ND_21_2021_D4 CONTAINS ND_21_2021_D4_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D5",
+    "evidence": "ND_21_2021_CH1 CONTAINS ND_21_2021_D5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D5",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D5_K1",
+    "evidence": "ND_21_2021_D5 CONTAINS ND_21_2021_D5_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D5",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D5_K2",
+    "evidence": "ND_21_2021_D5 CONTAINS ND_21_2021_D5_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D6",
+    "evidence": "ND_21_2021_CH1 CONTAINS ND_21_2021_D6",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D6",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D6_K1",
+    "evidence": "ND_21_2021_D6 CONTAINS ND_21_2021_D6_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D6",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D6_K2",
+    "evidence": "ND_21_2021_D6 CONTAINS ND_21_2021_D6_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D7",
+    "evidence": "ND_21_2021_CH1 CONTAINS ND_21_2021_D7",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D7",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D7_K1",
+    "evidence": "ND_21_2021_D7 CONTAINS ND_21_2021_D7_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D7",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D7_K2",
+    "evidence": "ND_21_2021_D7 CONTAINS ND_21_2021_D7_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D7_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D7_K2_DIEM_A",
+    "evidence": "ND_21_2021_D7_K2 CONTAINS ND_21_2021_D7_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D7_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D7_K2_DIEM_B",
+    "evidence": "ND_21_2021_D7_K2 CONTAINS ND_21_2021_D7_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D7_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D7_K2_DIEM_C",
+    "evidence": "ND_21_2021_D7_K2 CONTAINS ND_21_2021_D7_K2_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D7_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D7_K2_DIEM_D",
+    "evidence": "ND_21_2021_D7_K2 CONTAINS ND_21_2021_D7_K2_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D7",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D7_K3",
+    "evidence": "ND_21_2021_D7 CONTAINS ND_21_2021_D7_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH2",
+    "evidence": "ND_21_2021 CONTAINS ND_21_2021_CH2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D8",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D8",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D8",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D8_K1",
+    "evidence": "ND_21_2021_D8 CONTAINS ND_21_2021_D8_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D8",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D8_K2",
+    "evidence": "ND_21_2021_D8 CONTAINS ND_21_2021_D8_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D8",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D8_K3",
+    "evidence": "ND_21_2021_D8 CONTAINS ND_21_2021_D8_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D8",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D8_K4",
+    "evidence": "ND_21_2021_D8 CONTAINS ND_21_2021_D8_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D9",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D9",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D9",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D9_K1",
+    "evidence": "ND_21_2021_D9 CONTAINS ND_21_2021_D9_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D9",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D9_K2",
+    "evidence": "ND_21_2021_D9 CONTAINS ND_21_2021_D9_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D9",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D9_K3",
+    "evidence": "ND_21_2021_D9 CONTAINS ND_21_2021_D9_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D10",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D10",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D10",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D10_K1",
+    "evidence": "ND_21_2021_D10 CONTAINS ND_21_2021_D10_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D10",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D10_K2",
+    "evidence": "ND_21_2021_D10 CONTAINS ND_21_2021_D10_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D10",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D10_K3",
+    "evidence": "ND_21_2021_D10 CONTAINS ND_21_2021_D10_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D10",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D10_K4",
+    "evidence": "ND_21_2021_D10 CONTAINS ND_21_2021_D10_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D11",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D11",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D11",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D11_K1",
+    "evidence": "ND_21_2021_D11 CONTAINS ND_21_2021_D11_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D11",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D11_K2",
+    "evidence": "ND_21_2021_D11 CONTAINS ND_21_2021_D11_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D12",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D12",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D13",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D13",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D14",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D14",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D15",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D15",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D16",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D16",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D17",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D17",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D18",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D18",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D19",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D19",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D20",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D20",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D20_K1",
+    "evidence": "ND_21_2021_D20 CONTAINS ND_21_2021_D20_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D20_K2",
+    "evidence": "ND_21_2021_D20 CONTAINS ND_21_2021_D20_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D20_K2_DIEM_A",
+    "evidence": "ND_21_2021_D20_K2 CONTAINS ND_21_2021_D20_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D20_K2_DIEM_B",
+    "evidence": "ND_21_2021_D20_K2 CONTAINS ND_21_2021_D20_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D20_K3",
+    "evidence": "ND_21_2021_D20 CONTAINS ND_21_2021_D20_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D20_K4",
+    "evidence": "ND_21_2021_D20 CONTAINS ND_21_2021_D20_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D20_K5",
+    "evidence": "ND_21_2021_D20 CONTAINS ND_21_2021_D20_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21",
+    "evidence": "ND_21_2021_CH2 CONTAINS ND_21_2021_D21",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K1",
+    "evidence": "ND_21_2021_D21 CONTAINS ND_21_2021_D21_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K1_DIEM_A",
+    "evidence": "ND_21_2021_D21_K1 CONTAINS ND_21_2021_D21_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K1_DIEM_B",
+    "evidence": "ND_21_2021_D21_K1 CONTAINS ND_21_2021_D21_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K2",
+    "evidence": "ND_21_2021_D21 CONTAINS ND_21_2021_D21_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K2_DIEM_A",
+    "evidence": "ND_21_2021_D21_K2 CONTAINS ND_21_2021_D21_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K2_DIEM_B",
+    "evidence": "ND_21_2021_D21_K2 CONTAINS ND_21_2021_D21_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K3",
+    "evidence": "ND_21_2021_D21 CONTAINS ND_21_2021_D21_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K4",
+    "evidence": "ND_21_2021_D21 CONTAINS ND_21_2021_D21_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K5",
+    "evidence": "ND_21_2021_D21 CONTAINS ND_21_2021_D21_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K6",
+    "evidence": "ND_21_2021_D21 CONTAINS ND_21_2021_D21_K6",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K7",
+    "evidence": "ND_21_2021_D21 CONTAINS ND_21_2021_D21_K7",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K8",
+    "evidence": "ND_21_2021_D21 CONTAINS ND_21_2021_D21_K8",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K9",
+    "evidence": "ND_21_2021_D21 CONTAINS ND_21_2021_D21_K9",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D21_K10",
+    "evidence": "ND_21_2021_D21 CONTAINS ND_21_2021_D21_K10",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH3",
+    "evidence": "ND_21_2021 CONTAINS ND_21_2021_CH3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH3_M1",
+    "evidence": "ND_21_2021_CH3 CONTAINS ND_21_2021_CH3_M1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH3_M1_TM1",
+    "evidence": "ND_21_2021_CH3_M1 CONTAINS ND_21_2021_CH3_M1_TM1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D22",
+    "evidence": "ND_21_2021_CH3_M1_TM1 CONTAINS ND_21_2021_D22",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D22",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D22_K1",
+    "evidence": "ND_21_2021_D22 CONTAINS ND_21_2021_D22_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D22",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D22_K2",
+    "evidence": "ND_21_2021_D22 CONTAINS ND_21_2021_D22_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D22",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D22_K3",
+    "evidence": "ND_21_2021_D22 CONTAINS ND_21_2021_D22_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D22",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D22_K4",
+    "evidence": "ND_21_2021_D22 CONTAINS ND_21_2021_D22_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D23",
+    "evidence": "ND_21_2021_CH3_M1_TM1 CONTAINS ND_21_2021_D23",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D23",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D23_K1",
+    "evidence": "ND_21_2021_D23 CONTAINS ND_21_2021_D23_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D23",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D23_K2",
+    "evidence": "ND_21_2021_D23 CONTAINS ND_21_2021_D23_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D23",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D23_K3",
+    "evidence": "ND_21_2021_D23 CONTAINS ND_21_2021_D23_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D23",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D23_K4",
+    "evidence": "ND_21_2021_D23 CONTAINS ND_21_2021_D23_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D23_K4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D23_K4_DIEM_A",
+    "evidence": "ND_21_2021_D23_K4 CONTAINS ND_21_2021_D23_K4_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D23_K4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D23_K4_DIEM_B",
+    "evidence": "ND_21_2021_D23_K4 CONTAINS ND_21_2021_D23_K4_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D23_K4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D23_K4_DIEM_C",
+    "evidence": "ND_21_2021_D23_K4 CONTAINS ND_21_2021_D23_K4_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D23",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D23_K5",
+    "evidence": "ND_21_2021_D23 CONTAINS ND_21_2021_D23_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D24",
+    "evidence": "ND_21_2021_CH3_M1_TM1 CONTAINS ND_21_2021_D24",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D24",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D24_K1",
+    "evidence": "ND_21_2021_D24 CONTAINS ND_21_2021_D24_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D24",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D24_K2",
+    "evidence": "ND_21_2021_D24 CONTAINS ND_21_2021_D24_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D25",
+    "evidence": "ND_21_2021_CH3_M1_TM1 CONTAINS ND_21_2021_D25",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D25",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D25_K1",
+    "evidence": "ND_21_2021_D25 CONTAINS ND_21_2021_D25_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D25",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D25_K2",
+    "evidence": "ND_21_2021_D25 CONTAINS ND_21_2021_D25_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D26",
+    "evidence": "ND_21_2021_CH3_M1_TM1 CONTAINS ND_21_2021_D26",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D26",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D26_K1",
+    "evidence": "ND_21_2021_D26 CONTAINS ND_21_2021_D26_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D26",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D26_K2",
+    "evidence": "ND_21_2021_D26 CONTAINS ND_21_2021_D26_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D27",
+    "evidence": "ND_21_2021_CH3_M1_TM1 CONTAINS ND_21_2021_D27",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D27",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D27_K1",
+    "evidence": "ND_21_2021_D27 CONTAINS ND_21_2021_D27_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D27_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D27_K1_DIEM_A",
+    "evidence": "ND_21_2021_D27_K1 CONTAINS ND_21_2021_D27_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D27_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D27_K1_DIEM_B",
+    "evidence": "ND_21_2021_D27_K1 CONTAINS ND_21_2021_D27_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D27",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D27_K2",
+    "evidence": "ND_21_2021_D27 CONTAINS ND_21_2021_D27_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D27",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D27_K3",
+    "evidence": "ND_21_2021_D27 CONTAINS ND_21_2021_D27_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D28",
+    "evidence": "ND_21_2021_CH3_M1_TM1 CONTAINS ND_21_2021_D28",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D28",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D28_K1",
+    "evidence": "ND_21_2021_D28 CONTAINS ND_21_2021_D28_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D28",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D28_K2",
+    "evidence": "ND_21_2021_D28 CONTAINS ND_21_2021_D28_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D28",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D28_K3",
+    "evidence": "ND_21_2021_D28 CONTAINS ND_21_2021_D28_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D29",
+    "evidence": "ND_21_2021_CH3_M1_TM1 CONTAINS ND_21_2021_D29",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D29",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D29_K1",
+    "evidence": "ND_21_2021_D29 CONTAINS ND_21_2021_D29_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D29",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D29_K2",
+    "evidence": "ND_21_2021_D29 CONTAINS ND_21_2021_D29_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D29_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D29_K2_DIEM_A",
+    "evidence": "ND_21_2021_D29_K2 CONTAINS ND_21_2021_D29_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D29_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D29_K2_DIEM_B",
+    "evidence": "ND_21_2021_D29_K2 CONTAINS ND_21_2021_D29_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D30",
+    "evidence": "ND_21_2021_CH3_M1_TM1 CONTAINS ND_21_2021_D30",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D30",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D30_K1",
+    "evidence": "ND_21_2021_D30 CONTAINS ND_21_2021_D30_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D30_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D30_K1_DIEM_A",
+    "evidence": "ND_21_2021_D30_K1 CONTAINS ND_21_2021_D30_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D30_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D30_K1_DIEM_B",
+    "evidence": "ND_21_2021_D30_K1 CONTAINS ND_21_2021_D30_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D30_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D30_K1_DIEM_C",
+    "evidence": "ND_21_2021_D30_K1 CONTAINS ND_21_2021_D30_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D30_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D30_K1_DIEM_D",
+    "evidence": "ND_21_2021_D30_K1 CONTAINS ND_21_2021_D30_K1_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D30_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D30_K1_DIEM_Đ",
+    "evidence": "ND_21_2021_D30_K1 CONTAINS ND_21_2021_D30_K1_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D30",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D30_K2",
+    "evidence": "ND_21_2021_D30 CONTAINS ND_21_2021_D30_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH3_M1_TM2",
+    "evidence": "ND_21_2021_CH3_M1 CONTAINS ND_21_2021_CH3_M1_TM2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D31",
+    "evidence": "ND_21_2021_CH3_M1_TM2 CONTAINS ND_21_2021_D31",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D31",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D31_K1",
+    "evidence": "ND_21_2021_D31 CONTAINS ND_21_2021_D31_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D31",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D31_K2",
+    "evidence": "ND_21_2021_D31 CONTAINS ND_21_2021_D31_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D31",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D31_K3",
+    "evidence": "ND_21_2021_D31 CONTAINS ND_21_2021_D31_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D31",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D31_K4",
+    "evidence": "ND_21_2021_D31 CONTAINS ND_21_2021_D31_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D32",
+    "evidence": "ND_21_2021_CH3_M1_TM2 CONTAINS ND_21_2021_D32",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH3_M1_TM3",
+    "evidence": "ND_21_2021_CH3_M1 CONTAINS ND_21_2021_CH3_M1_TM3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D33",
+    "evidence": "ND_21_2021_CH3_M1_TM3 CONTAINS ND_21_2021_D33",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D34",
+    "evidence": "ND_21_2021_CH3_M1_TM3 CONTAINS ND_21_2021_D34",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D34",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D34_K1",
+    "evidence": "ND_21_2021_D34 CONTAINS ND_21_2021_D34_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D34",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D34_K2",
+    "evidence": "ND_21_2021_D34 CONTAINS ND_21_2021_D34_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D34",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D34_K3",
+    "evidence": "ND_21_2021_D34 CONTAINS ND_21_2021_D34_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D35",
+    "evidence": "ND_21_2021_CH3_M1_TM3 CONTAINS ND_21_2021_D35",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D35",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D35_K1",
+    "evidence": "ND_21_2021_D35 CONTAINS ND_21_2021_D35_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D35",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D35_K2",
+    "evidence": "ND_21_2021_D35 CONTAINS ND_21_2021_D35_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D35",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D35_K3",
+    "evidence": "ND_21_2021_D35 CONTAINS ND_21_2021_D35_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D35",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D35_K4",
+    "evidence": "ND_21_2021_D35 CONTAINS ND_21_2021_D35_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D36",
+    "evidence": "ND_21_2021_CH3_M1_TM3 CONTAINS ND_21_2021_D36",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D36",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D36_K1",
+    "evidence": "ND_21_2021_D36 CONTAINS ND_21_2021_D36_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D36",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D36_K2",
+    "evidence": "ND_21_2021_D36 CONTAINS ND_21_2021_D36_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH3_M1_TM4",
+    "evidence": "ND_21_2021_CH3_M1 CONTAINS ND_21_2021_CH3_M1_TM4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D37",
+    "evidence": "ND_21_2021_CH3_M1_TM4 CONTAINS ND_21_2021_D37",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38",
+    "evidence": "ND_21_2021_CH3_M1_TM4 CONTAINS ND_21_2021_D38",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K1",
+    "evidence": "ND_21_2021_D38 CONTAINS ND_21_2021_D38_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K1_DIEM_A",
+    "evidence": "ND_21_2021_D38_K1 CONTAINS ND_21_2021_D38_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K1_DIEM_B",
+    "evidence": "ND_21_2021_D38_K1 CONTAINS ND_21_2021_D38_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K1_DIEM_C",
+    "evidence": "ND_21_2021_D38_K1 CONTAINS ND_21_2021_D38_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K1_DIEM_D",
+    "evidence": "ND_21_2021_D38_K1 CONTAINS ND_21_2021_D38_K1_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K1_DIEM_Đ",
+    "evidence": "ND_21_2021_D38_K1 CONTAINS ND_21_2021_D38_K1_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K2",
+    "evidence": "ND_21_2021_D38 CONTAINS ND_21_2021_D38_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K2_DIEM_A",
+    "evidence": "ND_21_2021_D38_K2 CONTAINS ND_21_2021_D38_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K2_DIEM_B",
+    "evidence": "ND_21_2021_D38_K2 CONTAINS ND_21_2021_D38_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K2_DIEM_C",
+    "evidence": "ND_21_2021_D38_K2 CONTAINS ND_21_2021_D38_K2_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K2_DIEM_D",
+    "evidence": "ND_21_2021_D38_K2 CONTAINS ND_21_2021_D38_K2_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D38_K2_DIEM_Đ",
+    "evidence": "ND_21_2021_D38_K2 CONTAINS ND_21_2021_D38_K2_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH3_M1_TM5",
+    "evidence": "ND_21_2021_CH3_M1 CONTAINS ND_21_2021_CH3_M1_TM5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM5",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D39",
+    "evidence": "ND_21_2021_CH3_M1_TM5 CONTAINS ND_21_2021_D39",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D39",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D39_K1",
+    "evidence": "ND_21_2021_D39 CONTAINS ND_21_2021_D39_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D39",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D39_K2",
+    "evidence": "ND_21_2021_D39 CONTAINS ND_21_2021_D39_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D39",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D39_K3",
+    "evidence": "ND_21_2021_D39 CONTAINS ND_21_2021_D39_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM5",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40",
+    "evidence": "ND_21_2021_CH3_M1_TM5 CONTAINS ND_21_2021_D40",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K1",
+    "evidence": "ND_21_2021_D40 CONTAINS ND_21_2021_D40_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K1_DIEM_A",
+    "evidence": "ND_21_2021_D40_K1 CONTAINS ND_21_2021_D40_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K1_DIEM_B",
+    "evidence": "ND_21_2021_D40_K1 CONTAINS ND_21_2021_D40_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K1_DIEM_C",
+    "evidence": "ND_21_2021_D40_K1 CONTAINS ND_21_2021_D40_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K1_DIEM_D",
+    "evidence": "ND_21_2021_D40_K1 CONTAINS ND_21_2021_D40_K1_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K1_DIEM_Đ",
+    "evidence": "ND_21_2021_D40_K1 CONTAINS ND_21_2021_D40_K1_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K2",
+    "evidence": "ND_21_2021_D40 CONTAINS ND_21_2021_D40_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K2_DIEM_A",
+    "evidence": "ND_21_2021_D40_K2 CONTAINS ND_21_2021_D40_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K2_DIEM_B",
+    "evidence": "ND_21_2021_D40_K2 CONTAINS ND_21_2021_D40_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K2_DIEM_C",
+    "evidence": "ND_21_2021_D40_K2 CONTAINS ND_21_2021_D40_K2_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K2_DIEM_D",
+    "evidence": "ND_21_2021_D40_K2 CONTAINS ND_21_2021_D40_K2_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K2_DIEM_Đ",
+    "evidence": "ND_21_2021_D40_K2 CONTAINS ND_21_2021_D40_K2_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K3",
+    "evidence": "ND_21_2021_D40 CONTAINS ND_21_2021_D40_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K3_DIEM_A",
+    "evidence": "ND_21_2021_D40_K3 CONTAINS ND_21_2021_D40_K3_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K3_DIEM_B",
+    "evidence": "ND_21_2021_D40_K3 CONTAINS ND_21_2021_D40_K3_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D40_K3_DIEM_C",
+    "evidence": "ND_21_2021_D40_K3 CONTAINS ND_21_2021_D40_K3_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH3_M1_TM6",
+    "evidence": "ND_21_2021_CH3_M1 CONTAINS ND_21_2021_CH3_M1_TM6",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM6",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D41",
+    "evidence": "ND_21_2021_CH3_M1_TM6 CONTAINS ND_21_2021_D41",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D41",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D41_K1",
+    "evidence": "ND_21_2021_D41 CONTAINS ND_21_2021_D41_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D41",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D41_K2",
+    "evidence": "ND_21_2021_D41 CONTAINS ND_21_2021_D41_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM6",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D42",
+    "evidence": "ND_21_2021_CH3_M1_TM6 CONTAINS ND_21_2021_D42",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D42",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D42_K1",
+    "evidence": "ND_21_2021_D42 CONTAINS ND_21_2021_D42_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D42",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D42_K2",
+    "evidence": "ND_21_2021_D42 CONTAINS ND_21_2021_D42_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH3_M1_TM7",
+    "evidence": "ND_21_2021_CH3_M1 CONTAINS ND_21_2021_CH3_M1_TM7",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM7",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D43",
+    "evidence": "ND_21_2021_CH3_M1_TM7 CONTAINS ND_21_2021_D43",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D43",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D43_K1",
+    "evidence": "ND_21_2021_D43 CONTAINS ND_21_2021_D43_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D43",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D43_K2",
+    "evidence": "ND_21_2021_D43 CONTAINS ND_21_2021_D43_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D43",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D43_K3",
+    "evidence": "ND_21_2021_D43 CONTAINS ND_21_2021_D43_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM7",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D44",
+    "evidence": "ND_21_2021_CH3_M1_TM7 CONTAINS ND_21_2021_D44",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D44_K1",
+    "evidence": "ND_21_2021_D44 CONTAINS ND_21_2021_D44_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D44_K1_DIEM_A",
+    "evidence": "ND_21_2021_D44_K1 CONTAINS ND_21_2021_D44_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D44_K1_DIEM_B",
+    "evidence": "ND_21_2021_D44_K1 CONTAINS ND_21_2021_D44_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D44_K1_DIEM_C",
+    "evidence": "ND_21_2021_D44_K1 CONTAINS ND_21_2021_D44_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D44_K1_DIEM_D",
+    "evidence": "ND_21_2021_D44_K1 CONTAINS ND_21_2021_D44_K1_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D44_K1_DIEM_Đ",
+    "evidence": "ND_21_2021_D44_K1 CONTAINS ND_21_2021_D44_K1_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D44_K1_DIEM_E",
+    "evidence": "ND_21_2021_D44_K1 CONTAINS ND_21_2021_D44_K1_DIEM_E",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D44_K2",
+    "evidence": "ND_21_2021_D44 CONTAINS ND_21_2021_D44_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D44_K3",
+    "evidence": "ND_21_2021_D44 CONTAINS ND_21_2021_D44_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D44_K4",
+    "evidence": "ND_21_2021_D44 CONTAINS ND_21_2021_D44_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH3_M1_TM8",
+    "evidence": "ND_21_2021_CH3_M1 CONTAINS ND_21_2021_CH3_M1_TM8",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM8",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D45",
+    "evidence": "ND_21_2021_CH3_M1_TM8 CONTAINS ND_21_2021_D45",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M1_TM8",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46",
+    "evidence": "ND_21_2021_CH3_M1_TM8 CONTAINS ND_21_2021_D46",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K1",
+    "evidence": "ND_21_2021_D46 CONTAINS ND_21_2021_D46_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K1_DIEM_A",
+    "evidence": "ND_21_2021_D46_K1 CONTAINS ND_21_2021_D46_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K1_DIEM_B",
+    "evidence": "ND_21_2021_D46_K1 CONTAINS ND_21_2021_D46_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K1_DIEM_C",
+    "evidence": "ND_21_2021_D46_K1 CONTAINS ND_21_2021_D46_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K2",
+    "evidence": "ND_21_2021_D46 CONTAINS ND_21_2021_D46_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K2_DIEM_A",
+    "evidence": "ND_21_2021_D46_K2 CONTAINS ND_21_2021_D46_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K2_DIEM_B",
+    "evidence": "ND_21_2021_D46_K2 CONTAINS ND_21_2021_D46_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K2_DIEM_C",
+    "evidence": "ND_21_2021_D46_K2 CONTAINS ND_21_2021_D46_K2_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K3",
+    "evidence": "ND_21_2021_D46 CONTAINS ND_21_2021_D46_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K3_DIEM_A",
+    "evidence": "ND_21_2021_D46_K3 CONTAINS ND_21_2021_D46_K3_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K3_DIEM_B",
+    "evidence": "ND_21_2021_D46_K3 CONTAINS ND_21_2021_D46_K3_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K3_DIEM_C",
+    "evidence": "ND_21_2021_D46_K3 CONTAINS ND_21_2021_D46_K3_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D46_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D46_K3_DIEM_D",
+    "evidence": "ND_21_2021_D46_K3 CONTAINS ND_21_2021_D46_K3_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH3_M2",
+    "evidence": "ND_21_2021_CH3 CONTAINS ND_21_2021_CH3_M2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D47",
+    "evidence": "ND_21_2021_CH3_M2 CONTAINS ND_21_2021_D47",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D47",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D47_K1",
+    "evidence": "ND_21_2021_D47 CONTAINS ND_21_2021_D47_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D47",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D47_K2",
+    "evidence": "ND_21_2021_D47 CONTAINS ND_21_2021_D47_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D47_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D47_K2_DIEM_A",
+    "evidence": "ND_21_2021_D47_K2 CONTAINS ND_21_2021_D47_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D47_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D47_K2_DIEM_B",
+    "evidence": "ND_21_2021_D47_K2 CONTAINS ND_21_2021_D47_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH3_M2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D48",
+    "evidence": "ND_21_2021_CH3_M2 CONTAINS ND_21_2021_D48",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D48",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D48_K1",
+    "evidence": "ND_21_2021_D48 CONTAINS ND_21_2021_D48_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D48",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D48_K2",
+    "evidence": "ND_21_2021_D48 CONTAINS ND_21_2021_D48_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D48",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D48_K3",
+    "evidence": "ND_21_2021_D48 CONTAINS ND_21_2021_D48_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH4",
+    "evidence": "ND_21_2021 CONTAINS ND_21_2021_CH4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D49",
+    "evidence": "ND_21_2021_CH4 CONTAINS ND_21_2021_D49",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D49",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D49_K1",
+    "evidence": "ND_21_2021_D49 CONTAINS ND_21_2021_D49_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D49",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D49_K2",
+    "evidence": "ND_21_2021_D49 CONTAINS ND_21_2021_D49_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D49",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D49_K3",
+    "evidence": "ND_21_2021_D49 CONTAINS ND_21_2021_D49_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D49",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D49_K4",
+    "evidence": "ND_21_2021_D49 CONTAINS ND_21_2021_D49_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D50",
+    "evidence": "ND_21_2021_CH4 CONTAINS ND_21_2021_D50",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D51",
+    "evidence": "ND_21_2021_CH4 CONTAINS ND_21_2021_D51",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D51",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D51_K1",
+    "evidence": "ND_21_2021_D51 CONTAINS ND_21_2021_D51_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D51_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D51_K1_DIEM_A",
+    "evidence": "ND_21_2021_D51_K1 CONTAINS ND_21_2021_D51_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D51_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D51_K1_DIEM_B",
+    "evidence": "ND_21_2021_D51_K1 CONTAINS ND_21_2021_D51_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D51_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D51_K1_DIEM_C",
+    "evidence": "ND_21_2021_D51_K1 CONTAINS ND_21_2021_D51_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D51",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D51_K2",
+    "evidence": "ND_21_2021_D51 CONTAINS ND_21_2021_D51_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D51",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D51_K3",
+    "evidence": "ND_21_2021_D51 CONTAINS ND_21_2021_D51_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D51",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D51_K4",
+    "evidence": "ND_21_2021_D51 CONTAINS ND_21_2021_D51_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D52",
+    "evidence": "ND_21_2021_CH4 CONTAINS ND_21_2021_D52",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D52",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D52_K1",
+    "evidence": "ND_21_2021_D52 CONTAINS ND_21_2021_D52_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D52",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D52_K2",
+    "evidence": "ND_21_2021_D52 CONTAINS ND_21_2021_D52_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D52",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D52_K3",
+    "evidence": "ND_21_2021_D52 CONTAINS ND_21_2021_D52_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D52",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D52_K4",
+    "evidence": "ND_21_2021_D52 CONTAINS ND_21_2021_D52_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D52",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D52_K5",
+    "evidence": "ND_21_2021_D52 CONTAINS ND_21_2021_D52_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D52",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D52_K6",
+    "evidence": "ND_21_2021_D52 CONTAINS ND_21_2021_D52_K6",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D52",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D52_K7",
+    "evidence": "ND_21_2021_D52 CONTAINS ND_21_2021_D52_K7",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D52",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D52_K8",
+    "evidence": "ND_21_2021_D52 CONTAINS ND_21_2021_D52_K8",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D53",
+    "evidence": "ND_21_2021_CH4 CONTAINS ND_21_2021_D53",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D53",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D53_K1",
+    "evidence": "ND_21_2021_D53 CONTAINS ND_21_2021_D53_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D53",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D53_K2",
+    "evidence": "ND_21_2021_D53 CONTAINS ND_21_2021_D53_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D53",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D53_K3",
+    "evidence": "ND_21_2021_D53 CONTAINS ND_21_2021_D53_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D54",
+    "evidence": "ND_21_2021_CH4 CONTAINS ND_21_2021_D54",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D54",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D54_K1",
+    "evidence": "ND_21_2021_D54 CONTAINS ND_21_2021_D54_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D54",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D54_K2",
+    "evidence": "ND_21_2021_D54 CONTAINS ND_21_2021_D54_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D54",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D54_K3",
+    "evidence": "ND_21_2021_D54 CONTAINS ND_21_2021_D54_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D54",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D54_K4",
+    "evidence": "ND_21_2021_D54 CONTAINS ND_21_2021_D54_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D54",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D54_K5",
+    "evidence": "ND_21_2021_D54 CONTAINS ND_21_2021_D54_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D55",
+    "evidence": "ND_21_2021_CH4 CONTAINS ND_21_2021_D55",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D55",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D55_K1",
+    "evidence": "ND_21_2021_D55 CONTAINS ND_21_2021_D55_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D55",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D55_K2",
+    "evidence": "ND_21_2021_D55 CONTAINS ND_21_2021_D55_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D56",
+    "evidence": "ND_21_2021_CH4 CONTAINS ND_21_2021_D56",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D56_K1",
+    "evidence": "ND_21_2021_D56 CONTAINS ND_21_2021_D56_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D56_K1_DIEM_A",
+    "evidence": "ND_21_2021_D56_K1 CONTAINS ND_21_2021_D56_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D56_K1_DIEM_B",
+    "evidence": "ND_21_2021_D56_K1 CONTAINS ND_21_2021_D56_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D56_K2",
+    "evidence": "ND_21_2021_D56 CONTAINS ND_21_2021_D56_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D56_K3",
+    "evidence": "ND_21_2021_D56 CONTAINS ND_21_2021_D56_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D56_K3_DIEM_A",
+    "evidence": "ND_21_2021_D56_K3 CONTAINS ND_21_2021_D56_K3_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D56_K3_DIEM_B",
+    "evidence": "ND_21_2021_D56_K3 CONTAINS ND_21_2021_D56_K3_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D56_K4",
+    "evidence": "ND_21_2021_D56 CONTAINS ND_21_2021_D56_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D56_K5",
+    "evidence": "ND_21_2021_D56 CONTAINS ND_21_2021_D56_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D57",
+    "evidence": "ND_21_2021_CH4 CONTAINS ND_21_2021_D57",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D57",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D57_K1",
+    "evidence": "ND_21_2021_D57 CONTAINS ND_21_2021_D57_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D57_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D57_K1_DIEM_A",
+    "evidence": "ND_21_2021_D57_K1 CONTAINS ND_21_2021_D57_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D57_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D57_K1_DIEM_B",
+    "evidence": "ND_21_2021_D57_K1 CONTAINS ND_21_2021_D57_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D57_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D57_K1_DIEM_C",
+    "evidence": "ND_21_2021_D57_K1 CONTAINS ND_21_2021_D57_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D57_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D57_K1_DIEM_D",
+    "evidence": "ND_21_2021_D57_K1 CONTAINS ND_21_2021_D57_K1_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D57",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D57_K2",
+    "evidence": "ND_21_2021_D57 CONTAINS ND_21_2021_D57_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D58",
+    "evidence": "ND_21_2021_CH4 CONTAINS ND_21_2021_D58",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D58",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D58_K1",
+    "evidence": "ND_21_2021_D58 CONTAINS ND_21_2021_D58_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D58",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D58_K2",
+    "evidence": "ND_21_2021_D58 CONTAINS ND_21_2021_D58_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D58_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D58_K2_DIEM_A",
+    "evidence": "ND_21_2021_D58_K2 CONTAINS ND_21_2021_D58_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D58_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D58_K2_DIEM_B",
+    "evidence": "ND_21_2021_D58_K2 CONTAINS ND_21_2021_D58_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D58_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D58_K2_DIEM_C",
+    "evidence": "ND_21_2021_D58_K2 CONTAINS ND_21_2021_D58_K2_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D58",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D58_K3",
+    "evidence": "ND_21_2021_D58 CONTAINS ND_21_2021_D58_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D58",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D58_K4",
+    "evidence": "ND_21_2021_D58 CONTAINS ND_21_2021_D58_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D59",
+    "evidence": "ND_21_2021_CH4 CONTAINS ND_21_2021_D59",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D59",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D59_K1",
+    "evidence": "ND_21_2021_D59 CONTAINS ND_21_2021_D59_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D59",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D59_K2",
+    "evidence": "ND_21_2021_D59 CONTAINS ND_21_2021_D59_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_CH5",
+    "evidence": "ND_21_2021 CONTAINS ND_21_2021_CH5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH5",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D60",
+    "evidence": "ND_21_2021_CH5 CONTAINS ND_21_2021_D60",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D60",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D60_K1",
+    "evidence": "ND_21_2021_D60 CONTAINS ND_21_2021_D60_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D60",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D60_K2",
+    "evidence": "ND_21_2021_D60 CONTAINS ND_21_2021_D60_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH5",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D61",
+    "evidence": "ND_21_2021_CH5 CONTAINS ND_21_2021_D61",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D61",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D61_K1",
+    "evidence": "ND_21_2021_D61 CONTAINS ND_21_2021_D61_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D61",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D61_K2",
+    "evidence": "ND_21_2021_D61 CONTAINS ND_21_2021_D61_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_CH5",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D62",
+    "evidence": "ND_21_2021_CH5 CONTAINS ND_21_2021_D62",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D62",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D62_K1",
+    "evidence": "ND_21_2021_D62 CONTAINS ND_21_2021_D62_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D62",
+    "type": "CONTAINS",
+    "target_id": "ND_21_2021_D62_K2",
+    "evidence": "ND_21_2021_D62 CONTAINS ND_21_2021_D62_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_CH1",
+    "evidence": "ND_19_2019 CONTAINS ND_19_2019_CH1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D1",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D2",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D2_K1",
+    "evidence": "ND_19_2019_D2 CONTAINS ND_19_2019_D2_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D2_K2",
+    "evidence": "ND_19_2019_D2 CONTAINS ND_19_2019_D2_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D3",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D3_K1",
+    "evidence": "ND_19_2019_D3 CONTAINS ND_19_2019_D3_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D3_K2",
+    "evidence": "ND_19_2019_D3 CONTAINS ND_19_2019_D3_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D3_K3",
+    "evidence": "ND_19_2019_D3 CONTAINS ND_19_2019_D3_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D4",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D4_K1",
+    "evidence": "ND_19_2019_D4 CONTAINS ND_19_2019_D4_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D4_K2",
+    "evidence": "ND_19_2019_D4 CONTAINS ND_19_2019_D4_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D4_K3",
+    "evidence": "ND_19_2019_D4 CONTAINS ND_19_2019_D4_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D4_K4",
+    "evidence": "ND_19_2019_D4 CONTAINS ND_19_2019_D4_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D4_K5",
+    "evidence": "ND_19_2019_D4 CONTAINS ND_19_2019_D4_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D4_K6",
+    "evidence": "ND_19_2019_D4 CONTAINS ND_19_2019_D4_K6",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D4_K7",
+    "evidence": "ND_19_2019_D4 CONTAINS ND_19_2019_D4_K7",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D4",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D4_K8",
+    "evidence": "ND_19_2019_D4 CONTAINS ND_19_2019_D4_K8",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D5",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D5",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D5_K1",
+    "evidence": "ND_19_2019_D5 CONTAINS ND_19_2019_D5_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D5",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D5_K2",
+    "evidence": "ND_19_2019_D5 CONTAINS ND_19_2019_D5_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D6",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D6",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D6",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D6_K1",
+    "evidence": "ND_19_2019_D6 CONTAINS ND_19_2019_D6_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D6",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D6_K2",
+    "evidence": "ND_19_2019_D6 CONTAINS ND_19_2019_D6_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D6",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D6_K3",
+    "evidence": "ND_19_2019_D6 CONTAINS ND_19_2019_D6_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D7",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D7",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D7",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D7_K1",
+    "evidence": "ND_19_2019_D7 CONTAINS ND_19_2019_D7_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D7",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D7_K2",
+    "evidence": "ND_19_2019_D7 CONTAINS ND_19_2019_D7_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D8",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K1",
+    "evidence": "ND_19_2019_D8 CONTAINS ND_19_2019_D8_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K1_DIEM_A",
+    "evidence": "ND_19_2019_D8_K1 CONTAINS ND_19_2019_D8_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K1_DIEM_B",
+    "evidence": "ND_19_2019_D8_K1 CONTAINS ND_19_2019_D8_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K1_DIEM_C",
+    "evidence": "ND_19_2019_D8_K1 CONTAINS ND_19_2019_D8_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K1_DIEM_D",
+    "evidence": "ND_19_2019_D8_K1 CONTAINS ND_19_2019_D8_K1_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K1_DIEM_Đ",
+    "evidence": "ND_19_2019_D8_K1 CONTAINS ND_19_2019_D8_K1_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K2",
+    "evidence": "ND_19_2019_D8 CONTAINS ND_19_2019_D8_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K2_DIEM_A",
+    "evidence": "ND_19_2019_D8_K2 CONTAINS ND_19_2019_D8_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K2_DIEM_B",
+    "evidence": "ND_19_2019_D8_K2 CONTAINS ND_19_2019_D8_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K2_DIEM_C",
+    "evidence": "ND_19_2019_D8_K2 CONTAINS ND_19_2019_D8_K2_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K2_DIEM_D",
+    "evidence": "ND_19_2019_D8_K2 CONTAINS ND_19_2019_D8_K2_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K2_DIEM_Đ",
+    "evidence": "ND_19_2019_D8_K2 CONTAINS ND_19_2019_D8_K2_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K2_DIEM_E",
+    "evidence": "ND_19_2019_D8_K2 CONTAINS ND_19_2019_D8_K2_DIEM_E",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D8_K2_DIEM_G",
+    "evidence": "ND_19_2019_D8_K2 CONTAINS ND_19_2019_D8_K2_DIEM_G",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D9",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D9",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D9",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D9_K1",
+    "evidence": "ND_19_2019_D9 CONTAINS ND_19_2019_D9_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D9",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D9_K2",
+    "evidence": "ND_19_2019_D9 CONTAINS ND_19_2019_D9_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D10",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D10",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D10",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D10_K1",
+    "evidence": "ND_19_2019_D10 CONTAINS ND_19_2019_D10_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D10",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D10_K2",
+    "evidence": "ND_19_2019_D10 CONTAINS ND_19_2019_D10_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D10_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D10_K2_DIEM_A",
+    "evidence": "ND_19_2019_D10_K2 CONTAINS ND_19_2019_D10_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D10_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D10_K2_DIEM_B",
+    "evidence": "ND_19_2019_D10_K2 CONTAINS ND_19_2019_D10_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D10",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D10_K3",
+    "evidence": "ND_19_2019_D10 CONTAINS ND_19_2019_D10_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D11",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D11",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D11",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D11_K1",
+    "evidence": "ND_19_2019_D11 CONTAINS ND_19_2019_D11_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D11_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D11_K1_DIEM_A",
+    "evidence": "ND_19_2019_D11_K1 CONTAINS ND_19_2019_D11_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D11_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D11_K1_DIEM_B",
+    "evidence": "ND_19_2019_D11_K1 CONTAINS ND_19_2019_D11_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D11_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D11_K1_DIEM_C",
+    "evidence": "ND_19_2019_D11_K1 CONTAINS ND_19_2019_D11_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D11",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D11_K2",
+    "evidence": "ND_19_2019_D11 CONTAINS ND_19_2019_D11_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D12",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D12",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D12",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D12_K1",
+    "evidence": "ND_19_2019_D12 CONTAINS ND_19_2019_D12_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D12",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D12_K2",
+    "evidence": "ND_19_2019_D12 CONTAINS ND_19_2019_D12_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D12_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D12_K2_DIEM_A",
+    "evidence": "ND_19_2019_D12_K2 CONTAINS ND_19_2019_D12_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D12_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D12_K2_DIEM_B",
+    "evidence": "ND_19_2019_D12_K2 CONTAINS ND_19_2019_D12_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D12_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D12_K2_DIEM_C",
+    "evidence": "ND_19_2019_D12_K2 CONTAINS ND_19_2019_D12_K2_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D12_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D12_K2_DIEM_D",
+    "evidence": "ND_19_2019_D12_K2 CONTAINS ND_19_2019_D12_K2_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D12_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D12_K2_DIEM_Đ",
+    "evidence": "ND_19_2019_D12_K2 CONTAINS ND_19_2019_D12_K2_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D13",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D13",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D14",
+    "evidence": "ND_19_2019_CH1 CONTAINS ND_19_2019_D14",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D14_K1",
+    "evidence": "ND_19_2019_D14 CONTAINS ND_19_2019_D14_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D14_K1_DIEM_A",
+    "evidence": "ND_19_2019_D14_K1 CONTAINS ND_19_2019_D14_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D14_K1_DIEM_B",
+    "evidence": "ND_19_2019_D14_K1 CONTAINS ND_19_2019_D14_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D14_K2",
+    "evidence": "ND_19_2019_D14 CONTAINS ND_19_2019_D14_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D14_K2_DIEM_A",
+    "evidence": "ND_19_2019_D14_K2 CONTAINS ND_19_2019_D14_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D14_K2_DIEM_B",
+    "evidence": "ND_19_2019_D14_K2 CONTAINS ND_19_2019_D14_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D14_K2_DIEM_C",
+    "evidence": "ND_19_2019_D14_K2 CONTAINS ND_19_2019_D14_K2_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D14_K2_DIEM_D",
+    "evidence": "ND_19_2019_D14_K2 CONTAINS ND_19_2019_D14_K2_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D14_K3",
+    "evidence": "ND_19_2019_D14 CONTAINS ND_19_2019_D14_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D14_K4",
+    "evidence": "ND_19_2019_D14 CONTAINS ND_19_2019_D14_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_CH2",
+    "evidence": "ND_19_2019 CONTAINS ND_19_2019_CH2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15",
+    "evidence": "ND_19_2019_CH2 CONTAINS ND_19_2019_D15",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K1",
+    "evidence": "ND_19_2019_D15 CONTAINS ND_19_2019_D15_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K1_DIEM_A",
+    "evidence": "ND_19_2019_D15_K1 CONTAINS ND_19_2019_D15_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K1_DIEM_B",
+    "evidence": "ND_19_2019_D15_K1 CONTAINS ND_19_2019_D15_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K1_DIEM_C",
+    "evidence": "ND_19_2019_D15_K1 CONTAINS ND_19_2019_D15_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K1_DIEM_D",
+    "evidence": "ND_19_2019_D15_K1 CONTAINS ND_19_2019_D15_K1_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K1_DIEM_Đ",
+    "evidence": "ND_19_2019_D15_K1 CONTAINS ND_19_2019_D15_K1_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K1_DIEM_E",
+    "evidence": "ND_19_2019_D15_K1 CONTAINS ND_19_2019_D15_K1_DIEM_E",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K1_DIEM_G",
+    "evidence": "ND_19_2019_D15_K1 CONTAINS ND_19_2019_D15_K1_DIEM_G",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K1_DIEM_H",
+    "evidence": "ND_19_2019_D15_K1 CONTAINS ND_19_2019_D15_K1_DIEM_H",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K1_DIEM_I",
+    "evidence": "ND_19_2019_D15_K1 CONTAINS ND_19_2019_D15_K1_DIEM_I",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K1_DIEM_K",
+    "evidence": "ND_19_2019_D15_K1 CONTAINS ND_19_2019_D15_K1_DIEM_K",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K2",
+    "evidence": "ND_19_2019_D15 CONTAINS ND_19_2019_D15_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K2_DIEM_A",
+    "evidence": "ND_19_2019_D15_K2 CONTAINS ND_19_2019_D15_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K2_DIEM_B",
+    "evidence": "ND_19_2019_D15_K2 CONTAINS ND_19_2019_D15_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K2_DIEM_C",
+    "evidence": "ND_19_2019_D15_K2 CONTAINS ND_19_2019_D15_K2_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K2_DIEM_D",
+    "evidence": "ND_19_2019_D15_K2 CONTAINS ND_19_2019_D15_K2_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K3",
+    "evidence": "ND_19_2019_D15 CONTAINS ND_19_2019_D15_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K3_DIEM_A",
+    "evidence": "ND_19_2019_D15_K3 CONTAINS ND_19_2019_D15_K3_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D15_K3_DIEM_B",
+    "evidence": "ND_19_2019_D15_K3 CONTAINS ND_19_2019_D15_K3_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16",
+    "evidence": "ND_19_2019_CH2 CONTAINS ND_19_2019_D16",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K1",
+    "evidence": "ND_19_2019_D16 CONTAINS ND_19_2019_D16_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K1_DIEM_A",
+    "evidence": "ND_19_2019_D16_K1 CONTAINS ND_19_2019_D16_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K1_DIEM_B",
+    "evidence": "ND_19_2019_D16_K1 CONTAINS ND_19_2019_D16_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K1_DIEM_C",
+    "evidence": "ND_19_2019_D16_K1 CONTAINS ND_19_2019_D16_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K1_DIEM_D",
+    "evidence": "ND_19_2019_D16_K1 CONTAINS ND_19_2019_D16_K1_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K1_DIEM_Đ",
+    "evidence": "ND_19_2019_D16_K1 CONTAINS ND_19_2019_D16_K1_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K2",
+    "evidence": "ND_19_2019_D16 CONTAINS ND_19_2019_D16_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K2_DIEM_A",
+    "evidence": "ND_19_2019_D16_K2 CONTAINS ND_19_2019_D16_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K2_DIEM_B",
+    "evidence": "ND_19_2019_D16_K2 CONTAINS ND_19_2019_D16_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K3",
+    "evidence": "ND_19_2019_D16 CONTAINS ND_19_2019_D16_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K3_DIEM_A",
+    "evidence": "ND_19_2019_D16_K3 CONTAINS ND_19_2019_D16_K3_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D16_K3_DIEM_B",
+    "evidence": "ND_19_2019_D16_K3 CONTAINS ND_19_2019_D16_K3_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17",
+    "evidence": "ND_19_2019_CH2 CONTAINS ND_19_2019_D17",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17_K1",
+    "evidence": "ND_19_2019_D17 CONTAINS ND_19_2019_D17_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17_K1_DIEM_A",
+    "evidence": "ND_19_2019_D17_K1 CONTAINS ND_19_2019_D17_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17_K1_DIEM_B",
+    "evidence": "ND_19_2019_D17_K1 CONTAINS ND_19_2019_D17_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17_K1_DIEM_C",
+    "evidence": "ND_19_2019_D17_K1 CONTAINS ND_19_2019_D17_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17_K1_DIEM_D",
+    "evidence": "ND_19_2019_D17_K1 CONTAINS ND_19_2019_D17_K1_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17_K2",
+    "evidence": "ND_19_2019_D17 CONTAINS ND_19_2019_D17_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17_K2_DIEM_A",
+    "evidence": "ND_19_2019_D17_K2 CONTAINS ND_19_2019_D17_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17_K2_DIEM_B",
+    "evidence": "ND_19_2019_D17_K2 CONTAINS ND_19_2019_D17_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17_K3",
+    "evidence": "ND_19_2019_D17 CONTAINS ND_19_2019_D17_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17_K3_DIEM_A",
+    "evidence": "ND_19_2019_D17_K3 CONTAINS ND_19_2019_D17_K3_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D17_K3_DIEM_B",
+    "evidence": "ND_19_2019_D17_K3 CONTAINS ND_19_2019_D17_K3_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D18",
+    "evidence": "ND_19_2019_CH2 CONTAINS ND_19_2019_D18",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D18",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D18_K1",
+    "evidence": "ND_19_2019_D18 CONTAINS ND_19_2019_D18_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D18",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D18_K2",
+    "evidence": "ND_19_2019_D18 CONTAINS ND_19_2019_D18_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D18",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D18_K3",
+    "evidence": "ND_19_2019_D18 CONTAINS ND_19_2019_D18_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D18",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D18_K4",
+    "evidence": "ND_19_2019_D18 CONTAINS ND_19_2019_D18_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D18",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D18_K5",
+    "evidence": "ND_19_2019_D18 CONTAINS ND_19_2019_D18_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D18",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D18_K6",
+    "evidence": "ND_19_2019_D18 CONTAINS ND_19_2019_D18_K6",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D18",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D18_K7",
+    "evidence": "ND_19_2019_D18 CONTAINS ND_19_2019_D18_K7",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D18",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D18_K8",
+    "evidence": "ND_19_2019_D18 CONTAINS ND_19_2019_D18_K8",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_CH3",
+    "evidence": "ND_19_2019 CONTAINS ND_19_2019_CH3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_CH3_M1",
+    "evidence": "ND_19_2019_CH3 CONTAINS ND_19_2019_CH3_M1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH3_M1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D19",
+    "evidence": "ND_19_2019_CH3_M1 CONTAINS ND_19_2019_D19",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D19",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D19_K1",
+    "evidence": "ND_19_2019_D19 CONTAINS ND_19_2019_D19_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D19",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D19_K2",
+    "evidence": "ND_19_2019_D19 CONTAINS ND_19_2019_D19_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH3_M1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D20",
+    "evidence": "ND_19_2019_CH3_M1 CONTAINS ND_19_2019_D20",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D20",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D20_K1",
+    "evidence": "ND_19_2019_D20 CONTAINS ND_19_2019_D20_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D20",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D20_K2",
+    "evidence": "ND_19_2019_D20 CONTAINS ND_19_2019_D20_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D20",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D20_K3",
+    "evidence": "ND_19_2019_D20 CONTAINS ND_19_2019_D20_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D20",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D20_K4",
+    "evidence": "ND_19_2019_D20 CONTAINS ND_19_2019_D20_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_CH3_M2",
+    "evidence": "ND_19_2019_CH3 CONTAINS ND_19_2019_CH3_M2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH3_M2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D21",
+    "evidence": "ND_19_2019_CH3_M2 CONTAINS ND_19_2019_D21",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D21_K1",
+    "evidence": "ND_19_2019_D21 CONTAINS ND_19_2019_D21_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D21",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D21_K2",
+    "evidence": "ND_19_2019_D21 CONTAINS ND_19_2019_D21_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH3_M2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D22",
+    "evidence": "ND_19_2019_CH3_M2 CONTAINS ND_19_2019_D22",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D22",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D22_K1",
+    "evidence": "ND_19_2019_D22 CONTAINS ND_19_2019_D22_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D22",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D22_K2",
+    "evidence": "ND_19_2019_D22 CONTAINS ND_19_2019_D22_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D22_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D22_K2_DIEM_A",
+    "evidence": "ND_19_2019_D22_K2 CONTAINS ND_19_2019_D22_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D22_K2",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D22_K2_DIEM_B",
+    "evidence": "ND_19_2019_D22_K2 CONTAINS ND_19_2019_D22_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_CH4",
+    "evidence": "ND_19_2019 CONTAINS ND_19_2019_CH4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D23",
+    "evidence": "ND_19_2019_CH4 CONTAINS ND_19_2019_D23",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D23",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D23_K1",
+    "evidence": "ND_19_2019_D23 CONTAINS ND_19_2019_D23_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D23",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D23_K2",
+    "evidence": "ND_19_2019_D23 CONTAINS ND_19_2019_D23_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D23",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D23_K3",
+    "evidence": "ND_19_2019_D23 CONTAINS ND_19_2019_D23_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D23",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D23_K4",
+    "evidence": "ND_19_2019_D23 CONTAINS ND_19_2019_D23_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D24",
+    "evidence": "ND_19_2019_CH4 CONTAINS ND_19_2019_D24",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D24",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D24_K1",
+    "evidence": "ND_19_2019_D24 CONTAINS ND_19_2019_D24_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D24",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D24_K2",
+    "evidence": "ND_19_2019_D24 CONTAINS ND_19_2019_D24_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D24",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D24_K3",
+    "evidence": "ND_19_2019_D24 CONTAINS ND_19_2019_D24_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D24",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D24_K4",
+    "evidence": "ND_19_2019_D24 CONTAINS ND_19_2019_D24_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH4",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D25",
+    "evidence": "ND_19_2019_CH4 CONTAINS ND_19_2019_D25",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D25",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D25_K1",
+    "evidence": "ND_19_2019_D25 CONTAINS ND_19_2019_D25_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D25",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D25_K2",
+    "evidence": "ND_19_2019_D25 CONTAINS ND_19_2019_D25_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_CH5",
+    "evidence": "ND_19_2019 CONTAINS ND_19_2019_CH5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH5",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D26",
+    "evidence": "ND_19_2019_CH5 CONTAINS ND_19_2019_D26",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D26",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D26_K1",
+    "evidence": "ND_19_2019_D26 CONTAINS ND_19_2019_D26_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D26",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D26_K2",
+    "evidence": "ND_19_2019_D26 CONTAINS ND_19_2019_D26_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH5",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D27",
+    "evidence": "ND_19_2019_CH5 CONTAINS ND_19_2019_D27",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D27",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D27_K1",
+    "evidence": "ND_19_2019_D27 CONTAINS ND_19_2019_D27_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D27",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D27_K2",
+    "evidence": "ND_19_2019_D27 CONTAINS ND_19_2019_D27_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D27",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D27_K3",
+    "evidence": "ND_19_2019_D27 CONTAINS ND_19_2019_D27_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_CH5",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D28",
+    "evidence": "ND_19_2019_CH5 CONTAINS ND_19_2019_D28",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D28",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D28_K1",
+    "evidence": "ND_19_2019_D28 CONTAINS ND_19_2019_D28_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D28_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D28_K1_DIEM_A",
+    "evidence": "ND_19_2019_D28_K1 CONTAINS ND_19_2019_D28_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D28_K1",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D28_K1_DIEM_B",
+    "evidence": "ND_19_2019_D28_K1 CONTAINS ND_19_2019_D28_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D28",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D28_K2",
+    "evidence": "ND_19_2019_D28 CONTAINS ND_19_2019_D28_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D28",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D28_K3",
+    "evidence": "ND_19_2019_D28 CONTAINS ND_19_2019_D28_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D28_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D28_K3_DIEM_A",
+    "evidence": "ND_19_2019_D28_K3 CONTAINS ND_19_2019_D28_K3_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D28_K3",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D28_K3_DIEM_B",
+    "evidence": "ND_19_2019_D28_K3 CONTAINS ND_19_2019_D28_K3_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D28",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D28_K4",
+    "evidence": "ND_19_2019_D28 CONTAINS ND_19_2019_D28_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D28",
+    "type": "CONTAINS",
+    "target_id": "ND_19_2019_D28_K5",
+    "evidence": "ND_19_2019_D28 CONTAINS ND_19_2019_D28_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D1",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D2",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D2_K1",
+    "evidence": "NQ_02_2022_D2 CONTAINS NQ_02_2022_D2_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D2_K1_DIEM_A",
+    "evidence": "NQ_02_2022_D2_K1 CONTAINS NQ_02_2022_D2_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D2_K1_DIEM_B",
+    "evidence": "NQ_02_2022_D2_K1 CONTAINS NQ_02_2022_D2_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D2_K1_DIEM_C",
+    "evidence": "NQ_02_2022_D2_K1 CONTAINS NQ_02_2022_D2_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D2_K2",
+    "evidence": "NQ_02_2022_D2 CONTAINS NQ_02_2022_D2_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2_K2",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D2_K2_DIEM_A",
+    "evidence": "NQ_02_2022_D2_K2 CONTAINS NQ_02_2022_D2_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2_K2",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D2_K2_DIEM_B",
+    "evidence": "NQ_02_2022_D2_K2 CONTAINS NQ_02_2022_D2_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D2_K3",
+    "evidence": "NQ_02_2022_D2 CONTAINS NQ_02_2022_D2_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2_K3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D2_K3_DIEM_A",
+    "evidence": "NQ_02_2022_D2_K3 CONTAINS NQ_02_2022_D2_K3_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2_K3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D2_K3_DIEM_B",
+    "evidence": "NQ_02_2022_D2_K3 CONTAINS NQ_02_2022_D2_K3_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D3",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D3_K1",
+    "evidence": "NQ_02_2022_D3 CONTAINS NQ_02_2022_D3_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D3_K1_DIEM_A",
+    "evidence": "NQ_02_2022_D3_K1 CONTAINS NQ_02_2022_D3_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D3_K1_DIEM_B",
+    "evidence": "NQ_02_2022_D3_K1 CONTAINS NQ_02_2022_D3_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D3_K1_DIEM_C",
+    "evidence": "NQ_02_2022_D3_K1 CONTAINS NQ_02_2022_D3_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D3_K1_DIEM_D",
+    "evidence": "NQ_02_2022_D3_K1 CONTAINS NQ_02_2022_D3_K1_DIEM_D",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D3_K1_DIEM_Đ",
+    "evidence": "NQ_02_2022_D3_K1 CONTAINS NQ_02_2022_D3_K1_DIEM_Đ",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D3_K2",
+    "evidence": "NQ_02_2022_D3 CONTAINS NQ_02_2022_D3_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D3_K3",
+    "evidence": "NQ_02_2022_D3 CONTAINS NQ_02_2022_D3_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D3_K4",
+    "evidence": "NQ_02_2022_D3 CONTAINS NQ_02_2022_D3_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D3_K5",
+    "evidence": "NQ_02_2022_D3 CONTAINS NQ_02_2022_D3_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D4",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D4",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D4_K1",
+    "evidence": "NQ_02_2022_D4 CONTAINS NQ_02_2022_D4_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D4",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D4_K2",
+    "evidence": "NQ_02_2022_D4 CONTAINS NQ_02_2022_D4_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D4",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D4_K3",
+    "evidence": "NQ_02_2022_D4 CONTAINS NQ_02_2022_D4_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D4",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D4_K4",
+    "evidence": "NQ_02_2022_D4 CONTAINS NQ_02_2022_D4_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D4",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D4_K5",
+    "evidence": "NQ_02_2022_D4 CONTAINS NQ_02_2022_D4_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D5",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D5",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D5_K1",
+    "evidence": "NQ_02_2022_D5 CONTAINS NQ_02_2022_D5_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D5",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D5_K2",
+    "evidence": "NQ_02_2022_D5 CONTAINS NQ_02_2022_D5_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D5",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D5_K3",
+    "evidence": "NQ_02_2022_D5 CONTAINS NQ_02_2022_D5_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D6",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D6",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D6",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D6_K1",
+    "evidence": "NQ_02_2022_D6 CONTAINS NQ_02_2022_D6_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D6_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D6_K1_DIEM_A",
+    "evidence": "NQ_02_2022_D6_K1 CONTAINS NQ_02_2022_D6_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D6_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D6_K1_DIEM_B",
+    "evidence": "NQ_02_2022_D6_K1 CONTAINS NQ_02_2022_D6_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D6",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D6_K2",
+    "evidence": "NQ_02_2022_D6 CONTAINS NQ_02_2022_D6_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D6",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D6_K3",
+    "evidence": "NQ_02_2022_D6 CONTAINS NQ_02_2022_D6_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D7",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7_K1",
+    "evidence": "NQ_02_2022_D7 CONTAINS NQ_02_2022_D7_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7_K1_DIEM_A",
+    "evidence": "NQ_02_2022_D7_K1 CONTAINS NQ_02_2022_D7_K1_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7_K1_DIEM_B",
+    "evidence": "NQ_02_2022_D7_K1 CONTAINS NQ_02_2022_D7_K1_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7_K1",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7_K1_DIEM_C",
+    "evidence": "NQ_02_2022_D7_K1 CONTAINS NQ_02_2022_D7_K1_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7_K2",
+    "evidence": "NQ_02_2022_D7 CONTAINS NQ_02_2022_D7_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7_K2",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7_K2_DIEM_A",
+    "evidence": "NQ_02_2022_D7_K2 CONTAINS NQ_02_2022_D7_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7_K2",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7_K2_DIEM_B",
+    "evidence": "NQ_02_2022_D7_K2 CONTAINS NQ_02_2022_D7_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7_K3",
+    "evidence": "NQ_02_2022_D7 CONTAINS NQ_02_2022_D7_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7_K3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7_K3_DIEM_A",
+    "evidence": "NQ_02_2022_D7_K3 CONTAINS NQ_02_2022_D7_K3_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7_K3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7_K3_DIEM_B",
+    "evidence": "NQ_02_2022_D7_K3 CONTAINS NQ_02_2022_D7_K3_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7_K3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D7_K3_DIEM_C",
+    "evidence": "NQ_02_2022_D7_K3 CONTAINS NQ_02_2022_D7_K3_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D8",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D8",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D8_K1",
+    "evidence": "NQ_02_2022_D8 CONTAINS NQ_02_2022_D8_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D8_K2",
+    "evidence": "NQ_02_2022_D8 CONTAINS NQ_02_2022_D8_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D8_K3",
+    "evidence": "NQ_02_2022_D8 CONTAINS NQ_02_2022_D8_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8_K3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D8_K3_DIEM_A",
+    "evidence": "NQ_02_2022_D8_K3 CONTAINS NQ_02_2022_D8_K3_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8_K3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D8_K3_DIEM_B",
+    "evidence": "NQ_02_2022_D8_K3 CONTAINS NQ_02_2022_D8_K3_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8_K3",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D8_K3_DIEM_C",
+    "evidence": "NQ_02_2022_D8_K3 CONTAINS NQ_02_2022_D8_K3_DIEM_C",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D9",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D9",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D9",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D9_K1",
+    "evidence": "NQ_02_2022_D9 CONTAINS NQ_02_2022_D9_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D9",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D9_K2",
+    "evidence": "NQ_02_2022_D9 CONTAINS NQ_02_2022_D9_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D9_K2",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D9_K2_DIEM_A",
+    "evidence": "NQ_02_2022_D9_K2 CONTAINS NQ_02_2022_D9_K2_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D9_K2",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D9_K2_DIEM_B",
+    "evidence": "NQ_02_2022_D9_K2 CONTAINS NQ_02_2022_D9_K2_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D10",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D10",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D11",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D11",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D11",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D11_K1",
+    "evidence": "NQ_02_2022_D11 CONTAINS NQ_02_2022_D11_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D11",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D11_K2",
+    "evidence": "NQ_02_2022_D11 CONTAINS NQ_02_2022_D11_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D12",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D12",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D12_K1",
+    "evidence": "NQ_02_2022_D12 CONTAINS NQ_02_2022_D12_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D12_K2",
+    "evidence": "NQ_02_2022_D12 CONTAINS NQ_02_2022_D12_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D12_K3",
+    "evidence": "NQ_02_2022_D12 CONTAINS NQ_02_2022_D12_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D12_K4",
+    "evidence": "NQ_02_2022_D12 CONTAINS NQ_02_2022_D12_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12_K4",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D12_K4_DIEM_A",
+    "evidence": "NQ_02_2022_D12_K4 CONTAINS NQ_02_2022_D12_K4_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12_K4",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D12_K4_DIEM_B",
+    "evidence": "NQ_02_2022_D12_K4 CONTAINS NQ_02_2022_D12_K4_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D12_K5",
+    "evidence": "NQ_02_2022_D12 CONTAINS NQ_02_2022_D12_K5",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12_K5",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D12_K5_DIEM_A",
+    "evidence": "NQ_02_2022_D12_K5 CONTAINS NQ_02_2022_D12_K5_DIEM_A",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12_K5",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D12_K5_DIEM_B",
+    "evidence": "NQ_02_2022_D12_K5 CONTAINS NQ_02_2022_D12_K5_DIEM_B",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D13",
+    "evidence": "NQ_02_2022 CONTAINS NQ_02_2022_D13",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D13",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D13_K1",
+    "evidence": "NQ_02_2022_D13 CONTAINS NQ_02_2022_D13_K1",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D13",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D13_K2",
+    "evidence": "NQ_02_2022_D13 CONTAINS NQ_02_2022_D13_K2",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D13",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D13_K3",
+    "evidence": "NQ_02_2022_D13 CONTAINS NQ_02_2022_D13_K3",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D13",
+    "type": "CONTAINS",
+    "target_id": "NQ_02_2022_D13_K4",
+    "evidence": "NQ_02_2022_D13 CONTAINS NQ_02_2022_D13_K4",
+    "source_type": "STRUCTURAL",
+    "confidence": 1.0
+  },
+  {
     "source_id": "HIEN_PHAP_2013_D75_K4",
     "type": "REFERENCES",
     "target_id": "HIEN_PHAP_2013_D76_K2",
@@ -24594,14 +29218,6 @@
   {
     "source_id": "BLDS_2015_D426",
     "type": "REFERENCES",
-    "target_id": "BLDS_2015_D351",
-    "evidence": "...theo quy định tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này....",
-    "source_type": "EXPLICIT",
-    "confidence": 1.0
-  },
-  {
-    "source_id": "BLDS_2015_D426",
-    "type": "REFERENCES",
     "target_id": "BLDS_2015_D363",
     "evidence": "...theo quy định tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này.... | ...h tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này....",
     "source_type": "EXPLICIT",
@@ -24972,14 +29588,6 @@
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D524_K4",
     "evidence": "...vi phạm nghĩa vụ quy định tại các khoản 1, 3 và 4 Điều 524 của Bộ luật này....",
-    "source_type": "EXPLICIT",
-    "confidence": 1.0
-  },
-  {
-    "source_id": "BLDS_2015_D529_K2",
-    "type": "REFERENCES",
-    "target_id": "BLDS_2015_D524",
-    "evidence": "...ụ quy định tại các khoản 1, 3 và 4 Điều 524 của Bộ luật này....",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -25509,6 +30117,1414 @@
     "target_id": "BLDS_2015_D687_K2",
     "evidence": "...đồng, trừ trường hợp quy định tại khoản 2 Điều này. Trường hợp không có thỏa thuận th...",
     "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D7_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D7_K2",
+    "evidence": "...hông thuộc trường hợp quy định tại khoản 2 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D7_K2_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D321_K4",
+    "evidence": "...ặc được trao đổi theo quy định tại khoản 4 Điều 321 của Bộ luật Dân sự;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D7_K2_DIEM_C",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D21",
+    "evidence": "...thế bằng tài sản khác quy định tại Điều 21 Nghị định này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D7_K3",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D658",
+    "evidence": "...nhưng thực hiện theo quy định tại Điều 658 của Bộ luật Dân sự và quy định khá...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D9_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D12",
+    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này.... | ...i khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D9_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D13",
+    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D9_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D18",
+    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D9_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D19",
+    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D9_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D9_K2",
+    "evidence": "...ỏa thuận, phù hợp với quy định tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị đị...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D9_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D9_K3",
+    "evidence": "...ỏa thuận, phù hợp với quy định tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị đị...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D11_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D9_K1",
+    "evidence": "...n với đất thì áp dụng quy định tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D11_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D9_K2",
+    "evidence": "...n với đất thì áp dụng quy định tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị... | ...hì áp dụng quy định tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D11_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D10_K1",
+    "evidence": "...tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D11_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D10_K2",
+    "evidence": "...tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D11_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D10_K3",
+    "evidence": "...tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D11_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D271_K2",
+    "evidence": "...chủ thể quyền bề mặt quy định tại khoản 2 Điều 271 của Bộ luật Dân sự được dùng để bả...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D321_K2",
+    "evidence": "...tài sản thế chấp theo quy định tại khoản 2 Điều 321 của Bộ luật Dân sự thì phần giá tr...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D20_K1",
+    "evidence": "...ầu tư nếu việc đầu tư quy định tại khoản 1 và khoản 2 Điều này làm giảm giá trị tài sản thế chấp....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D20_K2",
+    "evidence": "...ầu tư nếu việc đầu tư quy định tại khoản 1 và khoản 2 Điều này làm giảm giá trị tài sản thế chấp....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20_K4",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D20_K2",
+    "evidence": "...ế chấp không tuân thủ quy định tại khoản 2 và khoản 3 Điều này mà gây thiệt hại thì phải bồi thườ...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20_K4",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D20_K3",
+    "evidence": "...ế chấp không tuân thủ quy định tại khoản 2 và khoản 3 Điều này mà gây thiệt hại thì phải bồi thườ...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20_K5",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D20_K1",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20_K5",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D20_K2",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20_K5",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D20_K3",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D20_K5",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D20_K4",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21_K9",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D21_K4",
+    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21_K9",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D21_K5",
+    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21_K9",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D21_K7",
+    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D21_K9",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D21_K8",
+    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D22_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D22_K1",
+    "evidence": "...Hợp đồng bảo đảm không thuộc khoản 1 Điều này có hiệu lực từ thời điểm do các bê...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D23_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D23_K2",
+    "evidence": "...Trường hợp không thuộc khoản 2 Điều này thì hiệu lực đối kháng với người t...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D23_K4",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D23_K3",
+    "evidence": "...uộc biện pháp bảo đảm quy định tại khoản 3 Điều này được giao cho người khác quản lý t...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D24_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D23_K1",
+    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D24_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D23_K2",
+    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D24_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D23_K3",
+    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D24_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D23_K4",
+    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D25_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D22",
+    "evidence": "...đảm với người thứ ba quy định tại Điều 22 và Điều 23 Nghị định này có hiệu lực đối với... | ...đảm với người thứ ba quy định tại Điều 22 và Điều 23 Nghị định này có hiệu l...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D25_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D23",
+    "evidence": "...đảm với người thứ ba quy định tại Điều 22 và Điều 23 Nghị định này có hiệu lực đối với... | ...ười thứ ba quy định tại Điều 22 và Điều 23 Nghị định này có hiệu lực đối với...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D26_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D325",
+    "evidence": "...sản gắn liền với đất quy định tại Điều 325 và Điều 326 của Bộ luật Dân sự thì hợp đồng th... | ...sản gắn liền với đất quy định tại Điều 325 và Điều 326 của Bộ luật Dân sự thì...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D26_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D326",
+    "evidence": "...sản gắn liền với đất quy định tại Điều 325 và Điều 326 của Bộ luật Dân sự thì hợp đồng th... | ...n với đất quy định tại Điều 325 và Điều 326 của Bộ luật Dân sự thì hợp đồng th...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D27_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D27_K1",
+    "evidence": "...đảm được xác lập theo quy định tại khoản 1 và khoản 2 Điều này mà vợ chồng ly hôn thì người đã xá...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D27_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D27_K2",
+    "evidence": "...đảm được xác lập theo quy định tại khoản 1 và khoản 2 Điều này mà vợ chồng ly hôn thì người đã xá...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D28_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D28",
+    "evidence": "...ác về quyền, nghĩa vụ quy định tại Điều này và quy định khác liên quan về chuy...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D30_K1_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D27",
+    "evidence": "...chung, trừ trường hợp quy định tại Điều 27 Nghị định này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D30_K2",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D338",
+    "evidence": "...được giải quyết theo quy định tại Điều 338 của Bộ luật Dân sự và khoản 2 Điều...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D30_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D5_K2",
+    "evidence": "...tại Điều 338 của Bộ luật Dân sự và khoản 2 Điều 5 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D31_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D311_K1",
+    "evidence": "...ề giao tài sản cầm cố quy định tại khoản 1 Điều 311 của Bộ luật Dân sự có thể là việc...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D31_K4",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D31_K2",
+    "evidence": "...Quy định tại khoản 2 và khoản 3 Điều này không áp dụng trong trường hợp vật...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D31_K4",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D31_K3",
+    "evidence": "...Quy định tại khoản 2 và khoản 3 Điều này không áp dụng trong trường hợp vật...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D32",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D161",
+    "evidence": "...i tài sản cầm cố theo quy định tại Điều 161 của Bộ luật Dân sự....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D34_K2",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D299",
+    "evidence": "...xử lý theo trường hợp quy định tại Điều 299 của Bộ luật Dân sự không làm chấm...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D35_K3",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D468",
+    "evidence": "...định tại khoản 2 Điều 357, khoản 5 Điều 466 và Điều 468 của Bộ luật Dân sự. Trường hợp có... | ...ản 2 Điều 357, khoản 5 Điều 466 và Điều 468 của Bộ luật Dân sự. Trường hợp có...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D35_K3",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D357_K2",
+    "evidence": "...huận về lãi, lãi suất quy định tại khoản 2 Điều 357, khoản 5 Điều 466 và Điều 468 của...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D35_K3",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D466_K5",
+    "evidence": "...uất quy định tại khoản 2 Điều 357, khoản 5 Điều 466 và Điều 468 của Bộ luật Dân sự. Tr...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D36_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D133_K1",
+    "evidence": "...trong các trường hợp quy định tại khoản 1 và khoản 2 Điều 133 của Bộ luật Dân sự thì hợp đồng th...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D36_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D133_K2",
+    "evidence": "...trong các trường hợp quy định tại khoản 1 và khoản 2 Điều 133 của Bộ luật Dân sự thì hợp đồng th... | ...trường hợp quy định tại khoản 1 và khoản 2 Điều 133 của Bộ luật Dân sự thì hợp đồng th...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D36_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D133_K3",
+    "evidence": "...n quan thực hiện theo quy định tại khoản 3 Điều 133 của Bộ luật Dân sự....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D36_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D36_K1",
+    "evidence": "...giao tài sản thế chấp quy định tại khoản 1 Điều này là việc bên thế chấp không giao tà...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D36_K2",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D320",
+    "evidence": "...hông vi phạm nghĩa vụ quy định tại Điều 320 của Bộ luật Dân sự....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D38_K1_DIEM_D",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D38_K2_DIEM_B",
+    "evidence": "...cọc, tài sản ký cược quy định tại điểm b khoản 2 Điều này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D40_K2_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D40_K1_DIEM_D",
+    "evidence": "...trả tiền ký quỹ theo quy định tại điểm d khoản 1 Điều này; được trả lãi trong trường hợp có...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D41_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D20_K5",
+    "evidence": "...mua phải phù hợp với quy định tại khoản 5 Điều 20 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44_K1_DIEM_Đ",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D335_K2",
+    "evidence": "...ng thực hiện nghĩa vụ quy định tại khoản 2 Điều 335 và khoản 1 Điều 339 của Bộ luật Dâ...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44_K1_DIEM_Đ",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D339_K1",
+    "evidence": "...ụ quy định tại khoản 2 Điều 335 và khoản 1 Điều 339 của Bộ luật Dân sự;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D44_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D44_K1",
+    "evidence": "...Trường hợp có căn cứ tại khoản 1 Điều này, bên nhận bảo lãnh thông báo cho b...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D47_K2_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D350_K1",
+    "evidence": "...tài sản chấm dứt quy định tại các khoản 1, 2 hoặc 5 Điều 350 của Bộ luật Dân sự....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D47_K2_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D350_K2",
+    "evidence": "...tài sản chấm dứt quy định tại các khoản 1, 2 hoặc 5 Điều 350 của Bộ luật Dân sự....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D47_K2_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D350_K5",
+    "evidence": "...tài sản chấm dứt quy định tại các khoản 1, 2 hoặc 5 Điều 350 của Bộ luật Dân sự....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D50",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D51",
+    "evidence": "...g báo cho bên bảo đảm quy định tại Điều 51 Nghị định này. Trường hợp chưa xác...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D51_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D51_K2",
+    "evidence": "...phương thức thông báo quy định tại khoản 2 Điều này còn có thể thực hiện bằng phương t...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D51_K4",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D300_K1",
+    "evidence": "...ảm bị xử lý ngay theo quy định tại khoản 1 Điều 300 của Bộ luật Dân sự. Trường hợp tài...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D51_K4",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D52_K3",
+    "evidence": "...ng thì thực hiện theo quy định tại khoản 3 Điều 52 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D52_K4",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D51_K4",
+    "evidence": "...ện nghĩa vụ thông báo quy định tại khoản 4 Điều 51 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D52_K5",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D51",
+    "evidence": "...xử lý tài sản bảo đảm quy định tại Điều 51 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D52_K8",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D301",
+    "evidence": "...tài sản bảo đảm theo quy định tại Điều 301 của Bộ luật Dân sự, không phối hợp...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D54_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D52",
+    "evidence": "...của các bên hoặc theo quy định tại Điều 52 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D54_K4",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D52",
+    "evidence": "...từ vận chuyển áp dụng quy định tại Điều 52 Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D54_K5",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D54",
+    "evidence": "...hoặc tài sản thu được quy định tại Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D20",
+    "evidence": "...vào tài sản thế chấp quy định tại Điều 20 Nghị định này làm phát sinh tài sả...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K3_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D56_K1_DIEM_B",
+    "evidence": "...i sản được xử lý theo quy định tại điểm b khoản 1 Điều này. Giá trị tài sản mới phát sinh đượ...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K4",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D20_K4",
+    "evidence": "...thường thiệt hại theo quy định tại khoản 4 Điều 20 Nghị định này từ số tiền thu được...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K5",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D56_K1",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K5",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D56_K2",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K5",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D56_K3",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K5",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D56_K4",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D57_K1_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D302",
+    "evidence": "Hoàn thành nghĩa vụ quy định tại Điều 302 của Bộ luật Dân sự;",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D57_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D57_K1",
+    "evidence": "...Trường hợp thuộc khoản 1 Điều này mà pháp luật về đấu giá tài sản, p...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D58_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D58_K2",
+    "evidence": "...đảm thì những văn bản quy định tại khoản 2 Điều này được dùng để thay thế cho các loại...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D59_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D223",
+    "evidence": "...lập quyền sở hữu theo quy định tại Điều 223 của Bộ luật Dân sự....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D61_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D61_K1",
+    "evidence": "...ảm, biện pháp bảo đảm quy định tại khoản 1 Điều này mà chưa được thực hiện hoặc đang đ...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D3_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D3",
+    "evidence": "...của pháp luật dân sự quy định tại Điều 3 của Bộ luật dân sự....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D7_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D7_K1",
+    "evidence": "...i được thực hiện theo quy định tại khoản 1 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D8_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D8_K1",
+    "evidence": "...oài các nội dung được quy định tại khoản 1 Điều này, văn bản thỏa thuận về dây họ có t...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D10_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D12_K1",
+    "evidence": "...không có chủ họ theo quy định tại khoản 1 Điều 12 của Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D12_K2_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D8_K1",
+    "evidence": "...thỏa thuận về dây họ quy định tại khoản 1 Điều 8 của Nghị định này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D14_K1",
+    "evidence": "...ã được thông báo theo quy định tại khoản 1, khoản 2 Điều này mà có sự thay đổi thì chủ họ phải...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D14_K2",
+    "evidence": "...ã được thông báo theo quy định tại khoản 1, khoản 2 Điều này mà có sự thay đổi thì chủ họ phải...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D14_K4",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D14_K1",
+    "evidence": "...ng thực hiện nghĩa vụ quy định tại khoản 1 Điều này thì bị xử phạt vi phạm hành chính...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1_DIEM_E",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D18",
+    "evidence": "...g nghĩa vụ của chủ họ quy định tại Điều 18 của Nghị định này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1_DIEM_G",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D16",
+    "evidence": "...hĩa vụ của thành viên quy định tại Điều 16 của Nghị định này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1_DIEM_H",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D9",
+    "evidence": "...ủa thành viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;... | ...viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1_DIEM_H",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D10",
+    "evidence": "...ủa thành viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;... | ...y định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1_DIEM_H",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D13",
+    "evidence": "...ủa thành viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;... | ...khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1_DIEM_H",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D7_K1",
+    "evidence": "...quyền của thành viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Ng...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K1_DIEM_I",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D14",
+    "evidence": "...n việc thông báo theo quy định tại Điều 14 của Nghị định này trong trường hợp...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K2_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D15_K1",
+    "evidence": "Các quyền quy định tại khoản 1 Điều này;",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K2_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D20_K3",
+    "evidence": "...mở họ, trừ trường hợp quy định tại khoản 3 Điều 20 của Nghị định này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K3_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D15_K1",
+    "evidence": "...Các quyền quy định tại khoản 1 Điều này nếu thuộc trường hợp họ không có l...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D15_K3_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D15_K2",
+    "evidence": "...có lãi hoặc các quyền quy định tại khoản 2 Điều này nếu thuộc trường hợp họ có lãi;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K1_DIEM_D",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D10",
+    "evidence": "...trong việc thực hiện quy định tại Điều 10 và khoản 2 Điều 11 của Nghị định n...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K1_DIEM_D",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D11_K2",
+    "evidence": "...thực hiện quy định tại Điều 10 và khoản 2 Điều 11 của Nghị định này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K1_DIEM_Đ",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D18_K5",
+    "evidence": "...theo quy định tại khoản 1 Điều 12, khoản 5 và khoản 6 Điều 18 của Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K1_DIEM_Đ",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D18_K6",
+    "evidence": "...theo quy định tại khoản 1 Điều 12, khoản 5 và khoản 6 Điều 18 của Nghị định này.... | ...nh tại khoản 1 Điều 12, khoản 5 và khoản 6 Điều 18 của Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K1_DIEM_Đ",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D12_K1",
+    "evidence": "...có các nghĩa vụ theo quy định tại khoản 1 Điều 12, khoản 5 và khoản 6 Điều 18 của Ng...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K2_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D16_K1",
+    "evidence": "Các nghĩa vụ quy định tại khoản 1 Điều này;",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K3_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D16_K1",
+    "evidence": "...Các nghĩa vụ quy định tại khoản 1 Điều này nếu thuộc trường hợp họ không có l...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D16_K3_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D16_K2",
+    "evidence": "...lãi hoặc các nghĩa vụ quy định tại khoản 2 Điều này nếu thuộc trường hợp họ có lãi;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K1_DIEM_C",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D9",
+    "evidence": "...iệc thực hiện quy định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này;... | ...hiện quy định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K1_DIEM_C",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D10",
+    "evidence": "...iệc thực hiện quy định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này;... | ...định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K1_DIEM_C",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D7_K1",
+    "evidence": "...trong việc thực hiện quy định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định n...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K2_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D17_K1",
+    "evidence": "Các quyền quy định tại khoản 1 Điều này;",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K3_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D17_K1",
+    "evidence": "...Các quyền quy định tại khoản 1 Điều này nếu thuộc trường hợp họ không có l...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D17_K3_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D17_K2",
+    "evidence": "...có lãi hoặc các quyền quy định tại khoản 2 Điều này nếu thuộc trường hợp họ có lãi;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D18_K6",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D14_K1",
+    "evidence": "Gửi thông báo theo quy định tại khoản 1 Điều 14 của Nghị định này.",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D18_K7",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D13",
+    "evidence": "Các nghĩa vụ quy định tại khoản 1 Điều 12 và Điều 13 của Nghị định này. | ...vụ quy định tại khoản 1 Điều 12 và Điều 13 của Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D18_K7",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D12_K1",
+    "evidence": "Các nghĩa vụ quy định tại khoản 1 Điều 12 và Điều 13 của Nghị định này.",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D20_K3",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D20_K4",
+    "evidence": "...theo, trừ trường hợp quy định tại khoản 4 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D21_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D468_K1",
+    "evidence": "...an có thẩm quyền theo quy định tại khoản 1 Điều 468 của Bộ luật dân sự thì áp dụng mức...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D21_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D21_K1",
+    "evidence": "...quá lãi suất giới hạn quy định tại khoản 1 Điều này thì mức lãi suất vượt quá không có...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D22_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D21_K1",
+    "evidence": "...mức lãi suất giới hạn quy định tại khoản 1 Điều 21 của Nghị định này của số tiền chậm...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D22_K2_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D21_K1",
+    "evidence": "...mức lãi suất giới hạn quy định tại khoản 1 Điều 21 của Nghị định này của số tiền chậm...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D22_K2_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D466_K5",
+    "evidence": "...ược xác định theo mức quy định tại khoản 5 Điều 466 của Bộ luật dân sự đối với họ có l...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D23_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D18_K3",
+    "evidence": "...ực hiện đúng nghĩa vụ quy định tại khoản 3 và khoản 4 Điều 18 của Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D23_K1",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D18_K4",
+    "evidence": "...ực hiện đúng nghĩa vụ quy định tại khoản 3 và khoản 4 Điều 18 của Nghị định này.... | ...g nghĩa vụ quy định tại khoản 3 và khoản 4 Điều 18 của Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D23_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D22_K1",
+    "evidence": "...iên được lĩnh họ theo quy định tại khoản 1 Điều 22 của Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D23_K3",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D418",
+    "evidence": "...uận phạt vi phạm theo quy định tại Điều 418 của Bộ luật dân sự....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D24_K2",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D22",
+    "evidence": "...tiền chậm góp họ theo quy định tại Điều 22 của Nghị định này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D24_K3",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D418",
+    "evidence": "...uận phạt vi phạm theo quy định tại Điều 418 của Bộ luật dân sự....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019_D28_K4",
+    "type": "REFERENCES",
+    "target_id": "ND_19_2019_D14",
+    "evidence": "...thông tin về họ theo quy định tại Điều 14 của Nghị định này và kịp thời phản...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D584",
+    "evidence": "...bồi thường thiệt hại quy định tại Điều 584 của Bộ luật Dân sự...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D584_K1",
+    "evidence": "...ại đối với trường hợp quy định tại khoản 1 Điều 584 của Bộ luật Dân sự phát sinh khi c...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2_K2",
+    "type": "REFERENCES",
+    "target_id": "NQ_02_2022_D2_K3",
+    "evidence": "...hại, trừ trường hợp hướng dẫn tại khoản 3 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D2_K2_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "NQ_02_2022_D2_K2_DIEM_B",
+    "evidence": "...hiệm bồi thường theo hướng dẫn tại điểm b khoản 2 Điều này. Chủ sở hữu tài sản được xác định...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D585",
+    "evidence": "...bồi thường thiệt hại quy định tại Điều 585 của Bộ luật Dân sự...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D585_K1",
+    "evidence": "Về khoản 1 Điều 585 của Bộ luật Dân sự",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3_K1_DIEM_A",
+    "type": "REFERENCES",
+    "target_id": "NQ_02_2022_D2_K1_DIEM_B",
+    "evidence": "...t hại đã xảy ra theo hướng dẫn tại điểm b khoản 1 Điều 2 Nghị quyết này, được tính thành ti...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3_K2",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D585_K2",
+    "evidence": "...Về khoản 2 Điều 585 của Bộ luật Dân sự Thiệt hại quá l...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3_K3",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D585_K3",
+    "evidence": "...Về khoản 3 Điều 585 của Bộ luật Dân sự Mức bồi thường...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3_K4",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D585_K4",
+    "evidence": "...Về khoản 4 Điều 585 của Bộ luật Dân sự Bên bị thiệt hạ...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D3_K5",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D585_K5",
+    "evidence": "...Về khoản 5 Điều 585 của Bộ luật Dân sự “Bên có quyền,...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D4",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D586",
+    "evidence": "...ời gây thiệt hại theo quy định tại Điều 586 của Bộ luật Dân sự...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D5",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D588",
+    "evidence": "...bồi thường thiệt hại quy định tại Điều 588 của Bộ luật Dân sự...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D6",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D589",
+    "evidence": "...o tài sản bị xâm phạm quy định tại Điều 589 của Bộ luật Dân sự...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D6_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D589_K1",
+    "evidence": "...hoại hoặc bị hư hỏng quy định tại khoản 1 Điều 589 của Bộ luật Dân sự căn cứ vào thỏa...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D6_K1_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "NQ_02_2022_D6_K1_DIEM_A",
+    "evidence": "...i được xác định theo hướng dẫn tại điểm a khoản 1 Điều này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D6_K2",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D589_K2",
+    "evidence": "...n bị mất, bị giảm sút quy định tại khoản 2 Điều 589 của Bộ luật Dân sự là hoa lợi, lợi...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D6_K3",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D589_K3",
+    "evidence": "...à khắc phục thiệt hại quy định tại khoản 3 Điều 589 của Bộ luật Dân sự là những chi ph...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D590",
+    "evidence": "...sức khỏe bị xâm phạm quy định tại Điều 590 của Bộ luật Dân sự...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7_K3",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D590_K1_DIEM_C",
+    "evidence": "...ười bị thiệt hại theo quy định tại điểm c khoản 1 Điều 590 của Bộ luật Dân sự được xác định n...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D7_K3_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "NQ_02_2022_D7_K2",
+    "evidence": "...ị được xác định theo hướng dẫn tại khoản 2 Điều này;...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D591_K1",
+    "evidence": "...tính mạng bị xâm phạm quy định tại khoản 1 Điều 591 của Bộ luật Dân sự...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D590",
+    "evidence": "...khỏe bị xâm phạm theo quy định tại Điều 590 Bộ luật Dân sự, được hướng dẫn tại...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8_K1",
+    "type": "REFERENCES",
+    "target_id": "NQ_02_2022_D7",
+    "evidence": "...Bộ luật Dân sự, được hướng dẫn tại Điều 7 Nghị quyết này, được tính từ thời...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D9",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D592",
+    "evidence": "...m, uy tín bị xâm phạm quy định tại Điều 592 của Bộ luật Dân sự...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D9_K2_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "NQ_02_2022_D7_K2",
+    "evidence": "...được thực hiện theo hướng dẫn tại khoản 2 Điều 7 Nghị quyết này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D10",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D598",
+    "evidence": "...i hành công vụ gây ra quy định tại Điều 598 của Bộ luật Dân sự\nThiệt hại do hà...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D11",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D599",
+    "evidence": "...hác trực tiếp quản lý quy định tại Điều 599 của Bộ luật Dân sự...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D11_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D599_K1",
+    "evidence": "...ọc trực tiếp quản lý” quy định tại khoản 1 Điều 599 của Bộ luật Dân sự là trong phạm v...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D11_K2",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D599_K2",
+    "evidence": "...ác trực tiếp quản lý” quy định tại khoản 2 Điều 599 của Bộ luật Dân sự là trong phạm v...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D601",
+    "evidence": "...uy hiểm cao độ gây ra quy định tại Điều 601 của Bộ luật Dân sự...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D601",
+    "evidence": "...độ được xác định theo quy định tại Điều 601 của Bộ luật Dân sự và các văn bản...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D12_K4_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D595_K2",
+    "evidence": "...đã gây ra tình thế cấp thiết theo khoản 2 Điều 595 của Bộ luật Dân sự....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D13_K2",
+    "type": "REFERENCES",
+    "target_id": "NQ_02_2022_D5",
+    "evidence": "...ết, trừ hướng dẫn về thời hiệu tại Điều 5 Nghị quyết này....",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021",
+    "type": "IMPLEMENTS",
+    "target_id": "BLDS_2015",
+    "evidence": "Nghị định 21/2021/NĐ-CP quy định thi hành Bộ luật Dân sự về bảo đảm thực hiện nghĩa vụ",
+    "source_type": "MANUAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_19_2019",
+    "type": "IMPLEMENTS",
+    "target_id": "BLDS_2015",
+    "evidence": "Nghị định 19/2019/NĐ-CP căn cứ Bộ luật Dân sự ngày 24 tháng 11 năm 2015",
+    "source_type": "MANUAL",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "BLDS_2015",
+    "type": "INTERPRETED_BY",
+    "target_id": "NQ_02_2022",
+    "evidence": "Bộ luật Dân sự 2015 được hướng dẫn áp dụng bởi Nghị quyết 02/2022/NQ-HĐTP về trách nhiệm bồi thường thiệt hại ngoài hợp đồng",
+    "source_type": "MANUAL",
     "confidence": 1.0
   }
 ]

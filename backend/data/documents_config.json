@@ -1,0 +1,149 @@
+[
+  {
+    "document_id": "HIEN_PHAP_2013",
+    "file_path": "van_ban/Hien_phap_nam_2013.docx",
+    "metadata": {
+      "document_id": "HIEN_PHAP_2013",
+      "ten_file": "Hien_phap_nam_2013.docx",
+      "duong_dan_file": "van_ban/Hien_phap_nam_2013.docx",
+      "ten_van_ban": "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013",
+      "loai_van_ban": "HIEN_PHAP",
+      "co_quan_ban_hanh": "Quốc hội",
+      "so_hieu": "15/2013/QH13",
+      "effective_from": "2014-01-01",
+      "effective_to": null,
+      "status": "CON_HIEU_LUC"
+    },
+    "parser_profile": "default",
+    "aliases": [
+      "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013",
+      "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam",
+      "Hiến pháp năm 2013",
+      "Hiến pháp 2013",
+      "Hiến pháp",
+      "15/2013/QH13"
+    ]
+  },
+  {
+    "document_id": "BLDS_2015",
+    "file_path": "van_ban/bo_luat_dan_su_91-2015-QH13.docx",
+    "metadata": {
+      "document_id": "BLDS_2015",
+      "ten_file": "bo_luat_dan_su_91-2015-QH13.docx",
+      "duong_dan_file": "van_ban/bo_luat_dan_su_91-2015-QH13.docx",
+      "ten_van_ban": "Bộ luật Dân sự 2015",
+      "loai_van_ban": "BO_LUAT",
+      "co_quan_ban_hanh": "Quốc hội",
+      "so_hieu": "91/2015/QH13",
+      "effective_from": "2017-01-01",
+      "effective_to": null,
+      "status": "CON_HIEU_LUC"
+    },
+    "parser_profile": "default",
+    "aliases": [
+      "Bộ luật Dân sự số 91/2015/QH13",
+      "Bộ luật Dân sự năm 2015",
+      "Bộ luật Dân sự 2015",
+      "Bộ luật Dân sự",
+      "91/2015/QH13",
+      "BLDS"
+    ]
+  },
+  {
+    "document_id": "ND_21_2021",
+    "file_path": "van_ban/21_2021_ND-CP_468069.docx",
+    "metadata": {
+      "document_id": "ND_21_2021",
+      "ten_file": "21_2021_ND-CP_468069.docx",
+      "duong_dan_file": "van_ban/21_2021_ND-CP_468069.docx",
+      "ten_van_ban": "Nghị định 21/2021/NĐ-CP quy định thi hành Bộ luật Dân sự về bảo đảm thực hiện nghĩa vụ",
+      "loai_van_ban": "NGHI_DINH",
+      "co_quan_ban_hanh": "Chính phủ",
+      "so_hieu": "21/2021/NĐ-CP",
+      "effective_from": "2021-05-15",
+      "effective_to": null,
+      "status": "CON_HIEU_LUC"
+    },
+    "parser_profile": "nghi_dinh",
+    "aliases": [
+      "Nghị định số 21/2021/NĐ-CP",
+      "Nghị định 21/2021/NĐ-CP",
+      "Nghị định 21/2021",
+      "21/2021/NĐ-CP",
+      "21/2021"
+    ],
+    "relations": [
+      {
+        "type": "IMPLEMENTS",
+        "target_id": "BLDS_2015",
+        "evidence": "Nghị định 21/2021/NĐ-CP quy định thi hành Bộ luật Dân sự về bảo đảm thực hiện nghĩa vụ",
+        "source_type": "MANUAL"
+      }
+    ]
+  },
+  {
+    "document_id": "ND_19_2019",
+    "file_path": "van_ban/19_2019_ND-CP_386324.docx",
+    "metadata": {
+      "document_id": "ND_19_2019",
+      "ten_file": "19_2019_ND-CP_386324.docx",
+      "duong_dan_file": "van_ban/19_2019_ND-CP_386324.docx",
+      "ten_van_ban": "Nghị định 19/2019/NĐ-CP về họ, hụi, biêu, phường",
+      "loai_van_ban": "NGHI_DINH",
+      "co_quan_ban_hanh": "Chính phủ",
+      "so_hieu": "19/2019/NĐ-CP",
+      "effective_from": "2019-04-05",
+      "effective_to": null,
+      "status": "CON_HIEU_LUC"
+    },
+    "parser_profile": "nghi_dinh",
+    "aliases": [
+      "Nghị định số 19/2019/NĐ-CP",
+      "Nghị định 19/2019/NĐ-CP",
+      "Nghị định 19/2019",
+      "19/2019/NĐ-CP",
+      "19/2019"
+    ],
+    "relations": [
+      {
+        "type": "IMPLEMENTS",
+        "target_id": "BLDS_2015",
+        "evidence": "Nghị định 19/2019/NĐ-CP căn cứ Bộ luật Dân sự ngày 24 tháng 11 năm 2015",
+        "source_type": "MANUAL"
+      }
+    ]
+  },
+  {
+    "document_id": "NQ_02_2022",
+    "file_path": "van_ban/02_2022_NQ-HDTP_483799.docx",
+    "metadata": {
+      "document_id": "NQ_02_2022",
+      "ten_file": "02_2022_NQ-HDTP_483799.docx",
+      "duong_dan_file": "van_ban/02_2022_NQ-HDTP_483799.docx",
+      "ten_van_ban": "Nghị quyết 02/2022/NQ-HĐTP hướng dẫn áp dụng một số quy định của Bộ luật Dân sự về trách nhiệm bồi thường thiệt hại ngoài hợp đồng",
+      "loai_van_ban": "NGHI_QUYET",
+      "co_quan_ban_hanh": "Hội đồng Thẩm phán Tòa án nhân dân tối cao",
+      "so_hieu": "02/2022/NQ-HĐTP",
+      "effective_from": "2023-01-01",
+      "effective_to": null,
+      "status": "CON_HIEU_LUC"
+    },
+    "parser_profile": "nghi_quyet",
+    "aliases": [
+      "Nghị quyết số 02/2022/NQ-HĐTP",
+      "Nghị quyết 02/2022/NQ-HĐTP",
+      "Nghị quyết 02/2022",
+      "02/2022/NQ-HĐTP",
+      "02/2022"
+    ],
+    "relations": [
+      {
+        "type": "INTERPRETED_BY",
+        "source_id": "BLDS_2015",
+        "target_id": "NQ_02_2022",
+        "evidence": "Bộ luật Dân sự 2015 được hướng dẫn áp dụng bởi Nghị quyết 02/2022/NQ-HĐTP về trách nhiệm bồi thường thiệt hại ngoài hợp đồng",
+        "source_type": "MANUAL"
+      }
+    ]
+  }
+]
