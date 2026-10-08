@@ -9,10 +9,17 @@
       "ten_van_ban": "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013",
       "loai_van_ban": "HIEN_PHAP",
       "co_quan_ban_hanh": "Quốc hội",
-      "so_hieu": "15/2013/QH13",
+      "so_hieu": "Không số",
       "effective_from": "2014-01-01",
       "effective_to": null,
-      "status": "CON_HIEU_LUC"
+      "status": "HET_HIEU_LUC_MOT_PHAN",
+      "source_file": "Hien_phap_nam_2013.docx",
+      "metadata_source": "DOCX nguồn: van_ban/Hien_phap_nam_2013.docx; effective_from: Nghị quyết 64/2013/QH13, Điều 1; status: CSDL Quốc gia VBPL ItemID 32801 (sửa đổi bởi Nghị quyết 203/2025/QH15)",
+      "verified_at": "2026-10-07",
+      "verification_scope": "effective_from verified via NQ 64/2013/QH13 (ItemID 32804); status verified via CSDL Quốc gia VBPL ItemID 32801 (sửa đổi bởi NQ 203/2025/QH15)",
+      "status_verified_at": "2026-10-07",
+      "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=32801",
+      "effective_from_source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=32804"
     },
     "parser_profile": "default",
     "aliases": [
@@ -20,8 +27,20 @@
       "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam",
       "Hiến pháp năm 2013",
       "Hiến pháp 2013",
-      "Hiến pháp",
-      "15/2013/QH13"
+      "Hiến pháp"
+    ],
+    "external_relations": [
+      {
+        "source_id": "NQ_203_2025",
+        "source_name": "Nghị quyết số 203/2025/QH15",
+        "source_so_hieu": "203/2025/QH15",
+        "type": "AMENDS",
+        "target_id": "HIEN_PHAP_2013",
+        "target_name": "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013",
+        "evidence": "Nghị quyết số 203/2025/QH15 của Quốc hội sửa đổi, bổ sung một số điều của Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam",
+        "source_type": "MANUAL",
+        "evidence_type": "OFFICIAL_GAZETTE"
+      }
     ]
   },
   {
@@ -37,7 +56,14 @@
       "so_hieu": "91/2015/QH13",
       "effective_from": "2017-01-01",
       "effective_to": null,
-      "status": "CON_HIEU_LUC"
+      "status": "CON_HIEU_LUC",
+      "source_file": "bo_luat_dan_su_91-2015-QH13.docx",
+      "metadata_source": "DOCX nguồn: van_ban/bo_luat_dan_su_91-2015-QH13.docx; effective_from: Điều 689",
+      "verified_at": "2026-10-07",
+      "verification_scope": "effective_from only; status and effective_to are unverified legacy values",
+      "status_verified_at": null,
+      "source_url": null,
+      "effective_from_source_url": null
     },
     "parser_profile": "default",
     "aliases": [
@@ -47,6 +73,37 @@
       "Bộ luật Dân sự",
       "91/2015/QH13",
       "BLDS"
+    ],
+    "external_relations": [
+      {
+        "source_id": "BLDS_2015",
+        "type": "REPEALS",
+        "target_id": "BLDS_2005",
+        "target_name": "Bộ luật dân sự số 33/2005/QH11",
+        "target_so_hieu": "33/2005/QH11",
+        "evidence": "Bộ luật dân sự số 33/2005/QH11 hết hiệu lực kể từ ngày Bộ luật này có hiệu lực.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
+      },
+      {
+        "source_id": "BLDS_2015",
+        "type": "REFERENCES",
+        "target_id": "BLDS_2005",
+        "target_name": "Bộ luật dân sự số 33/2005/QH11",
+        "target_so_hieu": "33/2005/QH11",
+        "evidence": "a) Giao dịch dân sự chưa được thực hiện mà có nội dung, hình thức khác với quy định của Bộ luật này thì chủ thể giao dịch tiếp tục thực hiện theo quy định của Bộ luật dân sự số 33/2005/QH11 và các văn bản quy phạm pháp luật quy định chi tiết Bộ luật dân sự số 33/2005/QH11, trừ trường hợp các bên của giao dịch dân sự có thỏa thuận về việc sửa đổi, bổ sung nội dung, hình thức của giao dịch để phù hợp với Bộ luật này và để áp dụng quy định của Bộ luật này.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
+      }
+    ],
+    "relations": [
+      {
+        "type": "REFERENCES",
+        "source_id": "BLDS_2015",
+        "target_id": "HIEN_PHAP_2013",
+        "evidence": "Căn cứ Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam; ",
+        "source_type": "MANUAL"
+      }
     ]
   },
   {
@@ -62,7 +119,14 @@
       "so_hieu": "21/2021/NĐ-CP",
       "effective_from": "2021-05-15",
       "effective_to": null,
-      "status": "CON_HIEU_LUC"
+      "status": "CON_HIEU_LUC",
+      "source_file": "21_2021_ND-CP_468069.docx",
+      "metadata_source": "DOCX nguồn: van_ban/21_2021_ND-CP_468069.docx; effective_from: Điều 60 khoản 1",
+      "verified_at": "2026-10-07",
+      "verification_scope": "effective_from only; status and effective_to are unverified legacy values",
+      "status_verified_at": null,
+      "source_url": null,
+      "effective_from_source_url": null
     },
     "parser_profile": "nghi_dinh",
     "aliases": [
@@ -79,6 +143,48 @@
         "evidence": "Nghị định 21/2021/NĐ-CP quy định thi hành Bộ luật Dân sự về bảo đảm thực hiện nghĩa vụ",
         "source_type": "MANUAL"
       }
+    ],
+    "external_relations": [
+      {
+        "source_id": "ND_21_2021",
+        "type": "REPEALS",
+        "target_id": "ND_163_2006",
+        "target_name": "Nghị định số 163/2006/NĐ-CP",
+        "target_so_hieu": "163/2006/NĐ-CP",
+        "evidence": "Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm hết hiệu lực kể từ ngày Nghị định này có hiệu lực thi hành.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
+      },
+      {
+        "source_id": "ND_21_2021",
+        "type": "REFERENCES",
+        "target_id": "ND_163_2006",
+        "target_name": "Nghị định số 163/2006/NĐ-CP",
+        "target_so_hieu": "163/2006/NĐ-CP",
+        "evidence": "1. Hợp đồng bảo đảm, biện pháp bảo đảm được xác lập, thực hiện trước ngày Nghị định này có hiệu lực thì áp dụng Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm, Nghị định số 11/2012/NĐ-CP ngày 22 tháng 02 năm 2012 của Chính phủ về sửa đổi, bổ sung một số điều của Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
+      },
+      {
+        "source_id": "ND_21_2021",
+        "type": "REPEALS",
+        "target_id": "ND_11_2012",
+        "target_name": "Nghị định số 11/2012/NĐ-CP",
+        "target_so_hieu": "11/2012/NĐ-CP",
+        "evidence": "Nghị định số 11/2012/NĐ-CP ngày 22 tháng 02 năm 2012 của Chính phủ về sửa đổi, bổ sung một số điều của Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm hết hiệu lực kể từ ngày Nghị định này có hiệu lực thi hành.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
+      },
+      {
+        "source_id": "ND_21_2021",
+        "type": "REFERENCES",
+        "target_id": "ND_11_2012",
+        "target_name": "Nghị định số 11/2012/NĐ-CP",
+        "target_so_hieu": "11/2012/NĐ-CP",
+        "evidence": "1. Hợp đồng bảo đảm, biện pháp bảo đảm được xác lập, thực hiện trước ngày Nghị định này có hiệu lực thì áp dụng Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm, Nghị định số 11/2012/NĐ-CP ngày 22 tháng 02 năm 2012 của Chính phủ về sửa đổi, bổ sung một số điều của Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
+      }
     ]
   },
   {
@@ -94,7 +200,14 @@
       "so_hieu": "19/2019/NĐ-CP",
       "effective_from": "2019-04-05",
       "effective_to": null,
-      "status": "CON_HIEU_LUC"
+      "status": "CON_HIEU_LUC",
+      "source_file": "19_2019_ND-CP_386324.docx",
+      "metadata_source": "DOCX nguồn: van_ban/19_2019_ND-CP_386324.docx; effective_from: Điều 26 khoản 1",
+      "verified_at": "2026-10-07",
+      "verification_scope": "effective_from only; status and effective_to are unverified legacy values",
+      "status_verified_at": null,
+      "source_url": null,
+      "effective_from_source_url": null
     },
     "parser_profile": "nghi_dinh",
     "aliases": [
@@ -111,6 +224,28 @@
         "evidence": "Nghị định 19/2019/NĐ-CP căn cứ Bộ luật Dân sự ngày 24 tháng 11 năm 2015",
         "source_type": "MANUAL"
       }
+    ],
+    "external_relations": [
+      {
+        "source_id": "ND_19_2019",
+        "type": "REPEALS",
+        "target_id": "ND_144_2006",
+        "target_name": "Nghị định số 144/2006/NĐ-CP",
+        "target_so_hieu": "144/2006/NĐ-CP",
+        "evidence": "Nghị định số 144/2006/NĐ-CP ngày 27 tháng 11 năm 2006 của Chính phủ về họ, hụi, biêu, phường hết hiệu lực thi hành kể từ ngày Nghị định này có hiệu lực thi hành.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
+      },
+      {
+        "source_id": "ND_19_2019",
+        "type": "REFERENCES",
+        "target_id": "ND_144_2006",
+        "target_name": "Nghị định số 144/2006/NĐ-CP",
+        "target_so_hieu": "144/2006/NĐ-CP",
+        "evidence": "1. Các dây họ được xác lập, thực hiện trước ngày Nghị định này có hiệu lực thì áp dụng theo quy định của Nghị định số 144/2006/NĐ-CP ngày 27 tháng 11 năm 2006 của Chính phủ về họ, hụi, biêu, phường.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
+      }
     ]
   },
   {
@@ -126,7 +261,14 @@
       "so_hieu": "02/2022/NQ-HĐTP",
       "effective_from": "2023-01-01",
       "effective_to": null,
-      "status": "CON_HIEU_LUC"
+      "status": "CON_HIEU_LUC",
+      "source_file": "02_2022_NQ-HDTP_483799.docx",
+      "metadata_source": "DOCX nguồn: van_ban/02_2022_NQ-HDTP_483799.docx; effective_from: Điều 13 khoản 1",
+      "verified_at": "2026-10-07",
+      "verification_scope": "effective_from only; status and effective_to are unverified legacy values",
+      "status_verified_at": null,
+      "source_url": null,
+      "effective_from_source_url": null
     },
     "parser_profile": "nghi_quyet",
     "aliases": [
@@ -143,6 +285,38 @@
         "target_id": "NQ_02_2022",
         "evidence": "Bộ luật Dân sự 2015 được hướng dẫn áp dụng bởi Nghị quyết 02/2022/NQ-HĐTP về trách nhiệm bồi thường thiệt hại ngoài hợp đồng",
         "source_type": "MANUAL"
+      }
+    ],
+    "external_relations": [
+      {
+        "source_id": "NQ_03_2006",
+        "source_name": "Nghị quyết số 03/2006/NQ-HĐTP",
+        "type": "REPLACED_BY",
+        "target_id": "NQ_02_2022",
+        "target_name": "Nghị quyết 02/2022/NQ-HĐTP",
+        "evidence": "Nghị quyết này thay thế Nghị quyết số 03/2006/NQ-HĐTP ngày 08 tháng 7 năm 2006 của Hội đồng Thẩm phán Tòa án nhân dân tối cao hướng dẫn áp dụng một số quy định của Bộ luật Dân sự năm 2005 về bồi thường thiệt hại ngoài hợp đồng.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
+      },
+      {
+        "source_id": "NQ_02_2022",
+        "type": "REFERENCES",
+        "target_id": "NQ_03_2006",
+        "target_name": "Nghị quyết số 03/2006/NQ-HĐTP",
+        "target_so_hieu": "03/2006/NQ-HĐTP",
+        "evidence": "2. Đối với những trường hợp bồi thường thiệt hại ngoài hợp đồng phát sinh trước ngày 01 tháng 01 năm 2017 (ngày Bộ luật Dân sự có hiệu lực), thì áp dụng quy định của Bộ luật Dân sự năm 2005, các văn bản pháp luật hướng dẫn áp dụng Bộ luật Dân sự năm 2005 và Nghị quyết số 03/2006/NQ-HĐTP ngày 08 tháng 7 năm 2006 của Hội đồng Thẩm phán Tòa án nhân dân tối cao để giải quyết, trừ hướng dẫn về thời hiệu tại Điều 5 Nghị quyết này.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
+      },
+      {
+        "source_id": "NQ_02_2022",
+        "type": "REFERENCES",
+        "target_id": "BLDS_2005",
+        "target_name": "Bộ luật Dân sự năm 2005",
+        "target_so_hieu": "33/2005/QH11",
+        "evidence": "2. Đối với những trường hợp bồi thường thiệt hại ngoài hợp đồng phát sinh trước ngày 01 tháng 01 năm 2017 (ngày Bộ luật Dân sự có hiệu lực), thì áp dụng quy định của Bộ luật Dân sự năm 2005, các văn bản pháp luật hướng dẫn áp dụng Bộ luật Dân sự năm 2005 và Nghị quyết số 03/2006/NQ-HĐTP ngày 08 tháng 7 năm 2006 của Hội đồng Thẩm phán Tòa án nhân dân tối cao để giải quyết, trừ hướng dẫn về thời hiệu tại Điều 5 Nghị quyết này.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
       }
     ]
   }

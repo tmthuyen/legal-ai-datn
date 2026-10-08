@@ -1,0 +1,134 @@
+[
+  {
+    "source_id": "NQ_203_2025",
+    "type": "AMENDS",
+    "target_id": "HIEN_PHAP_2013",
+    "target_name": "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013",
+    "evidence": "Nghị quyết số 203/2025/QH15 của Quốc hội sửa đổi, bổ sung một số điều của Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "source_name": "Nghị quyết số 203/2025/QH15",
+    "evidence_type": "OFFICIAL_GAZETTE"
+  },
+  {
+    "source_id": "BLDS_2015",
+    "type": "REPEALS",
+    "target_id": "BLDS_2005",
+    "target_name": "Bộ luật dân sự số 33/2005/QH11",
+    "target_so_hieu": "33/2005/QH11",
+    "evidence": "Bộ luật dân sự số 33/2005/QH11 hết hiệu lực kể từ ngày Bộ luật này có hiệu lực.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "evidence_type": "VERBATIM"
+  },
+  {
+    "source_id": "BLDS_2015",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2005",
+    "target_name": "Bộ luật dân sự số 33/2005/QH11",
+    "target_so_hieu": "33/2005/QH11",
+    "evidence": "a) Giao dịch dân sự chưa được thực hiện mà có nội dung, hình thức khác với quy định của Bộ luật này thì chủ thể giao dịch tiếp tục thực hiện theo quy định của Bộ luật dân sự số 33/2005/QH11 và các văn bản quy phạm pháp luật quy định chi tiết Bộ luật dân sự số 33/2005/QH11, trừ trường hợp các bên của giao dịch dân sự có thỏa thuận về việc sửa đổi, bổ sung nội dung, hình thức của giao dịch để phù hợp với Bộ luật này và để áp dụng quy định của Bộ luật này.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "evidence_type": "VERBATIM"
+  },
+  {
+    "source_id": "ND_21_2021",
+    "type": "REPEALS",
+    "target_id": "ND_163_2006",
+    "target_name": "Nghị định số 163/2006/NĐ-CP",
+    "target_so_hieu": "163/2006/NĐ-CP",
+    "evidence": "Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm hết hiệu lực kể từ ngày Nghị định này có hiệu lực thi hành.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "evidence_type": "VERBATIM"
+  },
+  {
+    "source_id": "ND_21_2021",
+    "type": "REFERENCES",
+    "target_id": "ND_163_2006",
+    "target_name": "Nghị định số 163/2006/NĐ-CP",
+    "target_so_hieu": "163/2006/NĐ-CP",
+    "evidence": "1. Hợp đồng bảo đảm, biện pháp bảo đảm được xác lập, thực hiện trước ngày Nghị định này có hiệu lực thì áp dụng Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm, Nghị định số 11/2012/NĐ-CP ngày 22 tháng 02 năm 2012 của Chính phủ về sửa đổi, bổ sung một số điều của Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "evidence_type": "VERBATIM"
+  },
+  {
+    "source_id": "ND_21_2021",
+    "type": "REPEALS",
+    "target_id": "ND_11_2012",
+    "target_name": "Nghị định số 11/2012/NĐ-CP",
+    "target_so_hieu": "11/2012/NĐ-CP",
+    "evidence": "Nghị định số 11/2012/NĐ-CP ngày 22 tháng 02 năm 2012 của Chính phủ về sửa đổi, bổ sung một số điều của Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm hết hiệu lực kể từ ngày Nghị định này có hiệu lực thi hành.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "evidence_type": "VERBATIM"
+  },
+  {
+    "source_id": "ND_21_2021",
+    "type": "REFERENCES",
+    "target_id": "ND_11_2012",
+    "target_name": "Nghị định số 11/2012/NĐ-CP",
+    "target_so_hieu": "11/2012/NĐ-CP",
+    "evidence": "1. Hợp đồng bảo đảm, biện pháp bảo đảm được xác lập, thực hiện trước ngày Nghị định này có hiệu lực thì áp dụng Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm, Nghị định số 11/2012/NĐ-CP ngày 22 tháng 02 năm 2012 của Chính phủ về sửa đổi, bổ sung một số điều của Nghị định số 163/2006/NĐ-CP ngày 29 tháng 12 năm 2006 của Chính phủ về giao dịch bảo đảm.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "evidence_type": "VERBATIM"
+  },
+  {
+    "source_id": "ND_19_2019",
+    "type": "REPEALS",
+    "target_id": "ND_144_2006",
+    "target_name": "Nghị định số 144/2006/NĐ-CP",
+    "target_so_hieu": "144/2006/NĐ-CP",
+    "evidence": "Nghị định số 144/2006/NĐ-CP ngày 27 tháng 11 năm 2006 của Chính phủ về họ, hụi, biêu, phường hết hiệu lực thi hành kể từ ngày Nghị định này có hiệu lực thi hành.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "evidence_type": "VERBATIM"
+  },
+  {
+    "source_id": "ND_19_2019",
+    "type": "REFERENCES",
+    "target_id": "ND_144_2006",
+    "target_name": "Nghị định số 144/2006/NĐ-CP",
+    "target_so_hieu": "144/2006/NĐ-CP",
+    "evidence": "1. Các dây họ được xác lập, thực hiện trước ngày Nghị định này có hiệu lực thì áp dụng theo quy định của Nghị định số 144/2006/NĐ-CP ngày 27 tháng 11 năm 2006 của Chính phủ về họ, hụi, biêu, phường.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "evidence_type": "VERBATIM"
+  },
+  {
+    "source_id": "NQ_03_2006",
+    "type": "REPLACED_BY",
+    "target_id": "NQ_02_2022",
+    "target_name": "Nghị quyết 02/2022/NQ-HĐTP",
+    "evidence": "Nghị quyết này thay thế Nghị quyết số 03/2006/NQ-HĐTP ngày 08 tháng 7 năm 2006 của Hội đồng Thẩm phán Tòa án nhân dân tối cao hướng dẫn áp dụng một số quy định của Bộ luật Dân sự năm 2005 về bồi thường thiệt hại ngoài hợp đồng.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "source_name": "Nghị quyết số 03/2006/NQ-HĐTP",
+    "evidence_type": "VERBATIM"
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "REFERENCES",
+    "target_id": "NQ_03_2006",
+    "target_name": "Nghị quyết số 03/2006/NQ-HĐTP",
+    "target_so_hieu": "03/2006/NQ-HĐTP",
+    "evidence": "2. Đối với những trường hợp bồi thường thiệt hại ngoài hợp đồng phát sinh trước ngày 01 tháng 01 năm 2017 (ngày Bộ luật Dân sự có hiệu lực), thì áp dụng quy định của Bộ luật Dân sự năm 2005, các văn bản pháp luật hướng dẫn áp dụng Bộ luật Dân sự năm 2005 và Nghị quyết số 03/2006/NQ-HĐTP ngày 08 tháng 7 năm 2006 của Hội đồng Thẩm phán Tòa án nhân dân tối cao để giải quyết, trừ hướng dẫn về thời hiệu tại Điều 5 Nghị quyết này.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "evidence_type": "VERBATIM"
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2005",
+    "target_name": "Bộ luật Dân sự năm 2005",
+    "target_so_hieu": "33/2005/QH11",
+    "evidence": "2. Đối với những trường hợp bồi thường thiệt hại ngoài hợp đồng phát sinh trước ngày 01 tháng 01 năm 2017 (ngày Bộ luật Dân sự có hiệu lực), thì áp dụng quy định của Bộ luật Dân sự năm 2005, các văn bản pháp luật hướng dẫn áp dụng Bộ luật Dân sự năm 2005 và Nghị quyết số 03/2006/NQ-HĐTP ngày 08 tháng 7 năm 2006 của Hội đồng Thẩm phán Tòa án nhân dân tối cao để giải quyết, trừ hướng dẫn về thời hiệu tại Điều 5 Nghị quyết này.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "evidence_type": "VERBATIM"
+  }
+]

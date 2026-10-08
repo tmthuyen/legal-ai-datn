@@ -27739,7 +27739,7 @@
     "source_id": "HIEN_PHAP_2013_D75_K4",
     "type": "REFERENCES",
     "target_id": "HIEN_PHAP_2013_D76_K2",
-    "evidence": "...ư Ủy ban của Quốc hội quy định tại khoản 2 Điều 76....",
+    "evidence": "...ư Ủy ban của Quốc hội quy định tại khoản 2 Điều 76.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27771,7 +27771,7 @@
     "source_id": "BLDS_2015_D4_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D3",
-    "evidence": "...của pháp luật dân sự quy định tại Điều 3 của Bộ luật này....",
+    "evidence": "...của pháp luật dân sự quy định tại Điều 3 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27787,7 +27787,7 @@
     "source_id": "BLDS_2015_D5_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D3",
-    "evidence": "...của pháp luật dân sự quy định tại Điều 3 của Bộ luật này....",
+    "evidence": "...của pháp luật dân sự quy định tại Điều 3 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27811,7 +27811,7 @@
     "source_id": "BLDS_2015_D9_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D3",
-    "evidence": "..., không được trái với quy định tại Điều 3 và Điều 10 của Bộ luật này....",
+    "evidence": "..., không được trái với quy định tại Điều 3 và Điều 10 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27819,7 +27819,7 @@
     "source_id": "BLDS_2015_D9_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D10",
-    "evidence": "..., không được trái với quy định tại Điều 3 và Điều 10 của Bộ luật này.... | ...ợc trái với quy định tại Điều 3 và Điều 10 của Bộ luật này....",
+    "evidence": "..., không được trái với quy định tại Điều 3 và Điều 10 của Bộ luật này. | ...ợc trái với quy định tại Điều 3 và Điều 10 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27835,7 +27835,7 @@
     "source_id": "BLDS_2015_D12",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D3",
-    "evidence": "...của pháp luật dân sự quy định tại Điều 3 của Bộ luật này....",
+    "evidence": "...của pháp luật dân sự quy định tại Điều 3 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27843,7 +27843,7 @@
     "source_id": "BLDS_2015_D14_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D5",
-    "evidence": "...trong trường hợp này, quy định tại Điều 5 và Điều 6 của Bộ luật này được áp dụng.... | ...trong trường hợp này, quy định tại Điều 5 và Điều 6 của Bộ luật này được áp...",
+    "evidence": "...trong trường hợp này, quy định tại Điều 5 và Điều 6 của Bộ luật này được áp dụng. | ...trong trường hợp này, quy định tại Điều 5 và Điều 6 của Bộ luật này được áp...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27851,7 +27851,7 @@
     "source_id": "BLDS_2015_D14_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D6",
-    "evidence": "...trong trường hợp này, quy định tại Điều 5 và Điều 6 của Bộ luật này được áp dụng.... | ...ng hợp này, quy định tại Điều 5 và Điều 6 của Bộ luật này được áp dụng....",
+    "evidence": "...trong trường hợp này, quy định tại Điều 5 và Điều 6 của Bộ luật này được áp dụng. | ...ng hợp này, quy định tại Điều 5 và Điều 6 của Bộ luật này được áp dụng.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27859,7 +27859,7 @@
     "source_id": "BLDS_2015_D15",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D11",
-    "evidence": "...bằng các phương thức quy định tại Điều 11 của Bộ luật này....",
+    "evidence": "...bằng các phương thức quy định tại Điều 11 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27867,7 +27867,7 @@
     "source_id": "BLDS_2015_D20_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D22",
-    "evidence": "...ầy đủ, trừ trường hợp quy định tại các điều 22, 23 và 24 của Bộ luật này.... | ...ủ, trừ trường hợp quy định tại các điều 22, 23 và 24 của Bộ luật này....",
+    "evidence": "...ầy đủ, trừ trường hợp quy định tại các điều 22, 23 và 24 của Bộ luật này. | ...ủ, trừ trường hợp quy định tại các điều 22, 23 và 24 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27875,7 +27875,7 @@
     "source_id": "BLDS_2015_D20_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D23",
-    "evidence": "...ầy đủ, trừ trường hợp quy định tại các điều 22, 23 và 24 của Bộ luật này....",
+    "evidence": "...ầy đủ, trừ trường hợp quy định tại các điều 22, 23 và 24 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27883,7 +27883,7 @@
     "source_id": "BLDS_2015_D20_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D24",
-    "evidence": "...ầy đủ, trừ trường hợp quy định tại các điều 22, 23 và 24 của Bộ luật này....",
+    "evidence": "...ầy đủ, trừ trường hợp quy định tại các điều 22, 23 và 24 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27912,6 +27912,22 @@
     "confidence": 1.0
   },
   {
+    "source_id": "BLDS_2015_D44_K2",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D40_K1",
+    "evidence": "...họ có nơi cư trú theo quy định tại khoản 1 Điều 40 của Bộ luật này.",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "BLDS_2015_D45",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D40_K1",
+    "evidence": "...họ có nơi cư trú theo quy định tại khoản 1 Điều 40 của Bộ luật này.",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
     "source_id": "BLDS_2015_D46_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D48_K2",
@@ -27931,7 +27947,23 @@
     "source_id": "BLDS_2015_D51_K4_DIEM_B",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D59",
-    "evidence": "...hiện giao dịch dân sự quy định tại Điều 59 của Bộ luật này;...",
+    "evidence": "...hiện giao dịch dân sự quy định tại Điều 59 của Bộ luật này;",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "BLDS_2015_D52",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D47_K1_DIEM_A",
+    "evidence": "...người chưa thành niên quy định tại điểm a và điểm b khoản 1 Điều 47 của Bộ luật này được xác định theo...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "BLDS_2015_D52",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D47_K1_DIEM_B",
+    "evidence": "...người chưa thành niên quy định tại điểm a và điểm b khoản 1 Điều 47 của Bộ luật này được xác định theo... | ...thành niên quy định tại điểm a và điểm b khoản 1 Điều 47 của Bộ luật này được xác định theo...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27956,6 +27988,14 @@
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D52_K2",
     "evidence": "...hông có người giám hộ quy định tại khoản 1 và khoản 2 Điều này thì bác ruột, chú ruột, cậu ruột,...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "BLDS_2015_D53",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D48_K2",
+    "evidence": "...có người giám hộ theo quy định tại khoản 2 Điều 48 của Bộ luật này thì người giám hộ...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -27995,7 +28035,7 @@
     "source_id": "BLDS_2015_D57_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D57_K1",
-    "evidence": "...trong số các nghĩa vụ quy định tại khoản 1 Điều này....",
+    "evidence": "...trong số các nghĩa vụ quy định tại khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28003,7 +28043,7 @@
     "source_id": "BLDS_2015_D58_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D58_K1",
-    "evidence": "...án trong số các quyền quy định tại khoản 1 Điều này....",
+    "evidence": "...án trong số các quyền quy định tại khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28011,7 +28051,7 @@
     "source_id": "BLDS_2015_D59_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D59_K1",
-    "evidence": "...án trong phạm vi được quy định tại khoản 1 Điều này....",
+    "evidence": "...án trong phạm vi được quy định tại khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28019,7 +28059,7 @@
     "source_id": "BLDS_2015_D60_K1_DIEM_A",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D49",
-    "evidence": "...còn đủ các điều kiện quy định tại Điều 49, Điều 50 của Bộ luật này;...",
+    "evidence": "...còn đủ các điều kiện quy định tại Điều 49, Điều 50 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28027,7 +28067,7 @@
     "source_id": "BLDS_2015_D60_K1_DIEM_A",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D50",
-    "evidence": "...còn đủ các điều kiện quy định tại Điều 49, Điều 50 của Bộ luật này;... | ...ác điều kiện quy định tại Điều 49, Điều 50 của Bộ luật này;...",
+    "evidence": "...còn đủ các điều kiện quy định tại Điều 49, Điều 50 của Bộ luật này; | ...ác điều kiện quy định tại Điều 49, Điều 50 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28051,7 +28091,7 @@
     "source_id": "BLDS_2015_D60_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D54",
-    "evidence": "...ộ được thực hiện theo quy định tại Điều 54 của Bộ luật này....",
+    "evidence": "...ộ được thực hiện theo quy định tại Điều 54 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28091,7 +28131,7 @@
     "source_id": "BLDS_2015_D64",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D65",
-    "evidence": "...ng mặt tại nơi cư trú quy định tại Điều 65 của Bộ luật này....",
+    "evidence": "...ng mặt tại nơi cư trú quy định tại Điều 65 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28131,7 +28171,7 @@
     "source_id": "BLDS_2015_D71_K1_DIEM_D",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D68_K1",
-    "evidence": "...ạn này được tính theo quy định tại khoản 1 Điều 68 của Bộ luật này....",
+    "evidence": "...ạn này được tính theo quy định tại khoản 1 Điều 68 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28155,7 +28195,15 @@
     "source_id": "BLDS_2015_D74_K1_DIEM_B",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D83",
-    "evidence": "...ó cơ cấu tổ chức theo quy định tại Điều 83 của Bộ luật này;...",
+    "evidence": "...ó cơ cấu tổ chức theo quy định tại Điều 83 của Bộ luật này;",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "BLDS_2015_D85",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_P1_CH9",
+    "evidence": "...tuân theo quy định về đại diện tại Chương IX Phần này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28163,7 +28211,7 @@
     "source_id": "BLDS_2015_D94_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D94_K3",
-    "evidence": "...p vốn, trừ trường hợp quy định tại khoản 3 Điều này hoặc pháp luật có quy định khác....",
+    "evidence": "...p vốn, trừ trường hợp quy định tại khoản 3 Điều này hoặc pháp luật có quy định khác.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28179,7 +28227,7 @@
     "source_id": "BLDS_2015_D96_K1_DIEM_A",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D88",
-    "evidence": "...ải thể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này;... | ...hể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này;...",
+    "evidence": "...ải thể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này; | ...hể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28187,7 +28235,7 @@
     "source_id": "BLDS_2015_D96_K1_DIEM_A",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D89",
-    "evidence": "...ải thể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này;...",
+    "evidence": "...ải thể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28195,7 +28243,7 @@
     "source_id": "BLDS_2015_D96_K1_DIEM_A",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D90",
-    "evidence": "...ải thể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này;...",
+    "evidence": "...ải thể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28203,7 +28251,7 @@
     "source_id": "BLDS_2015_D96_K1_DIEM_A",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D92",
-    "evidence": "...ải thể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này;...",
+    "evidence": "...ải thể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28211,7 +28259,7 @@
     "source_id": "BLDS_2015_D96_K1_DIEM_A",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D93",
-    "evidence": "...ải thể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này;...",
+    "evidence": "...ải thể pháp nhân theo quy định tại các điều 88, 89, 90, 92 và 93 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28219,7 +28267,7 @@
     "source_id": "BLDS_2015_D97",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D99",
-    "evidence": "...ách nhiệm dân sự theo quy định tại Điều 99 và Điều 100 của Bộ luật này....",
+    "evidence": "...ách nhiệm dân sự theo quy định tại Điều 99 và Điều 100 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28227,7 +28275,7 @@
     "source_id": "BLDS_2015_D97",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D100",
-    "evidence": "...ách nhiệm dân sự theo quy định tại Điều 99 và Điều 100 của Bộ luật này.... | ...ân sự theo quy định tại Điều 99 và Điều 100 của Bộ luật này....",
+    "evidence": "...ách nhiệm dân sự theo quy định tại Điều 99 và Điều 100 của Bộ luật này. | ...ân sự theo quy định tại Điều 99 và Điều 100 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28235,7 +28283,7 @@
     "source_id": "BLDS_2015_D99_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D99_K2",
-    "evidence": "...ao cho pháp nhân theo quy định tại khoản 2 Điều này....",
+    "evidence": "...ao cho pháp nhân theo quy định tại khoản 2 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28243,7 +28291,7 @@
     "source_id": "BLDS_2015_D100_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D100_K1",
-    "evidence": "...hân Việt Nam được áp dụng tương tự khoản 1 Điều này....",
+    "evidence": "...hân Việt Nam được áp dụng tương tự khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28251,7 +28299,7 @@
     "source_id": "BLDS_2015_D102_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D212",
-    "evidence": "...ày được xác định theo quy định tại Điều 212 của Bộ luật này....",
+    "evidence": "...ày được xác định theo quy định tại Điều 212 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28259,7 +28307,7 @@
     "source_id": "BLDS_2015_D102_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D506",
-    "evidence": "...ày được xác định theo quy định tại Điều 506 của Bộ luật này....",
+    "evidence": "...ày được xác định theo quy định tại Điều 506 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28267,7 +28315,7 @@
     "source_id": "BLDS_2015_D103_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D288",
-    "evidence": "...ực hiện nghĩa vụ theo quy định tại Điều 288 của Bộ luật này....",
+    "evidence": "...ực hiện nghĩa vụ theo quy định tại Điều 288 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28291,7 +28339,7 @@
     "source_id": "BLDS_2015_D104_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D130",
-    "evidence": "...ịch được áp dụng theo quy định tại các Điều 130, 142 và 143 của Bộ luật này.... | ...được áp dụng theo quy định tại các Điều 130, 142 và 143 của Bộ luật này....",
+    "evidence": "...ịch được áp dụng theo quy định tại các Điều 130, 142 và 143 của Bộ luật này. | ...được áp dụng theo quy định tại các Điều 130, 142 và 143 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28299,7 +28347,7 @@
     "source_id": "BLDS_2015_D104_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D142",
-    "evidence": "...ịch được áp dụng theo quy định tại các Điều 130, 142 và 143 của Bộ luật này....",
+    "evidence": "...ịch được áp dụng theo quy định tại các Điều 130, 142 và 143 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28307,7 +28355,7 @@
     "source_id": "BLDS_2015_D104_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D143",
-    "evidence": "...ịch được áp dụng theo quy định tại các Điều 130, 142 và 143 của Bộ luật này....",
+    "evidence": "...ịch được áp dụng theo quy định tại các Điều 130, 142 và 143 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28331,7 +28379,7 @@
     "source_id": "BLDS_2015_D121_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D648",
-    "evidence": "...c được thực hiện theo quy định tại Điều 648 của Bộ luật này....",
+    "evidence": "...c được thực hiện theo quy định tại Điều 648 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28347,7 +28395,7 @@
     "source_id": "BLDS_2015_D125_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D125_K2",
-    "evidence": "...ồng ý, trừ trường hợp quy định tại khoản 2 Điều này....",
+    "evidence": "...ồng ý, trừ trường hợp quy định tại khoản 2 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28363,7 +28411,7 @@
     "source_id": "BLDS_2015_D126_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D126_K2",
-    "evidence": "...hiệu, trừ trường hợp quy định tại khoản 2 Điều này....",
+    "evidence": "...hiệu, trừ trường hợp quy định tại khoản 2 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28411,7 +28459,7 @@
     "source_id": "BLDS_2015_D132_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D132_K1",
-    "evidence": "...Hết thời hiệu quy định tại khoản 1 Điều này mà không có yêu cầu tuyên bố giao...",
+    "evidence": "Hết thời hiệu quy định tại khoản 1 Điều này mà không có yêu cầu tuyên bố giao...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28435,7 +28483,7 @@
     "source_id": "BLDS_2015_D133_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D167",
-    "evidence": "...u lực, trừ trường hợp quy định tại Điều 167 của Bộ luật này....",
+    "evidence": "...u lực, trừ trường hợp quy định tại Điều 167 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28451,7 +28499,7 @@
     "source_id": "BLDS_2015_D136_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D136_K1",
-    "evidence": "...h được người đại diện quy định tại khoản 1 và khoản 2 Điều này....",
+    "evidence": "...h được người đại diện quy định tại khoản 1 và khoản 2 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28459,7 +28507,7 @@
     "source_id": "BLDS_2015_D136_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D136_K2",
-    "evidence": "...h được người đại diện quy định tại khoản 1 và khoản 2 Điều này....",
+    "evidence": "...h được người đại diện quy định tại khoản 1 và khoản 2 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28467,7 +28515,7 @@
     "source_id": "BLDS_2015_D137_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D140",
-    "evidence": "...ện cho pháp nhân theo quy định tại Điều 140 và Điều 141 của Bộ luật này....",
+    "evidence": "...ện cho pháp nhân theo quy định tại Điều 140 và Điều 141 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28475,7 +28523,7 @@
     "source_id": "BLDS_2015_D137_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D141",
-    "evidence": "...ện cho pháp nhân theo quy định tại Điều 140 và Điều 141 của Bộ luật này.... | ...nhân theo quy định tại Điều 140 và Điều 141 của Bộ luật này....",
+    "evidence": "...ện cho pháp nhân theo quy định tại Điều 140 và Điều 141 của Bộ luật này. | ...nhân theo quy định tại Điều 140 và Điều 141 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28491,7 +28539,7 @@
     "source_id": "BLDS_2015_D140_K3_DIEM_E",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D134_K3",
-    "evidence": "...hông còn đủ điều kiện quy định tại khoản 3 Điều 134 của Bộ luật này;...",
+    "evidence": "...hông còn đủ điều kiện quy định tại khoản 3 Điều 134 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28507,7 +28555,7 @@
     "source_id": "BLDS_2015_D142_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D142_K1_DIEM_A",
-    "evidence": "...dịch hoặc trường hợp quy định tại điểm a khoản 1 Điều này....",
+    "evidence": "...dịch hoặc trường hợp quy định tại điểm a khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28515,7 +28563,7 @@
     "source_id": "BLDS_2015_D143_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D143_K1_DIEM_A",
-    "evidence": "...dịch hoặc trường hợp quy định tại điểm a khoản 1 Điều này....",
+    "evidence": "...dịch hoặc trường hợp quy định tại điểm a khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28523,7 +28571,7 @@
     "source_id": "BLDS_2015_D157_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D157_K1",
-    "evidence": "...u ngày xảy ra sự kiện quy định tại khoản 1 Điều này....",
+    "evidence": "...u ngày xảy ra sự kiện quy định tại khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28539,7 +28587,7 @@
     "source_id": "BLDS_2015_D168",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D133_K2",
-    "evidence": "...tình, trừ trường hợp quy định tại khoản 2 Điều 133 của Bộ luật này....",
+    "evidence": "...tình, trừ trường hợp quy định tại khoản 2 Điều 133 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28547,7 +28595,7 @@
     "source_id": "BLDS_2015_D171_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D595",
-    "evidence": "...thường thiệt hại theo quy định tại Điều 595 của Bộ luật này....",
+    "evidence": "...thường thiệt hại theo quy định tại Điều 595 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28571,7 +28619,7 @@
     "source_id": "BLDS_2015_D179_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D228",
-    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này.... | ...u, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 củ...",
+    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này. | ...u, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 củ...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28579,7 +28627,7 @@
     "source_id": "BLDS_2015_D179_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D229",
-    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này....",
+    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28587,7 +28635,7 @@
     "source_id": "BLDS_2015_D179_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D230",
-    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này....",
+    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28595,7 +28643,7 @@
     "source_id": "BLDS_2015_D179_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D231",
-    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này....",
+    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28603,7 +28651,7 @@
     "source_id": "BLDS_2015_D179_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D232",
-    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này....",
+    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28611,7 +28659,7 @@
     "source_id": "BLDS_2015_D179_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D233",
-    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này....",
+    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28619,7 +28667,7 @@
     "source_id": "BLDS_2015_D179_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D236",
-    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này....",
+    "evidence": "...ở hữu, trừ trường hợp quy định tại các điều 228, 229, 230, 231, 232, 233 và 236 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28627,7 +28675,7 @@
     "source_id": "BLDS_2015_D182_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D184",
-    "evidence": "...người chiếm hữu được quy định tại Điều 184 của Bộ luật này....",
+    "evidence": "...người chiếm hữu được quy định tại Điều 184 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28635,7 +28683,7 @@
     "source_id": "BLDS_2015_D183_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D184",
-    "evidence": "...người chiếm hữu được quy định tại Điều 184 của Bộ luật này....",
+    "evidence": "...người chiếm hữu được quy định tại Điều 184 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28643,7 +28691,7 @@
     "source_id": "BLDS_2015_D187_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D236",
-    "evidence": "...ài sản được giao theo quy định tại Điều 236 của Bộ luật này....",
+    "evidence": "...ài sản được giao theo quy định tại Điều 236 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28651,7 +28699,7 @@
     "source_id": "BLDS_2015_D188_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D236",
-    "evidence": "...ài sản được giao theo quy định tại Điều 236 của Bộ luật này....",
+    "evidence": "...ài sản được giao theo quy định tại Điều 236 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28659,7 +28707,7 @@
     "source_id": "BLDS_2015_D212_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D213",
-    "evidence": "...quan, trừ trường hợp quy định tại Điều 213 của Bộ luật này....",
+    "evidence": "...quan, trừ trường hợp quy định tại Điều 213 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28683,7 +28731,7 @@
     "source_id": "BLDS_2015_D218_K6",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D228",
-    "evidence": "...hữu được áp dụng theo quy định tại Điều 228 của Bộ luật này....",
+    "evidence": "...hữu được áp dụng theo quy định tại Điều 228 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28691,7 +28739,15 @@
     "source_id": "BLDS_2015_D221_K7",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D236",
-    "evidence": "...c lợi về tài sản theo quy định tại Điều 236 của Bộ luật này....",
+    "evidence": "...c lợi về tài sản theo quy định tại Điều 236 của Bộ luật này.",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "BLDS_2015_D234",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_P4",
+    "evidence": "...tài sản thừa kế theo quy định tại Phần thứ tư của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28755,7 +28811,7 @@
     "source_id": "BLDS_2015_D254_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D254_K2",
-    "evidence": "...người phía trong theo quy định tại khoản 2 Điều này mà không có đền bù....",
+    "evidence": "...người phía trong theo quy định tại khoản 2 Điều này mà không có đền bù.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28763,7 +28819,7 @@
     "source_id": "BLDS_2015_D260_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D260_K1",
-    "evidence": "...g dụng trong thời hạn quy định tại khoản 1 Điều này....",
+    "evidence": "...g dụng trong thời hạn quy định tại khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28779,7 +28835,7 @@
     "source_id": "BLDS_2015_D271_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D271_K1",
-    "evidence": "...sản được tạo lập theo quy định tại khoản 1 Điều này....",
+    "evidence": "...sản được tạo lập theo quy định tại khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28795,7 +28851,7 @@
     "source_id": "BLDS_2015_D284_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D120_K2",
-    "evidence": "...a một bên thì áp dụng quy định tại khoản 2 Điều 120 của Bộ luật này....",
+    "evidence": "...a một bên thì áp dụng quy định tại khoản 2 Điều 120 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28835,7 +28891,7 @@
     "source_id": "BLDS_2015_D304_K2_DIEM_A",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D307",
-    "evidence": "...n được thực hiện theo quy định tại Điều 307 của Bộ luật này;...",
+    "evidence": "...n được thực hiện theo quy định tại Điều 307 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28851,7 +28907,7 @@
     "source_id": "BLDS_2015_D307_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D308",
-    "evidence": "...n theo thứ tự ưu tiên quy định tại Điều 308 của Bộ luật này....",
+    "evidence": "...n theo thứ tự ưu tiên quy định tại Điều 308 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28891,7 +28947,7 @@
     "source_id": "BLDS_2015_D320_K6",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D299",
-    "evidence": "...xử lý tài sản bảo đảm quy định tại Điều 299 của Bộ luật này....",
+    "evidence": "...xử lý tài sản bảo đảm quy định tại Điều 299 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28899,7 +28955,7 @@
     "source_id": "BLDS_2015_D320_K8",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D321_K4",
-    "evidence": "...chấp, trừ trường hợp quy định tại khoản 4 và khoản 5 Điều 321 của Bộ luật này....",
+    "evidence": "...chấp, trừ trường hợp quy định tại khoản 4 và khoản 5 Điều 321 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28907,7 +28963,7 @@
     "source_id": "BLDS_2015_D320_K8",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D321_K5",
-    "evidence": "...chấp, trừ trường hợp quy định tại khoản 4 và khoản 5 Điều 321 của Bộ luật này.... | ...trường hợp quy định tại khoản 4 và khoản 5 Điều 321 của Bộ luật này....",
+    "evidence": "...chấp, trừ trường hợp quy định tại khoản 4 và khoản 5 Điều 321 của Bộ luật này. | ...trường hợp quy định tại khoản 4 và khoản 5 Điều 321 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28915,7 +28971,7 @@
     "source_id": "BLDS_2015_D323_K7",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D299",
-    "evidence": "...khi thuộc trường hợp quy định tại Điều 299 của Bộ luật này....",
+    "evidence": "...khi thuộc trường hợp quy định tại Điều 299 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28947,7 +29003,7 @@
     "source_id": "BLDS_2015_D357_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D468_K2",
-    "evidence": "...ận thì thực hiện theo quy định tại khoản 2 Điều 468 của Bộ luật này....",
+    "evidence": "...ận thì thực hiện theo quy định tại khoản 2 Điều 468 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28963,7 +29019,7 @@
     "source_id": "BLDS_2015_D374",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D355_K2",
-    "evidence": "...nơi nhận gửi giữ theo quy định tại khoản 2 Điều 355 của Bộ luật này....",
+    "evidence": "...nơi nhận gửi giữ theo quy định tại khoản 2 Điều 355 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28971,7 +29027,7 @@
     "source_id": "BLDS_2015_D387_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D387_K1",
-    "evidence": "...Bên vi phạm quy định tại khoản 1, khoản 2 Điều này mà gây thiệt hại thì phải bồi thườ...",
+    "evidence": "Bên vi phạm quy định tại khoản 1, khoản 2 Điều này mà gây thiệt hại thì phải bồi thườ...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28979,7 +29035,7 @@
     "source_id": "BLDS_2015_D387_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D387_K2",
-    "evidence": "...Bên vi phạm quy định tại khoản 1, khoản 2 Điều này mà gây thiệt hại thì phải bồi thườ...",
+    "evidence": "Bên vi phạm quy định tại khoản 1, khoản 2 Điều này mà gây thiệt hại thì phải bồi thườ...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -28987,7 +29043,7 @@
     "source_id": "BLDS_2015_D400_K4",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D400_K3",
-    "evidence": "...ao kết hợp đồng được xác định theo khoản 3 Điều này....",
+    "evidence": "...ao kết hợp đồng được xác định theo khoản 3 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29083,7 +29139,7 @@
     "source_id": "BLDS_2015_D408_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D408_K1",
-    "evidence": "...Quy định tại khoản 1 và khoản 2 Điều này cũng được áp dụng đối với trường h...",
+    "evidence": "Quy định tại khoản 1 và khoản 2 Điều này cũng được áp dụng đối với trường h...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29091,7 +29147,7 @@
     "source_id": "BLDS_2015_D408_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D408_K2",
-    "evidence": "...Quy định tại khoản 1 và khoản 2 Điều này cũng được áp dụng đối với trường h...",
+    "evidence": "Quy định tại khoản 1 và khoản 2 Điều này cũng được áp dụng đối với trường h...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29099,7 +29155,7 @@
     "source_id": "BLDS_2015_D410_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D411",
-    "evidence": "...mình, trừ trường hợp quy định tại Điều 411 và Điều 413 của Bộ luật này....",
+    "evidence": "...mình, trừ trường hợp quy định tại Điều 411 và Điều 413 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29107,7 +29163,7 @@
     "source_id": "BLDS_2015_D410_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D413",
-    "evidence": "...mình, trừ trường hợp quy định tại Điều 411 và Điều 413 của Bộ luật này.... | ...rường hợp quy định tại Điều 411 và Điều 413 của Bộ luật này....",
+    "evidence": "...mình, trừ trường hợp quy định tại Điều 411 và Điều 413 của Bộ luật này. | ...rường hợp quy định tại Điều 411 và Điều 413 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29115,7 +29171,7 @@
     "source_id": "BLDS_2015_D412",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D346",
-    "evidence": "...của bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này.... | ...a bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này....",
+    "evidence": "...của bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này. | ...a bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29123,7 +29179,7 @@
     "source_id": "BLDS_2015_D412",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D347",
-    "evidence": "...của bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này....",
+    "evidence": "...của bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29131,7 +29187,7 @@
     "source_id": "BLDS_2015_D412",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D348",
-    "evidence": "...của bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này....",
+    "evidence": "...của bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29139,7 +29195,7 @@
     "source_id": "BLDS_2015_D412",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D349",
-    "evidence": "...của bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này....",
+    "evidence": "...của bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29147,7 +29203,7 @@
     "source_id": "BLDS_2015_D412",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D350",
-    "evidence": "...của bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này.... | ...a vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này....",
+    "evidence": "...của bên có nghĩa vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này. | ...a vụ theo quy định từ Điều 346 đến Điều 350 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29155,7 +29211,7 @@
     "source_id": "BLDS_2015_D419_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D13",
-    "evidence": "...heo quy định tại khoản 2 Điều này, Điều 13 và Điều 360 của Bộ luật này....",
+    "evidence": "...heo quy định tại khoản 2 Điều này, Điều 13 và Điều 360 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29163,7 +29219,7 @@
     "source_id": "BLDS_2015_D419_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D360",
-    "evidence": "...heo quy định tại khoản 2 Điều này, Điều 13 và Điều 360 của Bộ luật này.... | ...h tại khoản 2 Điều này, Điều 13 và Điều 360 của Bộ luật này....",
+    "evidence": "...heo quy định tại khoản 2 Điều này, Điều 13 và Điều 360 của Bộ luật này. | ...h tại khoản 2 Điều này, Điều 13 và Điều 360 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29179,7 +29235,7 @@
     "source_id": "BLDS_2015_D421_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D420",
-    "evidence": "...thể được sửa đổi theo quy định tại Điều 420 của Bộ luật này....",
+    "evidence": "...thể được sửa đổi theo quy định tại Điều 420 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29187,7 +29243,7 @@
     "source_id": "BLDS_2015_D422_K6",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D420",
-    "evidence": "...ợp đồng chấm dứt theo quy định tại Điều 420 của Bộ luật này;...",
+    "evidence": "...ợp đồng chấm dứt theo quy định tại Điều 420 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29195,7 +29251,7 @@
     "source_id": "BLDS_2015_D424_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D424_K1",
-    "evidence": "...không phải tuân theo quy định tại khoản 1 Điều này....",
+    "evidence": "...không phải tuân theo quy định tại khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29203,7 +29259,7 @@
     "source_id": "BLDS_2015_D426",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D351_K2",
-    "evidence": "...thuận khác hoặc theo quy định tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này....",
+    "evidence": "...thuận khác hoặc theo quy định tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29211,7 +29267,7 @@
     "source_id": "BLDS_2015_D426",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D351_K3",
-    "evidence": "...thuận khác hoặc theo quy định tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này.... | ...ác hoặc theo quy định tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này....",
+    "evidence": "...thuận khác hoặc theo quy định tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này. | ...ác hoặc theo quy định tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29219,7 +29275,7 @@
     "source_id": "BLDS_2015_D426",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D363",
-    "evidence": "...theo quy định tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này.... | ...h tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này....",
+    "evidence": "...theo quy định tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này. | ...h tại khoản 2, khoản 3 Điều 351 và Điều 363 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29267,7 +29323,7 @@
     "source_id": "BLDS_2015_D435",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D277_K2",
-    "evidence": "...hỏa thuận thì áp dụng quy định tại khoản 2 Điều 277 của Bộ luật này....",
+    "evidence": "...hỏa thuận thì áp dụng quy định tại khoản 2 Điều 277 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29291,7 +29347,7 @@
     "source_id": "BLDS_2015_D440_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D357",
-    "evidence": "...số tiền chậm trả theo quy định tại Điều 357 của Bộ luật này....",
+    "evidence": "...số tiền chậm trả theo quy định tại Điều 357 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29491,7 +29547,7 @@
     "source_id": "BLDS_2015_D466_K5_DIEM_A",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D468_K2",
-    "evidence": "...lãi theo mức lãi suất quy định tại khoản 2 Điều 468 của Bộ luật này;...",
+    "evidence": "...lãi theo mức lãi suất quy định tại khoản 2 Điều 468 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29499,7 +29555,7 @@
     "source_id": "BLDS_2015_D468_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D468_K1",
-    "evidence": "...mức lãi suất giới hạn quy định tại khoản 1 Điều này tại thời điểm trả nợ....",
+    "evidence": "...mức lãi suất giới hạn quy định tại khoản 1 Điều này tại thời điểm trả nợ.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29563,7 +29619,7 @@
     "source_id": "BLDS_2015_D529_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D525_K2",
-    "evidence": "...đồng trong trường hợp quy định tại khoản 2 Điều 525 của Bộ luật này....",
+    "evidence": "...đồng trong trường hợp quy định tại khoản 2 Điều 525 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29571,7 +29627,7 @@
     "source_id": "BLDS_2015_D529_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D524_K1",
-    "evidence": "...vi phạm nghĩa vụ quy định tại các khoản 1, 3 và 4 Điều 524 của Bộ luật này....",
+    "evidence": "...vi phạm nghĩa vụ quy định tại các khoản 1, 3 và 4 Điều 524 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29579,7 +29635,7 @@
     "source_id": "BLDS_2015_D529_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D524_K3",
-    "evidence": "...vi phạm nghĩa vụ quy định tại các khoản 1, 3 và 4 Điều 524 của Bộ luật này....",
+    "evidence": "...vi phạm nghĩa vụ quy định tại các khoản 1, 3 và 4 Điều 524 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29587,7 +29643,7 @@
     "source_id": "BLDS_2015_D529_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D524_K4",
-    "evidence": "...vi phạm nghĩa vụ quy định tại các khoản 1, 3 và 4 Điều 524 của Bộ luật này....",
+    "evidence": "...vi phạm nghĩa vụ quy định tại các khoản 1, 3 và 4 Điều 524 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29595,7 +29651,7 @@
     "source_id": "BLDS_2015_D541_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D536_K3",
-    "evidence": "...hỏng, trừ trường hợp quy định tại khoản 3 Điều 536 của Bộ luật này....",
+    "evidence": "...hỏng, trừ trường hợp quy định tại khoản 3 Điều 536 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29603,7 +29659,7 @@
     "source_id": "BLDS_2015_D565_K6",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D565",
-    "evidence": "...i do vi phạm nghĩa vụ quy định tại Điều này....",
+    "evidence": "...i do vi phạm nghĩa vụ quy định tại Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29611,7 +29667,7 @@
     "source_id": "BLDS_2015_D568_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D565",
-    "evidence": "...uyền vi phạm nghĩa vụ quy định tại Điều 565 của Bộ luật này....",
+    "evidence": "...uyền vi phạm nghĩa vụ quy định tại Điều 565 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29619,7 +29675,7 @@
     "source_id": "BLDS_2015_D578_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D575_K5",
-    "evidence": "...c hiện công việc theo quy định tại khoản 5 Điều 575 của Bộ luật này....",
+    "evidence": "...c hiện công việc theo quy định tại khoản 5 Điều 575 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29627,7 +29683,7 @@
     "source_id": "BLDS_2015_D579_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D236",
-    "evidence": "...quyền, trừ trường hợp quy định tại Điều 236 của Bộ luật này....",
+    "evidence": "...quyền, trừ trường hợp quy định tại Điều 236 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29635,7 +29691,7 @@
     "source_id": "BLDS_2015_D579_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D236",
-    "evidence": "...t hại, trừ trường hợp quy định tại Điều 236 của Bộ luật này....",
+    "evidence": "...t hại, trừ trường hợp quy định tại Điều 236 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29643,7 +29699,7 @@
     "source_id": "BLDS_2015_D581_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D236",
-    "evidence": "...luật, trừ trường hợp quy định tại Điều 236 của Bộ luật này....",
+    "evidence": "...luật, trừ trường hợp quy định tại Điều 236 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29651,7 +29707,7 @@
     "source_id": "BLDS_2015_D584_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D584_K2",
-    "evidence": "...ệt hại phát sinh theo quy định tại khoản 2 Điều này....",
+    "evidence": "...ệt hại phát sinh theo quy định tại khoản 2 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29675,7 +29731,7 @@
     "source_id": "BLDS_2015_D591_K1_DIEM_A",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D590",
-    "evidence": "...khỏe bị xâm phạm theo quy định tại Điều 590 của Bộ luật này;...",
+    "evidence": "...khỏe bị xâm phạm theo quy định tại Điều 590 của Bộ luật này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29731,7 +29787,7 @@
     "source_id": "BLDS_2015_D611_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D71_K2",
-    "evidence": "...thừa kế là ngày được xác định tại khoản 2 Điều 71 của Bộ luật này....",
+    "evidence": "...thừa kế là ngày được xác định tại khoản 2 Điều 71 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29755,7 +29811,7 @@
     "source_id": "BLDS_2015_D617_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D616_K1",
-    "evidence": "...Người quản lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có nghĩa vụ sau đâ...",
+    "evidence": "Người quản lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có nghĩa vụ sau đâ...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29763,7 +29819,7 @@
     "source_id": "BLDS_2015_D617_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D616_K3",
-    "evidence": "...Người quản lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có nghĩa vụ sau đâ... | ...lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có nghĩa vụ sau đâ...",
+    "evidence": "Người quản lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có nghĩa vụ sau đâ... | ...lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có nghĩa vụ sau đâ...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29787,7 +29843,7 @@
     "source_id": "BLDS_2015_D618_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D616_K3",
-    "evidence": "Người quản lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có quyền sau đây: | ...lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có quyền sau đây:...",
+    "evidence": "Người quản lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có quyền sau đây: | ...lý di sản quy định tại khoản 1 và khoản 3 Điều 616 của Bộ luật này có quyền sau đây:",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29795,7 +29851,7 @@
     "source_id": "BLDS_2015_D618_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D616_K2",
-    "evidence": "...dụng, quản lý di sản quy định tại khoản 2 Điều 616 của Bộ luật này có quyền sau đây:...",
+    "evidence": "...dụng, quản lý di sản quy định tại khoản 2 Điều 616 của Bộ luật này có quyền sau đây:",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29803,7 +29859,7 @@
     "source_id": "BLDS_2015_D619",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D652",
-    "evidence": "...p thừa kế thế vị theo quy định tại Điều 652 của Bộ luật này....",
+    "evidence": "...p thừa kế thế vị theo quy định tại Điều 652 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29811,7 +29867,7 @@
     "source_id": "BLDS_2015_D621_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D621_K1",
-    "evidence": "...Những người quy định tại khoản 1 Điều này vẫn được hưởng di sản, nếu người đ...",
+    "evidence": "Những người quy định tại khoản 1 Điều này vẫn được hưởng di sản, nếu người đ...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29819,7 +29875,15 @@
     "source_id": "BLDS_2015_D623_K1_DIEM_A",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D236",
-    "evidence": "...i đang chiếm hữu theo quy định tại Điều 236 của Bộ luật này;...",
+    "evidence": "...i đang chiếm hữu theo quy định tại Điều 236 của Bộ luật này;",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "BLDS_2015_D623_K1_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D623_K1_DIEM_A",
+    "evidence": "...ng có người chiếm hữu quy định tại điểm a khoản này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29835,7 +29899,7 @@
     "source_id": "BLDS_2015_D630_K4",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D630_K1",
-    "evidence": "...đủ các điều kiện được quy định tại khoản 1 Điều này....",
+    "evidence": "...đủ các điều kiện được quy định tại khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29843,7 +29907,7 @@
     "source_id": "BLDS_2015_D631_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D631_K1",
-    "evidence": "...Ngoài các nội dung quy định tại khoản 1 Điều này, di chúc có thể có các nội dung kh...",
+    "evidence": "Ngoài các nội dung quy định tại khoản 1 Điều này, di chúc có thể có các nội dung kh...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29851,7 +29915,7 @@
     "source_id": "BLDS_2015_D633",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D631",
-    "evidence": "...chứng phải tuân theo quy định tại Điều 631 của Bộ luật này....",
+    "evidence": "...chứng phải tuân theo quy định tại Điều 631 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29859,7 +29923,7 @@
     "source_id": "BLDS_2015_D634",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D631",
-    "evidence": "...chứng phải tuân theo quy định tại Điều 631 và Điều 632 của Bộ luật này....",
+    "evidence": "...chứng phải tuân theo quy định tại Điều 631 và Điều 632 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29867,7 +29931,7 @@
     "source_id": "BLDS_2015_D634",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D632",
-    "evidence": "...chứng phải tuân theo quy định tại Điều 631 và Điều 632 của Bộ luật này.... | ...tuân theo quy định tại Điều 631 và Điều 632 của Bộ luật này....",
+    "evidence": "...chứng phải tuân theo quy định tại Điều 631 và Điều 632 của Bộ luật này. | ...tuân theo quy định tại Điều 631 và Điều 632 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29875,7 +29939,7 @@
     "source_id": "BLDS_2015_D639_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D636",
-    "evidence": "...nghề công chứng theo quy định tại Điều 636 của Bộ luật này....",
+    "evidence": "...nghề công chứng theo quy định tại Điều 636 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29883,7 +29947,7 @@
     "source_id": "BLDS_2015_D644_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D644_K1",
-    "evidence": "...Quy định tại khoản 1 Điều này không áp dụng đối với người từ chố...",
+    "evidence": "Quy định tại khoản 1 Điều này không áp dụng đối với người từ chố...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29899,7 +29963,7 @@
     "source_id": "BLDS_2015_D644_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D621_K1",
-    "evidence": "...yền hưởng di sản theo quy định tại khoản 1 Điều 621 của Bộ luật này....",
+    "evidence": "...yền hưởng di sản theo quy định tại khoản 1 Điều 621 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29907,7 +29971,7 @@
     "source_id": "BLDS_2015_D653",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D651",
-    "evidence": "...c thừa kế di sản theo quy định tại Điều 651 và Điều 652 của Bộ luật này....",
+    "evidence": "...c thừa kế di sản theo quy định tại Điều 651 và Điều 652 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29915,7 +29979,7 @@
     "source_id": "BLDS_2015_D653",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D652",
-    "evidence": "...c thừa kế di sản theo quy định tại Điều 651 và Điều 652 của Bộ luật này.... | ...sản theo quy định tại Điều 651 và Điều 652 của Bộ luật này....",
+    "evidence": "...c thừa kế di sản theo quy định tại Điều 651 và Điều 652 của Bộ luật này. | ...sản theo quy định tại Điều 651 và Điều 652 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29923,7 +29987,7 @@
     "source_id": "BLDS_2015_D654",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D652",
-    "evidence": "...c thừa kế di sản theo quy định tại Điều 652 và Điều 653 của Bộ luật này....",
+    "evidence": "...c thừa kế di sản theo quy định tại Điều 652 và Điều 653 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -29931,7 +29995,7 @@
     "source_id": "BLDS_2015_D654",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D653",
-    "evidence": "...c thừa kế di sản theo quy định tại Điều 652 và Điều 653 của Bộ luật này.... | ...sản theo quy định tại Điều 652 và Điều 653 của Bộ luật này....",
+    "evidence": "...c thừa kế di sản theo quy định tại Điều 652 và Điều 653 của Bộ luật này. | ...sản theo quy định tại Điều 652 và Điều 653 của Bộ luật này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30000,6 +30064,14 @@
     "confidence": 1.0
   },
   {
+    "source_id": "BLDS_2015_D663_K1",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_P5",
+    "evidence": "...trái thì quy định có liên quan của Phần thứ năm của Bộ luật này được áp dụng.",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
     "source_id": "BLDS_2015_D664_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D664_K1",
@@ -30016,6 +30088,14 @@
     "confidence": 1.0
   },
   {
+    "source_id": "BLDS_2015_D665_K2",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_P5",
+    "evidence": "...hủ nghĩa Việt Nam là thành viên có quy định khác với quy định của Phần này và luật khác về pháp luật áp dụng...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
     "source_id": "BLDS_2015_D666",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D664_K2",
@@ -30027,7 +30107,7 @@
     "source_id": "BLDS_2015_D668_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D668_K4",
-    "evidence": "...ân sự, trừ trường hợp quy định tại khoản 4 Điều này....",
+    "evidence": "...ân sự, trừ trường hợp quy định tại khoản 4 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30035,7 +30115,7 @@
     "source_id": "BLDS_2015_D668_K4",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D664_K2",
-    "evidence": "...Trường hợp quy định tại khoản 2 Điều 664 của Bộ luật này thì pháp luật mà c...",
+    "evidence": "Trường hợp quy định tại khoản 2 Điều 664 của Bộ luật này thì pháp luật mà c...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30051,7 +30131,7 @@
     "source_id": "BLDS_2015_D674_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D674_K2",
-    "evidence": "...tịch, trừ trường hợp quy định tại khoản 2 Điều này....",
+    "evidence": "...tịch, trừ trường hợp quy định tại khoản 2 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30059,7 +30139,7 @@
     "source_id": "BLDS_2015_D675_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D675_K2",
-    "evidence": "...ời đó, trừ trường hợp quy định tại khoản 2 Điều này....",
+    "evidence": "...ời đó, trừ trường hợp quy định tại khoản 2 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30067,7 +30147,7 @@
     "source_id": "BLDS_2015_D676_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D676_K3",
-    "evidence": "...tịch, trừ trường hợp quy định tại khoản 3 Điều này....",
+    "evidence": "...tịch, trừ trường hợp quy định tại khoản 3 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30075,7 +30155,7 @@
     "source_id": "BLDS_2015_D678_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D678_K2",
-    "evidence": "...i sản, trừ trường hợp quy định tại khoản 2 Điều này....",
+    "evidence": "...i sản, trừ trường hợp quy định tại khoản 2 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30123,7 +30203,7 @@
     "source_id": "ND_21_2021_D7_K1",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D7_K2",
-    "evidence": "...hông thuộc trường hợp quy định tại khoản 2 Điều này....",
+    "evidence": "...hông thuộc trường hợp quy định tại khoản 2 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30131,7 +30211,7 @@
     "source_id": "ND_21_2021_D7_K2_DIEM_B",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D321_K4",
-    "evidence": "...ặc được trao đổi theo quy định tại khoản 4 Điều 321 của Bộ luật Dân sự;...",
+    "evidence": "...ặc được trao đổi theo quy định tại khoản 4 Điều 321 của Bộ luật Dân sự;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30139,7 +30219,7 @@
     "source_id": "ND_21_2021_D7_K2_DIEM_C",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D21",
-    "evidence": "...thế bằng tài sản khác quy định tại Điều 21 Nghị định này;...",
+    "evidence": "...thế bằng tài sản khác quy định tại Điều 21 Nghị định này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30155,7 +30235,7 @@
     "source_id": "ND_21_2021_D9_K1",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D12",
-    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này.... | ...i khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này....",
+    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này. | ...i khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30163,7 +30243,7 @@
     "source_id": "ND_21_2021_D9_K1",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D13",
-    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này....",
+    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30171,7 +30251,7 @@
     "source_id": "ND_21_2021_D9_K1",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D18",
-    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này....",
+    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30179,7 +30259,7 @@
     "source_id": "ND_21_2021_D9_K1",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D19",
-    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này....",
+    "evidence": "...h tại khoản 2 và khoản 3 Điều này, các Điều 12, 13, 18 và 19 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30219,7 +30299,7 @@
     "source_id": "ND_21_2021_D11_K1",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D10_K1",
-    "evidence": "...tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị định này....",
+    "evidence": "...tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30227,7 +30307,7 @@
     "source_id": "ND_21_2021_D11_K1",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D10_K2",
-    "evidence": "...tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị định này....",
+    "evidence": "...tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30235,7 +30315,7 @@
     "source_id": "ND_21_2021_D11_K1",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D10_K3",
-    "evidence": "...tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị định này....",
+    "evidence": "...tại khoản 1 và khoản 2 Điều 9, các khoản 1, 2 và 3 Điều 10 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30259,7 +30339,7 @@
     "source_id": "ND_21_2021_D20_K3",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D20_K1",
-    "evidence": "...ầu tư nếu việc đầu tư quy định tại khoản 1 và khoản 2 Điều này làm giảm giá trị tài sản thế chấp....",
+    "evidence": "...ầu tư nếu việc đầu tư quy định tại khoản 1 và khoản 2 Điều này làm giảm giá trị tài sản thế chấp.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30267,7 +30347,7 @@
     "source_id": "ND_21_2021_D20_K3",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D20_K2",
-    "evidence": "...ầu tư nếu việc đầu tư quy định tại khoản 1 và khoản 2 Điều này làm giảm giá trị tài sản thế chấp....",
+    "evidence": "...ầu tư nếu việc đầu tư quy định tại khoản 1 và khoản 2 Điều này làm giảm giá trị tài sản thế chấp.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30291,7 +30371,7 @@
     "source_id": "ND_21_2021_D20_K5",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D20_K1",
-    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30299,7 +30379,7 @@
     "source_id": "ND_21_2021_D20_K5",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D20_K2",
-    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30307,7 +30387,7 @@
     "source_id": "ND_21_2021_D20_K5",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D20_K3",
-    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30315,7 +30395,7 @@
     "source_id": "ND_21_2021_D20_K5",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D20_K4",
-    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30323,7 +30403,7 @@
     "source_id": "ND_21_2021_D21_K9",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D21_K4",
-    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này....",
+    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30331,7 +30411,7 @@
     "source_id": "ND_21_2021_D21_K9",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D21_K5",
-    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này....",
+    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30339,7 +30419,7 @@
     "source_id": "ND_21_2021_D21_K9",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D21_K7",
-    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này....",
+    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30347,7 +30427,7 @@
     "source_id": "ND_21_2021_D21_K9",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D21_K8",
-    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này....",
+    "evidence": "...m, trừ trường hợp quy định tại các khoản 4, 5, 7 và 8 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30355,7 +30435,7 @@
     "source_id": "ND_21_2021_D22_K2",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D22_K1",
-    "evidence": "...Hợp đồng bảo đảm không thuộc khoản 1 Điều này có hiệu lực từ thời điểm do các bê...",
+    "evidence": "Hợp đồng bảo đảm không thuộc khoản 1 Điều này có hiệu lực từ thời điểm do các bê...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30363,7 +30443,7 @@
     "source_id": "ND_21_2021_D23_K3",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D23_K2",
-    "evidence": "...Trường hợp không thuộc khoản 2 Điều này thì hiệu lực đối kháng với người t...",
+    "evidence": "Trường hợp không thuộc khoản 2 Điều này thì hiệu lực đối kháng với người t...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30379,7 +30459,7 @@
     "source_id": "ND_21_2021_D24_K2",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D23_K1",
-    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này....",
+    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30387,7 +30467,7 @@
     "source_id": "ND_21_2021_D24_K2",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D23_K2",
-    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này....",
+    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30395,7 +30475,7 @@
     "source_id": "ND_21_2021_D24_K2",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D23_K3",
-    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này....",
+    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30403,7 +30483,7 @@
     "source_id": "ND_21_2021_D24_K2",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D23_K4",
-    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này....",
+    "evidence": "...được áp dụng theo quy định tại các khoản 1, 2, 3 và 4 Điều 23 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30467,7 +30547,7 @@
     "source_id": "ND_21_2021_D30_K1_DIEM_A",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D27",
-    "evidence": "...chung, trừ trường hợp quy định tại Điều 27 Nghị định này;...",
+    "evidence": "...chung, trừ trường hợp quy định tại Điều 27 Nghị định này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30483,7 +30563,7 @@
     "source_id": "ND_21_2021_D30_K2",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D5_K2",
-    "evidence": "...tại Điều 338 của Bộ luật Dân sự và khoản 2 Điều 5 Nghị định này....",
+    "evidence": "...tại Điều 338 của Bộ luật Dân sự và khoản 2 Điều 5 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30499,7 +30579,7 @@
     "source_id": "ND_21_2021_D31_K4",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D31_K2",
-    "evidence": "...Quy định tại khoản 2 và khoản 3 Điều này không áp dụng trong trường hợp vật...",
+    "evidence": "Quy định tại khoản 2 và khoản 3 Điều này không áp dụng trong trường hợp vật...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30507,7 +30587,7 @@
     "source_id": "ND_21_2021_D31_K4",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D31_K3",
-    "evidence": "...Quy định tại khoản 2 và khoản 3 Điều này không áp dụng trong trường hợp vật...",
+    "evidence": "Quy định tại khoản 2 và khoản 3 Điều này không áp dụng trong trường hợp vật...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30515,7 +30595,7 @@
     "source_id": "ND_21_2021_D32",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D161",
-    "evidence": "...i tài sản cầm cố theo quy định tại Điều 161 của Bộ luật Dân sự....",
+    "evidence": "...i tài sản cầm cố theo quy định tại Điều 161 của Bộ luật Dân sự.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30571,7 +30651,7 @@
     "source_id": "ND_21_2021_D36_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D133_K3",
-    "evidence": "...n quan thực hiện theo quy định tại khoản 3 Điều 133 của Bộ luật Dân sự....",
+    "evidence": "...n quan thực hiện theo quy định tại khoản 3 Điều 133 của Bộ luật Dân sự.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30587,7 +30667,7 @@
     "source_id": "ND_21_2021_D36_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D320",
-    "evidence": "...hông vi phạm nghĩa vụ quy định tại Điều 320 của Bộ luật Dân sự....",
+    "evidence": "...hông vi phạm nghĩa vụ quy định tại Điều 320 của Bộ luật Dân sự.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30595,7 +30675,7 @@
     "source_id": "ND_21_2021_D38_K1_DIEM_D",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D38_K2_DIEM_B",
-    "evidence": "...cọc, tài sản ký cược quy định tại điểm b khoản 2 Điều này;...",
+    "evidence": "...cọc, tài sản ký cược quy định tại điểm b khoản 2 Điều này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30608,10 +30688,18 @@
     "confidence": 1.0
   },
   {
+    "source_id": "ND_21_2021_D40_K3_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D40_K3_DIEM_A",
+    "evidence": "...quỹ trong việc thực hiện quyền tại điểm a khoản này;",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
     "source_id": "ND_21_2021_D41_K1",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D20_K5",
-    "evidence": "...mua phải phù hợp với quy định tại khoản 5 Điều 20 Nghị định này....",
+    "evidence": "...mua phải phù hợp với quy định tại khoản 5 Điều 20 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30627,7 +30715,7 @@
     "source_id": "ND_21_2021_D44_K1_DIEM_Đ",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D339_K1",
-    "evidence": "...ụ quy định tại khoản 2 Điều 335 và khoản 1 Điều 339 của Bộ luật Dân sự;...",
+    "evidence": "...ụ quy định tại khoản 2 Điều 335 và khoản 1 Điều 339 của Bộ luật Dân sự;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30635,7 +30723,7 @@
     "source_id": "ND_21_2021_D44_K2",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D44_K1",
-    "evidence": "...Trường hợp có căn cứ tại khoản 1 Điều này, bên nhận bảo lãnh thông báo cho b...",
+    "evidence": "Trường hợp có căn cứ tại khoản 1 Điều này, bên nhận bảo lãnh thông báo cho b...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30643,7 +30731,7 @@
     "source_id": "ND_21_2021_D47_K2_DIEM_B",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D350_K1",
-    "evidence": "...tài sản chấm dứt quy định tại các khoản 1, 2 hoặc 5 Điều 350 của Bộ luật Dân sự....",
+    "evidence": "...tài sản chấm dứt quy định tại các khoản 1, 2 hoặc 5 Điều 350 của Bộ luật Dân sự.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30651,7 +30739,7 @@
     "source_id": "ND_21_2021_D47_K2_DIEM_B",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D350_K2",
-    "evidence": "...tài sản chấm dứt quy định tại các khoản 1, 2 hoặc 5 Điều 350 của Bộ luật Dân sự....",
+    "evidence": "...tài sản chấm dứt quy định tại các khoản 1, 2 hoặc 5 Điều 350 của Bộ luật Dân sự.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30659,7 +30747,7 @@
     "source_id": "ND_21_2021_D47_K2_DIEM_B",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D350_K5",
-    "evidence": "...tài sản chấm dứt quy định tại các khoản 1, 2 hoặc 5 Điều 350 của Bộ luật Dân sự....",
+    "evidence": "...tài sản chấm dứt quy định tại các khoản 1, 2 hoặc 5 Điều 350 của Bộ luật Dân sự.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30691,7 +30779,7 @@
     "source_id": "ND_21_2021_D51_K4",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D52_K3",
-    "evidence": "...ng thì thực hiện theo quy định tại khoản 3 Điều 52 Nghị định này....",
+    "evidence": "...ng thì thực hiện theo quy định tại khoản 3 Điều 52 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30699,7 +30787,7 @@
     "source_id": "ND_21_2021_D52_K4",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D51_K4",
-    "evidence": "...ện nghĩa vụ thông báo quy định tại khoản 4 Điều 51 Nghị định này....",
+    "evidence": "...ện nghĩa vụ thông báo quy định tại khoản 4 Điều 51 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30707,7 +30795,7 @@
     "source_id": "ND_21_2021_D52_K5",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D51",
-    "evidence": "...xử lý tài sản bảo đảm quy định tại Điều 51 Nghị định này....",
+    "evidence": "...xử lý tài sản bảo đảm quy định tại Điều 51 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30723,7 +30811,7 @@
     "source_id": "ND_21_2021_D54_K3",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D52",
-    "evidence": "...của các bên hoặc theo quy định tại Điều 52 Nghị định này....",
+    "evidence": "...của các bên hoặc theo quy định tại Điều 52 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30731,7 +30819,7 @@
     "source_id": "ND_21_2021_D54_K4",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D52",
-    "evidence": "...từ vận chuyển áp dụng quy định tại Điều 52 Nghị định này....",
+    "evidence": "...từ vận chuyển áp dụng quy định tại Điều 52 Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30739,7 +30827,7 @@
     "source_id": "ND_21_2021_D54_K5",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D54",
-    "evidence": "...hoặc tài sản thu được quy định tại Điều này....",
+    "evidence": "...hoặc tài sản thu được quy định tại Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30752,10 +30840,26 @@
     "confidence": 1.0
   },
   {
+    "source_id": "ND_21_2021_D56_K1_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D56_K1_DIEM_A",
+    "evidence": "...hông thể tách rời như quy định tại điểm a khoản này thì tài sản được xử lý bao gồm cả...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
     "source_id": "ND_21_2021_D56_K3_DIEM_B",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D56_K1_DIEM_B",
     "evidence": "...i sản được xử lý theo quy định tại điểm b khoản 1 Điều này. Giá trị tài sản mới phát sinh đượ...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "ND_21_2021_D56_K3_DIEM_B",
+    "type": "REFERENCES",
+    "target_id": "ND_21_2021_D56_K3_DIEM_A",
+    "evidence": "...hông thể tách rời như quy định tại điểm a khoản này thì tài sản được xử lý theo quy đị...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30771,7 +30875,7 @@
     "source_id": "ND_21_2021_D56_K5",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D56_K1",
-    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30779,7 +30883,7 @@
     "source_id": "ND_21_2021_D56_K5",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D56_K2",
-    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30787,7 +30891,7 @@
     "source_id": "ND_21_2021_D56_K5",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D56_K3",
-    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30795,7 +30899,7 @@
     "source_id": "ND_21_2021_D56_K5",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D56_K4",
-    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này....",
+    "evidence": "...hông quy định khác thì áp dụng các khoản 1, 2, 3 và 4 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30811,7 +30915,7 @@
     "source_id": "ND_21_2021_D57_K2",
     "type": "REFERENCES",
     "target_id": "ND_21_2021_D57_K1",
-    "evidence": "...Trường hợp thuộc khoản 1 Điều này mà pháp luật về đấu giá tài sản, p...",
+    "evidence": "Trường hợp thuộc khoản 1 Điều này mà pháp luật về đấu giá tài sản, p...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30827,7 +30931,7 @@
     "source_id": "ND_21_2021_D59_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D223",
-    "evidence": "...lập quyền sở hữu theo quy định tại Điều 223 của Bộ luật Dân sự....",
+    "evidence": "...lập quyền sở hữu theo quy định tại Điều 223 của Bộ luật Dân sự.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30843,7 +30947,7 @@
     "source_id": "ND_19_2019_D3_K1",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D3",
-    "evidence": "...của pháp luật dân sự quy định tại Điều 3 của Bộ luật dân sự....",
+    "evidence": "...của pháp luật dân sự quy định tại Điều 3 của Bộ luật dân sự.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30851,7 +30955,7 @@
     "source_id": "ND_19_2019_D7_K2",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D7_K1",
-    "evidence": "...i được thực hiện theo quy định tại khoản 1 Điều này....",
+    "evidence": "...i được thực hiện theo quy định tại khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30867,7 +30971,7 @@
     "source_id": "ND_19_2019_D10_K1",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D12_K1",
-    "evidence": "...không có chủ họ theo quy định tại khoản 1 Điều 12 của Nghị định này....",
+    "evidence": "...không có chủ họ theo quy định tại khoản 1 Điều 12 của Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30875,7 +30979,7 @@
     "source_id": "ND_19_2019_D12_K2_DIEM_A",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D8_K1",
-    "evidence": "...thỏa thuận về dây họ quy định tại khoản 1 Điều 8 của Nghị định này;...",
+    "evidence": "...thỏa thuận về dây họ quy định tại khoản 1 Điều 8 của Nghị định này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30907,7 +31011,7 @@
     "source_id": "ND_19_2019_D15_K1_DIEM_E",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D18",
-    "evidence": "...g nghĩa vụ của chủ họ quy định tại Điều 18 của Nghị định này;...",
+    "evidence": "...g nghĩa vụ của chủ họ quy định tại Điều 18 của Nghị định này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30915,7 +31019,7 @@
     "source_id": "ND_19_2019_D15_K1_DIEM_G",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D16",
-    "evidence": "...hĩa vụ của thành viên quy định tại Điều 16 của Nghị định này;...",
+    "evidence": "...hĩa vụ của thành viên quy định tại Điều 16 của Nghị định này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30923,7 +31027,7 @@
     "source_id": "ND_19_2019_D15_K1_DIEM_H",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D9",
-    "evidence": "...ủa thành viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;... | ...viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định...",
+    "evidence": "...ủa thành viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này; | ...viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30931,7 +31035,7 @@
     "source_id": "ND_19_2019_D15_K1_DIEM_H",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D10",
-    "evidence": "...ủa thành viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;... | ...y định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;...",
+    "evidence": "...ủa thành viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này; | ...y định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30939,7 +31043,7 @@
     "source_id": "ND_19_2019_D15_K1_DIEM_H",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D13",
-    "evidence": "...ủa thành viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;... | ...khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;...",
+    "evidence": "...ủa thành viên quy định tại khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này; | ...khoản 1 Điều 7, Điều 9, Điều 10 và Điều 13 của Nghị định này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30971,7 +31075,7 @@
     "source_id": "ND_19_2019_D15_K2_DIEM_B",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D20_K3",
-    "evidence": "...mở họ, trừ trường hợp quy định tại khoản 3 Điều 20 của Nghị định này;...",
+    "evidence": "...mở họ, trừ trường hợp quy định tại khoản 3 Điều 20 của Nghị định này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30979,7 +31083,7 @@
     "source_id": "ND_19_2019_D15_K3_DIEM_A",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D15_K1",
-    "evidence": "...Các quyền quy định tại khoản 1 Điều này nếu thuộc trường hợp họ không có l...",
+    "evidence": "Các quyền quy định tại khoản 1 Điều này nếu thuộc trường hợp họ không có l...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -30987,7 +31091,7 @@
     "source_id": "ND_19_2019_D15_K3_DIEM_A",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D15_K2",
-    "evidence": "...có lãi hoặc các quyền quy định tại khoản 2 Điều này nếu thuộc trường hợp họ có lãi;...",
+    "evidence": "...có lãi hoặc các quyền quy định tại khoản 2 Điều này nếu thuộc trường hợp họ có lãi;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31003,7 +31107,7 @@
     "source_id": "ND_19_2019_D16_K1_DIEM_D",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D11_K2",
-    "evidence": "...thực hiện quy định tại Điều 10 và khoản 2 Điều 11 của Nghị định này;...",
+    "evidence": "...thực hiện quy định tại Điều 10 và khoản 2 Điều 11 của Nghị định này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31011,7 +31115,7 @@
     "source_id": "ND_19_2019_D16_K1_DIEM_Đ",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D18_K5",
-    "evidence": "...theo quy định tại khoản 1 Điều 12, khoản 5 và khoản 6 Điều 18 của Nghị định này....",
+    "evidence": "...theo quy định tại khoản 1 Điều 12, khoản 5 và khoản 6 Điều 18 của Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31019,7 +31123,7 @@
     "source_id": "ND_19_2019_D16_K1_DIEM_Đ",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D18_K6",
-    "evidence": "...theo quy định tại khoản 1 Điều 12, khoản 5 và khoản 6 Điều 18 của Nghị định này.... | ...nh tại khoản 1 Điều 12, khoản 5 và khoản 6 Điều 18 của Nghị định này....",
+    "evidence": "...theo quy định tại khoản 1 Điều 12, khoản 5 và khoản 6 Điều 18 của Nghị định này. | ...nh tại khoản 1 Điều 12, khoản 5 và khoản 6 Điều 18 của Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31043,7 +31147,7 @@
     "source_id": "ND_19_2019_D16_K3_DIEM_A",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D16_K1",
-    "evidence": "...Các nghĩa vụ quy định tại khoản 1 Điều này nếu thuộc trường hợp họ không có l...",
+    "evidence": "Các nghĩa vụ quy định tại khoản 1 Điều này nếu thuộc trường hợp họ không có l...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31051,7 +31155,7 @@
     "source_id": "ND_19_2019_D16_K3_DIEM_A",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D16_K2",
-    "evidence": "...lãi hoặc các nghĩa vụ quy định tại khoản 2 Điều này nếu thuộc trường hợp họ có lãi;...",
+    "evidence": "...lãi hoặc các nghĩa vụ quy định tại khoản 2 Điều này nếu thuộc trường hợp họ có lãi;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31059,7 +31163,7 @@
     "source_id": "ND_19_2019_D17_K1_DIEM_C",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D9",
-    "evidence": "...iệc thực hiện quy định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này;... | ...hiện quy định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này;...",
+    "evidence": "...iệc thực hiện quy định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này; | ...hiện quy định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31067,7 +31171,7 @@
     "source_id": "ND_19_2019_D17_K1_DIEM_C",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D10",
-    "evidence": "...iệc thực hiện quy định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này;... | ...định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này;...",
+    "evidence": "...iệc thực hiện quy định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này; | ...định tại khoản 1 Điều 7, Điều 9 và Điều 10 của Nghị định này;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31091,7 +31195,7 @@
     "source_id": "ND_19_2019_D17_K3_DIEM_A",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D17_K1",
-    "evidence": "...Các quyền quy định tại khoản 1 Điều này nếu thuộc trường hợp họ không có l...",
+    "evidence": "Các quyền quy định tại khoản 1 Điều này nếu thuộc trường hợp họ không có l...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31099,7 +31203,7 @@
     "source_id": "ND_19_2019_D17_K3_DIEM_A",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D17_K2",
-    "evidence": "...có lãi hoặc các quyền quy định tại khoản 2 Điều này nếu thuộc trường hợp họ có lãi;...",
+    "evidence": "...có lãi hoặc các quyền quy định tại khoản 2 Điều này nếu thuộc trường hợp họ có lãi;",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31115,7 +31219,7 @@
     "source_id": "ND_19_2019_D18_K7",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D13",
-    "evidence": "Các nghĩa vụ quy định tại khoản 1 Điều 12 và Điều 13 của Nghị định này. | ...vụ quy định tại khoản 1 Điều 12 và Điều 13 của Nghị định này....",
+    "evidence": "Các nghĩa vụ quy định tại khoản 1 Điều 12 và Điều 13 của Nghị định này. | ...vụ quy định tại khoản 1 Điều 12 và Điều 13 của Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31131,7 +31235,7 @@
     "source_id": "ND_19_2019_D20_K3",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D20_K4",
-    "evidence": "...theo, trừ trường hợp quy định tại khoản 4 Điều này....",
+    "evidence": "...theo, trừ trường hợp quy định tại khoản 4 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31179,7 +31283,7 @@
     "source_id": "ND_19_2019_D23_K1",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D18_K3",
-    "evidence": "...ực hiện đúng nghĩa vụ quy định tại khoản 3 và khoản 4 Điều 18 của Nghị định này....",
+    "evidence": "...ực hiện đúng nghĩa vụ quy định tại khoản 3 và khoản 4 Điều 18 của Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31187,7 +31291,7 @@
     "source_id": "ND_19_2019_D23_K1",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D18_K4",
-    "evidence": "...ực hiện đúng nghĩa vụ quy định tại khoản 3 và khoản 4 Điều 18 của Nghị định này.... | ...g nghĩa vụ quy định tại khoản 3 và khoản 4 Điều 18 của Nghị định này....",
+    "evidence": "...ực hiện đúng nghĩa vụ quy định tại khoản 3 và khoản 4 Điều 18 của Nghị định này. | ...g nghĩa vụ quy định tại khoản 3 và khoản 4 Điều 18 của Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31195,7 +31299,7 @@
     "source_id": "ND_19_2019_D23_K2",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D22_K1",
-    "evidence": "...iên được lĩnh họ theo quy định tại khoản 1 Điều 22 của Nghị định này....",
+    "evidence": "...iên được lĩnh họ theo quy định tại khoản 1 Điều 22 của Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31203,7 +31307,7 @@
     "source_id": "ND_19_2019_D23_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D418",
-    "evidence": "...uận phạt vi phạm theo quy định tại Điều 418 của Bộ luật dân sự....",
+    "evidence": "...uận phạt vi phạm theo quy định tại Điều 418 của Bộ luật dân sự.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31211,7 +31315,7 @@
     "source_id": "ND_19_2019_D24_K2",
     "type": "REFERENCES",
     "target_id": "ND_19_2019_D22",
-    "evidence": "...tiền chậm góp họ theo quy định tại Điều 22 của Nghị định này....",
+    "evidence": "...tiền chậm góp họ theo quy định tại Điều 22 của Nghị định này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31219,7 +31323,7 @@
     "source_id": "ND_19_2019_D24_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D418",
-    "evidence": "...uận phạt vi phạm theo quy định tại Điều 418 của Bộ luật dân sự....",
+    "evidence": "...uận phạt vi phạm theo quy định tại Điều 418 của Bộ luật dân sự.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31235,7 +31339,7 @@
     "source_id": "NQ_02_2022_D2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D584",
-    "evidence": "...bồi thường thiệt hại quy định tại Điều 584 của Bộ luật Dân sự...",
+    "evidence": "...bồi thường thiệt hại quy định tại Điều 584 của Bộ luật Dân sự",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31251,7 +31355,7 @@
     "source_id": "NQ_02_2022_D2_K2",
     "type": "REFERENCES",
     "target_id": "NQ_02_2022_D2_K3",
-    "evidence": "...hại, trừ trường hợp hướng dẫn tại khoản 3 Điều này....",
+    "evidence": "...hại, trừ trường hợp hướng dẫn tại khoản 3 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31267,7 +31371,7 @@
     "source_id": "NQ_02_2022_D3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D585",
-    "evidence": "...bồi thường thiệt hại quy định tại Điều 585 của Bộ luật Dân sự...",
+    "evidence": "...bồi thường thiệt hại quy định tại Điều 585 của Bộ luật Dân sự",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31291,7 +31395,7 @@
     "source_id": "NQ_02_2022_D3_K2",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D585_K2",
-    "evidence": "...Về khoản 2 Điều 585 của Bộ luật Dân sự Thiệt hại quá l...",
+    "evidence": "Về khoản 2 Điều 585 của Bộ luật Dân sự Thiệt hại quá l...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31299,7 +31403,7 @@
     "source_id": "NQ_02_2022_D3_K3",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D585_K3",
-    "evidence": "...Về khoản 3 Điều 585 của Bộ luật Dân sự Mức bồi thường...",
+    "evidence": "Về khoản 3 Điều 585 của Bộ luật Dân sự Mức bồi thường...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31307,7 +31411,7 @@
     "source_id": "NQ_02_2022_D3_K4",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D585_K4",
-    "evidence": "...Về khoản 4 Điều 585 của Bộ luật Dân sự Bên bị thiệt hạ...",
+    "evidence": "Về khoản 4 Điều 585 của Bộ luật Dân sự Bên bị thiệt hạ...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31315,7 +31419,7 @@
     "source_id": "NQ_02_2022_D3_K5",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D585_K5",
-    "evidence": "...Về khoản 5 Điều 585 của Bộ luật Dân sự “Bên có quyền,...",
+    "evidence": "Về khoản 5 Điều 585 của Bộ luật Dân sự “Bên có quyền,...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31323,7 +31427,7 @@
     "source_id": "NQ_02_2022_D4",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D586",
-    "evidence": "...ời gây thiệt hại theo quy định tại Điều 586 của Bộ luật Dân sự...",
+    "evidence": "...ời gây thiệt hại theo quy định tại Điều 586 của Bộ luật Dân sự\nTuổi của người...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31331,7 +31435,7 @@
     "source_id": "NQ_02_2022_D5",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D588",
-    "evidence": "...bồi thường thiệt hại quy định tại Điều 588 của Bộ luật Dân sự...",
+    "evidence": "...bồi thường thiệt hại quy định tại Điều 588 của Bộ luật Dân sự",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31339,7 +31443,7 @@
     "source_id": "NQ_02_2022_D6",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D589",
-    "evidence": "...o tài sản bị xâm phạm quy định tại Điều 589 của Bộ luật Dân sự...",
+    "evidence": "...o tài sản bị xâm phạm quy định tại Điều 589 của Bộ luật Dân sự",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31355,7 +31459,7 @@
     "source_id": "NQ_02_2022_D6_K1_DIEM_B",
     "type": "REFERENCES",
     "target_id": "NQ_02_2022_D6_K1_DIEM_A",
-    "evidence": "...i được xác định theo hướng dẫn tại điểm a khoản 1 Điều này....",
+    "evidence": "...i được xác định theo hướng dẫn tại điểm a khoản 1 Điều này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31379,7 +31483,7 @@
     "source_id": "NQ_02_2022_D7",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D590",
-    "evidence": "...sức khỏe bị xâm phạm quy định tại Điều 590 của Bộ luật Dân sự...",
+    "evidence": "...sức khỏe bị xâm phạm quy định tại Điều 590 của Bộ luật Dân sự",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31395,7 +31499,31 @@
     "source_id": "NQ_02_2022_D7_K3_DIEM_B",
     "type": "REFERENCES",
     "target_id": "NQ_02_2022_D7_K2",
-    "evidence": "...ị được xác định theo hướng dẫn tại khoản 2 Điều này;...",
+    "evidence": "...ị được xác định theo hướng dẫn tại khoản 2 Điều này;",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D591_K1_DIEM_A",
+    "evidence": "...mạng bị xâm phạm theo quy định tại các điểm a, b và c khoản 1 Điều 591 của Bộ luật Dân sự được xác định n...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D591_K1_DIEM_B",
+    "evidence": "...mạng bị xâm phạm theo quy định tại các điểm a, b và c khoản 1 Điều 591 của Bộ luật Dân sự được xác định n...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022_D8",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_D591_K1_DIEM_C",
+    "evidence": "...mạng bị xâm phạm theo quy định tại các điểm a, b và c khoản 1 Điều 591 của Bộ luật Dân sự được xác định n...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31403,7 +31531,7 @@
     "source_id": "NQ_02_2022_D8",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D591_K1",
-    "evidence": "...tính mạng bị xâm phạm quy định tại khoản 1 Điều 591 của Bộ luật Dân sự...",
+    "evidence": "...tính mạng bị xâm phạm quy định tại khoản 1 Điều 591 của Bộ luật Dân sự\nThiệt hại do tí... | ...eo quy định tại các điểm a, b và c khoản 1 Điều 591 của Bộ luật Dân sự được xác định n...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31427,7 +31555,7 @@
     "source_id": "NQ_02_2022_D9",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D592",
-    "evidence": "...m, uy tín bị xâm phạm quy định tại Điều 592 của Bộ luật Dân sự...",
+    "evidence": "...m, uy tín bị xâm phạm quy định tại Điều 592 của Bộ luật Dân sự\nThiệt hại do da... | ...m, uy tín bị xâm phạm quy định tại Điều 592 của Bộ luật Dân sự được xác định n...",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31435,7 +31563,7 @@
     "source_id": "NQ_02_2022_D9_K2_DIEM_B",
     "type": "REFERENCES",
     "target_id": "NQ_02_2022_D7_K2",
-    "evidence": "...được thực hiện theo hướng dẫn tại khoản 2 Điều 7 Nghị quyết này....",
+    "evidence": "...được thực hiện theo hướng dẫn tại khoản 2 Điều 7 Nghị quyết này.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31451,7 +31579,7 @@
     "source_id": "NQ_02_2022_D11",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D599",
-    "evidence": "...hác trực tiếp quản lý quy định tại Điều 599 của Bộ luật Dân sự...",
+    "evidence": "...hác trực tiếp quản lý quy định tại Điều 599 của Bộ luật Dân sự",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31475,7 +31603,7 @@
     "source_id": "NQ_02_2022_D12",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D601",
-    "evidence": "...uy hiểm cao độ gây ra quy định tại Điều 601 của Bộ luật Dân sự...",
+    "evidence": "...uy hiểm cao độ gây ra quy định tại Điều 601 của Bộ luật Dân sự",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31491,7 +31619,7 @@
     "source_id": "NQ_02_2022_D12_K4_DIEM_B",
     "type": "REFERENCES",
     "target_id": "BLDS_2015_D595_K2",
-    "evidence": "...đã gây ra tình thế cấp thiết theo khoản 2 Điều 595 của Bộ luật Dân sự....",
+    "evidence": "...đã gây ra tình thế cấp thiết theo khoản 2 Điều 595 của Bộ luật Dân sự.",
     "source_type": "EXPLICIT",
     "confidence": 1.0
   },
@@ -31499,8 +31627,24 @@
     "source_id": "NQ_02_2022_D13_K2",
     "type": "REFERENCES",
     "target_id": "NQ_02_2022_D5",
-    "evidence": "...ết, trừ hướng dẫn về thời hiệu tại Điều 5 Nghị quyết này....",
+    "evidence": "...ết, trừ hướng dẫn về thời hiệu tại Điều 5 Nghị quyết này.",
     "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "NQ_02_2022",
+    "type": "REFERENCES",
+    "target_id": "BLDS_2015_P3_CH20",
+    "evidence": "...và thống nhất một số quy định tại Chương XX về trách nhiệm bồi thường thiệt hạ...",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0
+  },
+  {
+    "source_id": "BLDS_2015",
+    "type": "REFERENCES",
+    "target_id": "HIEN_PHAP_2013",
+    "evidence": "Căn cứ Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam; ",
+    "source_type": "MANUAL",
     "confidence": 1.0
   },
   {

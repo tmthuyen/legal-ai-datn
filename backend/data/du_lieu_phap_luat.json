@@ -9,19 +9,26 @@
       "ten_van_ban": "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013",
       "loai_van_ban": "HIEN_PHAP",
       "co_quan_ban_hanh": "Quốc hội",
-      "so_hieu": "15/2013/QH13",
+      "so_hieu": "Không số",
       "effective_from": "2014-01-01",
       "effective_to": null,
-      "status": "CON_HIEU_LUC"
+      "status": "HET_HIEU_LUC_MOT_PHAN",
+      "source_file": "Hien_phap_nam_2013.docx",
+      "metadata_source": "DOCX nguồn: van_ban/Hien_phap_nam_2013.docx; effective_from: Nghị quyết 64/2013/QH13, Điều 1; status: CSDL Quốc gia VBPL ItemID 32801 (sửa đổi bởi Nghị quyết 203/2025/QH15)",
+      "verified_at": "2026-10-07",
+      "verification_scope": "effective_from verified via NQ 64/2013/QH13 (ItemID 32804); status verified via CSDL Quốc gia VBPL ItemID 32801 (sửa đổi bởi NQ 203/2025/QH15)",
+      "status_verified_at": "2026-10-07",
+      "source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=32801",
+      "effective_from_source_url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=32804"
     },
     "cau_truc": {
       "loai": "van_ban",
       "ten": "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013",
       "loai_van_ban": "HIEN_PHAP",
-      "so_van_ban": "15/2013/QH13",
+      "so_van_ban": "Không số",
       "phan_mo_dau": [
         "HIẾN PHÁP",
-        "NƯỚC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT",
+        "NƯỚC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM",
         "LỜI NÓI ĐẦU",
         "Trải qua mấy nghìn năm lịch sử, Nhân dân Việt Nam lao động cần cù, sáng tạo, đấu tranh anh dũng để dựng nước và giữ nước, đã hun đúc nên truyền thống yêu nước, đoàn kết, nhân nghĩa, kiên cường, bất khuất và xây dựng nên nền văn hiến Việt Nam.",
         "Từ năm 1930, dưới sự lãnh đạo của Đảng Cộng sản Việt Nam do Chủ tịch Hồ Chí Minh sáng lập và rèn luyện, Nhân dân ta tiến hành cuộc đấu tranh lâu dài, đầy gian khổ, hy sinh vì độc lập, tự do của dân tộc, vì hạnh phúc của Nhân dân. Cách mạng tháng Tám thành công, ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn độc lập, khai sinh ra nước Việt Nam dân chủ cộng hòa, nay là Cộng hòa xã hội chủ nghĩa Việt Nam. Bằng ý chí và sức mạnh của toàn dân tộc, được sự giúp đỡ của bạn bè trên thế giới, Nhân dân ta đã giành chiến thắng vĩ đại trong các cuộc đấu tranh giải phóng dân tộc, thống nhất đất nước, bảo vệ Tổ quốc và làm nghĩa vụ quốc tế, đạt được những thành tựu to lớn, có ý nghĩa lịch sử trong công cuộc đổi mới, đưa đất nước đi lên chủ nghĩa xã hội.",
@@ -40,7 +47,7 @@
               "loai": "dieu",
               "so": 1,
               "tieu_de": null,
-              "noi_dung": "Nước Cộng hòa xã hội chủ nghĩa Việt là một nước độc lập, có chủ quyền, thống nhất và toàn vẹn lãnh thổ, bao gồm đất liền, hải đảo, vùng biển và vùng trời.",
+              "noi_dung": "Nước Cộng hòa xã hội chủ nghĩa Việt Nam là một nước độc lập, có chủ quyền, thống nhất và toàn vẹn lãnh thổ, bao gồm đất liền, hải đảo, vùng biển và vùng trời.",
               "cac_khoan": []
             },
             {
@@ -52,13 +59,13 @@
                 {
                   "loai": "khoan",
                   "so": 1,
-                  "noi_dung": "Nhà nước Cộng hòa xã hội chủ nghĩa Việt là nhà nước pháp quyền xã hội chủ nghĩa của Nhân dân, do Nhân dân, vì Nhân dân.",
+                  "noi_dung": "Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam là nhà nước pháp quyền xã hội chủ nghĩa của Nhân dân, do Nhân dân, vì Nhân dân.",
                   "cac_diem": []
                 },
                 {
                   "loai": "khoan",
                   "so": 2,
-                  "noi_dung": "Nước Cộng hòa xã hội chủ nghĩa Việt do Nhân dân làm chủ; tất cả quyền lực nhà nước thuộc về Nhân dân mà nền tảng là liên minh giữa giai cấp công nhân với giai cấp nông dân và đội ngũ trí thức.",
+                  "noi_dung": "Nước Cộng hòa xã hội chủ nghĩa Việt Nam do Nhân dân làm chủ; tất cả quyền lực nhà nước thuộc về Nhân dân mà nền tảng là liên minh giữa giai cấp công nhân với giai cấp nông dân và đội ngũ trí thức.",
                   "cac_diem": []
                 },
                 {
@@ -1226,7 +1233,7 @@
               "loai": "dieu",
               "so": 70,
               "tieu_de": null,
-              "noi_dung": null,
+              "noi_dung": "Quốc hội có những nhiệm vụ và quyền hạn sau đây:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -1389,7 +1396,7 @@
               "loai": "dieu",
               "so": 74,
               "tieu_de": null,
-              "noi_dung": null,
+              "noi_dung": "Uỷ ban thường vụ Quốc hội có những nhiệm vụ và quyền hạn sau đây:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -1734,7 +1741,7 @@
               "loai": "dieu",
               "so": 88,
               "tieu_de": null,
-              "noi_dung": null,
+              "noi_dung": "Chủ tịch nước có những nhiệm vụ và quyền hạn sau đây:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -1874,7 +1881,7 @@
               "loai": "dieu",
               "so": 96,
               "tieu_de": null,
-              "noi_dung": null,
+              "noi_dung": "Chính phủ có những nhiệm vụ và quyền hạn sau đây:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -1937,7 +1944,7 @@
               "loai": "dieu",
               "so": 98,
               "tieu_de": null,
-              "noi_dung": null,
+              "noi_dung": "Thủ tướng Chính phủ do Quốc hội bầu trong số đại biểu Quốc hội. Thủ tướng Chính phủ có những nhiệm vụ và quyền hạn sau đây:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -2499,7 +2506,7 @@
                 {
                   "loai": "khoan",
                   "so": 5,
-                  "noi_dung": "Thời hạn công bố, thời điểm có hiệu lực của Hiến pháp do Quốc hội quyết định. Hiến pháp này đã được Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XIII, kỳ họp thứ 6 thông qua ngày 28 tháng 11 năm 2013. CHỦ TỊCH QUỐC HỘI Nguyễn Sinh Hùng",
+                  "noi_dung": "Thời hạn công bố, thời điểm có hiệu lực của Hiến pháp do Quốc hội quyết định.",
                   "cac_diem": []
                 }
               ]
@@ -2507,7 +2514,12 @@
           ]
         }
       ],
-      "cac_dieu": []
+      "cac_dieu": [],
+      "phan_ket_thuc": [
+        "Hiến pháp này đã được Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XIII, kỳ họp thứ 6 thông qua ngày 28 tháng 11 năm 2013.",
+        "CHỦ TỊCH QUỐC HỘI",
+        "Nguyễn Sinh Hùng"
+      ]
     }
   },
   {
@@ -2523,7 +2535,14 @@
       "so_hieu": "91/2015/QH13",
       "effective_from": "2017-01-01",
       "effective_to": null,
-      "status": "CON_HIEU_LUC"
+      "status": "CON_HIEU_LUC",
+      "source_file": "bo_luat_dan_su_91-2015-QH13.docx",
+      "metadata_source": "DOCX nguồn: van_ban/bo_luat_dan_su_91-2015-QH13.docx; effective_from: Điều 689",
+      "verified_at": "2026-10-07",
+      "verification_scope": "effective_from only; status and effective_to are unverified legacy values",
+      "status_verified_at": null,
+      "source_url": null,
+      "effective_from_source_url": null
     },
     "cau_truc": {
       "loai": "van_ban",
@@ -2719,7 +2738,7 @@
                   "loai": "dieu",
                   "so": 8,
                   "tieu_de": "Căn cứ xác lập quyền dân sự",
-                  "noi_dung": null,
+                  "noi_dung": "Quyền dân sự được xác lập từ các căn cứ sau đây:",
                   "cac_khoan": [
                     {
                       "loai": "khoan",
@@ -2821,7 +2840,7 @@
                   "loai": "dieu",
                   "so": 11,
                   "tieu_de": "Các phương thức bảo vệ quyền dân sự",
-                  "noi_dung": null,
+                  "noi_dung": "Khi quyền dân sự của cá nhân, pháp nhân bị xâm phạm thì chủ thể đó có quyền tự bảo vệ theo quy định của Bộ luật này, luật khác có liên quan hoặc yêu cầu cơ quan, tổ chức có thẩm quyền:",
                   "cac_khoan": [
                     {
                       "loai": "khoan",
@@ -3750,7 +3769,7 @@
                         {
                           "loai": "khoan",
                           "so": 2,
-                          "noi_dung": "Nơi cư trú của sĩ quan quân đội, quân nhân chuyên nghiệp, công nhân, viên chức quốc phòng là nơi đơn vị của người đó đóng quân, trừ trường hợp họ có nơi cư trú theo quy định tại khoản 1 Ðiều 40 của Bộ luật này.",
+                          "noi_dung": "Nơi cư trú của sĩ quan quân đội, quân nhân chuyên nghiệp, công nhân, viên chức quốc phòng là nơi đơn vị của người đó đóng quân, trừ trường hợp họ có nơi cư trú theo quy định tại khoản 1 Điều 40 của Bộ luật này.",
                           "cac_diem": []
                         }
                       ]
@@ -3759,7 +3778,7 @@
                       "loai": "dieu",
                       "so": 45,
                       "tieu_de": "Nơi cư trú của người làm nghề lưu động",
-                      "noi_dung": "Nơi cư trú của người làm nghề lưu động trên tàu, thuyền, phương tiện hành nghề lưu động khác là nơi đăng ký tàu, thuyền, phương tiện đó, trừ trường hợp họ có nơi cư trú theo quy định tại khoản 1 Ðiều 40 của Bộ luật này.",
+                      "noi_dung": "Nơi cư trú của người làm nghề lưu động trên tàu, thuyền, phương tiện hành nghề lưu động khác là nơi đăng ký tàu, thuyền, phương tiện đó, trừ trường hợp họ có nơi cư trú theo quy định tại khoản 1 Điều 40 của Bộ luật này.",
                       "cac_khoan": []
                     }
                   ]
@@ -3867,7 +3886,7 @@
                       "loai": "dieu",
                       "so": 49,
                       "tieu_de": "Điều kiện của cá nhân làm người giám hộ",
-                      "noi_dung": null,
+                      "noi_dung": "Cá nhân có đủ các điều kiện sau đây có thể làm người giám hộ:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -3899,7 +3918,7 @@
                       "loai": "dieu",
                       "so": 50,
                       "tieu_de": "Điều kiện của pháp nhân làm người giám hộ",
-                      "noi_dung": null,
+                      "noi_dung": "Pháp nhân có đủ các điều kiện sau đây có thể làm người giám hộ:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -3967,7 +3986,7 @@
                       "loai": "dieu",
                       "so": 52,
                       "tieu_de": "Người giám hộ đương nhiên của người chưa thành niên",
-                      "noi_dung": null,
+                      "noi_dung": "Người giám hộ đương nhiên của người chưa thành niên quy định tại điểm a và điểm b khoản 1 Điều 47 của Bộ luật này được xác định theo thứ tự sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -3993,7 +4012,7 @@
                       "loai": "dieu",
                       "so": 53,
                       "tieu_de": "Người giám hộ đương nhiên của người mất năng lực hành vi dân sự",
-                      "noi_dung": null,
+                      "noi_dung": "Trường hợp không có người giám hộ theo quy định tại khoản 2 Điều 48 của Bộ luật này thì người giám hộ đương nhiên của người mất năng lực hành vi dân sự được xác định như sau:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -4814,7 +4833,7 @@
                         {
                           "loai": "diem",
                           "so": "l",
-                          "noi_dung": "Ðiều kiện hợp nhất, sáp nhập, chia, tách, chuyển đổi hình thức, giải thể pháp nhân."
+                          "noi_dung": "Điều kiện hợp nhất, sáp nhập, chia, tách, chuyển đổi hình thức, giải thể pháp nhân."
                         }
                       ]
                     }
@@ -5944,7 +5963,7 @@
                   "loai": "dieu",
                   "so": 129,
                   "tieu_de": "Giao dịch dân sự vô hiệu do không tuân thủ quy định về hình thức",
-                  "noi_dung": null,
+                  "noi_dung": "Giao dịch dân sự vi phạm quy định điều kiện có hiệu lực về hình thức thì vô hiệu, trừ trường hợp sau đây:",
                   "cac_khoan": [
                     {
                       "loai": "khoan",
@@ -6851,7 +6870,7 @@
                       "loai": "dieu",
                       "so": 155,
                       "tieu_de": "Không áp dụng thời hiệu khởi kiện",
-                      "noi_dung": null,
+                      "noi_dung": "Thời hiệu khởi kiện không áp dụng trong trường hợp sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -6883,7 +6902,7 @@
                       "loai": "dieu",
                       "so": 156,
                       "tieu_de": "Thời gian không tính vào thời hiệu khởi kiện vụ án dân sự, thời hiệu yêu cầu giải quyết việc dân sự",
-                      "noi_dung": null,
+                      "noi_dung": "Thời gian không tính vào thời hiệu khởi kiện vụ án dân sự, thời hiệu yêu cầu giải quyết việc dân sự là khoảng thời gian xảy ra một trong các sự kiện sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -8128,7 +8147,7 @@
                           "loai": "dieu",
                           "so": 220,
                           "tieu_de": "Chấm dứt sở hữu chung",
-                          "noi_dung": null,
+                          "noi_dung": "Sở hữu chung chấm dứt trong trường hợp sau đây:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -8175,7 +8194,7 @@
                           "loai": "dieu",
                           "so": 221,
                           "tieu_de": "Căn cứ xác lập quyền sở hữu",
-                          "noi_dung": null,
+                          "noi_dung": "Quyền sở hữu được xác lập đối với tài sản trong trường hợp sau đây:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -8525,7 +8544,7 @@
                           "loai": "dieu",
                           "so": 237,
                           "tieu_de": "Căn cứ chấm dứt quyền sở hữu",
-                          "noi_dung": null,
+                          "noi_dung": "Quyền sở hữu chấm dứt trong trường hợp sau đây:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -8696,7 +8715,7 @@
                       "loai": "dieu",
                       "so": 248,
                       "tieu_de": "Nguyên tắc thực hiện quyền đối với bất động sản liền kề",
-                      "noi_dung": null,
+                      "noi_dung": "Việc thực hiện quyền đối với bất động sản liền kề theo thỏa thuận của các bên. Trường hợp các bên không có thỏa thuận thì thực hiện theo các nguyên tắc sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -8790,7 +8809,7 @@
                       "loai": "dieu",
                       "so": 256,
                       "tieu_de": "Chấm dứt quyền đối với bất động sản liền kề",
-                      "noi_dung": null,
+                      "noi_dung": "Quyền đối với bất động sản liền kề chấm dứt trong trường hợp sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -8987,7 +9006,7 @@
                       "loai": "dieu",
                       "so": 265,
                       "tieu_de": "Chấm dứt quyền hưởng dụng",
-                      "noi_dung": null,
+                      "noi_dung": "Quyền hưởng dụng chấm dứt trong trường hợp sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -9119,7 +9138,7 @@
                       "loai": "dieu",
                       "so": 272,
                       "tieu_de": "Chấm dứt quyền bề mặt",
-                      "noi_dung": null,
+                      "noi_dung": "Quyền bề mặt chấm dứt trong trường hợp sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -9209,7 +9228,7 @@
                       "loai": "dieu",
                       "so": 275,
                       "tieu_de": "Căn cứ phát sinh nghĩa vụ",
-                      "noi_dung": null,
+                      "noi_dung": "Nghĩa vụ phát sinh từ căn cứ sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -9588,7 +9607,7 @@
                           "loai": "dieu",
                           "so": 292,
                           "tieu_de": "Biện pháp bảo đảm thực hiện nghĩa vụ",
-                          "noi_dung": null,
+                          "noi_dung": "Các biện pháp bảo đảm thực hiện nghĩa vụ bao gồm:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -10208,7 +10227,7 @@
                           "loai": "dieu",
                           "so": 315,
                           "tieu_de": "Chấm dứt cầm cố tài sản",
-                          "noi_dung": null,
+                          "noi_dung": "Cầm cố tài sản chấm dứt trong trường hợp sau đây:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -10583,7 +10602,7 @@
                           "loai": "dieu",
                           "so": 327,
                           "tieu_de": "Chấm dứt thế chấp tài sản",
-                          "noi_dung": null,
+                          "noi_dung": "Thế chấp tài sản chấm dứt trong trường hợp sau đây:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -10748,7 +10767,7 @@
                           "loai": "dieu",
                           "so": 334,
                           "tieu_de": "Chấm dứt bảo lưu quyền sở hữu",
-                          "noi_dung": null,
+                          "noi_dung": "Bảo lưu quyền sở hữu chấm dứt trong trường hợp sau đây:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -10926,7 +10945,7 @@
                           "loai": "dieu",
                           "so": 343,
                           "tieu_de": "Chấm dứt bảo lãnh",
-                          "noi_dung": null,
+                          "noi_dung": "Bảo lãnh chấm dứt trong trường hợp sau đây:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -11077,7 +11096,7 @@
                           "loai": "dieu",
                           "so": 350,
                           "tieu_de": "Chấm dứt cầm giữ",
-                          "noi_dung": null,
+                          "noi_dung": "Cầm giữ tài sản chấm dứt trong trường hợp sau đây:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -11480,7 +11499,7 @@
                       "loai": "dieu",
                       "so": 372,
                       "tieu_de": "Căn cứ chấm dứt nghĩa vụ",
-                      "noi_dung": null,
+                      "noi_dung": "Nghĩa vụ chấm dứt trong trường hợp sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -11647,7 +11666,7 @@
                       "loai": "dieu",
                       "so": 379,
                       "tieu_de": "Những trường hợp không được bù trừ nghĩa vụ",
-                      "noi_dung": null,
+                      "noi_dung": "Nghĩa vụ không được bù trừ trong trường hợp sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -11864,7 +11883,7 @@
                           "loai": "dieu",
                           "so": 391,
                           "tieu_de": "Chấm dứt đề nghị giao kết hợp đồng",
-                          "noi_dung": null,
+                          "noi_dung": "Đề nghị giao kết hợp đồng chấm dứt trong trường hợp sau đây:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -12097,7 +12116,7 @@
                           "loai": "dieu",
                           "so": 402,
                           "tieu_de": "Các loại hợp đồng chủ yếu",
-                          "noi_dung": null,
+                          "noi_dung": "Hợp đồng gồm các loại chủ yếu sau đây:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -12572,7 +12591,7 @@
                           "loai": "dieu",
                           "so": 422,
                           "tieu_de": "Chấm dứt hợp đồng",
-                          "noi_dung": null,
+                          "noi_dung": "Hợp đồng chấm dứt trong trường hợp sau đây:",
                           "cac_khoan": [
                             {
                               "loai": "khoan",
@@ -12994,7 +13013,7 @@
                       "loai": "dieu",
                       "so": 439,
                       "tieu_de": "Trách nhiệm giao tài sản không đúng chủng loại",
-                      "noi_dung": null,
+                      "noi_dung": "Trường hợp tài sản được giao không đúng chủng loại thì bên mua có một trong các quyền sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -14300,7 +14319,7 @@
                       "loai": "dieu",
                       "so": 505,
                       "tieu_de": "Nội dung của hợp đồng hợp tác",
-                      "noi_dung": null,
+                      "noi_dung": "Hợp đồng hợp tác có nội dung chủ yếu sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -16074,7 +16093,7 @@
                   "loai": "dieu",
                   "so": 578,
                   "tieu_de": "Chấm dứt thực hiện công việc không có ủy quyền",
-                  "noi_dung": null,
+                  "noi_dung": "Việc thực hiện công việc không có ủy quyền chấm dứt trong trường hợp sau đây:",
                   "cac_khoan": [
                     {
                       "loai": "khoan",
@@ -16326,7 +16345,7 @@
                       "loai": "dieu",
                       "so": 589,
                       "tieu_de": "Thiệt hại do tài sản bị xâm phạm",
-                      "noi_dung": null,
+                      "noi_dung": "Thiệt hại do tài sản bị xâm phạm bao gồm:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -17183,7 +17202,7 @@
                   "loai": "dieu",
                   "so": 626,
                   "tieu_de": "Quyền của người lập di chúc",
-                  "noi_dung": null,
+                  "noi_dung": "Người lập di chúc có quyền sau đây:",
                   "cac_khoan": [
                     {
                       "loai": "khoan",
@@ -17228,7 +17247,7 @@
                   "loai": "dieu",
                   "so": 628,
                   "tieu_de": "Di chúc bằng văn bản",
-                  "noi_dung": null,
+                  "noi_dung": "Di chúc bằng văn bản bao gồm:",
                   "cac_khoan": [
                     {
                       "loai": "khoan",
@@ -17376,7 +17395,7 @@
                   "loai": "dieu",
                   "so": 632,
                   "tieu_de": "Người làm chứng cho việc lập di chúc",
-                  "noi_dung": null,
+                  "noi_dung": "Mọi người đều có thể làm chứng cho việc lập di chúc, trừ những người sau đây:",
                   "cac_khoan": [
                     {
                       "loai": "khoan",
@@ -17423,7 +17442,7 @@
                   "loai": "dieu",
                   "so": 636,
                   "tieu_de": "Thủ tục lập di chúc tại tổ chức hành nghề công chứng hoặc Ủy ban nhân dân cấp xã",
-                  "noi_dung": null,
+                  "noi_dung": "Việc lập di chúc tại tổ chức hành nghề công chứng hoặc Ủy ban nhân dân cấp xã phải tuân theo thủ tục sau đây:",
                   "cac_khoan": [
                     {
                       "loai": "khoan",
@@ -17443,7 +17462,7 @@
                   "loai": "dieu",
                   "so": 637,
                   "tieu_de": "Người không được công chứng, chứng thực di chúc",
-                  "noi_dung": null,
+                  "noi_dung": "Công chứng viên, người có thẩm quyền của Ủy ban nhân dân cấp xã không được công chứng, chứng thực đối với di chúc nếu thuộc một trong các trường hợp sau đây:",
                   "cac_khoan": [
                     {
                       "loai": "khoan",
@@ -18026,7 +18045,7 @@
                   "loai": "dieu",
                   "so": 658,
                   "tieu_de": "Thứ tự ưu tiên thanh toán",
-                  "noi_dung": null,
+                  "noi_dung": "Các nghĩa vụ tài sản và các khoản chi phí liên quan đến thừa kế được thanh toán theo thứ tự sau đây:",
                   "cac_khoan": [
                     {
                       "loai": "khoan",
@@ -18753,14 +18772,17 @@
               "loai": "dieu",
               "so": 689,
               "tieu_de": "Hiệu lực thi hành",
-              "noi_dung": "Bộ luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2017. Bộ luật dân sự số 33/2005/QH11 hết hiệu lực kể từ ngày Bộ luật này có hiệu lực. Bộ luật này đã được Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XIII, kỳ họp thứ 10 thông qua ngày 24 tháng 11 năm 2015./.",
+              "noi_dung": "Bộ luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2017. Bộ luật dân sự số 33/2005/QH11 hết hiệu lực kể từ ngày Bộ luật này có hiệu lực.",
               "cac_khoan": []
             }
           ]
         }
       ],
       "cac_chuong": [],
-      "cac_dieu": []
+      "cac_dieu": [],
+      "phan_ket_thuc": [
+        "Bộ luật này đã được Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XIII, kỳ họp thứ 10 thông qua ngày 24 tháng 11 năm 2015./."
+      ]
     }
   },
   {
@@ -18776,7 +18798,14 @@
       "so_hieu": "21/2021/NĐ-CP",
       "effective_from": "2021-05-15",
       "effective_to": null,
-      "status": "CON_HIEU_LUC"
+      "status": "CON_HIEU_LUC",
+      "source_file": "21_2021_ND-CP_468069.docx",
+      "metadata_source": "DOCX nguồn: van_ban/21_2021_ND-CP_468069.docx; effective_from: Điều 60 khoản 1",
+      "verified_at": "2026-10-07",
+      "verification_scope": "effective_from only; status and effective_to are unverified legacy values",
+      "status_verified_at": null,
+      "source_url": null,
+      "effective_from_source_url": null
     },
     "cau_truc": {
       "loai": "van_ban",
@@ -18831,7 +18860,7 @@
               "loai": "dieu",
               "so": 3,
               "tieu_de": "Giải thích từ ngữ",
-              "noi_dung": null,
+              "noi_dung": "Trong Nghị định này, các từ ngữ dưới đây được hiểu như sau:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -19009,7 +19038,7 @@
               "loai": "dieu",
               "so": 8,
               "tieu_de": "Tài sản dùng để bảo đảm thực hiện nghĩa vụ",
-              "noi_dung": null,
+              "noi_dung": "Tài sản dùng để bảo đảm thực hiện nghĩa vụ bao gồm:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -19703,7 +19732,7 @@
                       "loai": "dieu",
                       "so": 35,
                       "tieu_de": "Việc nhận thế chấp của cá nhân, tổ chức kinh tế không phải là tổ chức tín dụng đối với quyền sử dụng đất, tài sản gắn liền với đất của hộ gia đình, cá nhân sử dụng đất",
-                      "noi_dung": null,
+                      "noi_dung": "Việc nhận thế chấp của cá nhân, tổ chức kinh tế không phải là tổ chức tín dụng đối với quyền sử dụng đất, tài sản gắn liền với đất của hộ gia đình, cá nhân sử dụng đất phải đáp ứng các điều kiện sau đây:",
                       "cac_khoan": [
                         {
                           "loai": "khoan",
@@ -20492,7 +20521,7 @@
               "loai": "dieu",
               "so": 55,
               "tieu_de": "Xử lý tài sản bảo đảm là tài sản hình thành trong tương lai",
-              "noi_dung": null,
+              "noi_dung": "Việc xử lý tài sản bảo đảm là tài sản hình thành trong tương lai thực hiện theo thỏa thuận của các bên. Thỏa thuận này có thể có các nội dung sau đây:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -20749,7 +20778,8 @@
           ]
         }
       ],
-      "cac_dieu": []
+      "cac_dieu": [],
+      "phan_ket_thuc": []
     }
   },
   {
@@ -20765,7 +20795,14 @@
       "so_hieu": "19/2019/NĐ-CP",
       "effective_from": "2019-04-05",
       "effective_to": null,
-      "status": "CON_HIEU_LUC"
+      "status": "CON_HIEU_LUC",
+      "source_file": "19_2019_ND-CP_386324.docx",
+      "metadata_source": "DOCX nguồn: van_ban/19_2019_ND-CP_386324.docx; effective_from: Điều 26 khoản 1",
+      "verified_at": "2026-10-07",
+      "verification_scope": "effective_from only; status and effective_to are unverified legacy values",
+      "status_verified_at": null,
+      "source_url": null,
+      "effective_from_source_url": null
     },
     "cau_truc": {
       "loai": "van_ban",
@@ -20800,7 +20837,7 @@
               "loai": "dieu",
               "so": 2,
               "tieu_de": "Đối tượng áp dụng",
-              "noi_dung": null,
+              "noi_dung": "Nghị định này áp dụng đối với:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -20846,7 +20883,7 @@
               "loai": "dieu",
               "so": 4,
               "tieu_de": "Giải thích từ ngữ",
-              "noi_dung": null,
+              "noi_dung": "Trong Nghị định này, các từ ngữ dưới đây được hiểu như sau:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -21050,7 +21087,7 @@
               "loai": "dieu",
               "so": 9,
               "tieu_de": "Gia nhập dây họ",
-              "noi_dung": null,
+              "noi_dung": "Trừ trường hợp có thỏa thuận khác, một người có thể trở thành thành viên mới của dây họ khi:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -21714,7 +21751,7 @@
               "loai": "dieu",
               "so": 23,
               "tieu_de": "Trách nhiệm của chủ họ do không giao hoặc giao không đầy đủ các phần họ cho thành viên được lĩnh họ",
-              "noi_dung": null,
+              "noi_dung": "Trường hợp đến kỳ mở họ mà chủ họ không giao các phần họ cho thành viên được lĩnh họ thì chủ họ có trách nhiệm đối với thành viên đó như sau:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -21746,7 +21783,7 @@
               "loai": "dieu",
               "so": 24,
               "tieu_de": "Trách nhiệm của thành viên không góp phần họ",
-              "noi_dung": null,
+              "noi_dung": "Trường hợp đến kỳ mở họ mà có thành viên không góp phần họ hoặc góp phần họ không đầy đủ thì thành viên đó có trách nhiệm đối với chủ họ như sau:",
               "cac_khoan": [
                 {
                   "loai": "khoan",
@@ -21912,7 +21949,8 @@
           ]
         }
       ],
-      "cac_dieu": []
+      "cac_dieu": [],
+      "phan_ket_thuc": []
     }
   },
   {
@@ -21928,7 +21966,14 @@
       "so_hieu": "02/2022/NQ-HĐTP",
       "effective_from": "2023-01-01",
       "effective_to": null,
-      "status": "CON_HIEU_LUC"
+      "status": "CON_HIEU_LUC",
+      "source_file": "02_2022_NQ-HDTP_483799.docx",
+      "metadata_source": "DOCX nguồn: van_ban/02_2022_NQ-HDTP_483799.docx; effective_from: Điều 13 khoản 1",
+      "verified_at": "2026-10-07",
+      "verification_scope": "effective_from only; status and effective_to are unverified legacy values",
+      "status_verified_at": null,
+      "source_url": null,
+      "effective_from_source_url": null
     },
     "cau_truc": {
       "loai": "van_ban",
@@ -22086,7 +22131,7 @@
           "loai": "dieu",
           "so": 4,
           "tieu_de": "Xác định tuổi của người gây thiệt hại theo quy định tại Điều 586 của Bộ luật Dân sự",
-          "noi_dung": null,
+          "noi_dung": "Tuổi của người gây thiệt hại được tính tại thời điểm gây thiệt hại. Trường hợp không xác định được chính xác tuổi của người gây thiệt hại thì ngày, tháng, năm sinh của họ được xác định như sau:",
           "cac_khoan": [
             {
               "loai": "khoan",
@@ -22256,7 +22301,7 @@
           "loai": "dieu",
           "so": 8,
           "tieu_de": "Về thiệt hại do tính mạng bị xâm phạm quy định tại khoản 1 Điều 591 của Bộ luật Dân sự",
-          "noi_dung": null,
+          "noi_dung": "Thiệt hại do tính mạng bị xâm phạm theo quy định tại các điểm a, b và c khoản 1 Điều 591 của Bộ luật Dân sự được xác định như sau:",
           "cac_khoan": [
             {
               "loai": "khoan",
@@ -22298,7 +22343,7 @@
           "loai": "dieu",
           "so": 9,
           "tieu_de": "Về thiệt hại do danh dự, nhân phẩm, uy tín bị xâm phạm quy định tại Điều 592 của Bộ luật Dân sự",
-          "noi_dung": null,
+          "noi_dung": "Thiệt hại do danh dự, nhân phẩm, uy tín bị xâm phạm quy định tại Điều 592 của Bộ luật Dân sự được xác định như sau:",
           "cac_khoan": [
             {
               "loai": "khoan",
@@ -22444,7 +22489,8 @@
             }
           ]
         }
-      ]
+      ],
+      "phan_ket_thuc": []
     }
   }
 ]
