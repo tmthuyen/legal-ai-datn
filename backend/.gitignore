@@ -1,10 +1,4 @@
-
-__pycache__/
-.venv/
-
 # 1. Môi trường ảo (Quan trọng nhất)
-venv/
-.env
 .venv/
 # 2. Python rác
 __pycache__/
@@ -53,5 +47,4 @@ venv/
 
 # OS
 .DS_Store
-
-model_artifacts/
+ 
