@@ -1,0 +1,47 @@
+[project]
+name = "legal-ai"
+version = "0.1.0"
+description = "Legal AI System"
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "neo4j",           # graph DB client
+    "chromadb",        # vector DB
+    "sentence-transformers",  # BGE-M3 embedding
+    "transformers",    # Qwen3, model inference
+    "peft",            # LoRA fine-tune
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+    "pydantic",
+    "torch",
+
+    # 1. Core Data & Math
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+
+    "tqdm>=4.65.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=3.0.0",
+    "pre-commit>=2.0.0"
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"

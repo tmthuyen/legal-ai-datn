@@ -1,0 +1,57 @@
+
+__pycache__/
+.venv/
+
+# 1. Môi trường ảo (Quan trọng nhất)
+venv/
+.env
+.venv/
+# 2. Python rác
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# 1. Bỏ qua toàn bộ Data (Siêu nặng)
+data/*
+
+# 2. Bỏ qua Logs (Rác sinh ra hàng ngày)
+logs/*
+!logs/.gitkeep
+
+# 5. Logs & Notebooks
+logs/*.log
+.ipynb_checkpoints/
+
+.venv/
+venv/
+*.pt
+*.pth
+logs/
+*.log
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+
+# Data 
+*.npy
+*.pkl
+*.csv
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+model_artifacts/
