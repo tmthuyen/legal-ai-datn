@@ -12,6 +12,7 @@ from neo4j import GraphDatabase, Driver, Session
 load_dotenv()
 logger = logging.getLogger(__name__)
 
+
 class Neo4jClient:
     """Wrapper cho kết nối và truy vấn Neo4j."""
 
@@ -73,23 +74,18 @@ class Neo4jClient:
 
 # OLD CODE (THUYÊN)
 
-from typing import Any
-
-from neo4j import GraphDatabase, Driver
-
 from src.common.setting_config import Settings, get_settings
 
 setting: Settings = get_settings()
+
+
 class Neo4jClient_1:
-    def __init__(
-        self,
-        ):
+    def __init__(self):
         self._driver: Driver = GraphDatabase.driver(
             setting.neo4j_uri,
             auth=(setting.neo4j_username, setting.neo4j_password),
         )
         self._database = setting.neo4j_database
-        
 
     def verify_connection(self) -> None:
         self._driver.verify_connectivity()
