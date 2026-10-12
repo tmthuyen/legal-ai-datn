@@ -8,9 +8,9 @@ requires-python = ">=3.10"
 dependencies = [
     "neo4j",           # graph DB client
     "chromadb",        # vector DB
-    "sentence-transformers",  # BGE-M3 embedding
-    "transformers",    # Qwen3, model inference
-    "peft",            # LoRA fine-tune
+    "sentence-transformers",  
+    "transformers",    
+    "peft",            
     "fastapi",
     "uvicorn",
     "python-dotenv",
