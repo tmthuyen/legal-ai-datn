@@ -12,12 +12,10 @@ from neo4j import GraphDatabase, Driver, Session
 load_dotenv()
 logger = logging.getLogger(__name__)
 
-
 class Neo4jClient:
     """Wrapper cho kết nối và truy vấn Neo4j."""
 
     def __init__(
-<<<<<<< HEAD:backend/src/graph/neo4j_client.py
         self,
         uri: Optional[str] = None,
         username: Optional[str] = None,
@@ -31,47 +29,6 @@ class Neo4jClient:
             raise ValueError(
                 "NEO4J_PASSWORD chưa được cấu hình. "
                 "Vui lòng thiết lập biến NEO4J_PASSWORD trong file .env hoặc truyền vào khi khởi tạo Neo4jClient."
-=======
-            self,
-            uri: str = setting.neo4j_uri,
-            username: str = setting.neo4j_username,
-            password: str = setting.neo4j_password,
-            database: str = setting.neo4j_database,
-        ):
-        self._driver: Driver = GraphDatabase.driver(
-            uri,
-            auth=(username, password),
-        )
-        self._database = database
-        
-
-    def verify_connection(self) -> None:
-        self._driver.verify_connectivity()
-
-    def execute_read(
-        self,
-        query: str,
-        parameters: dict[str, Any] | None = None,
-    ) -> list[dict[str, Any]]:
-        with self._driver.session(
-            database=self._database
-        ) as session:
-            result = session.run(query, parameters or {})
-            return [record.data() for record in result]
-
-    def execute_write(
-        self,
-        query: str,
-        parameters: dict[str, Any] | None = None,
-    ) -> list[dict[str, Any]]:
-        with self._driver.session(
-            database=self._database
-        ) as session:
-            return session.execute_write(
-                self._run_write,
-                query,
-                parameters or {},
->>>>>>> a48714f (fea: retrieval):backend/src/graph/neo4j_client_1.py
             )
         self.database = database or os.getenv("NEO4J_DATABASE", "neo4j")
         self._driver: Optional[Driver] = None
