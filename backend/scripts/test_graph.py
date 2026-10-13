@@ -48,22 +48,4 @@ repo = LegalGraphRepository(db=neo4j_client)
 service = LegalGraphService(repository=repo)
 test_graph = TestGraph(service=service)
 test_graph.test_import()
-# test_graph.test_graph()
-
-from transformers import AutoTokenizer, AutoModelForCausalLM
-import torch
-
-tokenizer = AutoTokenizer.from_pretrained("tmtdev/vietnam-law-llama3")
-model = AutoModelForCausalLM.from_pretrained(
-    "tmtdev/vietnam-law-llama3",
-    torch_dtype=torch.float16,
-    device_map="auto"
-)
-
-# Test
-question = "Tuổi kết hôn tối thiểu ở Việt Nam?"
-prompt = f"Hỏi: {question}\nĐáp: "
-inputs = tokenizer(prompt, return_tensors="pt")
-outputs = model.generate(**inputs, max_new_tokens=200, temperature=0.3)
-answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
-print(answer)
+test_graph.test_graph() 

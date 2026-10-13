@@ -1,6 +1,7 @@
 import json
 import os
 from pathlib import Path
+import pandas as pd
 
 from src.utils.logger import setup_logger
  
@@ -36,3 +37,24 @@ class FileUtils:
             
         return file_path
             
+    # Lưu cả json và csv: trả về đường dẫn file json và csv
+    @staticmethod
+    def save_json_and_csv(data: list[dict], dir: Path, file_name: str = "data") -> tuple[Path, Path]:
+        """
+        Save JSON and CSV data to files.
+        """
+        # Xóa extension nếu có trong file_name
+        file_name = file_name.replace(".json", "").replace(".csv", "")
+        
+        # Save JSON
+        json_path = FileUtils.save_json_file(data, dir, file_name + ".json")
+        print(f"Data saved to {json_path}")
+
+        # Save CSV
+        csv_path = dir / (file_name + ".csv")
+        df = pd.DataFrame(data)
+        df.to_csv(csv_path, index=False, encoding='utf-8-sig')
+        
+        print(f"Data saved to {csv_path}")
+        
+        return json_path, csv_path

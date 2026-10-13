@@ -5,27 +5,35 @@
 
 ## 1. Legal Query Reference & Hierarchy Extraction
 
+- legal-query-hierarchy-reference-extraction: LegalQRHE
+
 - Trích xuất các trích dẫn luật từ truy vấn pháp lý (Legal Query Reference Extraction) và xác định cấu trúc phân cấp của luật (Legal Hierarchy Extraction) để hỗ trợ truy vấn pháp lý chính xác hơn.
 
 - Đầu vào: **query_text** (truy vấn pháp lý của người dùng)
 
-- Đầu ra: **extracted_hierarchy** (cấu trúc phân cấp của luật),
+- Đầu ra: **extracted_hierarchy** (cấu trúc phân cấp của luật), đầy đủ các trường: document, part, chapter, section, subsection, article, clause, point. Các trường có thể null nếu không được xác định.
 
 - Ví dụ:
+  - Đầu vào:
 
   ```json
   {
-    "query_text": "Chương I của Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013 quy định về vấn đề gì?",
-    "target": {
-      "part": null,
-      "chapter": "I",
-      "section": null,
-      "subsection": null,
-      "article": null,
-      "clause": null,
-      "point": null,
-      "document": "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013"
-    }
+    "query_text": "Điều 1 Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013"
+  }
+  ```
+
+  - Đầu ra:
+
+  ```json
+  {
+    "document": "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013",
+    "part": null,
+    "chapter": "I",
+    "section": null,
+    "subsection": null,
+    "article": null,
+    "clause": null,
+    "point": null
   }
   ```
 

@@ -35,6 +35,7 @@ class Neo4jClient:
         self._driver: Optional[Driver] = None
 
     def connect(self) -> Driver:
+        """Khởi tạo hoặc trả về Driver kết nối tới Neo4j."""
         if self._driver is None:
             self._driver = GraphDatabase.driver(
                 self.uri,
@@ -44,22 +45,36 @@ class Neo4jClient:
 
     @property
     def driver(self) -> Driver:
+        """Thuộc tính truy cập Driver kết nối."""
         return self.connect()
 
+    def verify_connectivity(self) -> bool:
+        """Kiểm tra tính khả dụng của kết nối tới Neo4j."""
+        try:
+            self.driver.verify_connectivity()
+            return True
+        except Exception as e:
+            logger.error(f"Lỗi kiểm tra kết nối Neo4j ({self.uri}): {e}")
+            return False
+
     def close(self) -> None:
+        """Đóng kết nối Driver Neo4j."""
         if self._driver is not None:
             self._driver.close()
             self._driver = None
 
     def session(self) -> Session:
+        """Tạo một phiên làm việc (Session) mới với database đã cấu hình."""
         return self.driver.session(database=self.database)
 
     def execute_read(self, query: str, parameters: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+        """Thực thi câu truy vấn đọc (READ) Cypher và trả về danh sách kết quả dạng dict."""
         with self.session() as s:
             result = s.run(query, parameters or {})
             return [record.data() for record in result]
 
     def execute_write(self, query: str, parameters: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+        """Thực thi câu truy vấn ghi (WRITE) Cypher và trả về danh sách kết quả dạng dict."""
         with self.session() as s:
             result = s.run(query, parameters or {})
             return [record.data() for record in result]
@@ -70,59 +85,3 @@ class Neo4jClient:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
-
-
-# OLD CODE (THUYÊN)
-
-from src.common.setting_config import Settings, get_settings
-
-setting: Settings = get_settings()
-
-
-class Neo4jClient_1:
-    def __init__(self):
-        self._driver: Driver = GraphDatabase.driver(
-            setting.neo4j_uri,
-            auth=(setting.neo4j_username, setting.neo4j_password),
-        )
-        self._database = setting.neo4j_database
-
-    def verify_connection(self) -> None:
-        self._driver.verify_connectivity()
-
-    def execute_read(
-        self,
-        query: str,
-        parameters: dict[str, Any] | None = None,
-    ) -> list[dict[str, Any]]:
-        with self._driver.session(
-            database=self._database
-        ) as session:
-            result = session.run(query, parameters or {})
-            return [record.data() for record in result]
-
-    def execute_write(
-        self,
-        query: str,
-        parameters: dict[str, Any] | None = None,
-    ) -> list[dict[str, Any]]:
-        with self._driver.session(
-            database=self._database
-        ) as session:
-            return session.execute_write(
-                self._run_write,
-                query,
-                parameters or {},
-            )
-
-    @staticmethod
-    def _run_write(
-        tx,
-        query: str,
-        parameters: dict[str, Any],
-    ) -> list[dict[str, Any]]:
-        result = tx.run(query, parameters)
-        return [record.data() for record in result]
-
-    def close(self) -> None:
-        self._driver.close()

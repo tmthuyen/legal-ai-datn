@@ -9,6 +9,26 @@ class ExtractorLegalQuery:
         pass
 
     def extract(self, query_text: str, document: str) -> dict:
+        """ Trích xuất phân cấp luật từ câu truy vấn và tên văn bản pháp luật.
+        - Chỉ trích xuât các cấp: Phần, Chương, Mục, Tiểu mục, Điều, Khoản, Điểm
+        - Chưa có khả năng trích văn bản được nhắc đên trong câu truy vấn
+        - Dùng làm output để fine-tune mô hình có khả năng trích xuất phân cấp luật và cả văn bản (document) từ câu truy vấn.
+
+        Args:
+            query_text (str): Câu truy vấn từ người dùng (Có chứa vị trí trích dẫn).
+            document (str): Tên văn bản pháp luật.
+
+        Raises:
+            - CustomException: Nếu câu truy vấn hoặc tên văn bản pháp luật bị để trống. 
+            - Nếu phân cấp không hợp lệ thì báo lỗi
+
+        Returns:
+            dict: 
+            {
+                "query_text": str,  # Câu truy vấn ban đầu từ người dùng.
+                "hierarchy": dict,  # Phân cấp luật được trích xuất từ câu truy vấn, có cả văn bản.
+            }
+        """
         query_text = query_text.strip()
         document = document.strip()
 
@@ -18,42 +38,19 @@ class ExtractorLegalQuery:
         if not document:
             raise CustomException("Tên văn bản pháp luật không được để trống.")
 
-        # 1. Trích xuất các cấp cấu trúc từ câu truy vấn.
+        # Trích xuất các cấp cấu trúc từ câu truy vấn.
         values = {}
 
         for field, pattern in LegalHierarchyPatterns.hierarchy_patterns.items():
             match = pattern.search(query_text)
             values[field] = match.group(1) if match else None
 
-        # 2. Chuẩn hóa các giá trị không phân biệt hoa/thường.
+        # Chuẩn hóa các giá trị không phân biệt hoa/thường.
         for field in ("point", "part", "chapter", "section", "subsection"):
             if values[field] is not None:
                 values[field] = values[field].lower()
 
-        # 3. Loại bỏ các thành phần dẫn chiếu để lấy nội dung câu hỏi.
-        question_text = query_text
-
-        # Xóa các cụm dẫn chiếu như:
-        # "Theo", "Tìm hiểu", "tại", "ở", "về" không được xóa tùy tiện
-        # vì có thể là nội dung thực sự của câu hỏi.
-        for pattern in LegalHierarchyPatterns.hierarchy_patterns.values():
-            question_text = pattern.sub("", question_text)
-
-        # Loại bỏ các cụm mở đầu thường gặp.
-        question_text = LegalHierarchyPatterns.query_prefix_pattern.sub(
-            "", question_text
-        )
-
-        # Chuẩn hóa khoảng trắng và dấu câu ở đầu/cuối.
-        question_text = " ".join(question_text.split())
-        question_text = question_text.strip(" ,:;.-")
-
-        if not question_text:
-            raise CustomException(
-                "Câu truy vấn không chứa thông tin câu hỏi."
-            )
-
-        # 4. Xây dựng và kiểm tra cấu trúc phân cấp.
+        # Xây dựng và kiểm tra cấu trúc phân cấp.
         hierarchy = LegalHierarchy()
         hierarchy.document = document
 
@@ -62,9 +59,8 @@ class ExtractorLegalQuery:
 
         hierarchy.validate()
 
-        # 5. Trả về dữ liệu làm dataset.
+        # Trả về dữ liệu làm dataset.
         return {
             "query_text": query_text,
-            "question_text": question_text,
-            "context": hierarchy.to_dict(),
+            "hierarchy": hierarchy.to_dict(),
         }
