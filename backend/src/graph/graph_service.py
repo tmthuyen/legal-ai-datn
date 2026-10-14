@@ -284,8 +284,7 @@ class LegalGraphService:
         self,
         document_id: str,
         target: dict[str, Any],
-        query_text: str = "",
-        question_text: str = "",
+        query_text: str = "", 
     ) -> dict[str, Any]:
         """
         Đóng gói toàn diện kết quả truy xuất (Retrieval Result) từ câu hỏi và mục tiêu trích dẫn,
@@ -316,8 +315,7 @@ class LegalGraphService:
             provenance = self.get_document_provenance(document_id)
             return {
                 "query_info": {
-                    "query_text": query_text,
-                    "question_text": question_text,
+                    "query_text": query_text, 
                 },
                 "resolved": None,
                 "content": None,
@@ -362,8 +360,7 @@ class LegalGraphService:
 
         return {
             "query_info": {
-                "query_text": query_text,
-                "question_text": question_text,
+                "query_text": query_text, 
             },
             "resolved": {
                 "document_id": document_id,

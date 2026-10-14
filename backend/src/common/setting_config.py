@@ -4,15 +4,15 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    app_name: str = "movie-recommendation-ai-service"
+    app_name: str = "legal-ai"
     app_version: str = "0.1.0"
-    app_port: int = 8082
+    app_port: int = 8090
     api_prefix: str = "/api"
     cors_origins: str = "http://localhost:3000,http://localhost:5173"
 
-    neo4j_uri: str = "neo4j://localhost:7687"
+    neo4j_uri: str = "bolt://localhost:7687"
     neo4j_username: str = "neo4j"
-    neo4j_password: str = "123456"
+    neo4j_password: str = "password_not_set"
     neo4j_database: str = "legalai"
 
 

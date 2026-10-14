@@ -54,7 +54,6 @@ Nhóm đặt trọng tâm nghiên cứu kỹ thuật vào bài toán **Biểu di
 
 - Python (v3.10 or higher)
 - Neo4j (v5.x or higher)
-- Docker (v20.10 or higher) - optional, chạy Neo4j bằng container
 - GPU CUDA (khuyến nghị) cho bước fine-tuning
 
 ## Technologies
@@ -66,8 +65,7 @@ Nhóm đặt trọng tâm nghiên cứu kỹ thuật vào bài toán **Biểu di
 - sentence-transformers (Text Embedding)
 - Qwen2.5 + LoRA/PEFT (Fine-tuning)
 - PyTorch
-- pandas / numpy
-- Docker
+- pandas / numpy 
 - Jupyter Notebook (Pipeline ETL & Experiment)
 
 ## Structure folder
@@ -121,14 +119,6 @@ NEO4J_PASSWORD=123456
 NEO4J_DATABASE=legalai
 ```
 
-- Run Neo4j (docker):
-
-```bash
-docker run -d --name neo4j-legal-ai `
-  -p 7474:7474 -p 7687:7687 `
-  -e NEO4J_AUTH=neo4j/123456 `
-  neo4j:5
-```
 
 - Import Knowledge Graph vào Neo4j:
 
