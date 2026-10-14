@@ -7,11 +7,7 @@ Cung cấp dữ liệu ngữ cảnh phân cấp, quan hệ pháp lý và xuất 
 from typing import Any, Optional
 
 from src.common.schemas import LegalHierarchy
-from src.graph.graph_repository import (
-    LegalGraphRepository,
-    LegalLabels,
-    LegalRelationshipTypes,
-)
+from src.graph.graph_repository import LegalGraphRepository
 from src.utils.logger import setup_logger
 
 logger = setup_logger(name="graph_service", filename="graph_service.log")
@@ -30,7 +26,7 @@ class LegalGraphService:
     def __init__(self, repository: LegalGraphRepository):
         """
         Khởi tạo LegalGraphService với một repository instance.
-        
+
         Args:
             repository: Đối tượng LegalGraphRepository đã kết nối Neo4jClient.
         """
@@ -48,10 +44,10 @@ class LegalGraphService:
     def get_node_by_id(self, node_id: str) -> Optional[dict[str, Any]]:
         """
         Lấy thông tin chi tiết của một node trong đồ thị theo node_id.
-        
+
         Args:
             node_id: Mã định danh node (ví dụ: 'HIEN_PHAP_2013_D1', 'BLDS_2015_D27_K1_DIEM_A').
-            
+
         Returns:
             Dict thuộc tính node hoặc None nếu không tìm thấy.
         """
@@ -63,10 +59,10 @@ class LegalGraphService:
     def get_document(self, document_id: str) -> Optional[dict[str, Any]]:
         """
         Lấy thông tin văn bản quy phạm pháp luật theo document_id.
-        
+
         Args:
             document_id: Mã định danh văn bản (ví dụ: 'HIEN_PHAP_2013', 'BLDS_2015').
-            
+
         Returns:
             Dict metadata của văn bản hoặc None.
         """
@@ -77,7 +73,7 @@ class LegalGraphService:
     def get_all_documents(self) -> list[dict[str, Any]]:
         """
         Lấy danh sách tất cả các văn bản quy phạm pháp luật hiện có trong đồ thị.
-        
+
         Returns:
             Danh sách các Document node.
         """
@@ -94,7 +90,7 @@ class LegalGraphService:
     ) -> Optional[dict[str, Any]]:
         """
         Phân giải cấu trúc target (trích xuất từ câu hỏi người dùng) thành node đích thực tế trên đồ thị.
-        
+
         Cấu trúc target mẫu:
         {
             "part": None,
@@ -106,11 +102,11 @@ class LegalGraphService:
             "point": None,
             "document": "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013"
         }
-        
+
         Args:
             document_id: Mã văn bản đã được chuẩn hóa (ví dụ 'HIEN_PHAP_2013', 'BLDS_2015').
             target: Dict chứa các trường phân cấp trích dẫn.
-            
+
         Returns:
             Dict node đích sâu nhất tìm thấy trên đồ thị, hoặc None nếu không tồn tại.
         """
@@ -144,12 +140,12 @@ class LegalGraphService:
     def get_breadcrumbs(self, node_id: str) -> list[dict[str, Any]]:
         """
         Lấy chuỗi phả hệ tổ tiên (Breadcrumbs) từ văn bản gốc tới node hiện tại.
-        
+
         Ví dụ: Document -> Chapter -> Article -> Clause -> Point.
-        
+
         Args:
             node_id: Mã định danh node.
-            
+
         Returns:
             Danh sách tóm tắt từng cấp trên đường dẫn phả hệ.
         """
@@ -160,10 +156,10 @@ class LegalGraphService:
     def get_children(self, node_id: str) -> list[dict[str, Any]]:
         """
         Lấy danh sách các node con trực tiếp của node hiện tại.
-        
+
         Args:
             node_id: Mã định danh node cha.
-            
+
         Returns:
             Danh sách node con (ví dụ các Khoản thuộc Điều, hoặc các Điều thuộc Chương).
         """
@@ -179,26 +175,28 @@ class LegalGraphService:
     ) -> list[dict[str, Any]]:
         """
         Lấy toàn bộ cây node con cháu bên dưới node hiện tại đến độ sâu max_depth.
-        
+
         Args:
             node_id: Mã node gốc.
             max_depth: Độ sâu duyệt cây.
             limit: Giới hạn số lượng node.
-            
+
         Returns:
             Danh sách các node hậu duệ kèm thông tin độ sâu (depth).
         """
         if not node_id:
             return []
-        return self._repository.get_descendants(node_id, max_depth=max_depth, limit=limit)
+        return self._repository.get_descendants(
+            node_id, max_depth=max_depth, limit=limit
+        )
 
     def get_node_content_and_hierarchy(self, node_id: str) -> Optional[dict[str, Any]]:
         """
         Lấy trọn vẹn nội dung của node cùng danh sách các node con trực thuộc để xây dựng ngữ cảnh quy phạm.
-        
+
         Args:
             node_id: Mã node cần lấy nội dung.
-            
+
         Returns:
             Dict gồm:
             - node: thông tin node hiện tại (title, text, full_text, number...)
@@ -239,7 +237,9 @@ class LegalGraphService:
 
         breadcrumbs = self.get_breadcrumbs(node_id)
         if not breadcrumbs:
-            logger.warning(f"Không lấy được phả hệ để dựng trích dẫn cho node='{node_id}'.")
+            logger.warning(
+                f"Không lấy được phả hệ để dựng trích dẫn cho node='{node_id}'."
+            )
             return None
 
         return LegalHierarchy.from_ancestors(breadcrumbs).get_citation_path()
@@ -258,13 +258,13 @@ class LegalGraphService:
         """
         Truy xuất các quy định, văn bản pháp luật có mối liên hệ pháp lý với node hiện tại
         (như dẫn chiếu REFERENCES, hướng dẫn thi hành IMPLEMENTS, giải thích INTERPRETED_BY).
-        
+
         Args:
             node_id: Mã node nguồn.
             relation_types: Danh sách loại quan hệ cần lấy (mặc định lấy tất cả trừ CONTAINS).
             hops: Số bước nhảy (1 hoặc 2 hop).
             limit: Số lượng tối đa.
-            
+
         Returns:
             Danh sách các node và quan hệ liên quan.
         """
@@ -281,14 +281,16 @@ class LegalGraphService:
     # 5. XUẤT XỨ & HIỆU LỰC TÀI LIỆU (PROVENANCE & ANTI-HALLUCINATION)
     # --------------------------------------------------------------------------
 
-    def get_document_provenance(self, document_id_or_node_id: str) -> Optional[dict[str, Any]]:
+    def get_document_provenance(
+        self, document_id_or_node_id: str
+    ) -> Optional[dict[str, Any]]:
         """
         Lấy thông tin xuất xứ pháp lý, số hiệu, ngày ban hành và tình trạng hiệu lực
         từ node :Document để kiểm chứng chống bịa đặt (Anti-hallucination).
-        
+
         Args:
             document_id_or_node_id: Có thể là document_id ('HIEN_PHAP_2013') hoặc node_id ('BLDS_2015_D27').
-            
+
         Returns:
             Dict chứa metadata nguồn gốc văn bản.
         """
@@ -311,38 +313,42 @@ class LegalGraphService:
         self,
         document_id: str,
         target: dict[str, Any],
-        query_text: str = "", 
+        query_text: str = "",
     ) -> dict[str, Any]:
         """
         Đóng gói toàn diện kết quả truy xuất (Retrieval Result) từ câu hỏi và mục tiêu trích dẫn,
         tạo thành input hoàn chỉnh đưa vào module AI suy luận (Reasoning / LLM).
-        
+
         Quy trình thực hiện:
         1. Phân giải target thành node đích cụ thể trên đồ thị.
         2. Lấy phả hệ tổ tiên (Breadcrumbs).
         3. Lấy nội dung chi tiết của node (text, full_text) và các node con trực tiếp.
         4. Truy vết các quan hệ pháp lý và quy định liên quan (REFERENCES, IMPLEMENTS...).
         5. Lấy xuất xứ văn bản gốc (Provenance: số hiệu, hiệu lực, file nguồn).
-        
+
         Args:
             document_id: Mã văn bản đã chuẩn hóa.
             target: Dict mục tiêu trích dẫn phân cấp.
             query_text: Câu truy vấn gốc của người dùng.
             question_text: Nội dung câu hỏi sau khi lược bỏ trích dẫn.
-            
+
         Returns:
             Dict kết quả chuẩn cấu trúc RetrievalResult.
         """
-        logger.info(f"Bắt đầu đóng gói ngữ cảnh truy xuất cho document='{document_id}'...")
+        logger.info(
+            f"Bắt đầu đóng gói ngữ cảnh truy xuất cho document='{document_id}'..."
+        )
 
         # 1. Phân giải node
         resolved_node = self.resolve_target_node(document_id, target)
         if not resolved_node:
-            logger.warning(f"Không thể phân giải node cho target={target} trong document='{document_id}'.")
+            logger.warning(
+                f"Không thể phân giải node cho target={target} trong document='{document_id}'."
+            )
             provenance = self.get_document_provenance(document_id)
             return {
                 "query_info": {
-                    "query_text": query_text, 
+                    "query_text": query_text,
                 },
                 "resolved": None,
                 "content": None,
@@ -381,13 +387,17 @@ class LegalGraphService:
         related_laws = self.get_related_laws(target_node_id, limit=30)
 
         # 5. Xuất xứ văn bản (Provenance)
-        provenance = self.get_document_provenance(target_node_id) or self.get_document_provenance(document_id)
+        provenance = self.get_document_provenance(
+            target_node_id
+        ) or self.get_document_provenance(document_id)
 
-        logger.info(f"Đóng gói hoàn tất ngữ cảnh truy xuất cho node='{target_node_id}'.")
+        logger.info(
+            f"Đóng gói hoàn tất ngữ cảnh truy xuất cho node='{target_node_id}'."
+        )
 
         return {
             "query_info": {
-                "query_text": query_text, 
+                "query_text": query_text,
             },
             "resolved": {
                 "document_id": document_id,
@@ -424,7 +434,9 @@ class LegalGraphService:
             limit=limit,
         )
 
-    def get_relationships_by_node(self, node_id: str, limit: int = 100) -> list[dict[str, Any]]:
+    def get_relationships_by_node(
+        self, node_id: str, limit: int = 100
+    ) -> list[dict[str, Any]]:
         """Lấy các quan hệ liên quan tới một node."""
         return self._repository.get_all_node_relationships(node_id=node_id, limit=limit)
 
