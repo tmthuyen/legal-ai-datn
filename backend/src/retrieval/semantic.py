@@ -67,6 +67,7 @@ class SemanticSearcher:
     ) -> Dict[str, Any]:
         """
         Tìm kiếm các điều luật liên quan nhất theo ngữ nghĩa trên Neo4j Vector Index.
+        Đồng thời tự động lấy thông tin các Văn bản (Document) chứa các điều luật đó.
 
         Args:
             query: Nội dung câu hỏi truy vấn của người dùng.
@@ -81,7 +82,8 @@ class SemanticSearcher:
                 "search_time_ms": float,
                 "encode_time_ms": float,
                 "model_name": str,
-                "results": [
+                "results": [...],  # Giữ nguyên để tương thích ngược (backward compatibility)
+                "related_nodes": [
                     {
                         "node_id": str,
                         "label": str,
@@ -96,6 +98,18 @@ class SemanticSearcher:
                         "hop": 0
                     },
                     ...
+                ],
+                "related_documents": [
+                    {
+                        "node_id": str,
+                        "label": "Document",
+                        "number": Any,
+                        "title": str,
+                        "full_text": str,
+                        "document_id": Any,
+                        "parent_id": Any
+                    },
+                    ...
                 ]
             }
         """
@@ -107,6 +121,8 @@ class SemanticSearcher:
                 "encode_time_ms": 0.0,
                 "model_name": self.embedder.model_name,
                 "results": [],
+                "related_nodes": [],
+                "related_documents": [],
             }
 
         t_start = time.time()
@@ -116,9 +132,10 @@ class SemanticSearcher:
         query_vector = self.embedder.encode_query(query)
         encode_time_ms = (time.time() - t_enc) * 1000
 
-        results: List[Dict[str, Any]] = []
+        related_nodes: List[Dict[str, Any]] = []
+        related_documents: List[Dict[str, Any]] = []
 
-        # 2. Truy vấn qua Neo4j Vector Index
+        # 2. Truy vấn qua Neo4j Vector Index và gom luôn Document tương ứng trong 1 câu query duy nhất
         try:
             where_filter = ""
             candidate_k = top_k
@@ -139,6 +156,11 @@ class SemanticSearcher:
             CALL db.index.vector.queryNodes('{self.index_name}', $candidate_k, $query_vector)
             YIELD node, score
             {where_filter}
+            WITH node, score
+            ORDER BY score DESC
+            LIMIT $top_k
+            OPTIONAL MATCH (doc:LegalNode)
+            WHERE ('Document' IN labels(doc) OR doc.label = 'Document') AND doc.node_id = node.document_id
             RETURN node.node_id AS node_id,
                    coalesce(node.label, head([lbl IN labels(node) WHERE lbl <> 'LegalNode']), 'Article') AS label,
                    node.number AS number,
@@ -146,17 +168,25 @@ class SemanticSearcher:
                    node.full_text AS full_text,
                    node.document_id AS document_id,
                    node.parent_id AS parent_id,
-                   score
+                   score,
+                   doc.node_id AS doc_node_id,
+                   coalesce(doc.label, head([lbl IN labels(doc) WHERE lbl <> 'LegalNode']), 'Document') AS doc_label,
+                   doc.number AS doc_number,
+                   doc.title AS doc_title,
+                   coalesce(doc.full_text, doc.text, '') AS doc_full_text,
+                   doc.document_id AS doc_document_id,
+                   doc.parent_id AS doc_parent_id
             ORDER BY score DESC
-            LIMIT $top_k
             """
             rows = self.client.execute_read(
                 search_cypher,
                 cypher_params,
             )
+
+            seen_doc_ids = set()
             for rank, r in enumerate(rows, 1):
                 lbl = r.get("label") or "Article"
-                results.append(
+                related_nodes.append(
                     {
                         "node_id": r.get("node_id"),
                         "label": lbl,
@@ -171,6 +201,22 @@ class SemanticSearcher:
                         "hop": 0,
                     }
                 )
+
+                # Gom unique Document node theo node_id
+                doc_node_id = r.get("doc_node_id")
+                if doc_node_id and doc_node_id not in seen_doc_ids:
+                    seen_doc_ids.add(doc_node_id)
+                    related_documents.append(
+                        {
+                            "node_id": doc_node_id,
+                            "label": r.get("doc_label") or "Document",
+                            "number": r.get("doc_number"),
+                            "title": r.get("doc_title") or "",
+                            "full_text": r.get("doc_full_text") or "",
+                            "document_id": r.get("doc_document_id") or doc_node_id,
+                            "parent_id": r.get("doc_parent_id"),
+                        }
+                    )
         except Exception as e:
             logger.error("Lỗi khi truy vấn Neo4j Vector Index '%s': %s", self.index_name, e)
 
@@ -178,11 +224,13 @@ class SemanticSearcher:
 
         return {
             "query": query,
-            "total_found": len(results),
+            "total_found": len(related_nodes),
             "search_time_ms": round(total_time_ms, 2),
             "encode_time_ms": round(encode_time_ms, 2),
             "model_name": self.embedder.model_name,
-            "results": results,
+            "results": related_nodes,
+            "related_nodes": related_nodes,
+            "related_documents": related_documents,
         }
 
     def search_node_ids(self, query: str, top_k: int = 5) -> List[str]:
@@ -191,7 +239,8 @@ class SemanticSearcher:
         (phục vụ Graph Traverse và Reranker trong hybrid search).
         """
         res = self.search(query=query, top_k=top_k)
-        return [item["node_id"] for item in res.get("results", [])]
+        nodes = res.get("related_nodes") or res.get("results") or []
+        return [item["node_id"] for item in nodes]
 
     def semantic_search_by_text_and_label(
         self,
@@ -243,7 +292,7 @@ class SemanticSearcher:
         # 2. Nếu label là 'Article' và đã có vector index trong Neo4j, tái sử dụng search() (retrieval_source="vector")
         if target_label == "Article":
             search_res = self.search(query=clean_text, top_k=top_k)
-            return search_res.get("results", [])
+            return search_res.get("related_nodes") or search_res.get("results", [])
 
         # 3. Truy vấn danh sách node thuộc canonical label từ Neo4j
         cypher = """
