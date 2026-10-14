@@ -1,12 +1,12 @@
 """
 embed_nodes.py
-Script pipeline sinh embedding cho Article nodes trong Neo4j bằng BAAI/bge-m3.
+Script pipeline sinh embedding cho Article nodes trong Neo4j bằng darklethelong/vnlegal-lal (kèm ghép Context-Enriched).
 
 Quy trình:
-1. Đọc tất cả Article nodes (kèm full_text) từ Neo4j.
-2. Kiểm tra tính toàn vẹn dữ liệu (fail-fast: không cho phép full_text rỗng).
-3. Sinh dense vector (1024-d) bằng BAAI/bge-m3 (hoặc nạp từ cache an toàn).
-4. Cache an toàn: xác thực 4 lớp (model_name, dimension, node_ids, corpus_hash).
+1. Đọc tất cả Article nodes từ Neo4j hoặc nodes.json.
+2. Ghép nhãn ngữ cảnh phả hệ [Văn bản > Phần > Chương > Mục > Điều] vào text trước khi Embed.
+3. Sinh dense vector (1024-d) bằng darklethelong/vnlegal-lal (hoặc nạp từ cache an toàn).
+4. Cache an toàn: phân tách file cache theo model và loại cấu hình (bảo toàn cache BGE-M3 cũ).
 5. Ghi thuộc tính n.embedding vào từng Article node trên Neo4j theo batch.
 6. Xác thực và kích hoạt Neo4j Vector Index (article_embeddings_idx) với timeout an toàn.
 7. Đánh giá chất lượng Semantic Search với bộ benchmark định lượng: Hit@1, Hit@3, Hit@5, MRR.
@@ -21,6 +21,8 @@ Cách sử dụng:
 import os
 import sys
 import time
+import math
+import json
 import hashlib
 import argparse
 import pathlib
@@ -43,44 +45,81 @@ BACKEND_DIR = CURRENT_DIR.parent
 if str(BACKEND_DIR) not in sys.path:
     sys.path.insert(0, str(BACKEND_DIR))
 
-from src.graph.embedder import NodeEmbedder
+from src.graph.embedder import NodeEmbedder, build_enriched_text
 from src.graph.neo4j_client import Neo4jClient
 from src.utils.logger import setup_logger
 
 logger = setup_logger(name="embed_nodes", filename="embed_nodes.log")
 
 CACHE_DIR = BACKEND_DIR / "data" / "embeddings"
-CACHE_FILE = CACHE_DIR / "article_embeddings.npz"
+PROCESSED_NODES_FILE = BACKEND_DIR / "data" / "processed" / "nodes.json"
+BENCHMARK_FILE = BACKEND_DIR / "data" / "eval" / "benchmark_queries.json"
 INDEX_NAME = "article_embeddings_idx"
 
-# Bộ câu hỏi Benchmark định lượng phục vụ báo cáo đồ án
-BENCHMARK_QUERIES = [
-    {
-        "query": "lãi suất cho vay theo thỏa thuận trong hợp đồng vay tài sản",
-        "expected_ids": ["BLDS_2015_D468"],
-        "topic": "Lãi suất thỏa thuận (Điều 468 BLDS)",
-    },
-    {
-        "query": "bồi thường thiệt hại do tai nạn giao thông do nguồn nguy hiểm cao độ gây ra",
-        "expected_ids": ["BLDS_2015_D601", "NQ_02_2022_D12"],
-        "topic": "Nguồn nguy hiểm cao độ (Điều 601 BLDS / NQ 02/2022)",
-    },
-    {
-        "query": "quyền và nghĩa vụ của bên nhận thế chấp tài sản",
-        "expected_ids": ["BLDS_2015_D320", "BLDS_2015_D323", "BLDS_2015_D324"],
-        "topic": "Bảo đảm thực hiện nghĩa vụ - Thế chấp tài sản",
-    },
-    {
-        "query": "hụi họ biêu phường chủ hụi bỏ trốn quỵt tiền và trách nhiệm của chủ họ",
-        "expected_ids": ["BLDS_2015_D471", "ND_19_2019_D1", "ND_19_2019_D18"],
-        "topic": "Hình thức giao dịch họ, hụi, biêu, phường",
-    },
-    {
-        "query": "thực hiện hợp đồng vay tài sản không kỳ hạn và không có lãi",
-        "expected_ids": ["BLDS_2015_D469", "BLDS_2015_D470", "BLDS_2015_D463"],
-        "topic": "Hợp đồng vay không kỳ hạn / không lãi",
-    },
-]
+
+def get_cache_file(model_name: str, config_type: str = "enriched") -> pathlib.Path:
+    """Tạo đường dẫn file cache riêng biệt theo tên model và dạng cấu hình."""
+    slug = model_name.replace("/", "_")
+    return CACHE_DIR / f"article_embeddings_{slug}_{config_type}.npz"
+
+
+def load_benchmark_queries() -> List[Dict[str, Any]]:
+    """Nạp bộ dữ liệu benchmark chuẩn 25 câu hỏi từ file benchmark_queries.json."""
+    if BENCHMARK_FILE.exists():
+        try:
+            with open(BENCHMARK_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, dict) and "queries" in data:
+                return data["queries"]
+            elif isinstance(data, list):
+                return data
+        except Exception as e:
+            logger.warning("Không thể nạp %s (%s). Sử dụng danh sách dự phòng.", BENCHMARK_FILE, e)
+
+    return [
+        {
+            "query": "lãi suất cho vay theo thỏa thuận trong hợp đồng vay tài sản",
+            "expected_ids": ["BLDS_2015_D468"],
+            "topic": "Lãi suất thỏa thuận (Điều 468 BLDS)",
+        },
+        {
+            "query": "bồi thường thiệt hại do tai nạn giao thông do nguồn nguy hiểm cao độ gây ra",
+            "expected_ids": ["BLDS_2015_D601", "NQ_02_2022_D12"],
+            "topic": "Nguồn nguy hiểm cao độ (Điều 601 BLDS / NQ 02/2022)",
+        },
+        {
+            "query": "quyền và nghĩa vụ của bên nhận thế chấp tài sản",
+            "expected_ids": ["BLDS_2015_D322", "BLDS_2015_D323"],
+            "topic": "Bảo đảm thực hiện nghĩa vụ - Thế chấp tài sản (Điều 322, 323 BLDS)",
+        },
+        {
+            "query": "hụi họ biêu phường chủ hụi bỏ trốn quỵt tiền và trách nhiệm của chủ họ",
+            "expected_ids": ["BLDS_2015_D471", "ND_19_2019_D1", "ND_19_2019_D18"],
+            "topic": "Hình thức giao dịch họ, hụi, biêu, phường",
+        },
+        {
+            "query": "thực hiện hợp đồng vay tài sản không kỳ hạn và không có lãi",
+            "expected_ids": ["BLDS_2015_D469", "BLDS_2015_D470", "BLDS_2015_D463"],
+            "topic": "Hợp đồng vay không kỳ hạn / không lãi",
+        },
+    ]
+
+
+def compute_ndcg_at_k(actual_ranks: List[int], num_relevant: int, k: int = 5) -> float:
+    """Tính NDCG@k theo binary relevance cho truy vấn có thể có nhiều expected_ids.
+
+    Args:
+        actual_ranks: Danh sách thứ hạng (1-indexed) của các kết quả đúng xuất hiện trong top-k.
+        num_relevant: Tổng số tài liệu liên quan kỳ vọng (|expected_ids|).
+        k: Ngưỡng cắt rank (mặc định 5).
+    """
+    if num_relevant <= 0:
+        return 0.0
+    dcg = sum(1.0 / math.log2(r + 1) for r in actual_ranks if r <= k)
+    ideal_count = min(num_relevant, k)
+    idcg = sum(1.0 / math.log2(r + 1) for r in range(1, ideal_count + 1))
+    return dcg / idcg if idcg > 0 else 0.0
+
 
 
 def compute_corpus_hash(node_ids: List[str], texts: List[str]) -> str:
@@ -94,18 +133,37 @@ def compute_corpus_hash(node_ids: List[str], texts: List[str]) -> str:
     return hasher.hexdigest()
 
 
-def fetch_articles(client: Neo4jClient) -> List[Dict[str, Any]]:
-    """Truy vấn toàn bộ Article nodes từ Neo4j."""
-    query = """
-    MATCH (n:Article)
-    RETURN n.node_id AS node_id,
-           n.title AS title,
-           n.full_text AS full_text
-    ORDER BY n.node_id
-    """
-    results = client.execute_read(query)
-    logger.info("Đã lấy %d Article nodes từ Neo4j.", len(results))
-    return results
+def fetch_articles(client: Optional[Neo4jClient] = None) -> List[Dict[str, Any]]:
+    """Truy vấn toàn bộ Article nodes từ Neo4j, tự động fallback sang nodes.json nếu Neo4j chưa online."""
+    if client:
+        try:
+            query = """
+            MATCH (n:Article)
+            RETURN n.node_id AS node_id,
+                   n.number AS number,
+                   n.title AS title,
+                   n.full_text AS full_text,
+                   n.parent_id AS parent_id,
+                   n.document_id AS document_id
+            ORDER BY n.node_id
+            """
+            results = client.execute_read(query)
+            if results:
+                logger.info("Đã lấy %d Article nodes từ Neo4j.", len(results))
+                return results
+        except Exception as e:
+            logger.warning("Chưa thể kết nối Neo4j (%s). Tự động fallback sang đọc từ nodes.json...", e)
+
+    if PROCESSED_NODES_FILE.exists():
+        import json
+        with open(PROCESSED_NODES_FILE, "r", encoding="utf-8") as f:
+            all_nodes = json.load(f)
+        articles = [n for n in all_nodes if n.get("type") == "Article"]
+        articles.sort(key=lambda x: x["node_id"])
+        logger.info("Đã lấy %d Article nodes từ file nodes.json.", len(articles))
+        return articles
+
+    return []
 
 
 def save_embeddings_cache(
@@ -153,7 +211,7 @@ def load_embeddings_cache(
         data = np.load(file_path, allow_pickle=True)
     except Exception as e:
         logger.warning("Không thể đọc cache file %s: %s", file_path, e)
-        print(f"⚠️ [CACHE] Lỗi khi đọc file cache: {e}")
+        print(f"[CACHE ERROR] Lỗi khi đọc file cache: {e}")
         return None
 
     cached_ids = data["node_ids"].tolist() if "node_ids" in data else []
@@ -164,25 +222,25 @@ def load_embeddings_cache(
     # 1. Kiểm tra danh sách node_id
     if cached_ids != expected_node_ids:
         logger.warning("Cache từ chối: Danh sách node_id không khớp (%d vs %d)", len(cached_ids), len(expected_node_ids))
-        print(f"⚠️ [CACHE] Từ chối cache: Danh sách node_id không khớp với database ({len(cached_ids)} vs {len(expected_node_ids)}).")
+        print(f"[CACHE WARN] Từ chối cache: Danh sách node_id không khớp với database ({len(cached_ids)} vs {len(expected_node_ids)}).")
         return None
 
     # 2. Kiểm tra model_name
     if cached_model != expected_model:
         logger.warning("Cache từ chối: Model mismatch (cached=%s, expected=%s)", cached_model, expected_model)
-        print(f"⚠️ [CACHE] Từ chối cache: Model không khớp (Cache: '{cached_model}' != Hiện tại: '{expected_model}').")
+        print(f"[CACHE WARN] Từ chối cache: Model không khớp (Cache: '{cached_model}' != Hiện tại: '{expected_model}').")
         return None
 
     # 3. Kiểm tra dimension
     if cached_dim != expected_dim:
         logger.warning("Cache từ chối: Dimension mismatch (cached=%d, expected=%d)", cached_dim, expected_dim)
-        print(f"⚠️ [CACHE] Từ chối cache: Dimension không khớp (Cache: {cached_dim} != Hiện tại: {expected_dim}).")
+        print(f"[CACHE WARN] Từ chối cache: Dimension không khớp (Cache: {cached_dim} != Hiện tại: {expected_dim}).")
         return None
 
     # 4. Kiểm tra corpus hash
     if cached_hash != expected_corpus_hash:
         logger.warning("Cache từ chối: Corpus hash mismatch (cached=%s, current=%s)", cached_hash, expected_corpus_hash)
-        print("⚠️ [CACHE] Từ chối cache: Nội dung văn bản (full_text) đã bị thay đổi so với lúc tạo cache.")
+        print("[CACHE WARN] Từ chối cache: Nội dung văn bản (full_text) đã bị thay đổi so với lúc tạo cache.")
         return None
 
     vectors = data["vectors"]
@@ -258,7 +316,7 @@ def ensure_vector_index(client: Neo4jClient, dimension: int, timeout_seconds: in
                 "Vector Index %s cấu hình không khớp (dim: %s vs %s, sim: %s vs cosine). Đang xoá để tạo lại...",
                 INDEX_NAME, curr_dim, dimension, curr_sim
             )
-            print(f"⚠️ [INDEX] Index '{INDEX_NAME}' không khớp cấu hình (dim={curr_dim} vs {dimension}). Đang xoá để tạo lại...")
+            print(f"[INDEX WARN] Index '{INDEX_NAME}' không khớp cấu hình (dim={curr_dim} vs {dimension}). Đang xoá để tạo lại...")
             client.execute_write(f"DROP INDEX {INDEX_NAME}")
             need_create = True
 
@@ -303,17 +361,20 @@ def ensure_vector_index(client: Neo4jClient, dimension: int, timeout_seconds: in
 def run_retrieval_benchmark(client: Neo4jClient, embedder: NodeEmbedder, top_k: int = 5) -> Dict[str, float]:
     """
     Chạy bộ đánh giá định lượng (Benchmark) Retrieval:
-    Tính toán Hit@1, Hit@3, Hit@5 và MRR (Mean Reciprocal Rank) phục vụ báo cáo khoa học.
+    Tính toán Hit@1, Hit@3, Hit@5, MRR và NDCG@5 phục vụ báo cáo khoa học.
     """
+    benchmark_queries = load_benchmark_queries()
+    total_queries = len(benchmark_queries)
+
     print("\n" + "=" * 90)
-    print("           BÁO CÁO ĐÁNH GIÁ ĐỊNH LƯỢNG RETRIEVAL (BENCHMARK EVALUATION)")
+    print(f"       BÁO CÁO ĐÁNH GIÁ ĐỊNH LƯỢNG RETRIEVAL ({total_queries} CÂU HỎI BENCHMARK)")
     print("=" * 90)
 
-    total_queries = len(BENCHMARK_QUERIES)
     hits_at_1 = 0
     hits_at_3 = 0
     hits_at_5 = 0
     rr_scores: List[float] = []
+    ndcg_scores: List[float] = []
     latencies: List[float] = []
 
     search_cypher = f"""
@@ -326,10 +387,10 @@ def run_retrieval_benchmark(client: Neo4jClient, embedder: NodeEmbedder, top_k: 
     ORDER BY score DESC
     """
 
-    for idx, test_case in enumerate(BENCHMARK_QUERIES, 1):
+    for idx, test_case in enumerate(benchmark_queries, 1):
         query = test_case["query"]
         expected_ids = set(test_case["expected_ids"])
-        topic = test_case["topic"]
+        topic = test_case.get("topic", "")
 
         # Encode query
         t0 = time.time()
@@ -343,37 +404,36 @@ def run_retrieval_benchmark(client: Neo4jClient, embedder: NodeEmbedder, top_k: 
         total_time = encode_time + search_time
         latencies.append(total_time)
 
-        # Tính rank xuất hiện đầu tiên của expected target
-        first_hit_rank: Optional[int] = None
-        for rank, res in enumerate(results, 1):
-            if res["node_id"] in expected_ids:
-                first_hit_rank = rank
-                break
+        # Danh sách rank của tất cả các kết quả đúng trong top_k
+        hit_ranks = [rank for rank, res in enumerate(results, 1) if res["node_id"] in expected_ids]
+        first_hit_rank: Optional[int] = hit_ranks[0] if hit_ranks else None
 
         # Cập nhật metrics
         is_hit_1 = 1 if (first_hit_rank == 1) else 0
         is_hit_3 = 1 if (first_hit_rank is not None and first_hit_rank <= 3) else 0
         is_hit_5 = 1 if (first_hit_rank is not None and first_hit_rank <= 5) else 0
         rr = (1.0 / first_hit_rank) if first_hit_rank is not None else 0.0
+        ndcg = compute_ndcg_at_k(hit_ranks, num_relevant=len(expected_ids), k=5)
 
         hits_at_1 += is_hit_1
         hits_at_3 += is_hit_3
         hits_at_5 += is_hit_5
         rr_scores.append(rr)
+        ndcg_scores.append(ndcg)
 
-        status_icon = "✅" if is_hit_1 else ("⚠️" if is_hit_5 else "❌")
+        status_icon = "[PASS]" if is_hit_1 else ("[TOP5]" if is_hit_5 else "[FAIL]")
         rank_str = f"Rank #{first_hit_rank}" if first_hit_rank else "NOT FOUND"
 
-        print(f"\n[Test {idx}/{total_queries}] {status_icon} Chủ đề: {topic}")
+        print(f"\n[Test {idx:02d}/{total_queries}] {status_icon} Chủ đề: {topic}")
         print(f"  Query: \"{query}\"")
-        print(f"  Kỳ vọng: {sorted(list(expected_ids))} -> Kết quả: {rank_str} (RR = {rr:.2f})")
+        print(f"  Kỳ vọng: {sorted(list(expected_ids))} -> Kết quả: {rank_str} (RR = {rr:.2f}, NDCG@5 = {ndcg:.2f})")
         print(f"  Thời gian: Encode {encode_time:.1f}ms | Search {search_time:.1f}ms | Tổng {total_time:.1f}ms")
 
         for rank, res in enumerate(results, 1):
             nid = res["node_id"]
             score = res["score"]
             title = res.get("title") or ""
-            mark = "🎯 [HIT]" if nid in expected_ids else "        "
+            mark = "[HIT]   " if nid in expected_ids else "        "
             print(f"    {mark} Top {rank} [{score:.4f}] {nid} — {title}")
 
     # Tổng hợp chỉ số
@@ -381,6 +441,7 @@ def run_retrieval_benchmark(client: Neo4jClient, embedder: NodeEmbedder, top_k: 
     hit_at_3_rate = hits_at_3 / total_queries
     hit_at_5_rate = hits_at_5 / total_queries
     mrr = sum(rr_scores) / total_queries
+    ndcg_at_5 = sum(ndcg_scores) / total_queries
     avg_latency = sum(latencies) / total_queries
 
     print("\n" + "-" * 90)
@@ -391,6 +452,7 @@ def run_retrieval_benchmark(client: Neo4jClient, embedder: NodeEmbedder, top_k: 
     print(f"  • Hit@3 (Xuất hiện trong Top 3): {hits_at_3}/{total_queries} ({hit_at_3_rate * 100:.1f}%)")
     print(f"  • Hit@5 (Xuất hiện trong Top 5): {hits_at_5}/{total_queries} ({hit_at_5_rate * 100:.1f}%)")
     print(f"  • MRR (Mean Reciprocal Rank) : {mrr:.4f}")
+    print(f"  • NDCG@5                     : {ndcg_at_5:.4f}")
     print(f"  • Độ trễ trung bình mỗi câu  : {avg_latency:.1f} ms")
     print("=" * 90 + "\n")
 
@@ -399,6 +461,7 @@ def run_retrieval_benchmark(client: Neo4jClient, embedder: NodeEmbedder, top_k: 
         "Hit@3": hit_at_3_rate,
         "Hit@5": hit_at_5_rate,
         "MRR": mrr,
+        "NDCG@5": ndcg_at_5,
         "Avg_Latency_ms": avg_latency,
     }
 
@@ -420,7 +483,7 @@ def main():
         print(">> [BƯỚC 1] Kết nối Neo4j và lấy danh sách Article...")
         articles = fetch_articles(client)
         if not articles:
-            print("❌ Lỗi: Không tìm thấy node Article nào trong Neo4j!")
+            print("[ERROR] Không tìm thấy node Article nào trong Neo4j!")
             return
 
         print(f">> [BƯỚC 1] Đã tìm thấy {len(articles):,} Article nodes.")
@@ -443,6 +506,14 @@ def main():
                 run_retrieval_benchmark(client, embedder)
             return
 
+        # Nạp bản đồ phân cấp để ghép ngữ cảnh phả hệ
+        node_map = {}
+        if PROCESSED_NODES_FILE.exists():
+            import json
+            with open(PROCESSED_NODES_FILE, "r", encoding="utf-8") as f:
+                all_nodes = json.load(f)
+                node_map = {n["node_id"]: n for n in all_nodes}
+
         # Chế độ --dry-run: Tuyệt đối KHÔNG ghi vào database, KHÔNG tạo index
         if args.dry_run:
             sample_n = 5
@@ -450,7 +521,8 @@ def main():
             print(f"   - Tuyệt đối KHÔNG ghi dữ liệu vào Neo4j.")
             print(f"   - Tuyệt đối KHÔNG tạo/sửa đổi Vector Index.")
             dry_samples = articles[:sample_n]
-            dry_texts = [a["full_text"] for a in dry_samples]
+            dry_texts = [build_enriched_text(a, node_map) if node_map else a["full_text"] for a in dry_samples]
+            print(f">> [DRY-RUN] Mẫu text có ngữ cảnh phả hệ:\n{dry_texts[0][:250]}...\n")
             print(f">> [DRY-RUN] Đang encode thử {sample_n} articles bằng model '{embedder.model_name}'...")
             t0 = time.time()
             sample_vecs = embedder.encode_passages(dry_texts, show_progress_bar=False)
@@ -466,17 +538,20 @@ def main():
             articles = articles[:args.sample]
 
         node_ids = [a["node_id"] for a in articles]
-        texts = [a["full_text"] for a in articles]
+        # Ghép ngữ cảnh phả hệ vào text trước khi Embed
+        texts = [build_enriched_text(a, node_map) if node_map else a["full_text"] for a in articles]
 
         # 2. Tính mã băm ngữ liệu (Corpus Hash)
         corpus_hash = compute_corpus_hash(node_ids, texts)
         logger.info("Corpus SHA256: %s (cho %d articles)", corpus_hash, len(node_ids))
 
+        target_cache_file = get_cache_file(embedder.model_name, "enriched")
+
         vectors = None
-        # 3. Xử lý Embedding: Kiểm tra Cache an toàn 4 lớp
-        if args.use_cache and CACHE_FILE.exists() and not args.sample:
+        # 3. Xử lý Embedding: Kiểm tra Cache an toàn 4 lớp (bảo toàn cache cũ)
+        if args.use_cache and target_cache_file.exists() and not args.sample:
             cached_data = load_embeddings_cache(
-                CACHE_FILE,
+                target_cache_file,
                 expected_node_ids=node_ids,
                 expected_model=embedder.model_name,
                 expected_dim=embedder.dimension,
@@ -486,7 +561,7 @@ def main():
                 _, vectors = cached_data
 
         if vectors is None:
-            print(f"\n>> [BƯỚC 2] Bắt đầu sinh embedding cho {len(texts):,} articles bằng model '{embedder.model_name}'...")
+            print(f"\n>> [BƯỚC 2] Bắt đầu sinh embedding (Context-Enriched) cho {len(texts):,} articles bằng model '{embedder.model_name}'...")
             print(f">> Cấu hình: Device={embedder.device}, Batch Size={embedder.batch_size}")
             t_start = time.time()
 
@@ -498,9 +573,9 @@ def main():
 
             # Lưu cache an toàn (chỉ khi không dùng --sample)
             if not args.sample:
-                print("\n>> [BƯỚC 3] Lưu kết quả embedding vào cache an toàn...")
+                print(f"\n>> [BƯỚC 3] Lưu kết quả embedding vào cache riêng biệt: {target_cache_file.name}...")
                 save_embeddings_cache(
-                    CACHE_FILE,
+                    target_cache_file,
                     node_ids=node_ids,
                     vectors=vectors,
                     model_name=embedder.model_name,
@@ -522,7 +597,7 @@ def main():
             print("\n>> [BƯỚC 6] Khởi chạy bộ đánh giá Retrieval Benchmark...")
             run_retrieval_benchmark(client, embedder, top_k=5)
 
-        print("\n✨ HOÀN THÀNH TOÀN BỘ TIẾN TRÌNH EMBEDDING V1 CHO LEGAL GRAPH! ✨\n")
+        print("\n=== HOÀN THÀNH TOÀN BỘ TIẾN TRÌNH EMBEDDING CHO LEGAL GRAPH ===\n")
 
     finally:
         client.close()

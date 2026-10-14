@@ -17,13 +17,13 @@ def load_yaml_config(config_name="config.yaml"):
     # logger = setup_logger("ConfigLoader")
     
     if not os.path.exists(config_path):
-        logger.error(f"❌ KHÔNG TÌM THẤY FILE CONFIG: {config_path}")
+        logger.error(f"[ERROR] KHONG TIM THAY FILE CONFIG: {config_path}")
         raise FileNotFoundError(f"Vui lòng tạo file {config_name} trong thư mục config/")
         
     try:
         with open(config_path, "r", encoding="utf-8") as f:
             config = yaml.safe_load(f)
-        # logger.info(f"✅ Đã nạp thành công cấu hình từ: {config_name}")
+        # logger.info(f"[OK] Đã nạp thành công cấu hình từ: {config_name}")
         
         # Debug config
         logger.info(f"--- Cấu hình từ {os.path.basename(config_path)} ---")
@@ -32,5 +32,5 @@ def load_yaml_config(config_name="config.yaml"):
         
         return config
     except Exception as e:
-        # logger.error(f"❌ LỖI ĐỌC FILE CONFIG {config_name}: {e}")
+        # logger.error(f"[ERROR] LỖI ĐỌC FILE CONFIG {config_name}: {e}")
         raise Exception(f"Đã xảy ra lỗi khi đọc file config: {e}")

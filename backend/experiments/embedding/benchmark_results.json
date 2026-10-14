@@ -1,0 +1,3764 @@
+[
+  {
+    "experiment_name": "BGE-M3 (Plain Text)",
+    "model_name": "BAAI/bge-m3",
+    "config_type": "plain",
+    "total_queries": 25,
+    "hit@1_count": 21,
+    "hit@1_rate": 0.84,
+    "hit@3_count": 25,
+    "hit@3_rate": 1.0,
+    "hit@5_count": 25,
+    "hit@5_rate": 1.0,
+    "mrr": 0.9133,
+    "ndcg@5": 0.8962,
+    "avg_latency_ms": 514.6,
+    "details": [
+      {
+        "id": "Q01",
+        "topic": "Hợp đồng vay - Lãi suất thỏa thuận",
+        "query": "lãi suất cho vay theo thỏa thuận trong hợp đồng vay tài sản",
+        "expected_ids": [
+          "BLDS_2015_D468"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D468",
+        "top1_score": 0.7277,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 9308.9,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D468",
+            "score": 0.7277,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D463",
+            "score": 0.7044,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D466",
+            "score": 0.6307,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D469",
+            "score": 0.6213,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D470",
+            "score": 0.6025,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q02",
+        "topic": "Bồi thường ngoài hợp đồng - Nguồn nguy hiểm cao độ",
+        "query": "bồi thường thiệt hại do tai nạn giao thông do nguồn nguy hiểm cao độ gây ra",
+        "expected_ids": [
+          "NQ_02_2022_D12",
+          "BLDS_2015_D601"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "NQ_02_2022_D12",
+        "top1_score": 0.7165,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 213.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "NQ_02_2022_D12",
+            "score": 0.7165,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D601",
+            "score": 0.705,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D3",
+            "score": 0.5708,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "NQ_02_2022_D2",
+            "score": 0.5613,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D591",
+            "score": 0.5534,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q03",
+        "topic": "Biện pháp bảo đảm - Thế chấp tài sản (Điều 322, 323 BLDS)",
+        "query": "quyền và nghĩa vụ của bên nhận thế chấp tài sản",
+        "expected_ids": [
+          "BLDS_2015_D323",
+          "BLDS_2015_D322"
+        ],
+        "first_hit_rank": 2,
+        "top1_id": "BLDS_2015_D320",
+        "top1_score": 0.7404,
+        "hit@1": 0,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 0.5,
+        "ndcg@5": 0.6509,
+        "latency_ms": 131.5,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D320",
+            "score": 0.7404,
+            "is_hit": false
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D323",
+            "score": 0.7391,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D324",
+            "score": 0.7314,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D322",
+            "score": 0.7218,
+            "is_hit": true
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D321",
+            "score": 0.6993,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q04",
+        "topic": "Giao dịch họ, hụi, biêu, phường",
+        "query": "hụi họ biêu phường chủ hụi bỏ trốn quỵt tiền và trách nhiệm của chủ họ",
+        "expected_ids": [
+          "ND_19_2019_D23",
+          "ND_19_2019_D1",
+          "BLDS_2015_D471"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D471",
+        "top1_score": 0.5843,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 153.5,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D471",
+            "score": 0.5843,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_19_2019_D1",
+            "score": 0.5672,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_19_2019_D23",
+            "score": 0.5314,
+            "is_hit": true
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_19_2019_D24",
+            "score": 0.4931,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_19_2019_D28",
+            "score": 0.4682,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q05",
+        "topic": "Hợp đồng vay - Không kỳ hạn và không lãi",
+        "query": "thực hiện hợp đồng vay tài sản không kỳ hạn và không có lãi",
+        "expected_ids": [
+          "BLDS_2015_D463",
+          "BLDS_2015_D469",
+          "BLDS_2015_D470"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D469",
+        "top1_score": 0.7006,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.9675,
+        "latency_ms": 156.1,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D469",
+            "score": 0.7006,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D470",
+            "score": 0.6746,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D466",
+            "score": 0.6257,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D463",
+            "score": 0.6213,
+            "is_hit": true
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D494",
+            "score": 0.5981,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q06",
+        "topic": "Biện pháp bảo đảm - Đặt cọc",
+        "query": "đặt cọc để bảo đảm giao kết hoặc thực hiện hợp đồng",
+        "expected_ids": [
+          "BLDS_2015_D328"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D328",
+        "top1_score": 0.7481,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 134.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D328",
+            "score": 0.7481,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_21_2021_D37",
+            "score": 0.6475,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_21_2021_D38",
+            "score": 0.6362,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D345",
+            "score": 0.5875,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_21_2021_D43",
+            "score": 0.5811,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q07",
+        "topic": "Biện pháp bảo đảm - Cầm cố tài sản",
+        "query": "cầm cố tài sản và quyền của bên nhận cầm cố",
+        "expected_ids": [
+          "BLDS_2015_D309",
+          "BLDS_2015_D314"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D314",
+        "top1_score": 0.771,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131,
+        "latency_ms": 129.8,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D314",
+            "score": 0.771,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D312",
+            "score": 0.759,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D311",
+            "score": 0.7588,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_21_2021_D31",
+            "score": 0.7429,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D313",
+            "score": 0.7368,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q08",
+        "topic": "Biện pháp bảo đảm - Bảo lãnh",
+        "query": "nghĩa vụ bảo lãnh và phạm vi bảo lãnh thực hiện nghĩa vụ",
+        "expected_ids": [
+          "BLDS_2015_D335",
+          "BLDS_2015_D336"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D336",
+        "top1_score": 0.7461,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.8772,
+        "latency_ms": 146.8,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D336",
+            "score": 0.7461,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_21_2021_D44",
+            "score": 0.7389,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D342",
+            "score": 0.7096,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D335",
+            "score": 0.7022,
+            "is_hit": true
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D339",
+            "score": 0.6986,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q09",
+        "topic": "Hợp đồng tặng cho tài sản có điều kiện",
+        "query": "tặng cho tài sản có điều kiện và xử lý khi bên được tặng cho không thực hiện điều kiện",
+        "expected_ids": [
+          "BLDS_2015_D462"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D462",
+        "top1_score": 0.7571,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 151.1,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D462",
+            "score": 0.7571,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D356",
+            "score": 0.6691,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D460",
+            "score": 0.668,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D457",
+            "score": 0.6488,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D301",
+            "score": 0.6389,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q10",
+        "topic": "Thừa kế theo pháp luật - Hàng thừa kế",
+        "query": "các hàng thừa kế theo pháp luật và thứ tự ưu tiên nhận di sản",
+        "expected_ids": [
+          "BLDS_2015_D651"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D651",
+        "top1_score": 0.7442,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 143.0,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D651",
+            "score": 0.7442,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D658",
+            "score": 0.6644,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D649",
+            "score": 0.636,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D650",
+            "score": 0.6165,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D644",
+            "score": 0.5998,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q11",
+        "topic": "Thừa kế theo di chúc - Di chúc hợp pháp",
+        "query": "điều kiện để một bản di chúc được coi là hợp pháp",
+        "expected_ids": [
+          "BLDS_2015_D630"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D630",
+        "top1_score": 0.7653,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 132.5,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D630",
+            "score": 0.7653,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D625",
+            "score": 0.6676,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D650",
+            "score": 0.6662,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D641",
+            "score": 0.6498,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D681",
+            "score": 0.6481,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q12",
+        "topic": "Thừa kế - Từ chối nhận di sản",
+        "query": "từ chối nhận di sản thừa kế thời hạn và thủ tục",
+        "expected_ids": [
+          "BLDS_2015_D620"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D620",
+        "top1_score": 0.7104,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 125.8,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D620",
+            "score": 0.7104,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D623",
+            "score": 0.6162,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D644",
+            "score": 0.5751,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D622",
+            "score": 0.5564,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D650",
+            "score": 0.5537,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q13",
+        "topic": "Thừa kế - Thời hiệu thừa kế",
+        "query": "thời hiệu yêu cầu chia di sản thừa kế và thời hiệu khởi kiện",
+        "expected_ids": [
+          "BLDS_2015_D623"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D623",
+        "top1_score": 0.724,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 139.8,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D623",
+            "score": 0.724,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D661",
+            "score": 0.6703,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D611",
+            "score": 0.6214,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "NQ_02_2022_D5",
+            "score": 0.6208,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D588",
+            "score": 0.6109,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q14",
+        "topic": "Bồi thường thiệt hại do súc vật gây ra",
+        "query": "bồi thường thiệt hại do súc vật vật nuôi chó cắn gây ra",
+        "expected_ids": [
+          "BLDS_2015_D603"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D603",
+        "top1_score": 0.6392,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 138.1,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D603",
+            "score": 0.6392,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D13",
+            "score": 0.5409,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D606",
+            "score": 0.5372,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D607",
+            "score": 0.5321,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D590",
+            "score": 0.5243,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q15",
+        "topic": "Bồi thường do người chưa thành niên gây ra",
+        "query": "bồi thường thiệt hại do người dưới mười lăm tuổi người mất năng lực hành vi gây ra",
+        "expected_ids": [
+          "BLDS_2015_D599"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D599",
+        "top1_score": 0.7384,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 144.3,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D599",
+            "score": 0.7384,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D586",
+            "score": 0.7168,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D11",
+            "score": 0.6618,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D593",
+            "score": 0.6106,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D596",
+            "score": 0.6035,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q16",
+        "topic": "Bồi thường thiệt hại do tính mạng bị xâm phạm",
+        "query": "xác định thiệt hại do tính mạng bị xâm phạm bao gồm những chi phí nào",
+        "expected_ids": [
+          "BLDS_2015_D591"
+        ],
+        "first_hit_rank": 2,
+        "top1_id": "NQ_02_2022_D8",
+        "top1_score": 0.7719,
+        "hit@1": 0,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309,
+        "latency_ms": 145.5,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "NQ_02_2022_D8",
+            "score": 0.7719,
+            "is_hit": false
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D591",
+            "score": 0.7578,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D590",
+            "score": 0.7061,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "NQ_02_2022_D7",
+            "score": 0.7042,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "NQ_02_2022_D6",
+            "score": 0.6647,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q17",
+        "topic": "Chấm dứt hợp đồng - Đơn phương chấm dứt",
+        "query": "đơn phương chấm dứt thực hiện hợp đồng khi một bên vi phạm nghiêm trọng",
+        "expected_ids": [
+          "BLDS_2015_D428"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D428",
+        "top1_score": 0.7162,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 158.5,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D428",
+            "score": 0.7162,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D520",
+            "score": 0.7104,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D529",
+            "score": 0.6968,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D551",
+            "score": 0.6567,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D492",
+            "score": 0.6443,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q18",
+        "topic": "Nguyên tắc cơ bản của pháp luật dân sự",
+        "query": "nguyên tắc cơ bản của pháp luật dân sự về tự do cam kết thỏa thuận",
+        "expected_ids": [
+          "BLDS_2015_D3"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D3",
+        "top1_score": 0.6707,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 148.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D3",
+            "score": 0.6707,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D8",
+            "score": 0.5363,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D12",
+            "score": 0.5235,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "HIEN_PHAP_2013_D31",
+            "score": 0.5216,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D120",
+            "score": 0.516,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q19",
+        "topic": "Nghị định 19 - Nguyên tắc tổ chức và chủ họ",
+        "query": "nguyên tắc tổ chức họ hụi biêu phường và điều kiện làm chủ họ",
+        "expected_ids": [
+          "ND_19_2019_D3",
+          "ND_19_2019_D6"
+        ],
+        "first_hit_rank": 3,
+        "top1_id": "ND_19_2019_D1",
+        "top1_score": 0.7204,
+        "hit@1": 0,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 0.3333,
+        "ndcg@5": 0.5706,
+        "latency_ms": 143.0,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_19_2019_D1",
+            "score": 0.7204,
+            "is_hit": false
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D471",
+            "score": 0.7199,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_19_2019_D6",
+            "score": 0.6134,
+            "is_hit": true
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_19_2019_D3",
+            "score": 0.5789,
+            "is_hit": true
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_19_2019_D27",
+            "score": 0.5581,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q20",
+        "topic": "Nghị định 19 - Lãi suất trong dây họ",
+        "query": "mức lãi suất trong họ có lãi và thỏa thuận giữa các thành viên",
+        "expected_ids": [
+          "ND_19_2019_D21"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "ND_19_2019_D21",
+        "top1_score": 0.7588,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 137.8,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_19_2019_D21",
+            "score": 0.7588,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_19_2019_D20",
+            "score": 0.6972,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_19_2019_D22",
+            "score": 0.6873,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_19_2019_D4",
+            "score": 0.6508,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_19_2019_D19",
+            "score": 0.6436,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q21",
+        "topic": "Nghị định 19 - Trách nhiệm của chủ họ",
+        "query": "trách nhiệm của chủ họ do không giao hoặc giao không đầy đủ các phần họ",
+        "expected_ids": [
+          "ND_19_2019_D23"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "ND_19_2019_D23",
+        "top1_score": 0.8096,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 142.5,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_19_2019_D23",
+            "score": 0.8096,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_19_2019_D24",
+            "score": 0.7034,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_19_2019_D18",
+            "score": 0.6401,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_19_2019_D16",
+            "score": 0.5998,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_19_2019_D17",
+            "score": 0.5981,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q22",
+        "topic": "Nghị định 21 - Xử lý tài sản bảo đảm",
+        "query": "các phương thức xử lý tài sản bảo đảm và thông báo xử lý tài sản bảo đảm",
+        "expected_ids": [
+          "ND_21_2021_D51",
+          "ND_21_2021_D49"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "ND_21_2021_D51",
+        "top1_score": 0.8104,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131,
+        "latency_ms": 144.1,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_21_2021_D51",
+            "score": 0.8104,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D300",
+            "score": 0.7807,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D303",
+            "score": 0.7318,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_21_2021_D52",
+            "score": 0.7253,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_21_2021_D54",
+            "score": 0.7203,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q23",
+        "topic": "Nghị quyết 02 - Hướng dẫn Điều 601 nguồn nguy hiểm cao độ",
+        "query": "hướng dẫn áp dụng Điều 601 Bộ luật Dân sự về bồi thường thiệt hại nguồn nguy hiểm cao độ",
+        "expected_ids": [
+          "NQ_02_2022_D12",
+          "BLDS_2015_D601"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "NQ_02_2022_D12",
+        "top1_score": 0.7473,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 163.9,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "NQ_02_2022_D12",
+            "score": 0.7473,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D601",
+            "score": 0.6585,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D3",
+            "score": 0.589,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "NQ_02_2022_D6",
+            "score": 0.5876,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "NQ_02_2022_D1",
+            "score": 0.5774,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q24",
+        "topic": "Nghị quyết 02 - Hướng dẫn Điều 585 nguyên tắc bồi thường",
+        "query": "nguyên tắc bồi thường thiệt hại toàn bộ và kịp thời theo hướng dẫn của Hội đồng Thẩm phán",
+        "expected_ids": [
+          "NQ_02_2022_D3"
+        ],
+        "first_hit_rank": 2,
+        "top1_id": "BLDS_2015_D585",
+        "top1_score": 0.667,
+        "hit@1": 0,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309,
+        "latency_ms": 143.5,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D585",
+            "score": 0.667,
+            "is_hit": false
+          },
+          {
+            "rank": 2,
+            "node_id": "NQ_02_2022_D3",
+            "score": 0.6386,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D13",
+            "score": 0.5978,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "NQ_02_2022_D6",
+            "score": 0.5731,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D419",
+            "score": 0.5648,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q25",
+        "topic": "Hiến pháp 2013 - Chế độ chính trị",
+        "query": "chế độ chính trị nước Cộng hòa xã hội chủ nghĩa Việt Nam quyền lực nhà nước thuộc về nhân dân",
+        "expected_ids": [
+          "HIEN_PHAP_2013_D1",
+          "HIEN_PHAP_2013_D2"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "HIEN_PHAP_2013_D2",
+        "top1_score": 0.8181,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.8503,
+        "latency_ms": 188.5,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "HIEN_PHAP_2013_D2",
+            "score": 0.8181,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "HIEN_PHAP_2013_D94",
+            "score": 0.735,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D97",
+            "score": 0.7167,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "HIEN_PHAP_2013_D69",
+            "score": 0.7156,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "HIEN_PHAP_2013_D1",
+            "score": 0.7122,
+            "is_hit": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "experiment_name": "BGE-M3 (Context-Enriched)",
+    "model_name": "BAAI/bge-m3",
+    "config_type": "enriched",
+    "total_queries": 25,
+    "hit@1_count": 23,
+    "hit@1_rate": 0.92,
+    "hit@3_count": 25,
+    "hit@3_rate": 1.0,
+    "hit@5_count": 25,
+    "hit@5_rate": 1.0,
+    "mrr": 0.96,
+    "ndcg@5": 0.9196,
+    "avg_latency_ms": 514.1,
+    "details": [
+      {
+        "id": "Q01",
+        "topic": "Hợp đồng vay - Lãi suất thỏa thuận",
+        "query": "lãi suất cho vay theo thỏa thuận trong hợp đồng vay tài sản",
+        "expected_ids": [
+          "BLDS_2015_D468"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D468",
+        "top1_score": 0.7166,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 8979.9,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D468",
+            "score": 0.7166,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D463",
+            "score": 0.6846,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D466",
+            "score": 0.6275,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D470",
+            "score": 0.6241,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D469",
+            "score": 0.6235,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q02",
+        "topic": "Bồi thường ngoài hợp đồng - Nguồn nguy hiểm cao độ",
+        "query": "bồi thường thiệt hại do tai nạn giao thông do nguồn nguy hiểm cao độ gây ra",
+        "expected_ids": [
+          "NQ_02_2022_D12",
+          "BLDS_2015_D601"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "NQ_02_2022_D12",
+        "top1_score": 0.7209,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 168.9,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "NQ_02_2022_D12",
+            "score": 0.7209,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D601",
+            "score": 0.7172,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D3",
+            "score": 0.565,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D585",
+            "score": 0.5619,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "NQ_02_2022_D2",
+            "score": 0.5578,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q03",
+        "topic": "Biện pháp bảo đảm - Thế chấp tài sản (Điều 322, 323 BLDS)",
+        "query": "quyền và nghĩa vụ của bên nhận thế chấp tài sản",
+        "expected_ids": [
+          "BLDS_2015_D323",
+          "BLDS_2015_D322"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D323",
+        "top1_score": 0.7634,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 156.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D323",
+            "score": 0.7634,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D322",
+            "score": 0.7352,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D320",
+            "score": 0.7329,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D324",
+            "score": 0.7328,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D321",
+            "score": 0.731,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q04",
+        "topic": "Giao dịch họ, hụi, biêu, phường",
+        "query": "hụi họ biêu phường chủ hụi bỏ trốn quỵt tiền và trách nhiệm của chủ họ",
+        "expected_ids": [
+          "ND_19_2019_D23",
+          "ND_19_2019_D1",
+          "BLDS_2015_D471"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "ND_19_2019_D23",
+        "top1_score": 0.6147,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.7039,
+        "latency_ms": 179.5,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_19_2019_D23",
+            "score": 0.6147,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_19_2019_D24",
+            "score": 0.6034,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D471",
+            "score": 0.5986,
+            "is_hit": true
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_19_2019_D28",
+            "score": 0.5952,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_19_2019_D25",
+            "score": 0.5844,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q05",
+        "topic": "Hợp đồng vay - Không kỳ hạn và không lãi",
+        "query": "thực hiện hợp đồng vay tài sản không kỳ hạn và không có lãi",
+        "expected_ids": [
+          "BLDS_2015_D463",
+          "BLDS_2015_D469",
+          "BLDS_2015_D470"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D469",
+        "top1_score": 0.7154,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 167.2,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D469",
+            "score": 0.7154,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D470",
+            "score": 0.6853,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D463",
+            "score": 0.6047,
+            "is_hit": true
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_21_2021_D35",
+            "score": 0.5931,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D494",
+            "score": 0.5898,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q06",
+        "topic": "Biện pháp bảo đảm - Đặt cọc",
+        "query": "đặt cọc để bảo đảm giao kết hoặc thực hiện hợp đồng",
+        "expected_ids": [
+          "BLDS_2015_D328"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D328",
+        "top1_score": 0.701,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 143.0,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D328",
+            "score": 0.701,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_21_2021_D37",
+            "score": 0.6868,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_21_2021_D38",
+            "score": 0.6329,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D386",
+            "score": 0.5627,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D330",
+            "score": 0.5579,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q07",
+        "topic": "Biện pháp bảo đảm - Cầm cố tài sản",
+        "query": "cầm cố tài sản và quyền của bên nhận cầm cố",
+        "expected_ids": [
+          "BLDS_2015_D309",
+          "BLDS_2015_D314"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D314",
+        "top1_score": 0.7777,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131,
+        "latency_ms": 175.1,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D314",
+            "score": 0.7777,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D312",
+            "score": 0.7648,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D311",
+            "score": 0.7617,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D313",
+            "score": 0.756,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_21_2021_D31",
+            "score": 0.7123,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q08",
+        "topic": "Biện pháp bảo đảm - Bảo lãnh",
+        "query": "nghĩa vụ bảo lãnh và phạm vi bảo lãnh thực hiện nghĩa vụ",
+        "expected_ids": [
+          "BLDS_2015_D335",
+          "BLDS_2015_D336"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D336",
+        "top1_score": 0.7683,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131,
+        "latency_ms": 140.0,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D336",
+            "score": 0.7683,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_21_2021_D44",
+            "score": 0.7412,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_21_2021_D43",
+            "score": 0.7122,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D339",
+            "score": 0.7065,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D341",
+            "score": 0.7035,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q09",
+        "topic": "Hợp đồng tặng cho tài sản có điều kiện",
+        "query": "tặng cho tài sản có điều kiện và xử lý khi bên được tặng cho không thực hiện điều kiện",
+        "expected_ids": [
+          "BLDS_2015_D462"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D462",
+        "top1_score": 0.7401,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 143.5,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D462",
+            "score": 0.7401,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D460",
+            "score": 0.6602,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D356",
+            "score": 0.6521,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D457",
+            "score": 0.6509,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D461",
+            "score": 0.6284,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q10",
+        "topic": "Thừa kế theo pháp luật - Hàng thừa kế",
+        "query": "các hàng thừa kế theo pháp luật và thứ tự ưu tiên nhận di sản",
+        "expected_ids": [
+          "BLDS_2015_D651"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D651",
+        "top1_score": 0.7299,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 137.3,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D651",
+            "score": 0.7299,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D658",
+            "score": 0.675,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D649",
+            "score": 0.6188,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D650",
+            "score": 0.6073,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D644",
+            "score": 0.5942,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q11",
+        "topic": "Thừa kế theo di chúc - Di chúc hợp pháp",
+        "query": "điều kiện để một bản di chúc được coi là hợp pháp",
+        "expected_ids": [
+          "BLDS_2015_D630"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D630",
+        "top1_score": 0.7757,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 135.1,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D630",
+            "score": 0.7757,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D650",
+            "score": 0.6884,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D625",
+            "score": 0.662,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D643",
+            "score": 0.6588,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D641",
+            "score": 0.6427,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q12",
+        "topic": "Thừa kế - Từ chối nhận di sản",
+        "query": "từ chối nhận di sản thừa kế thời hạn và thủ tục",
+        "expected_ids": [
+          "BLDS_2015_D620"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D620",
+        "top1_score": 0.7244,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 137.7,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D620",
+            "score": 0.7244,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D623",
+            "score": 0.6201,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D622",
+            "score": 0.5848,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D644",
+            "score": 0.5826,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D621",
+            "score": 0.5671,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q13",
+        "topic": "Thừa kế - Thời hiệu thừa kế",
+        "query": "thời hiệu yêu cầu chia di sản thừa kế và thời hiệu khởi kiện",
+        "expected_ids": [
+          "BLDS_2015_D623"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D623",
+        "top1_score": 0.7369,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 142.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D623",
+            "score": 0.7369,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D661",
+            "score": 0.6836,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D611",
+            "score": 0.6358,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D660",
+            "score": 0.6238,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D154",
+            "score": 0.6104,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q14",
+        "topic": "Bồi thường thiệt hại do súc vật gây ra",
+        "query": "bồi thường thiệt hại do súc vật vật nuôi chó cắn gây ra",
+        "expected_ids": [
+          "BLDS_2015_D603"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D603",
+        "top1_score": 0.6419,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 136.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D603",
+            "score": 0.6419,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D606",
+            "score": 0.5493,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D607",
+            "score": 0.5406,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D13",
+            "score": 0.5307,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D591",
+            "score": 0.5277,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q15",
+        "topic": "Bồi thường do người chưa thành niên gây ra",
+        "query": "bồi thường thiệt hại do người dưới mười lăm tuổi người mất năng lực hành vi gây ra",
+        "expected_ids": [
+          "BLDS_2015_D599"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D599",
+        "top1_score": 0.7516,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 224.9,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D599",
+            "score": 0.7516,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D586",
+            "score": 0.7068,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D11",
+            "score": 0.7001,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D593",
+            "score": 0.6035,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D577",
+            "score": 0.5962,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q16",
+        "topic": "Bồi thường thiệt hại do tính mạng bị xâm phạm",
+        "query": "xác định thiệt hại do tính mạng bị xâm phạm bao gồm những chi phí nào",
+        "expected_ids": [
+          "BLDS_2015_D591"
+        ],
+        "first_hit_rank": 2,
+        "top1_id": "NQ_02_2022_D8",
+        "top1_score": 0.7634,
+        "hit@1": 0,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309,
+        "latency_ms": 163.0,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "NQ_02_2022_D8",
+            "score": 0.7634,
+            "is_hit": false
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D591",
+            "score": 0.7592,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D7",
+            "score": 0.69,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D590",
+            "score": 0.6771,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D593",
+            "score": 0.6738,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q17",
+        "topic": "Chấm dứt hợp đồng - Đơn phương chấm dứt",
+        "query": "đơn phương chấm dứt thực hiện hợp đồng khi một bên vi phạm nghiêm trọng",
+        "expected_ids": [
+          "BLDS_2015_D428"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D428",
+        "top1_score": 0.7255,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 147.0,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D428",
+            "score": 0.7255,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D520",
+            "score": 0.7066,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D529",
+            "score": 0.6854,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D551",
+            "score": 0.6739,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D569",
+            "score": 0.6674,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q18",
+        "topic": "Nguyên tắc cơ bản của pháp luật dân sự",
+        "query": "nguyên tắc cơ bản của pháp luật dân sự về tự do cam kết thỏa thuận",
+        "expected_ids": [
+          "BLDS_2015_D3"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D3",
+        "top1_score": 0.6762,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 154.3,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D3",
+            "score": 0.6762,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D406",
+            "score": 0.5528,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D8",
+            "score": 0.5511,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D375",
+            "score": 0.5507,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D418",
+            "score": 0.5418,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q19",
+        "topic": "Nghị định 19 - Nguyên tắc tổ chức và chủ họ",
+        "query": "nguyên tắc tổ chức họ hụi biêu phường và điều kiện làm chủ họ",
+        "expected_ids": [
+          "ND_19_2019_D3",
+          "ND_19_2019_D6"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "ND_19_2019_D6",
+        "top1_score": 0.74,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 149.3,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_19_2019_D6",
+            "score": 0.74,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_19_2019_D3",
+            "score": 0.7156,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_19_2019_D1",
+            "score": 0.7033,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D471",
+            "score": 0.69,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_19_2019_D5",
+            "score": 0.6692,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q20",
+        "topic": "Nghị định 19 - Lãi suất trong dây họ",
+        "query": "mức lãi suất trong họ có lãi và thỏa thuận giữa các thành viên",
+        "expected_ids": [
+          "ND_19_2019_D21"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "ND_19_2019_D21",
+        "top1_score": 0.755,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 152.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_19_2019_D21",
+            "score": 0.755,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_19_2019_D20",
+            "score": 0.7115,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_19_2019_D22",
+            "score": 0.6631,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_19_2019_D19",
+            "score": 0.6535,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_19_2019_D16",
+            "score": 0.643,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q21",
+        "topic": "Nghị định 19 - Trách nhiệm của chủ họ",
+        "query": "trách nhiệm của chủ họ do không giao hoặc giao không đầy đủ các phần họ",
+        "expected_ids": [
+          "ND_19_2019_D23"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "ND_19_2019_D23",
+        "top1_score": 0.8219,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 153.3,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_19_2019_D23",
+            "score": 0.8219,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_19_2019_D24",
+            "score": 0.7286,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_19_2019_D18",
+            "score": 0.6373,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_19_2019_D28",
+            "score": 0.6103,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D437",
+            "score": 0.5999,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q22",
+        "topic": "Nghị định 21 - Xử lý tài sản bảo đảm",
+        "query": "các phương thức xử lý tài sản bảo đảm và thông báo xử lý tài sản bảo đảm",
+        "expected_ids": [
+          "ND_21_2021_D51",
+          "ND_21_2021_D49"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "ND_21_2021_D51",
+        "top1_score": 0.8197,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.8772,
+        "latency_ms": 166.8,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_21_2021_D51",
+            "score": 0.8197,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D300",
+            "score": 0.7666,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_21_2021_D52",
+            "score": 0.7348,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_21_2021_D49",
+            "score": 0.7325,
+            "is_hit": true
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_21_2021_D54",
+            "score": 0.7292,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q23",
+        "topic": "Nghị quyết 02 - Hướng dẫn Điều 601 nguồn nguy hiểm cao độ",
+        "query": "hướng dẫn áp dụng Điều 601 Bộ luật Dân sự về bồi thường thiệt hại nguồn nguy hiểm cao độ",
+        "expected_ids": [
+          "NQ_02_2022_D12",
+          "BLDS_2015_D601"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "NQ_02_2022_D12",
+        "top1_score": 0.7677,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 180.0,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "NQ_02_2022_D12",
+            "score": 0.7677,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D601",
+            "score": 0.7181,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D3",
+            "score": 0.6025,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D585",
+            "score": 0.5984,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "NQ_02_2022_D6",
+            "score": 0.5829,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q24",
+        "topic": "Nghị quyết 02 - Hướng dẫn Điều 585 nguyên tắc bồi thường",
+        "query": "nguyên tắc bồi thường thiệt hại toàn bộ và kịp thời theo hướng dẫn của Hội đồng Thẩm phán",
+        "expected_ids": [
+          "NQ_02_2022_D3"
+        ],
+        "first_hit_rank": 2,
+        "top1_id": "BLDS_2015_D585",
+        "top1_score": 0.6834,
+        "hit@1": 0,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309,
+        "latency_ms": 163.0,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D585",
+            "score": 0.6834,
+            "is_hit": false
+          },
+          {
+            "rank": 2,
+            "node_id": "NQ_02_2022_D3",
+            "score": 0.6332,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D13",
+            "score": 0.6102,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "NQ_02_2022_D13",
+            "score": 0.5788,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "NQ_02_2022_D12",
+            "score": 0.5644,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q25",
+        "topic": "Hiến pháp 2013 - Chế độ chính trị",
+        "query": "chế độ chính trị nước Cộng hòa xã hội chủ nghĩa Việt Nam quyền lực nhà nước thuộc về nhân dân",
+        "expected_ids": [
+          "HIEN_PHAP_2013_D1",
+          "HIEN_PHAP_2013_D2"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "HIEN_PHAP_2013_D2",
+        "top1_score": 0.8194,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.9197,
+        "latency_ms": 255.9,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "HIEN_PHAP_2013_D2",
+            "score": 0.8194,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "HIEN_PHAP_2013_D6",
+            "score": 0.7733,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "HIEN_PHAP_2013_D1",
+            "score": 0.723,
+            "is_hit": true
+          },
+          {
+            "rank": 4,
+            "node_id": "HIEN_PHAP_2013_D69",
+            "score": 0.722,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "HIEN_PHAP_2013_D94",
+            "score": 0.7172,
+            "is_hit": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "experiment_name": "VNLegal-LAL (Context-Enriched)",
+    "model_name": "darklethelong/vnlegal-lal",
+    "config_type": "enriched",
+    "total_queries": 25,
+    "hit@1_count": 24,
+    "hit@1_rate": 0.96,
+    "hit@3_count": 25,
+    "hit@3_rate": 1.0,
+    "hit@5_count": 25,
+    "hit@5_rate": 1.0,
+    "mrr": 0.98,
+    "ndcg@5": 0.9509,
+    "avg_latency_ms": 870.0,
+    "details": [
+      {
+        "id": "Q01",
+        "topic": "Hợp đồng vay - Lãi suất thỏa thuận",
+        "query": "lãi suất cho vay theo thỏa thuận trong hợp đồng vay tài sản",
+        "expected_ids": [
+          "BLDS_2015_D468"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D468",
+        "top1_score": 0.7732,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 4078.9,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D468",
+            "score": 0.7732,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D463",
+            "score": 0.6109,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D470",
+            "score": 0.5583,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D466",
+            "score": 0.5567,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D469",
+            "score": 0.5369,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q02",
+        "topic": "Bồi thường ngoài hợp đồng - Nguồn nguy hiểm cao độ",
+        "query": "bồi thường thiệt hại do tai nạn giao thông do nguồn nguy hiểm cao độ gây ra",
+        "expected_ids": [
+          "NQ_02_2022_D12",
+          "BLDS_2015_D601"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "NQ_02_2022_D12",
+        "top1_score": 0.7373,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 795.9,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "NQ_02_2022_D12",
+            "score": 0.7373,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D601",
+            "score": 0.7006,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D2",
+            "score": 0.523,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "NQ_02_2022_D3",
+            "score": 0.508,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D584",
+            "score": 0.4721,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q03",
+        "topic": "Biện pháp bảo đảm - Thế chấp tài sản (Điều 322, 323 BLDS)",
+        "query": "quyền và nghĩa vụ của bên nhận thế chấp tài sản",
+        "expected_ids": [
+          "BLDS_2015_D323",
+          "BLDS_2015_D322"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D323",
+        "top1_score": 0.7051,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 624.3,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D323",
+            "score": 0.7051,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D322",
+            "score": 0.6891,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D321",
+            "score": 0.663,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D320",
+            "score": 0.6341,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D317",
+            "score": 0.6288,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q04",
+        "topic": "Giao dịch họ, hụi, biêu, phường",
+        "query": "hụi họ biêu phường chủ hụi bỏ trốn quỵt tiền và trách nhiệm của chủ họ",
+        "expected_ids": [
+          "ND_19_2019_D23",
+          "ND_19_2019_D1",
+          "BLDS_2015_D471"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D471",
+        "top1_score": 0.5001,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.7654,
+        "latency_ms": 860.2,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D471",
+            "score": 0.5001,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_19_2019_D23",
+            "score": 0.4929,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_19_2019_D17",
+            "score": 0.4856,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_19_2019_D25",
+            "score": 0.4702,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_19_2019_D24",
+            "score": 0.4513,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q05",
+        "topic": "Hợp đồng vay - Không kỳ hạn và không lãi",
+        "query": "thực hiện hợp đồng vay tài sản không kỳ hạn và không có lãi",
+        "expected_ids": [
+          "BLDS_2015_D463",
+          "BLDS_2015_D469",
+          "BLDS_2015_D470"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D469",
+        "top1_score": 0.6376,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 696.2,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D469",
+            "score": 0.6376,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D470",
+            "score": 0.5554,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D463",
+            "score": 0.474,
+            "is_hit": true
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D466",
+            "score": 0.4331,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D468",
+            "score": 0.4077,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q06",
+        "topic": "Biện pháp bảo đảm - Đặt cọc",
+        "query": "đặt cọc để bảo đảm giao kết hoặc thực hiện hợp đồng",
+        "expected_ids": [
+          "BLDS_2015_D328"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D328",
+        "top1_score": 0.6928,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 671.2,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D328",
+            "score": 0.6928,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_21_2021_D37",
+            "score": 0.5578,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_21_2021_D38",
+            "score": 0.5156,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D292",
+            "score": 0.4448,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_21_2021_D3",
+            "score": 0.4204,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q07",
+        "topic": "Biện pháp bảo đảm - Cầm cố tài sản",
+        "query": "cầm cố tài sản và quyền của bên nhận cầm cố",
+        "expected_ids": [
+          "BLDS_2015_D309",
+          "BLDS_2015_D314"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D314",
+        "top1_score": 0.7433,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.6131,
+        "latency_ms": 600.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D314",
+            "score": 0.7433,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D312",
+            "score": 0.7265,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_21_2021_D32",
+            "score": 0.6968,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D313",
+            "score": 0.6801,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D311",
+            "score": 0.6779,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q08",
+        "topic": "Biện pháp bảo đảm - Bảo lãnh",
+        "query": "nghĩa vụ bảo lãnh và phạm vi bảo lãnh thực hiện nghĩa vụ",
+        "expected_ids": [
+          "BLDS_2015_D335",
+          "BLDS_2015_D336"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D336",
+        "top1_score": 0.7601,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 653.9,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D336",
+            "score": 0.7601,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D335",
+            "score": 0.7007,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D342",
+            "score": 0.6055,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_21_2021_D44",
+            "score": 0.6053,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D339",
+            "score": 0.6021,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q09",
+        "topic": "Hợp đồng tặng cho tài sản có điều kiện",
+        "query": "tặng cho tài sản có điều kiện và xử lý khi bên được tặng cho không thực hiện điều kiện",
+        "expected_ids": [
+          "BLDS_2015_D462"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D462",
+        "top1_score": 0.6639,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 776.9,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D462",
+            "score": 0.6639,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D460",
+            "score": 0.491,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D457",
+            "score": 0.4783,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D459",
+            "score": 0.4563,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D646",
+            "score": 0.4452,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q10",
+        "topic": "Thừa kế theo pháp luật - Hàng thừa kế",
+        "query": "các hàng thừa kế theo pháp luật và thứ tự ưu tiên nhận di sản",
+        "expected_ids": [
+          "BLDS_2015_D651"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D651",
+        "top1_score": 0.6464,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 718.9,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D651",
+            "score": 0.6464,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D650",
+            "score": 0.6013,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D658",
+            "score": 0.5876,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D660",
+            "score": 0.5637,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D656",
+            "score": 0.5572,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q11",
+        "topic": "Thừa kế theo di chúc - Di chúc hợp pháp",
+        "query": "điều kiện để một bản di chúc được coi là hợp pháp",
+        "expected_ids": [
+          "BLDS_2015_D630"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D630",
+        "top1_score": 0.6693,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 664.5,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D630",
+            "score": 0.6693,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D681",
+            "score": 0.6021,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D638",
+            "score": 0.6015,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D627",
+            "score": 0.5968,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D624",
+            "score": 0.5875,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q12",
+        "topic": "Thừa kế - Từ chối nhận di sản",
+        "query": "từ chối nhận di sản thừa kế thời hạn và thủ tục",
+        "expected_ids": [
+          "BLDS_2015_D620"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D620",
+        "top1_score": 0.666,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 712.1,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D620",
+            "score": 0.666,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D623",
+            "score": 0.509,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D622",
+            "score": 0.4748,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D644",
+            "score": 0.4725,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D661",
+            "score": 0.4716,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q13",
+        "topic": "Thừa kế - Thời hiệu thừa kế",
+        "query": "thời hiệu yêu cầu chia di sản thừa kế và thời hiệu khởi kiện",
+        "expected_ids": [
+          "BLDS_2015_D623"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D623",
+        "top1_score": 0.6399,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 721.1,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D623",
+            "score": 0.6399,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D154",
+            "score": 0.5948,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D661",
+            "score": 0.5706,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D155",
+            "score": 0.5563,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D150",
+            "score": 0.5511,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q14",
+        "topic": "Bồi thường thiệt hại do súc vật gây ra",
+        "query": "bồi thường thiệt hại do súc vật vật nuôi chó cắn gây ra",
+        "expected_ids": [
+          "BLDS_2015_D603"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D603",
+        "top1_score": 0.6219,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 697.1,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D603",
+            "score": 0.6219,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "NQ_02_2022_D2",
+            "score": 0.5288,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D3",
+            "score": 0.4952,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D584",
+            "score": 0.4909,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D585",
+            "score": 0.4873,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q15",
+        "topic": "Bồi thường do người chưa thành niên gây ra",
+        "query": "bồi thường thiệt hại do người dưới mười lăm tuổi người mất năng lực hành vi gây ra",
+        "expected_ids": [
+          "BLDS_2015_D599"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D599",
+        "top1_score": 0.6692,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 776.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D599",
+            "score": 0.6692,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D586",
+            "score": 0.634,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D11",
+            "score": 0.5819,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "NQ_02_2022_D2",
+            "score": 0.5497,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D584",
+            "score": 0.5266,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q16",
+        "topic": "Bồi thường thiệt hại do tính mạng bị xâm phạm",
+        "query": "xác định thiệt hại do tính mạng bị xâm phạm bao gồm những chi phí nào",
+        "expected_ids": [
+          "BLDS_2015_D591"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D591",
+        "top1_score": 0.7297,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 822.0,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D591",
+            "score": 0.7297,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "NQ_02_2022_D8",
+            "score": 0.7105,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D590",
+            "score": 0.5685,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "NQ_02_2022_D6",
+            "score": 0.5564,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "NQ_02_2022_D7",
+            "score": 0.5563,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q17",
+        "topic": "Chấm dứt hợp đồng - Đơn phương chấm dứt",
+        "query": "đơn phương chấm dứt thực hiện hợp đồng khi một bên vi phạm nghiêm trọng",
+        "expected_ids": [
+          "BLDS_2015_D428"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D428",
+        "top1_score": 0.7029,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 731.8,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D428",
+            "score": 0.7029,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D520",
+            "score": 0.6201,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D423",
+            "score": 0.537,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D422",
+            "score": 0.5256,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D492",
+            "score": 0.5182,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q18",
+        "topic": "Nguyên tắc cơ bản của pháp luật dân sự",
+        "query": "nguyên tắc cơ bản của pháp luật dân sự về tự do cam kết thỏa thuận",
+        "expected_ids": [
+          "BLDS_2015_D3"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "BLDS_2015_D3",
+        "top1_score": 0.6157,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 724.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "BLDS_2015_D3",
+            "score": 0.6157,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D375",
+            "score": 0.5004,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_21_2021_D4",
+            "score": 0.49,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D9",
+            "score": 0.484,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D284",
+            "score": 0.4811,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q19",
+        "topic": "Nghị định 19 - Nguyên tắc tổ chức và chủ họ",
+        "query": "nguyên tắc tổ chức họ hụi biêu phường và điều kiện làm chủ họ",
+        "expected_ids": [
+          "ND_19_2019_D3",
+          "ND_19_2019_D6"
+        ],
+        "first_hit_rank": 2,
+        "top1_id": "ND_19_2019_D1",
+        "top1_score": 0.6298,
+        "hit@1": 0,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 0.5,
+        "ndcg@5": 0.6934,
+        "latency_ms": 727.7,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_19_2019_D1",
+            "score": 0.6298,
+            "is_hit": false
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_19_2019_D6",
+            "score": 0.6231,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_19_2019_D3",
+            "score": 0.6208,
+            "is_hit": true
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D471",
+            "score": 0.5629,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_19_2019_D2",
+            "score": 0.5437,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q20",
+        "topic": "Nghị định 19 - Lãi suất trong dây họ",
+        "query": "mức lãi suất trong họ có lãi và thỏa thuận giữa các thành viên",
+        "expected_ids": [
+          "ND_19_2019_D21"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "ND_19_2019_D21",
+        "top1_score": 0.6865,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 698.3,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_19_2019_D21",
+            "score": 0.6865,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_19_2019_D22",
+            "score": 0.5919,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_19_2019_D20",
+            "score": 0.5776,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_19_2019_D15",
+            "score": 0.5716,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D468",
+            "score": 0.5409,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q21",
+        "topic": "Nghị định 19 - Trách nhiệm của chủ họ",
+        "query": "trách nhiệm của chủ họ do không giao hoặc giao không đầy đủ các phần họ",
+        "expected_ids": [
+          "ND_19_2019_D23"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "ND_19_2019_D23",
+        "top1_score": 0.7307,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 761.8,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_19_2019_D23",
+            "score": 0.7307,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_19_2019_D18",
+            "score": 0.6267,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "ND_19_2019_D24",
+            "score": 0.6049,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "ND_19_2019_D17",
+            "score": 0.5835,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_19_2019_D16",
+            "score": 0.5438,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q22",
+        "topic": "Nghị định 21 - Xử lý tài sản bảo đảm",
+        "query": "các phương thức xử lý tài sản bảo đảm và thông báo xử lý tài sản bảo đảm",
+        "expected_ids": [
+          "ND_21_2021_D51",
+          "ND_21_2021_D49"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "ND_21_2021_D51",
+        "top1_score": 0.7175,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.8503,
+        "latency_ms": 743.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "ND_21_2021_D51",
+            "score": 0.7175,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "ND_21_2021_D52",
+            "score": 0.633,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "BLDS_2015_D300",
+            "score": 0.5998,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D303",
+            "score": 0.573,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "ND_21_2021_D49",
+            "score": 0.5454,
+            "is_hit": true
+          }
+        ]
+      },
+      {
+        "id": "Q23",
+        "topic": "Nghị quyết 02 - Hướng dẫn Điều 601 nguồn nguy hiểm cao độ",
+        "query": "hướng dẫn áp dụng Điều 601 Bộ luật Dân sự về bồi thường thiệt hại nguồn nguy hiểm cao độ",
+        "expected_ids": [
+          "NQ_02_2022_D12",
+          "BLDS_2015_D601"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "NQ_02_2022_D12",
+        "top1_score": 0.7115,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 881.2,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "NQ_02_2022_D12",
+            "score": 0.7115,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D601",
+            "score": 0.676,
+            "is_hit": true
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D3",
+            "score": 0.5683,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "NQ_02_2022_D2",
+            "score": 0.55,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "BLDS_2015_D594",
+            "score": 0.5075,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q24",
+        "topic": "Nghị quyết 02 - Hướng dẫn Điều 585 nguyên tắc bồi thường",
+        "query": "nguyên tắc bồi thường thiệt hại toàn bộ và kịp thời theo hướng dẫn của Hội đồng Thẩm phán",
+        "expected_ids": [
+          "NQ_02_2022_D3"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "NQ_02_2022_D3",
+        "top1_score": 0.6197,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "latency_ms": 832.8,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "NQ_02_2022_D3",
+            "score": 0.6197,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "BLDS_2015_D585",
+            "score": 0.5393,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "NQ_02_2022_D2",
+            "score": 0.4833,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "BLDS_2015_D13",
+            "score": 0.4588,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "NQ_02_2022_D6",
+            "score": 0.438,
+            "is_hit": false
+          }
+        ]
+      },
+      {
+        "id": "Q25",
+        "topic": "Hiến pháp 2013 - Chế độ chính trị",
+        "query": "chế độ chính trị nước Cộng hòa xã hội chủ nghĩa Việt Nam quyền lực nhà nước thuộc về nhân dân",
+        "expected_ids": [
+          "HIEN_PHAP_2013_D1",
+          "HIEN_PHAP_2013_D2"
+        ],
+        "first_hit_rank": 1,
+        "top1_id": "HIEN_PHAP_2013_D2",
+        "top1_score": 0.6604,
+        "hit@1": 1,
+        "hit@3": 1,
+        "hit@5": 1,
+        "mrr": 1.0,
+        "ndcg@5": 0.8503,
+        "latency_ms": 776.6,
+        "top_k_retrieved": [
+          {
+            "rank": 1,
+            "node_id": "HIEN_PHAP_2013_D2",
+            "score": 0.6604,
+            "is_hit": true
+          },
+          {
+            "rank": 2,
+            "node_id": "HIEN_PHAP_2013_D3",
+            "score": 0.589,
+            "is_hit": false
+          },
+          {
+            "rank": 3,
+            "node_id": "HIEN_PHAP_2013_D6",
+            "score": 0.5869,
+            "is_hit": false
+          },
+          {
+            "rank": 4,
+            "node_id": "HIEN_PHAP_2013_D8",
+            "score": 0.5576,
+            "is_hit": false
+          },
+          {
+            "rank": 5,
+            "node_id": "HIEN_PHAP_2013_D1",
+            "score": 0.5275,
+            "is_hit": true
+          }
+        ]
+      }
+    ]
+  }
+]

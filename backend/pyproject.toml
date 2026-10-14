@@ -45,3 +45,10 @@ target-version = ['py310']
 
 [tool.isort]
 profile = "black"
+
+[tool.pyright]
+extraPaths = ["."]
+
+[tool.pyrefly]
+search-path = ["."]
+
