@@ -15,6 +15,11 @@ class Settings(BaseSettings):
     neo4j_password: str = "password_not_set"
     neo4j_database: str = "legalai"
 
+    # Embedding model configurations
+    embedding_model_name: str = "darklethelong/vnlegal-lal"
+    embedding_device: str = "cpu"
+    embedding_batch_size: int = 4
+
 
     model_config = SettingsConfigDict(
         env_file=(".env", ".env.development", ".env.production"),

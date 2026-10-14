@@ -8,14 +8,14 @@ Nhiệm vụ:
 - Truy vấn trực tiếp chỉ mục vector (db.index.vector.queryNodes) trên Neo4j.
 - Trả về danh sách ứng viên Article nodes được chuẩn hóa theo Unified Data Contract
   cho Hybrid Retrieval và Graph Traversal:
-    - rank, node_id, type, score, document_id, title, full_text, parent_id
-    - retrieval_source: "vector" (chứng thực nguồn gốc)
-    - hop: 0 (seed node mầm, chưa traverse graph)
+    - node_id, label, number, title, full_text, document_id, parent_id
+    - rank, score, retrieval_source: "vector", hop: 0
 """
 
 import sys
 import time
 import logging
+from difflib import SequenceMatcher
 from typing import List, Dict, Any, Optional
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -31,6 +31,17 @@ except (ImportError, ModuleNotFoundError):
     from graph.neo4j_client import Neo4jClient  # type: ignore
 
 logger = logging.getLogger(__name__)
+
+CANONICAL_LABELS: Dict[str, str] = {
+    "document": "Document",
+    "part": "Part",
+    "chapter": "Chapter",
+    "section": "Section",
+    "subsection": "SubSection",
+    "article": "Article",
+    "clause": "Clause",
+    "point": "Point",
+}
 
 
 class SemanticSearcher:
@@ -72,14 +83,15 @@ class SemanticSearcher:
                 "model_name": str,
                 "results": [
                     {
-                        "rank": int,
                         "node_id": str,
-                        "type": str,
-                        "score": float,
-                        "document_id": str,
+                        "label": str,
+                        "number": Any,
                         "title": str,
                         "full_text": str,
+                        "document_id": str,
                         "parent_id": str,
+                        "rank": int,
+                        "score": float,
                         "retrieval_source": "vector",
                         "hop": 0
                     },
@@ -128,7 +140,8 @@ class SemanticSearcher:
             YIELD node, score
             {where_filter}
             RETURN node.node_id AS node_id,
-                   node.type AS type,
+                   coalesce(node.label, head([lbl IN labels(node) WHERE lbl <> 'LegalNode']), 'Article') AS label,
+                   node.number AS number,
                    node.title AS title,
                    node.full_text AS full_text,
                    node.document_id AS document_id,
@@ -142,16 +155,18 @@ class SemanticSearcher:
                 cypher_params,
             )
             for rank, r in enumerate(rows, 1):
+                lbl = r.get("label") or "Article"
                 results.append(
                     {
-                        "rank": rank,
                         "node_id": r.get("node_id"),
-                        "type": r.get("type") or "Article",
-                        "score": round(float(r.get("score", 0.0)), 4),
-                        "document_id": r.get("document_id"),
+                        "label": lbl,
+                        "number": r.get("number"),
                         "title": r.get("title"),
                         "full_text": r.get("full_text"),
+                        "document_id": r.get("document_id"),
                         "parent_id": r.get("parent_id"),
+                        "rank": rank,
+                        "score": round(float(r.get("score", 0.0)), 4),
                         "retrieval_source": "vector",
                         "hop": 0,
                     }
@@ -177,3 +192,132 @@ class SemanticSearcher:
         """
         res = self.search(query=query, top_k=top_k)
         return [item["node_id"] for item in res.get("results", [])]
+
+    def semantic_search_by_text_and_label(
+        self,
+        text: str,
+        label: str,
+        top_k: int = 5,
+    ) -> List[Dict[str, Any]]:
+        """
+        Tìm kiếm node theo nội dung text và loại node (label).
+        Mục đích: Tìm node động (ví dụ: 'Bộ luật dân sự', 'Document') để lấy document_id
+        hoặc node_id tương ứng mà không cần hard-code (như 'BLDS_2015').
+
+        Args:
+            text: Chuỗi văn bản cần tìm kiếm (ví dụ: 'Bộ luật dân sự', 'Hiến pháp').
+            label: Loại node / nhãn cấp bậc (ví dụ: 'Document', 'Chapter', 'Article', 'Part').
+            top_k: Số lượng node phù hợp nhất cần trả về.
+
+        Returns:
+            Danh sách node khớp nhất, chuẩn hóa theo Unified Contract:
+            [
+                {
+                    "node_id": str,
+                    "label": str,
+                    "number": Any,
+                    "title": str,
+                    "full_text": str,
+                    "document_id": str,
+                    "parent_id": str,
+                    "rank": int,
+                    "score": float,
+                    "retrieval_source": str,  # "vector" khi label="Article", "text_label" khi là các label khác
+                    "hop": 0
+                },
+                ...
+            ]
+        """
+        if not text or not text.strip() or not label or not label.strip():
+            return []
+
+        # 1. Chuẩn hóa và validate canonical label (ví dụ: 'document' -> 'Document', 'ARTICLE' -> 'Article')
+        raw_label = label.strip().lower()
+        target_label = CANONICAL_LABELS.get(raw_label)
+        if not target_label:
+            logger.warning("Nhãn '%s' không hợp lệ hoặc không được hỗ trợ trong Knowledge Graph.", label)
+            return []
+
+        clean_text = text.strip()
+
+        # 2. Nếu label là 'Article' và đã có vector index trong Neo4j, tái sử dụng search() (retrieval_source="vector")
+        if target_label == "Article":
+            search_res = self.search(query=clean_text, top_k=top_k)
+            return search_res.get("results", [])
+
+        # 3. Truy vấn danh sách node thuộc canonical label từ Neo4j
+        cypher = """
+        MATCH (n:LegalNode)
+        WHERE $label IN labels(n) OR n.label = $label
+        RETURN n.node_id AS node_id,
+               coalesce(n.label, head([lbl IN labels(n) WHERE lbl <> 'LegalNode']), $label) AS label,
+               n.number AS number,
+               n.title AS title,
+               coalesce(n.full_text, n.text, '') AS full_text,
+               n.document_id AS document_id,
+               n.parent_id AS parent_id
+        """
+        try:
+            rows = self.client.execute_read(cypher, {"label": target_label})
+        except Exception as e:
+            logger.error("Lỗi khi truy vấn node theo nhãn '%s': %s", target_label, e)
+            rows = []
+
+        if not rows:
+            return []
+
+        # 4. Tính điểm lexical matching + fuzzy matching nhẹ (không encode neural embedding)
+        candidates_scored = []
+        q_lower = clean_text.lower()
+
+        for r in rows:
+            node_title = (r.get("title") or "").strip()
+            node_full_text = (r.get("full_text") or "").strip()
+            t_lower = node_title.lower()
+
+            # Ưu tiên so khớp trên title
+            score = 0.0
+            if q_lower and t_lower:
+                if q_lower == t_lower:
+                    score = 1.0
+                elif q_lower in t_lower:
+                    score = 0.75 + 0.25 * (len(q_lower) / len(t_lower))
+                elif t_lower in q_lower:
+                    score = 0.70 + 0.25 * (len(t_lower) / len(q_lower))
+                else:
+                    score = SequenceMatcher(None, q_lower, t_lower).ratio()
+
+            # Fallback so khớp trên full_text / text nếu title không khớp hoặc rỗng
+            if score < 0.5 and node_full_text:
+                ft_lower = node_full_text[:300].lower()
+                if q_lower in ft_lower:
+                    score = max(score, 0.60)
+                else:
+                    ft_ratio = SequenceMatcher(None, q_lower, ft_lower[:len(q_lower) * 2]).ratio()
+                    score = max(score, ft_ratio * 0.5)
+
+            if score > 0.0:
+                candidates_scored.append((score, r))
+
+        # Sắp xếp theo điểm giảm dần
+        candidates_scored.sort(key=lambda x: x[0], reverse=True)
+
+        results = []
+        for rank, (score, r) in enumerate(candidates_scored[:top_k], 1):
+            lbl = r.get("label") or target_label
+            results.append(
+                {
+                    "node_id": r.get("node_id"),
+                    "label": lbl,
+                    "number": r.get("number"),
+                    "title": r.get("title"),
+                    "full_text": r.get("full_text"),
+                    "document_id": r.get("document_id"),
+                    "parent_id": r.get("parent_id"),
+                    "rank": rank,
+                    "score": round(float(score), 4),
+                    "retrieval_source": "text_label",
+                    "hop": 0,
+                }
+            )
+        return results

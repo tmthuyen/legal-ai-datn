@@ -9,13 +9,18 @@ Nhiệm vụ:
 - Encode user query sang dense vector phục vụ Semantic Vector Search
 """
 
-import os
 import time
 import logging
 from typing import List, Optional, Union, Dict, Any
+
 import numpy as np
 import torch
-from dotenv import load_dotenv
+import torch.nn.functional as F
+from tqdm import tqdm
+from transformers import AutoModel, AutoTokenizer
+from sentence_transformers import SentenceTransformer
+
+from src.common.setting_config import get_settings
 
 logger = logging.getLogger(__name__)
 
@@ -36,7 +41,7 @@ def build_enriched_text(article: Dict[str, Any], node_map: Dict[str, Dict[str, A
 
     parts = []
     for c in chain:
-        ctype = c.get("type")
+        ctype = c.get("label") or c.get("type")
         title = (c.get("title") or "").strip()
         num = str(c.get("number") or "").strip()
         if ctype == "Document":
@@ -82,11 +87,10 @@ class NodeEmbedder:
         batch_size: Optional[int] = None,
         max_seq_length: int = 2048,
     ):
-        load_dotenv()
-        self.model_name = model_name or os.getenv("EMBEDDING_MODEL_NAME", "darklethelong/vnlegal-lal")
-        self.device = device or os.getenv("EMBEDDING_DEVICE", "cpu")
-        env_batch_size = os.getenv("EMBEDDING_BATCH_SIZE", "4")
-        self.batch_size = batch_size if batch_size is not None else int(env_batch_size)
+        settings = get_settings()
+        self.model_name = model_name or settings.embedding_model_name
+        self.device = device or settings.embedding_device
+        self.batch_size = batch_size if batch_size is not None else settings.embedding_batch_size
         self.max_seq_length = max_seq_length
 
         self.is_vnlegal = "vnlegal-lal" in self.model_name.lower()
@@ -104,7 +108,6 @@ class NodeEmbedder:
             start_time = time.time()
 
             if self.is_vnlegal:
-                from transformers import AutoModel, AutoTokenizer
                 self._tokenizer = AutoTokenizer.from_pretrained(self.model_name)
                 self._tokenizer.padding_side = "right"
                 self._model = AutoModel.from_pretrained(self.model_name)
@@ -112,7 +115,6 @@ class NodeEmbedder:
                 self._model.eval()
                 self._dimension = self._model.config.hidden_size
             else:
-                from sentence_transformers import SentenceTransformer
                 self._model = SentenceTransformer(self.model_name, device=self.device)
                 if hasattr(self._model, "max_seq_length"):
                     self._model.max_seq_length = self.max_seq_length
@@ -169,9 +171,6 @@ class NodeEmbedder:
                 )
 
         if self.is_vnlegal:
-            import torch.nn.functional as F
-            from tqdm import tqdm
-
             all_embs = []
             iterator = range(0, len(texts), bs)
             if show_progress_bar:
@@ -217,7 +216,6 @@ class NodeEmbedder:
         clean_query = query.strip()
 
         if self.is_vnlegal:
-            import torch.nn.functional as F
             prompted_query = self.QUERY_PREFIX + clean_query
             inputs = self._tokenizer(
                 [prompted_query],
