@@ -6,6 +6,7 @@ Cung cấp dữ liệu ngữ cảnh phân cấp, quan hệ pháp lý và xuất 
 
 from typing import Any, Optional
 
+from src.common.schemas import LegalHierarchy
 from src.graph.graph_repository import (
     LegalGraphRepository,
     LegalLabels,
@@ -216,6 +217,32 @@ class LegalGraphService:
             "breadcrumbs": breadcrumbs,
             "children": children,
         }
+
+    def get_citation_path(self, node_id: str) -> Optional[str]:
+        """
+        Truy vết và trả về trích dẫn tuyệt đối (citation path) của một node bất kỳ trên đồ thị.
+
+        Quy trình:
+        1. Lấy chuỗi tổ tiên Document -> ... -> node qua `get_breadcrumbs` (quan hệ CONTAINS).
+        2. Dựng lại `LegalHierarchy` từ phả hệ (suy loại node từ **label**, không đọc property `type`).
+        3. Tái sử dụng `LegalHierarchy.get_citation_path()` để sinh chuỗi trích dẫn (thứ tự nhỏ -> lớn).
+
+        Args:
+            node_id: Mã định danh node cần lấy trích dẫn.
+
+        Returns:
+            str: Trích dẫn tuyệt đối, ví dụ
+            'Điểm a Khoản 1 Điều 522 của Bộ luật Dân sự 2015'; hoặc None nếu không tìm thấy node.
+        """
+        if not node_id:
+            return None
+
+        breadcrumbs = self.get_breadcrumbs(node_id)
+        if not breadcrumbs:
+            logger.warning(f"Không lấy được phả hệ để dựng trích dẫn cho node='{node_id}'.")
+            return None
+
+        return LegalHierarchy.from_ancestors(breadcrumbs).get_citation_path()
 
     # --------------------------------------------------------------------------
     # 4. TRUY VẤN MẠNG LƯỚI QUAN HỆ PHÁP LÝ (LEGAL RELATIONSHIPS)

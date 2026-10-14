@@ -9,6 +9,8 @@ from typing import Any, Dict, List, Optional
 from dotenv import load_dotenv
 from neo4j import GraphDatabase, Driver, Session
 
+from src.common.custom_exception import CustomException
+
 load_dotenv()
 logger = logging.getLogger(__name__)
 
@@ -27,12 +29,22 @@ class Neo4jClient:
         self.username = username or os.getenv("NEO4J_USERNAME", "neo4j")
         self.password = password or os.getenv("NEO4J_PASSWORD")
         if not self.password:
-            raise ValueError(
-                "NEO4J_PASSWORD chưa được cấu hình. "
-                "Vui lòng thiết lập biến NEO4J_PASSWORD trong file .env hoặc truyền vào khi khởi tạo Neo4jClient."
+            raise CustomException(
+                message="Mật khẩu Neo4j không được cung cấp.",
+                status_code=500
             )
         self.database = database or os.getenv("NEO4J_DATABASE", "neo4j")
         self._driver: Optional[Driver] = None
+
+        # Kiểm tra kết nối ngay khi khởi tạo
+        if not self.verify_connectivity():
+            raise CustomException(
+                message="Không thể kết nối tới Neo4j.",
+                status_code=500
+            )
+            
+        # successful connection log
+        logger.info(f"Kết nối thành công tới Neo4j tại {self.uri} với database '{self.database}'.")
 
     def connect(self) -> Driver:
         """Khởi tạo hoặc trả về Driver kết nối tới Neo4j."""

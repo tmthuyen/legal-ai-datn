@@ -440,16 +440,17 @@ class LegalGraphRepository(BaseGraphRepository):
             
         Returns:
             Danh sách các dict tóm tắt thông tin từng node trên đường dẫn:
-            [{node_id, type, number, title, labels}, ...]
+            [{node_id, type, number, title, parent_id, document_id, labels}, ...]
         """
         query = """
         MATCH path = (doc:Document)-[:CONTAINS*0..7]->(n:LegalNode {node_id: $node_id})
         RETURN [x IN nodes(path) | {
             node_id: x.node_id,
-            type: x.type,
+            type: [l IN labels(x) WHERE l <> 'LegalNode'][0],
             number: x.number,
             title: x.title,
             parent_id: x.parent_id,
+            document_id: x.document_id,
             labels: labels(x)
         }] AS breadcrumb
         LIMIT 1
@@ -718,7 +719,6 @@ class LegalGraphRepository(BaseGraphRepository):
             so_hieu: d.number,
             issuer: d.issuer,
             effective_from: d.effective_from,
-            effective_to: d.effective_to,
             status: d.status,
             source_file: d.source_file,
             source_url: d.source_url,
@@ -727,6 +727,7 @@ class LegalGraphRepository(BaseGraphRepository):
         } AS provenance
         LIMIT 1
         """
+            # effective_to: d.effective_to, Chưa có
         rows = self._db.execute_read(query, {"document_id": document_id})
         if not rows or not rows[0].get("provenance"):
             return None
