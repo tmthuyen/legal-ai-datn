@@ -61,8 +61,8 @@ Nhóm đặt trọng tâm nghiên cứu kỹ thuật vào bài toán **Biểu di
 - Python
 - FastAPI
 - Neo4j (Knowledge Graph)
-- Vector Database (ChromaDB)
-- sentence-transformers (Text Embedding)
+- Vector Database (Neo4j Vector Index)
+- sentence-transformers / transformers (Text Embedding: `darklethelong/vnlegal-lal`)
 - Qwen2.5 + LoRA/PEFT (Fine-tuning)
 - PyTorch
 - pandas / numpy 

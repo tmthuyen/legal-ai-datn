@@ -10,7 +10,7 @@ Backend service (FastAPI) của đồ án **Legal AI - Knowledge Graph & Counter
 - Sinh `node_id` chuẩn hoá và trích xuất các quan hệ pháp lý (`REFERENCES`, `IMPLEMENTS`, `INTERPRETED_BY`, ...).
 - Validator chất lượng dữ liệu V1 → V8 + Independent Audit Suite (đối chiếu 1-1 với file Word gốc).
 - Knowledge Graph trên Neo4j: nodes/edges + repository/service layer truy vấn.
-- Retrieval: semantic search (BGE-M3 + ChromaDB) kết hợp graph traversal (Hybrid / GraphRAG).
+- Retrieval: semantic search (`darklethelong/vnlegal-lal` + Neo4j Vector Index) kết hợp graph traversal (Hybrid / GraphRAG).
 - Reasoning: tam đoạn luận `Facts → Conditions → Rules → Conclusion`.
 - Verification: phản ví dụ (counterfactual), NLI, confidence - chống ảo giác trích dẫn.
 - Evaluation: Precision@k, F1, hallucination rate.
@@ -34,13 +34,13 @@ Backend service (FastAPI) của đồ án **Legal AI - Knowledge Graph & Counter
 ### Data & storage
 
 - **Neo4j** (`neo4j` driver) - Knowledge Graph database
-- **ChromaDB** - Vector Database
+- **Neo4j Vector Index** - Vector Database (lưu trữ vector trên Neo4j)
 - **pandas** / **numpy** - xử lý dữ liệu
 - **python-docx** / OOXML (`zipfile`, `xml.etree`) - parse file `.docx`
 
 ### NLP / AI
 
-- **sentence-transformers** - embedding văn bản bằng **BGE-M3**
+- **sentence-transformers** / **transformers** - embedding văn bản bằng **`darklethelong/vnlegal-lal`** (1024-d, Context-Enriched)
 - **transformers** - suy luận mô hình **Qwen2.5** (`ntphuc149/ViLegalQwen2.5-1.5B-Base`)
 - **peft** - fine-tune **LoRA**
 - **PyTorch** - nền tảng huấn luyện / suy luận
@@ -104,9 +104,9 @@ backend/
 │   │   ├── graph_repository.py #   repository truy vấn (labels, relationship types)
 │   │   ├── graph_service.py    #   service layer cho repository
 │   │   ├── builder_graph.py    #   build graph
-│   │   └── embedder.py         #   embed node → ChromaDB
+│   │   └── embedder.py         #   embed node → Neo4j Vector Index
 │   ├── retrieval/              # Bước 2a - Truy xuất
-│   │   ├── semantic.py         #   BGE-M3 + ChromaDB search
+│   │   ├── semantic.py         #   vnlegal-lal + Neo4j vector search
 │   │   ├── graph_traverse.py   #   traverse Neo4j theo edges
 │   │   ├── hybrid.py           #   merge semantic + graph
 │   │   ├── reranker.py         #   rerank bằng hard negative model

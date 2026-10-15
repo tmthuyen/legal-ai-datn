@@ -1,5 +1,6 @@
 from functools import lru_cache
 
+from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -20,6 +21,13 @@ class Settings(BaseSettings):
     embedding_device: str = "cpu"
     embedding_batch_size: int = 4
 
+    # Reasoning model (fine-tuned citation inference) configurations
+    hf_base_model: str = "ntphuc149/ViLegalQwen2.5-1.5B-Base"
+    hf_model_id: str = "tmtdev/ViLegalQwen2.5-CitationInference-V1"
+    hf_revision: str = Field(
+        default="main",
+        validation_alias=AliasChoices("HF_REVISION", "REVISION"),
+    )
 
     model_config = SettingsConfigDict(
         env_file=(".env", ".env.development", ".env.production"),

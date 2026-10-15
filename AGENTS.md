@@ -23,19 +23,29 @@ Hướng dẫn chung cho AI coding agent khi làm việc trong repo này. Đọc
 - Smoke test kết nối/truy vấn: `python scripts/test_graph.py`.
 - Notebook: chạy với cwd = `backend/notebooks`, đường dẫn trong notebook là `../data/...`. Thứ tự pipeline: `01_parse_data` → `02_transform` → `03_explore_graph` → `04_retrieval` → `05_*`.
 
-## Trạng thái code: nhiều module còn RỖNG (0 byte)
+## Trạng thái code: một số module còn RỖNG (0 byte)
 
-Các lệnh trong README dưới đây **chưa chạy được** vì file rỗng:
+Module còn rỗng (không kể `__init__.py`):
 
-- `src/api/*` (gồm `server.py`) và `src/main.py` → `uvicorn src.api.server:app` KHÔNG chạy.
-- `src/reasoning/*`, `src/verification/*`, `src/eval/*`.
-- `src/retrieval/semantic.py`, `graph_traverse.py`, `hybrid.py`, `reranker.py`.
-- `scripts/seed_graph.py`, `eval_pipeline.py`, `test_retrieval.py`, `test_reasoning.py`, `test_models.py`; `notebooks/10_test_models.ipynb`.
+- `src/main.py`
+- `src/reasoning/{condition_checker,extractor,generator,syllogism}.py`
+- `src/verification/{confidence,counterfactual,nli}.py`
+- `src/eval/{dataset_eval,metrics_eval,runner_eval}.py`
+- `src/retrieval/{graph_traverse,hybrid}.py`
 
-Đã triển khai thật: `graph/import_neo4j.py`, `scripts/embed_nodes.py`, `scripts/test_graph.py`, `src/common/*`, `src/graph/{neo4j_client,graph_repository,graph_service,embedder}.py`, `src/retrieval/legal_query_extractor.py`, `src/utils/*`.
+`graph_traverse.py`/`hybrid.py` còn rỗng → luồng traversal/hybrid hiện nằm trong `src/retrieval/retrieval_service.py`.
+
+Đã triển khai thật:
+
+- Data/graph: `graph/import_neo4j.py`, `src/graph/{neo4j_client,graph_repository,graph_service,embedder}.py`.
+- Retrieval: `src/retrieval/{legal_query_extractor,semantic,retrieval_service}.py`.
+- API: `src/api/{server,api_schemas,dependencies}.py` + `src/api/routes/{health,retrieval}.py` → `uvicorn src.api.server:app` **chạy được** (cần Neo4j đang bật).
+- Chung/tiện ích: `src/common/*` (gồm `container.py`), `src/models/legal_model.py`, `src/utils/*`.
+- Script: `scripts/{embed_nodes,test_graph,test_retrieval,run_ablation_experiments}.py`.
 
 - **Không có test suite pytest** (dù `pytest` có trong dev deps). `scripts/test_*.py` là script thủ công, không phải pytest.
 - Tên đúng là `src/retrieval/legal_query_extractor.py` (README ghi sai là `legal_query.py`).
+- `scripts/seed_graph.py`, `eval_pipeline.py`, `test_reasoning.py`, `test_models.py` **không tồn tại** (README nhắc tới nhưng chưa có).
 
 ## Đặc điểm đồ thị/dữ liệu (dễ sai)
 
@@ -46,7 +56,7 @@ Các lệnh trong README dưới đây **chưa chạy được** vì file rỗng
 - **Nội dung Article nằm ở `full_text`**, không phải `text` (`text` chỉ là đoạn mở đầu Điều). Chỉ Article có `full_text`; các loại khác không.
 - Relation whitelist: `CONTAINS, REFERENCES, IMPLEMENTS, INTERPRETED_BY, AMENDS, REPEALS, REPLACED_BY, RELATED_TO`. Quan hệ cấu trúc là `CONTAINS` (parent → child).
 - Quy mô hiện tại: **3,472 nodes / 3,959 relations** (CONTAINS 3467, REFERENCES 489, IMPLEMENTS 2, INTERPRETED_BY 1).
-- Embedding: Article + `BAAI/bge-m3` (1024-d, cosine), vector index `article_embeddings_idx`.
+- Embedding: Article + `darklethelong/vnlegal-lal` (1024-d, cosine, Context-Enriched), vector index `article_embeddings_idx` trên Neo4j.
 
 ## Cấu hình & dữ liệu (Config-Driven)
 
@@ -58,13 +68,23 @@ Các lệnh trong README dưới đây **chưa chạy được** vì file rỗng
 
 ## Quy ước code & git
 
-Dưới đây là quy ước chung cơ bản. Chi tiết các quy ước code (RULES) nằm trong `docs/RULES.md`, file này chỉ đươc đọc, nếu sửa phải có developer yêu cầu và developer có thể tự sửa file này.
+Dưới đây là quy ước chung cơ bản. Chi tiết các quy ước code (RULES) và các rule bắt buộc nằm trong `docs/RULES.md` — file đó chỉ được đọc, nếu sửa phải có developer yêu cầu (developer có thể tự sửa file đó).
 
 - **Mọi hàm/method viết trong class Python phải có docstring mô tả rõ ràng** (mục đích; thêm `Args`/`Returns` khi hữu ích) — theo style hiện có ở `src/graph/graph_repository.py`.
 - Format: `black` line-length 88, `isort` profile black. Comment/tên biến dùng tiếng Việt — giữ nhất quán.
 - Không thêm comment vào code trừ khi được yêu cầu.
 - `.env` chứa `NEO4J_PASSWORD`/`HF_TOKEN` — **không bao giờ commit**. `.gitignore` bỏ qua `.env`, `.agents/`, `logs`, `**/data/van_ban/`.
 - Không tự ý commit/push; chỉ commit khi được yêu cầu.
+
+## RULES bắt buộc (chi tiết: `docs/RULES.md`)
+
+Các rule cứng, agent/dev **phải tuân thủ**. Chi tiết đầy đủ và danh sách vi phạm hiện tại nằm trong `docs/RULES.md`. Tóm tắt:
+
+- **Kiến trúc:** logic nghiệp vụ chỉ nằm trong `src/`; routes/`scripts/**`/notebook chỉ *sử dụng* service (không viết logic, không tự wiring). Wiring tập trung ở `src/common/container.py`.
+- **Config:** cấm `os.getenv` trong `src/` — dùng `get_settings()` (`src/common/setting_config.py`).
+- **Dùng chung:** tái sử dụng `src/common/constants.py`, `src/common/schemas.py`, `src/common/custom_exception.py` và `src/utils/*`; cấm nhân bản hằng số/logic.
+- **Logging:** cấm `import logging`/`logging.getLogger`; bắt buộc `setup_logger` trong `src/utils/logger.py` (vd `setup_logger("retrieval_service", "retrieval_service.log")`). Ngoại lệ: chính `logger.py`.
+- **API:** mọi endpoint trả envelope `SuccessResponse[T]` / `ErrorResponse` (`src/api/api_schemas.py`); **HTTP status = `status_code` trong body**; xử lý lỗi tập trung bằng global exception handlers; 5xx không lộ chi tiết nội bộ; middleware đăng ký tập trung ở `src/api/middlewares/registry.py`.
 
 ## Quy trình của agent
 

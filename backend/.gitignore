@@ -48,3 +48,6 @@ venv/
 # OS
 .DS_Store
  
+
+# model cache
+models/.cache/

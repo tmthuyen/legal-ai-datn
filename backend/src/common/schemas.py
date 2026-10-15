@@ -338,13 +338,14 @@ class LegalHierarchy:
         """
 
         if document_id is None:
-            raise CustomException("document_id không thể là None.")
+            raise CustomException("document_id không thể là None.", status_code=400)
 
         type_node = self.get_node_type()
 
         if type_node == "Document":
             raise CustomException(
-                f"Không thể tự tạo ID cho node Document. DocName: {self.document}"
+                f"Không thể tự tạo ID cho node Document. Tên văn bản: {self.document}",
+                status_code=400,
             )
 
         # Chuyến các Part, Chapter, Section, Subsection, Article, Clause, thành số nguyên

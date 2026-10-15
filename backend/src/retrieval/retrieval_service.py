@@ -10,6 +10,7 @@ from src.common.constants import LegalHierarchyLabels, MinimumScoreThresholds
 from src.common.custom_exception import CustomException
 from src.common.schemas import LegalHierarchy
 from src.graph.graph_service import LegalGraphService
+from src.models.legal_model import BaseLegalModel
 from src.retrieval.legal_query_extractor import LegalQueryExtractor
 from src.retrieval.semantic import SemanticSearcher
 from src.utils.logger import setup_logger
@@ -32,6 +33,7 @@ class RetrievalService:
             legal_graph_service: Service truy vấn đồ thị.
             legal_query_extractor: Bộ parse câu hỏi -> phân cấp.
             semantic_service: Service tìm kiếm ngữ nghĩa.
+            legal_model: Mô hình suy luận luật.
         """
         self._semantic_service = semantic_service
         self._legal_graph_service = legal_graph_service
@@ -79,17 +81,16 @@ class RetrievalService:
         related_nodes: dict[str, dict[str, Any]] = {}
         related_relationships: list[tuple[str, dict[str, Any]]] = []
 
-        # văn bản hard code để test (vì chưa có model trích xuất document_name từ câu hỏi)
-        default_document = "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013"
+        # # văn bản hard code để test (vì chưa có model trích xuất document_name từ câu hỏi)
+        # default_document = "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013"
 
-        # (1) Parse cấu trúc từ câu hỏi.
-        extracted = self._extractor.extract_hierarchy(
-            query_text=query_text, document=default_document
-        )
-        # Dùng khi có model tự trích xuất
-        # extracted = self._extractor.extract_hierarchy_with_model(
-        #     query_text=query_text
+        # # (1) Parse cấu trúc từ câu hỏi.
+        # extracted = self._extractor.extract_hierarchy(
+        #     query_text=query_text, document=default_document
         # )
+
+        # Dùng khi có model tự trích xuất
+        extracted = self._extractor.extract_hierarchy_with_model(query_text=query_text)
 
         has_hierarchy = extracted.get("has_hierarchy", False)
         valid_hierarchy = extracted.get("valid_hierarchy", False)
@@ -168,16 +169,22 @@ class RetrievalService:
                     logger.warning(f"Không tìm thấy node với node_id {node_id}")
                     continue
 
+                logger.info(f"Tìm thấy node với node_id {node_id}")
+
                 # tìm các node con, cháu và thêm vào tập kết quả (khử trùng theo node_id)
                 related_nodes[node_id] = node
                 seed_ids = [node_id]
 
                 # gom các node liên quan (cha, con, con cháu) và quan hệ pháp lý
+                logger.info(
+                    f"Gom các node liên quan (cha, con, con cháu) và quan hệ pháp lý"
+                )
                 nodes = self._collect_related_nodes(seed_ids)
                 for n in nodes:
                     related_nodes[n["node_id"]] = n
 
                 # related relationships
+                logger.info(f"Gom các quan hệ pháp lý của các node liên quan")
                 legal_relationships = self._collect_legal_relationships(seed_ids)
                 related_relationships.extend(legal_relationships)
 
@@ -192,12 +199,19 @@ class RetrievalService:
                 )
                 return EMPTY_RESULT
 
+            logger.info(
+                f"Tổng hợp kết quả: {len(related_nodes)} nodes, {len(related_documents)} documents, {len(related_relationships)} relationships."
+            )
+
             # =======================================================
             # lọc các node liên quan nhất với query_text bằng semantic search, giảm số lượng node cần xử lý bước sau
             ## CHƯA CẦN ĐẾN, GIAI ĐOẠN SAU CÓ THỂ XỬ LÝ Ở ĐÂY
             # =======================================================
 
             # Lọc document chính xác nhất của node, không loại doc liên quan
+            logger.info(
+                f"Lọc document chính xác nhất của node, không loại doc liên quan"
+            )
             top_score = 0
             for doc in semantic_search_documents:
                 score = doc.get("score", 0)
@@ -229,14 +243,23 @@ class RetrievalService:
 
             # Tìm kiếm toàn graph theo semantic search
             semantic_search_nodes = self._semantic_service.search(
-                query_text=query_text,
+                query=query_text,
                 top_k=10,
             )
-            semantic_results = semantic_search_nodes.get("results", {})
-            related_nodes_semantic = semantic_results.get(
-                "related_nodes", semantic_search_nodes.get("results", {})
+
+            if not semantic_search_nodes or "results" not in semantic_search_nodes:
+                logger.warning(
+                    "Không tìm thấy node hoặc document nào liên quan từ semantic search."
+                )
+                return EMPTY_RESULT
+
+            # semantic_results = semantic_search_nodes.get("results", {})
+            related_nodes_semantic = semantic_search_nodes.get(
+                "related_nodes",
             )
-            related_documents_semantic = semantic_results.get("related_documents", [])
+            related_documents_semantic = semantic_search_nodes.get(
+                "related_documents", []
+            )
 
             logger.info(
                 f"Kết quả tìm kiếm ngữ nghĩa: {len(related_nodes_semantic)} nodes, {len(related_documents_semantic)} documents."

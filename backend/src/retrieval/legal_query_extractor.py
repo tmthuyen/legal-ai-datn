@@ -1,17 +1,36 @@
+import json
+
 from src.common.constants import (
     FROM_NUMBER_TO_ROMAN,
     FROM_NUMBER_TO_VIETNAMESE_ORDINALS,
 )
 from src.common.custom_exception import CustomException
 from src.common.schemas import LegalHierarchy, LegalHierarchyPatterns
+from src.models.legal_model import BaseLegalModel, LegalModelTaskID
 from src.utils.logger import setup_logger
 
 logger = setup_logger("legal_query_extractor", "legal_query_extractor.log")
 
 
 class LegalQueryExtractor:
-    def __init__(self):
-        pass
+    def __init__(self, legal_model: BaseLegalModel):
+        """Khởi tạo bộ phân tách cấu trúc luật từ truy vấn
+
+        Args:
+            legal_model (BaseLegalModel): Mô hình suy luận luật để trích xuất phân cấp từ câu truy vấn.
+        Raises:
+            CustomException: Nếu mô hình suy luận luật chưa được khởi tạo hoặc không hợp lệ.
+        """
+        if legal_model is not None and not isinstance(legal_model, BaseLegalModel):
+            raise CustomException(
+                message="Legal Model chưa có",
+                status_code=500,
+            )
+        self._legal_model = legal_model
+
+        logger.info(
+            f"Khởi tạo LegalQueryExtractor với mô hình suy luận: {self._legal_model.__class__.__name__ if self._legal_model else 'None'}"
+        )
 
     def extract_hierarchy(self, query_text: str, document: str = None) -> dict:
         """Trích xuất phân cấp luật từ câu truy vấn và tên văn bản pháp luật.
@@ -137,21 +156,32 @@ class LegalQueryExtractor:
 
         logger.info(f"Extracting hierarchy from query: '{query_text}' using model.")
 
-        # load model
-
         # run model
+        if self._legal_model is None:
+            raise CustomException(
+                message="Mô hình suy luận luật chưa được khởi tạo.",
+                status_code=500,
+            )
+        task_id = LegalModelTaskID.LEGAL_QUERY_REFERENCE_HIERARCHY_EXTRACTION
+
+        pred_result = self._legal_model.predict(
+            task_id=task_id, input_text=query_text, max_new_tokens=128
+        )
+        logger.info(
+            f"Kết quả trích xuất từ mô hình: {json.dumps(pred_result, ensure_ascii=False, indent=2)}"
+        )
 
         # xử lý kết quả
-        extracted_hierarchy = {
-            "document": "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013",  # str document do model tách ra
-            "part": None,  # str: thứ nhất
-            "chapter": None,  # str: I, II, III
-            "section": None,  # number: 1, 2, 3
-            "subsection": None,  # number: 1, 2, 3
-            "article": None,  # number: 1, 2, 3
-            "clause": None,  # number: 1, 2, 3
-            "point": None,  # str: a, b, c
-        }
+        extracted_hierarchy = pred_result["result"].get("output", {})
+
+        if not extracted_hierarchy:
+            logger.warning("Không trích xuất được phân cấp từ mô hình.")
+            return {
+                "query_text": query_text,
+                "hierarchy": {},
+                "has_hierarchy": False,
+                "valid_hierarchy": False,
+            }
 
         hierarchy = LegalHierarchy.from_dict(extracted_hierarchy)
         is_valid, error_message = hierarchy.validate(require_document=True)

@@ -1,11 +1,6 @@
-.env
-
-.vscode/
-
-__pycache__/
-.venv/
-**/data/van_ban/
-
+# ======================================================================
+# Những file bỏ qua phổ biến trong các dự án
+# ======================================================================
 # compiled output
 dist/
 node_modules/
@@ -62,4 +57,12 @@ pids
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
-.agents/*
+
+
+# ======================================================================
+# NHỮNG FILE BỎ QUA RIÊNG CHO DỰ ÁN NÀY
+# ======================================================================
+backend/models/.cache
+backend/data/
+!data/processed/
+!data/metadata

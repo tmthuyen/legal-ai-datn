@@ -9,7 +9,7 @@ legal-ai/
 │
 ├── scripts/
 │   ├── seed_graph.py        # seed data luật vào Neo4j
-│   ├── embed_nodes.py       # embed các node bằng BGE-M3 → ChromaDB
+│   ├── embed_nodes.py       # embed các node bằng vnlegal-lal → Neo4j Vector Index
 │   ├── test_retrieval.py    # test GraphRAG trước khi tích hợp
 │   ├── test_reasoning.py    # test tam đoạn luận
 │   ├── test_counterfactual.py
@@ -27,11 +27,11 @@ legal-ai/
 │   ├── graph/               # Bước 1 — Biểu diễn tri thức
 │   │   ├── schema.py        # định nghĩa node/edge schema
 │   │   ├── builder.py       # build graph từ data đã parse
-│   │   ├── embedder.py      # embed node → ChromaDB
+│   │   ├── embedder.py      # embed node → Neo4j Vector Index
 │   │   └── neo4j_client.py  # wrapper kết nối Neo4j
 │   │
 │   ├── retrieval/           # Bước 2a — Truy xuất
-│   │   ├── semantic.py      # BGE-M3 + ChromaDB search
+│   │   ├── semantic.py      # vnlegal-lal + Neo4j vector search
 │   │   ├── graph_traverse.py # traverse Neo4j theo edges
 │   │   ├── hybrid.py        # merge semantic + graph results
 │   │   └── reranker.py      # rerank bằng hard negative model

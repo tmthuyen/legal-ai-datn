@@ -1,0 +1,36 @@
+# test nhanh các APi bằng file .http
+
+# API documentation: http://localhost:8090/docs
+@baseUrl = http://localhost:8090/api
+@contentType = application/json
+
+# API login (sau này) tự lấy token 
+# [POST] /api/auth/login
+# @name loginRequest
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "secret_password"
+}
+
+@accessToken = {{loginRequest.response.body.result.access_token}}
+
+### GET: /api/auth/me
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{accessToken}}
+Accept: {{contentType}}
+
+### GET - /api/health 
+GET http://localhost:8090/health
+Accept: application/json
+
+### POST: /api/retrieval
+POST {{baseUrl}}/retrieval
+Accept: application/json
+Content-Type: {{contentType}}
+
+{
+  "query_text": "Điều số 2 Khoản 2 Bộ luật Dân sự 2015, nói về vấn đề gì?"
+}

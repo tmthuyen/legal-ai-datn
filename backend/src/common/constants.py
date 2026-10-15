@@ -148,11 +148,11 @@ class MinimumScoreThresholds:
     """Các ngưỡng điểm tối thiểu cho các loại tìm kiếm khác nhau."""
 
     SEMANTIC_SEARCH_DOCUMENTS = (
-        0.5  # Ngưỡng điểm tối thiểu cho tìm kiếm ngữ nghĩa theo document name
+        0.3  # Ngưỡng điểm tối thiểu cho tìm kiếm ngữ nghĩa theo document name
     )
 
     SEMANTIC_SEARCH_NODES = (
-        0.5  # Ngưỡng điểm tối thiểu cho tìm kiếm ngữ nghĩa theo node content
+        0.3  # Ngưỡng điểm tối thiểu cho tìm kiếm ngữ nghĩa theo node content
     )
 
 
