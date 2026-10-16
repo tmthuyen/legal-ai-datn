@@ -6,7 +6,7 @@ from src.common.constants import (
 )
 from src.common.custom_exception import CustomException
 from src.common.schemas import LegalHierarchy, LegalHierarchyPatterns
-from src.models.legal_model import BaseLegalModel, LegalModelTaskID
+from src.models.base_model import BaseLegalModel, LegalModelTaskID
 from src.utils.logger import setup_logger
 
 logger = setup_logger("legal_query_extractor", "legal_query_extractor.log")
