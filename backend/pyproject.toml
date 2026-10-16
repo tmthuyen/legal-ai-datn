@@ -7,7 +7,7 @@ requires-python = ">=3.10"
 
 dependencies = [
     "neo4j",           # graph DB client
-    "chromadb",        # vector DB
+    "chromadb>=1.5.9,<2",        # vector DB
     "sentence-transformers",  
     "transformers",    
     "peft",            

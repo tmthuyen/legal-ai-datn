@@ -14,9 +14,11 @@ Nhiệm vụ:
 
 import sys
 import time
-import logging
 from difflib import SequenceMatcher
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict, List, Optional
+
+from src.common.setting_config import get_settings
+from src.utils.logger import setup_logger
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -30,7 +32,7 @@ except (ImportError, ModuleNotFoundError):
     from graph.embedder import NodeEmbedder  # type: ignore
     from graph.neo4j_client import Neo4jClient  # type: ignore
 
-logger = logging.getLogger(__name__)
+logger = setup_logger("semantic", "semantic.log")
 
 CANONICAL_LABELS: Dict[str, str] = {
     "document": "Document",
@@ -46,18 +48,21 @@ CANONICAL_LABELS: Dict[str, str] = {
 
 class SemanticSearcher:
     """
-    Truy vấn trực tiếp chỉ mục Vector trên Neo4j.
+    Tìm vector qua Chroma hoặc Neo4j rollback; nội dung luôn lấy từ Neo4j.
     """
 
     def __init__(
         self,
         embedder: Optional[NodeEmbedder] = None,
         neo4j_client: Optional[Neo4jClient] = None,
-        index_name: str = "article_embeddings_idx",
+        index_name: Optional[str] = None,
+        vector_store=None,
     ):
+        """Nhận vector store đã wiring; None giữ đường Neo4j để rollback."""
+        self.vector_store = vector_store
         self.embedder = embedder or NodeEmbedder()
         self.client = neo4j_client or Neo4jClient()
-        self.index_name = index_name
+        self.index_name = index_name or get_settings().vector_index_name
 
     def search(
         self,
@@ -66,7 +71,7 @@ class SemanticSearcher:
         document_filter: Optional[str] = None,
     ) -> Dict[str, Any]:
         """
-        Tìm kiếm các điều luật liên quan nhất theo ngữ nghĩa trên Neo4j Vector Index.
+        Tìm kiếm các điều luật theo vector backend được inject.
         Đồng thời tự động lấy thông tin các Văn bản (Document) chứa các điều luật đó.
 
         Args:
@@ -125,6 +130,8 @@ class SemanticSearcher:
                 "related_documents": [],
             }
 
+        if isinstance(top_k, bool) or not isinstance(top_k, int) or top_k < 1:
+            raise ValueError("top_k phải là số nguyên dương.")
         t_start = time.time()
 
         # 1. Mã hóa câu hỏi thành dense vector
@@ -137,51 +144,7 @@ class SemanticSearcher:
 
         # 2. Truy vấn qua Neo4j Vector Index và gom luôn Document tương ứng trong 1 câu query duy nhất
         try:
-            where_filter = ""
-            candidate_k = top_k
-            if document_filter:
-                where_filter = "WHERE node.document_id = $document_filter"
-                # Mở rộng candidate pool gấp 10 lần để tránh hiện tượng filter sau khi cắt top_k làm cạn kiệt kết quả
-                candidate_k = max(top_k * 10, 50)
-
-            cypher_params: Dict[str, Any] = {
-                "candidate_k": candidate_k,
-                "top_k": top_k,
-                "query_vector": query_vector,
-            }
-            if document_filter:
-                cypher_params["document_filter"] = document_filter
-
-            search_cypher = f"""
-            CALL db.index.vector.queryNodes('{self.index_name}', $candidate_k, $query_vector)
-            YIELD node, score
-            {where_filter}
-            WITH node, score
-            ORDER BY score DESC
-            LIMIT $top_k
-            OPTIONAL MATCH (doc:LegalNode)
-            WHERE ('Document' IN labels(doc) OR doc.label = 'Document') AND doc.node_id = node.document_id
-            RETURN node.node_id AS node_id,
-                   coalesce(node.label, head([lbl IN labels(node) WHERE lbl <> 'LegalNode']), 'Article') AS label,
-                   node.number AS number,
-                   node.title AS title,
-                   node.full_text AS full_text,
-                   node.document_id AS document_id,
-                   node.parent_id AS parent_id,
-                   score,
-                   doc.node_id AS doc_node_id,
-                   coalesce(doc.label, head([lbl IN labels(doc) WHERE lbl <> 'LegalNode']), 'Document') AS doc_label,
-                   doc.number AS doc_number,
-                   doc.title AS doc_title,
-                   coalesce(doc.full_text, doc.text, '') AS doc_full_text,
-                   doc.document_id AS doc_document_id,
-                   doc.parent_id AS doc_parent_id
-            ORDER BY score DESC
-            """
-            rows = self.client.execute_read(
-                search_cypher,
-                cypher_params,
-            )
+            rows = self._query_rows(query_vector, top_k, document_filter)
 
             seen_doc_ids = set()
             for rank, r in enumerate(rows, 1):
@@ -218,7 +181,7 @@ class SemanticSearcher:
                         }
                     )
         except Exception as e:
-            logger.error("Lỗi khi truy vấn Neo4j Vector Index '%s': %s", self.index_name, e)
+            logger.error("Lỗi vector search/hydration: %s", e)
 
         total_time_ms = (time.time() - t_start) * 1000
 
@@ -232,6 +195,65 @@ class SemanticSearcher:
             "related_nodes": related_nodes,
             "related_documents": related_documents,
         }
+
+    def _query_rows(self, query_vector, top_k, document_filter):
+        """Tìm vector và hydrate Article + Document bằng đúng một query Neo4j."""
+        if self.vector_store is not None:
+            hits = self.vector_store.query(query_vector, top_k, document_filter)
+            if not hits:
+                return []
+            prefix = """
+            UNWIND $hits AS hit
+            MATCH (node:Article {node_id: hit.node_id})
+            WHERE $document_filter IS NULL OR node.document_id = $document_filter
+            WITH node, hit.score AS score
+            """
+            params = {
+                "hits": [{"node_id": h["node_id"], "score": h["score"]} for h in hits],
+                "document_filter": document_filter,
+            }
+        else:
+            prefix = """
+            CALL db.index.vector.queryNodes($index_name, $candidate_k, $query_vector)
+            YIELD node, score
+            WHERE $document_filter IS NULL OR node.document_id = $document_filter
+            WITH node, score ORDER BY score DESC LIMIT $top_k
+            """
+            params = {
+                "index_name": self.index_name,
+                "query_vector": query_vector,
+                "candidate_k": max(top_k * 10, 50) if document_filter else top_k,
+                "top_k": top_k,
+                "document_filter": document_filter,
+            }
+        projection = """
+            OPTIONAL MATCH (doc:LegalNode)
+            WHERE ('Document' IN labels(doc) OR doc.label = 'Document') AND doc.node_id = node.document_id
+            RETURN node.node_id AS node_id,
+                   coalesce(node.label, head([lbl IN labels(node) WHERE lbl <> 'LegalNode']), 'Article') AS label,
+                   node.number AS number,
+                   node.title AS title,
+                   node.full_text AS full_text,
+                   node.document_id AS document_id,
+                   node.parent_id AS parent_id,
+                   score,
+                   doc.node_id AS doc_node_id,
+                   coalesce(doc.label, head([lbl IN labels(doc) WHERE lbl <> 'LegalNode']), 'Document') AS doc_label,
+                   doc.number AS doc_number,
+                   doc.title AS doc_title,
+                   coalesce(doc.full_text, doc.text, '') AS doc_full_text,
+                   doc.document_id AS doc_document_id,
+                   doc.parent_id AS doc_parent_id
+        """
+        rows = self.client.execute_read(prefix + projection, params)
+        if self.vector_store is not None:
+            by_id = {row["node_id"]: row for row in rows}
+            return [
+                dict(by_id[h["node_id"]], score=h["score"])
+                for h in hits
+                if h["node_id"] in by_id
+            ]
+        return sorted(rows, key=lambda row: row["score"], reverse=True)
 
     def search_node_ids(self, query: str, top_k: int = 5) -> List[str]:
         """
@@ -284,7 +306,10 @@ class SemanticSearcher:
         raw_label = label.strip().lower()
         target_label = CANONICAL_LABELS.get(raw_label)
         if not target_label:
-            logger.warning("Nhãn '%s' không hợp lệ hoặc không được hỗ trợ trong Knowledge Graph.", label)
+            logger.warning(
+                "Nhãn '%s' không hợp lệ hoặc không được hỗ trợ trong Knowledge Graph.",
+                label,
+            )
             return []
 
         clean_text = text.strip()
@@ -342,7 +367,9 @@ class SemanticSearcher:
                 if q_lower in ft_lower:
                     score = max(score, 0.60)
                 else:
-                    ft_ratio = SequenceMatcher(None, q_lower, ft_lower[:len(q_lower) * 2]).ratio()
+                    ft_ratio = SequenceMatcher(
+                        None, q_lower, ft_lower[: len(q_lower) * 2]
+                    ).ratio()
                     score = max(score, ft_ratio * 0.5)
 
             if score > 0.0:

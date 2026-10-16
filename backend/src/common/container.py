@@ -25,6 +25,31 @@ from src.utils.logger import setup_logger
 logger = setup_logger("container", "container.log")
 
 
+def build_embedding_pipeline(args):
+    """Wiring pipeline embedding; chế độ Chroma không cần kết nối Neo4j."""
+    from src.vector.chroma_store import ChromaVectorStore
+    from src.vector.embedding_pipeline import run_embedding_pipeline
+
+    settings = get_settings()
+    client = None
+    if args.store in ("neo4j", "dual") and not args.dry_run:
+        client = Neo4jClient(
+            uri=settings.neo4j_uri,
+            username=settings.neo4j_username,
+            password=settings.neo4j_password,
+            database=settings.neo4j_database,
+        )
+    embedder = NodeEmbedder(batch_size=args.batch_size)
+
+    def store_factory(model_name, dimension):
+        """Tạo persistent store theo cấu hình chung."""
+        return ChromaVectorStore(
+            settings.chroma_path, settings.chroma_collection, model_name, dimension
+        )
+
+    return run_embedding_pipeline, client, embedder, store_factory
+
+
 @dataclass
 class AppServices:
     """Tập hợp service dùng chung, khởi tạo một lần và tái sử dụng cho mọi request.
@@ -50,11 +75,14 @@ class AppServices:
     legal_model: LegalReasoningModel
     query_extractor: LegalQueryExtractor
     retrieval_service: RetrievalService
+    vector_store: object = None
 
     def close(self) -> None:
         """Giải phóng tài nguyên dùng chung (đóng kết nối Neo4j)."""
         logger.info("Đóng tài nguyên service dùng chung.")
         self.neo4j_client.close()
+        if self.vector_store is not None:
+            self.vector_store.close()
 
 
 def build_services(settings: Optional[Settings] = None) -> AppServices:
@@ -89,7 +117,24 @@ def build_services(settings: Optional[Settings] = None) -> AppServices:
         batch_size=settings.embedding_batch_size,
     )
     embedder.load_model()
-    semantic_service = SemanticSearcher(neo4j_client=neo4j_client, embedder=embedder)
+    vector_store = None
+    if settings.vector_backend == "chroma":
+        from src.vector.chroma_store import ChromaVectorStore
+
+        vector_store = ChromaVectorStore(
+            settings.chroma_path,
+            settings.chroma_collection,
+            embedder.model_name,
+            embedder.dimension,
+            create=False,
+        )
+        if not vector_store.count():
+            vector_store.close()
+            neo4j_client.close()
+            raise ValueError("Chroma collection chưa được populate.")
+    semantic_service = SemanticSearcher(
+        neo4j_client=neo4j_client, embedder=embedder, vector_store=vector_store
+    )
 
     logger.info("Nạp reasoning model: %s", settings.hf_model_id)
     legal_model = LegalReasoningModel(
@@ -117,4 +162,5 @@ def build_services(settings: Optional[Settings] = None) -> AppServices:
         legal_model=legal_model,
         query_extractor=query_extractor,
         retrieval_service=retrieval_service,
+        vector_store=vector_store,
     )
