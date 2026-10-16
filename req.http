@@ -32,5 +32,7 @@ Accept: application/json
 Content-Type: {{contentType}}
 
 {
-  "query_text": "Điều số 2 Khoản 2 Bộ luật Dân sự 2015, nói về vấn đề gì?"
+  "query_text": "Điều số 5 Khoản 1 Bộ luật Dân sự 2015, nói về vấn đề gì?"
 }
+### "query_text": "Hiến pháp 2013, nói về vấn đề gì?"
+### "query_text": "Điều số 5 Khoản 1 Bộ luật Dân sự 2015, nói về vấn đề gì?"

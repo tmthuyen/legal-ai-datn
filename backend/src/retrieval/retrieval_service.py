@@ -111,8 +111,12 @@ class RetrievalService:
             "relationships": [],
         }
 
+        node_type = hierarchy.get_node_type()
+        # Nếu type (label) là document thì search cả query
+        is_document_type = node_type == LegalHierarchyLabels.Document
+
         # Nếu có cấu trúc phân cấp thì search theo phân cấp,
-        if has_hierarchy:
+        if has_hierarchy and not is_document_type:
             logger.info(f"Tìm kiếm thông tin node theo phân cấp đã trích xuất")
             # Phân cấp không hợp lệ thì return và lỗi
             if not valid_hierarchy:
@@ -236,7 +240,7 @@ class RetrievalService:
             }
 
         # Nếu không có phân cấp: semantic search (V2) hoặc fallback search (V1) để tìm node liên quan.
-        else:
+        if not has_hierarchy or is_document_type:
             logger.info(
                 f"Không tìm thấy phân cấp trong câu hỏi, sẽ tìm kiếm node liên quan bằng semantic search."
             )

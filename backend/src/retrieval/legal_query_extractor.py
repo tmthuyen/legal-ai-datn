@@ -164,9 +164,7 @@ class LegalQueryExtractor:
             )
         task_id = LegalModelTaskID.LEGAL_QUERY_REFERENCE_HIERARCHY_EXTRACTION
 
-        pred_result = self._legal_model.predict(
-            task_id=task_id, input_text=query_text, max_new_tokens=128
-        )
+        pred_result = self._legal_model.predict(task_id=task_id, input_text=query_text)
         logger.info(
             f"Kết quả trích xuất từ mô hình: {json.dumps(pred_result, ensure_ascii=False, indent=2)}"
         )
