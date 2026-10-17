@@ -1,0 +1,107 @@
+name: Frontend CI
+
+on:
+  push:
+    branches: [dev, main, ci-cd]
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend-CI.yml'
+  pull_request:
+    branches: [dev, main, ci-cd]
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend-CI.yml'
+
+concurrency:
+  group: frontend-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend-ci:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ['18.x', '20.x', '22.x']
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Detect package.json
+        id: pkg
+        run: |
+          if [ -f package.json ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+
+      - name: Skip (no frontend code)
+        if: steps.pkg.outputs.exists != 'true'
+        run: |
+          echo "No frontend/package.json found. Skipping CI."
+        shell: bash
+
+      - name: Setup Node (matrix)
+        if: steps.pkg.outputs.exists == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install deps
+        if: steps.pkg.outputs.exists == 'true'
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm i --no-audit --no-fund
+          fi
+        shell: bash
+
+      - name: Lint
+        if: steps.pkg.outputs.exists == 'true'
+        run: |
+          if npm run | grep -q " lint"; then
+            npm run lint
+          else
+            echo "No lint script; skip."
+          fi
+        shell: bash
+
+      - name: Type check
+        if: steps.pkg.outputs.exists == 'true'
+        run: |
+          if npm run | grep -q " type-check"; then
+            npm run type-check
+          elif npx --yes tsc --version >/dev/null 2>&1 && grep -q '"typescript"' package.json; then
+            npx tsc --noEmit
+          else
+            echo "No type-check; skip."
+          fi
+        shell: bash
+
+      - name: Test
+        if: steps.pkg.outputs.exists == 'true'
+        run: |
+          if npm run | grep -q " test"; then
+            npm test -- --passWithNoTests
+          else
+            echo "No test script; skip."
+          fi
+        shell: bash
+
+      - name: Build
+        if: steps.pkg.outputs.exists == 'true'
+        run: |
+          if npm run | grep -q " build"; then
+            npm run build
+          else
+            echo "No build script; skip."
+          fi
+        shell: bash

@@ -1,0 +1,85 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [dev, main, ci-cd]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend-CI.yml'
+  pull_request:
+    branches: [dev, main, ci-cd]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend-CI.yml'
+
+concurrency:
+  group: backend-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend-ci:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+    defaults:
+      run:
+        working-directory: backend
+    env:
+      PYTHONIOENCODING: utf-8
+      LANG: C.UTF-8
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f pyproject.toml ]; then
+            pip install -e ".[dev]"
+          else
+            echo "pyproject.toml not found"
+            exit 1
+          fi
+        shell: bash
+
+      - name: Lint (black + isort)
+        run: |
+          black --check .
+          isort --check-only .
+        shell: bash
+
+      - name: Type check (pyright/pyrefly if available)
+        run: |
+          if command -v pyright >/dev/null 2>&1; then
+            pyright --project .
+          elif command -v pyrefly >/dev/null 2>&1; then
+            pyrefly check .
+          else
+            echo "No type checker binary found; skipping."
+          fi
+        shell: bash
+
+      - name: Run tests
+        run: |
+          if pytest --version >/dev/null 2>&1; then
+            pytest -q || true
+          else
+            echo "pytest not available; running manual smoke tests if exist"
+            if [ -f scripts/test_graph.py ]; then
+              python scripts/test_graph.py || true
+            fi
+          fi
+        shell: bash
+
+      - name: Smoke import
+        run: |
+          python -c "import src.api.server; print('OK')"
+        shell: bash

@@ -1,0 +1,43 @@
+name: Frontend CD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend-CD.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: frontend-cd-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend-cd:
+    runs-on: ubuntu-latest
+    # environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Detect package.json
+        id: pkg
+        run: |
+          if [ -f frontend/package.json ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+
+      - name: Skip if no frontend
+        if: steps.pkg.outputs.exists != 'true'
+        run: echo "No frontend; skip."
+        shell: bash
+
+      - name: Deploy placeholder (Vercel/Netlify/SSH)
+        if: steps.pkg.outputs.exists == 'true'
+        run: |
+          echo "Frontend CD: configure VERCEL_TOKEN/NETLIFY_AUTH_TOKEN/SSH secrets to deploy."
+        shell: bash

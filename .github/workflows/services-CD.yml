@@ -1,0 +1,41 @@
+name: Services CD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'services/**'
+      - '.github/workflows/services-CD.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: services-cd-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      has_docker: ${{ steps.scan.outputs.has_docker }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: scan
+        run: |
+          cnt=$(find services -name 'Dockerfile' 2>/dev/null | wc -l)
+          echo "has_docker=$cnt" >> $GITHUB_OUTPUT
+        shell: bash
+
+  services-cd:
+    needs: detect
+    runs-on: ubuntu-latest
+    # environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy placeholder
+        run: |
+          if [ "${{ needs.detect.outputs.has_docker }}" != "0" ]; then
+            echo "Services CD: Dockerfiles found. Add registry/ssh secrets to enable build+deploy."
+          else
+            echo "Services CD: no Dockerfile. Skipping."
+          fi
+        shell: bash

@@ -134,6 +134,7 @@ Mỗi mục dưới đây là **một phạm vi riêng**, áp dụng độc lậ
 
 - **Không tự ý commit/push**; chỉ commit khi được yêu cầu.
 - `.env` (chứa `NEO4J_PASSWORD`, `HF_TOKEN`) **không bao giờ commit**.
+- Khi làm việc với scope `cicd`, ưu tiên tạo nhánh Git có prefix `cicd/` (ví dụ: `cicd/split-workflows`, `cicd/update-deploy-action`).
 
 ## 8. Quy trình agent
 

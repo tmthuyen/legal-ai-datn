@@ -88,16 +88,20 @@ Các rule cứng, agent/dev **phải tuân thủ**. Chi tiết đầy đủ và 
 
 ## Quy trình của agent
 
-- Khi nhận task/yêu cầu, agent **phải lập plan và lưu vào `docs/plans/`** trước khi triển khai.
-  - Đặt tên theo version: `V{n}_{slug}.md` (V1, V2, … Vn),
-  - tiêu đề `# V{n} — <mô tả>`,
-  - ghi trạng thái,
-  - người thực hiện & thời gian thực hiện,
-  - Các module được sửa hoăc liên quan,
-  - phạm vi — theo mẫu `docs/plans/V1_retrieval_target_validation.md`.
+- Khi nhận task/yêu cầu, agent **phải lập plan và lưu vào docs/plans/** trước khi triển khai.
+  - Đặt tên file plan theo định dạng: V{index}_{scope}_{task_name}.md
+    - {index}: số thứ tự liên tục (integer), bắt đầu từ 0. Xác định dựa trên toàn bộ plans trong docs/plans/ (xem docs/plans/PLAN_INDEX.md).
+    - {scope}: ∈ ackend | rontend | cicd | i
+    - {task_name}: slug dạng kebab-case (lowercase, dùng - thay khoảng trắng), mô tả ngắn gọn công việc.
+    - VD: V0_init-plan.md, V1_cicd_ci-cd-split-workflows.md, V2_backend_retrieval-target-validation.md, V3_backend_retrieval-api.md
+  - Tiêu đề trong file: # V{index} — <mô tả>
+  - Ghi đầy đủ: trạng thái, người thực hiện & thời gian thực hiện, các module được sửa hoặc liên quan, phạm vi (theo mẫu docs/plans/V1_retrieval_target_validation.md).
+  - Khi tạo plan mới, **bắt buộc cập nhật docs/plans/PLAN_INDEX.md** (mapping file↔index↔scope↔task_name↔mô tả, 
+ext_index = max(index)+1).
+  - Nếu phát hiện sai số thứ tự (trùng lặp, không liên tục), đề xuất sắp xếp lại tên file theo thứ tự hợp lý — **chỉ thực hiện rename sau khi có xác nhận từ người dùng**, đồng thời cập nhật PLAN_INDEX.md tương ứng.
 
-- Các task trong plan phải mô tả rõ ràng và chia nhỏ thành phase hay subtask viết rõ trong plan đó để thực hiện. Đánh dấu tiến độ đã hoàn thành hay chưa
-
+- Các task trong plan phải mô tả rõ ràng
+- Khi làm việc với scope `cicd`, ưu tiên tạo nhánh Git có prefix `cicd/` (ví dụ: `cicd/split-workflows`, `cicd/update-deploy-action`). và chia nhỏ thành phase hay subtask viết rõ trong plan đó để thực hiện. Đánh dấu tiến độ đã hoàn thành hay chưa
 ## Tài liệu tham chiếu
 
 ### Summary
@@ -108,7 +112,7 @@ Các rule cứng, agent/dev **phải tuân thủ**. Chi tiết đầy đủ và 
 
 ### Plans
 
-Đây là các tài liệu mô tả kế hoạch triển khai, **agent được phép sửa** khi có yêu cầu. Thêm mới khi có task mới. Quản lý phiên bản và tên plan theo quy ước `V{n}_{slug}.md` (V1, V2, … Vn). Tiêu đề `# V{n} — <mô tả>`; ghi trạng thái, người thực hiện, phạm vi.
+Đây là các tài liệu mô tả kế hoạch triển khai, **agent được phép sửa** khi có yêu cầu. Thêm mới khi có task mới. Quản lý tên file theo `V{index}_{scope}_{task_name}.md` với `scope` ∈ `backend` | `frontend` | `cicd` | `ai`. Index là số thứ tự liên tục (0,1,...). Tiêu đề `# V{index} — <mô tả>`. Phải cập nhật `docs/plans/PLAN_INDEX.md` khi thêm/sửa/đổi tên. Xem chi tiết tại mục "Quy trình của agent".
 
 - `docs/plans/V1_retrieval_target_validation.md` — pipeline retrieval + format JSON đầu ra (`input, extracted_hierarchy, related_documents, related_nodes`).
 

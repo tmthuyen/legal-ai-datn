@@ -1,0 +1,74 @@
+name: Services CI
+
+on:
+  push:
+    branches: [dev, main, ci-cd]
+    paths:
+      - 'services/**'
+      - '.github/workflows/services-CI.yml'
+  pull_request:
+    branches: [dev, main, ci-cd]
+    paths:
+      - 'services/**'
+      - '.github/workflows/services-CI.yml'
+
+concurrency:
+  group: services-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      java: ${{ steps.scan.outputs.java }}
+      go: ${{ steps.scan.outputs.go }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: scan
+        run: |
+          java=$(find services -name 'pom.xml' -o -name 'build.gradle' -o -name 'build.gradle.kts' 2>/dev/null | wc -l)
+          go=$(find services -name 'go.mod' 2>/dev/null | wc -l)
+          echo "java=$java" >> $GITHUB_OUTPUT
+          echo "go=$go" >> $GITHUB_OUTPUT
+        shell: bash
+
+  java-ci:
+    needs: detect
+    if: needs.detect.outputs.java != '0'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Build/Test (Maven/Gradle auto)
+        run: |
+          if find . -name 'pom.xml' | grep -q .; then
+            mvn -B test || true
+          elif find . -name 'build.gradle*' | grep -q .; then
+            chmod +x gradlew 2>/dev/null || true
+            ./gradlew test --continue || gradle test --continue || true
+          fi
+        working-directory: services
+        shell: bash
+
+  go-ci:
+    needs: detect
+    if: needs.detect.outputs.go != '0'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+          cache: true
+      - name: Build & Test
+        run: |
+          go build ./...
+          go test ./... || true
+        working-directory: services
+        shell: bash

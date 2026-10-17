@@ -1,7 +1,8 @@
 # Kết quả đánh giá task: Legal_QRHE
 
+- Người thực hiện: Trần Minh Thuyên
+- Thời gian: 15/10/2026
 - Thông tin mô hình:
-  |
 
 - Link dataset: [ViLegal-QRHE-Dataset](https://huggingface.co/datasets/tmtdev/ViLegal-QRHE-Dataset)
 
