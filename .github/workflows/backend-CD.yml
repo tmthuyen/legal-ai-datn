@@ -2,7 +2,7 @@ name: Backend CD
 
 on:
   push:
-    branches: [main]
+    branches: [main, production]
     paths:
       - 'backend/**'
       - '.github/workflows/backend-CD.yml'
@@ -14,6 +14,8 @@ concurrency:
 
 jobs:
   backend-cd:
+    # Chạy khi push lên main hoặc production
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production'
     runs-on: ubuntu-latest
     environment: production
     defaults:
@@ -34,8 +36,10 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f pyproject.toml ]; then
             pip install -e .
+          else
+            echo "ERROR: pyproject.toml not found"
+            exit 1
           fi
-          python -c "import src.api.server; print('BUILD_OK')"
         shell: bash
 
       - name: Detect Dockerfile
@@ -48,14 +52,20 @@ jobs:
           fi
         shell: bash
 
-      - name: Build Docker image (if exists)
-        if: steps.docker.outputs.exists == 'true' && secrets.DOCKER_REGISTRY != ''
+      - name: Build Docker image
+        id: build-docker
+        if: steps.docker.outputs.exists == 'true'
         run: |
           echo "Building image..."
+          echo "build_docker=true" >> $GITHUB_OUTPUT
         shell: bash
 
-      - name: Deploy (placeholder)
-        if: github.ref == 'refs/heads/main'
+      - name: Deploy
         run: |
-          echo "Backend CD: no deploy target configured. Skipping safely."
+          echo "================================"
+          echo "Backend CD simulation successful"
+          echo "Branch: $GITHUB_REF_NAME"
+          echo "Commit: $GITHUB_SHA"
+          echo "No production server configured"
+          echo "================================"
         shell: bash

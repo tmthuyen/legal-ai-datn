@@ -4,15 +4,16 @@ Quản lý kết nối tới Neo4j Graph Database.
 """
 
 import os
-import logging
 from typing import Any, Dict, List, Optional
+
 from dotenv import load_dotenv
-from neo4j import GraphDatabase, Driver, Session
+from neo4j import Driver, GraphDatabase, Session
 
 from src.common.custom_exception import CustomException
+from src.utils.logger import setup_logger
 
 load_dotenv()
-logger = logging.getLogger(__name__)
+logger = setup_logger(name="neo4j_client", filename="neo4j_client.log")
 
 
 class Neo4jClient:
@@ -30,8 +31,7 @@ class Neo4jClient:
         self.password = password or os.getenv("NEO4J_PASSWORD")
         if not self.password:
             raise CustomException(
-                message="Mật khẩu Neo4j không được cung cấp.",
-                status_code=500
+                message="Mật khẩu Neo4j không được cung cấp.", status_code=500
             )
         self.database = database or os.getenv("NEO4J_DATABASE", "neo4j")
         self._driver: Optional[Driver] = None
@@ -39,12 +39,13 @@ class Neo4jClient:
         # Kiểm tra kết nối ngay khi khởi tạo
         if not self.verify_connectivity():
             raise CustomException(
-                message="Không thể kết nối tới Neo4j.",
-                status_code=500
+                message="Không thể kết nối tới Neo4j.", status_code=500
             )
-            
+
         # successful connection log
-        logger.info(f"Kết nối thành công tới Neo4j tại {self.uri} với database '{self.database}'.")
+        logger.info(
+            f"Kết nối thành công tới Neo4j tại {self.uri} với database '{self.database}'."
+        )
 
     def connect(self) -> Driver:
         """Khởi tạo hoặc trả về Driver kết nối tới Neo4j."""
@@ -79,13 +80,17 @@ class Neo4jClient:
         """Tạo một phiên làm việc (Session) mới với database đã cấu hình."""
         return self.driver.session(database=self.database)
 
-    def execute_read(self, query: str, parameters: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+    def execute_read(
+        self, query: str, parameters: Optional[Dict[str, Any]] = None
+    ) -> List[Dict[str, Any]]:
         """Thực thi câu truy vấn đọc (READ) Cypher và trả về danh sách kết quả dạng dict."""
         with self.session() as s:
             result = s.run(query, parameters or {})
             return [record.data() for record in result]
 
-    def execute_write(self, query: str, parameters: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+    def execute_write(
+        self, query: str, parameters: Optional[Dict[str, Any]] = None
+    ) -> List[Dict[str, Any]]:
         """Thực thi câu truy vấn ghi (WRITE) Cypher và trả về danh sách kết quả dạng dict."""
         with self.session() as s:
             result = s.run(query, parameters or {})

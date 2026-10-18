@@ -136,9 +136,7 @@ async def http_exception_handler(
     )
 
 
-def make_classified_exception_handler(
-    status_code: int, message: str
-) -> Any:
+def make_classified_exception_handler(status_code: int, message: str) -> Any:
     """Tạo handler cho một loại exception đã phân loại (auth/validation).
 
     Args:
@@ -174,9 +172,7 @@ async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONR
     Returns:
         JSONResponse mang ErrorResponse với HTTP status 500 (không lộ nội bộ).
     """
-    logger.error(
-        "Unhandled exception tại %s: %s", request.url.path, exc, exc_info=exc
-    )
+    logger.error("Unhandled exception tại %s: %s", request.url.path, exc, exc_info=exc)
     return error_response(
         message="Lỗi hệ thống",
         status_code=500,

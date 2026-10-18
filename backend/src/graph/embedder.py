@@ -9,23 +9,25 @@ Nhiệm vụ:
 - Encode user query sang dense vector phục vụ Semantic Vector Search
 """
 
-import time
 import logging
-from typing import List, Optional, Union, Dict, Any
+import time
+from typing import Any, Dict, List, Optional, Union
 
 import numpy as np
 import torch
 import torch.nn.functional as F
+from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 from transformers import AutoModel, AutoTokenizer
-from sentence_transformers import SentenceTransformer
 
 from src.common.setting_config import get_settings
 
 logger = logging.getLogger(__name__)
 
 
-def build_enriched_text(article: Dict[str, Any], node_map: Dict[str, Dict[str, Any]]) -> str:
+def build_enriched_text(
+    article: Dict[str, Any], node_map: Dict[str, Dict[str, Any]]
+) -> str:
     """
     Ghép nhãn ngữ cảnh phả hệ (Context-Enriched) vào trước nội dung điều luật:
     Định dạng: [Văn bản] [Phần] [Chương] [Mục] [Điều X: Tiêu đề]\n{full_text}
@@ -90,7 +92,9 @@ class NodeEmbedder:
         settings = get_settings()
         self.model_name = model_name or settings.embedding_model_name
         self.device = device or settings.embedding_device
-        self.batch_size = batch_size if batch_size is not None else settings.embedding_batch_size
+        self.batch_size = (
+            batch_size if batch_size is not None else settings.embedding_batch_size
+        )
         self.max_seq_length = max_seq_length
 
         self.is_vnlegal = "vnlegal-lal" in self.model_name.lower()
@@ -104,7 +108,12 @@ class NodeEmbedder:
             if self.device == "cpu":
                 torch.set_num_threads(8)
 
-            logger.info("Đang nạp embedding model: %s (device=%s, max_seq_length=%d)...", self.model_name, self.device, self.max_seq_length)
+            logger.info(
+                "Đang nạp embedding model: %s (device=%s, max_seq_length=%d)...",
+                self.model_name,
+                self.device,
+                self.max_seq_length,
+            )
             start_time = time.time()
 
             if self.is_vnlegal:
@@ -139,16 +148,20 @@ class NodeEmbedder:
         return self._dimension
 
     @staticmethod
-    def _last_token_pool(last_hidden_state: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
+    def _last_token_pool(
+        last_hidden_state: torch.Tensor, attention_mask: torch.Tensor
+    ) -> torch.Tensor:
         """
         Trích xuất representation tại token thật cuối cùng, hỗ trợ cả right-padding và left-padding.
         """
-        left_padding = (attention_mask[:, -1].sum() == attention_mask.shape[0])
+        left_padding = attention_mask[:, -1].sum() == attention_mask.shape[0]
         if left_padding:
             return last_hidden_state[:, -1]
         sequence_lengths = attention_mask.sum(dim=1) - 1
         batch_size = last_hidden_state.shape[0]
-        return last_hidden_state[torch.arange(batch_size, device=last_hidden_state.device), sequence_lengths]
+        return last_hidden_state[
+            torch.arange(batch_size, device=last_hidden_state.device), sequence_lengths
+        ]
 
     def encode_passages(
         self,
@@ -174,7 +187,9 @@ class NodeEmbedder:
             all_embs = []
             iterator = range(0, len(texts), bs)
             if show_progress_bar:
-                iterator = tqdm(iterator, desc=f"Embedding with {self.model_name} (2048 tokens)")
+                iterator = tqdm(
+                    iterator, desc=f"Embedding with {self.model_name} (2048 tokens)"
+                )
 
             for i in iterator:
                 batch = texts[i : i + bs]
@@ -190,7 +205,9 @@ class NodeEmbedder:
                     out = self._model(**inputs)
 
                 # Last-token pooling chuẩn cho kiến trúc Decoder-only
-                batch_embs = self._last_token_pool(out.last_hidden_state, inputs["attention_mask"])
+                batch_embs = self._last_token_pool(
+                    out.last_hidden_state, inputs["attention_mask"]
+                )
                 batch_embs = F.normalize(batch_embs, p=2, dim=1)
                 all_embs.append(batch_embs.cpu().numpy())
 
@@ -210,7 +227,9 @@ class NodeEmbedder:
         Áp dụng QUERY_PREFIX cho mô hình retrieval bất đối xứng (asymmetric).
         """
         if not query or not isinstance(query, str) or not query.strip():
-            raise ValueError("Query tìm kiếm không được để trống hoặc chỉ chứa khoảng trắng.")
+            raise ValueError(
+                "Query tìm kiếm không được để trống hoặc chỉ chứa khoảng trắng."
+            )
 
         self.load_model()
         clean_query = query.strip()
@@ -228,7 +247,9 @@ class NodeEmbedder:
             with torch.no_grad():
                 out = self._model(**inputs)
 
-            embs = self._last_token_pool(out.last_hidden_state, inputs["attention_mask"])
+            embs = self._last_token_pool(
+                out.last_hidden_state, inputs["attention_mask"]
+            )
             embs = F.normalize(embs, p=2, dim=1)
             return embs.cpu().squeeze(0).tolist()
         else:
@@ -238,4 +259,3 @@ class NodeEmbedder:
                 convert_to_numpy=True,
             )
             return vec.tolist()
-

@@ -21,9 +21,7 @@ logger = setup_logger("request_logging", "request_logging.log")
 class RequestLoggingMiddleware(BaseHTTPMiddleware):
     """Log mọi request: response time, tên request, IP, user-agent, url."""
 
-    async def dispatch(
-        self, request: Request, call_next: Any
-    ) -> Response:
+    async def dispatch(self, request: Request, call_next: Any) -> Response:
         """Đo thời gian và ghi log sau khi request xử lý xong.
 
         Args:

@@ -2,7 +2,7 @@ name: Services CD
 
 on:
   push:
-    branches: [main]
+    branches: [main, production]
     paths:
       - 'services/**'
       - '.github/workflows/services-CD.yml'
@@ -14,6 +14,8 @@ concurrency:
 
 jobs:
   detect:
+    # Chạy khi push lên main hoặc production
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production'
     runs-on: ubuntu-latest
     outputs:
       has_docker: ${{ steps.scan.outputs.has_docker }}

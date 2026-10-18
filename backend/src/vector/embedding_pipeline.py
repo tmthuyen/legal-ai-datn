@@ -159,8 +159,7 @@ def fetch_articles(client: Optional[Neo4jClient] = None) -> List[Dict[str, Any]]
         with open(PROCESSED_NODES_FILE, "r", encoding="utf-8") as f:
             all_nodes = json.load(f)
         articles = [
-            n for n in all_nodes
-            if (n.get("label") or n.get("type")) == "Article"
+            n for n in all_nodes if (n.get("label") or n.get("type")) == "Article"
         ]
         articles.sort(key=lambda x: x["node_id"])
         logger.info("Đã lấy %d Article nodes từ file nodes.json.", len(articles))
