@@ -2,12 +2,12 @@ name: Services CI
 
 on:
   push:
-    branches: [dev, main, ci-cd]
+    branches: [dev, ci-cd]
     paths:
       - 'services/**'
       - '.github/workflows/services-CI.yml'
   pull_request:
-    branches: [dev, main, ci-cd]
+    branches: [dev, ci-cd]
     paths:
       - 'services/**'
       - '.github/workflows/services-CI.yml'
