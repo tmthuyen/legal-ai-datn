@@ -1,0 +1,395 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Colors - Map hex CSS variables directly for Tailwind v4 */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Border Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+}
+
+:root {
+  /* 
+
+  /* --- LIGHT MODE: Emerald/Teal Theme - Dễ nhìn, Professional ---
+  --radius: 0.75rem; /* Bo góc 12px (Modern rounded)
+
+  --background: #fcfcfc; /* Trắng dịu, giảm độ gắt
+  --foreground: #0f172a; /* Chữ đậm nhưng không quá đen - dễ đọc
+
+  /* Card (Thẻ từ vựng) - Nổi bật nhẹ trên nền
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+
+  /* Popover (Menu bật ra)
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+
+  /* Primary (Màu chủ đạo): Emerald/Teal - Xanh lá ngọc, dễ nhìn
+  --primary: #000000; /* Primary nhẹ, giảm bão hòa để bớt gắt
+  --primary-foreground: #ffffff;
+
+  /* Secondary: Màu phụ trợ (Xám nhạt)
+  --secondary: #eff4f8;
+  --secondary-foreground: #0f172a;
+
+  /* Muted: Dành cho text phụ (Ví dụ: phiên âm IPA)
+  --muted: #f3f6f9;
+  --muted-foreground: #64748b;
+
+  /* Accent: Emerald accent
+  --accent: #23b8a7;
+  --accent-foreground: #ffffff;
+
+  /* Destructive: Màu đỏ cảnh báo (Nút xóa)
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  /* Border & Input lines
+  --border: #e0e6ee;
+  --input: #e0e6ee;
+  --ring: #189587;
+
+  */
+
+  --radius: 0.625rem;
+  --background: #fff;
+  --foreground: #000;
+  --card: #fff;
+  --card-foreground: #000;
+  --popover: #fff;
+  --popover-foreground: #000;
+  --primary: #000;
+  --primary-foreground: #fafafa;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #171717;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --accent: #f5f5f5;
+  --accent-foreground: #171717;
+  --destructive: #e40014;
+  --destructive-foreground: #fcf3f3;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #a1a1a1;
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
+  --sidebar: #fafafa;
+  --sidebar-foreground: #000;
+  --sidebar-primary: #171717;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f5f5f5;
+  --sidebar-accent-foreground: #171717;
+  --sidebar-border: #e5e5e5;
+  --sidebar-ring: #a1a1a1;
+  --surface: #f8f8f8;
+  --surface-foreground: var(--foreground);
+  --code: var(--surface);
+  --code-foreground: var(--surface-foreground);
+  --code-highlight: #f2f2f2;
+  --code-number: #747474;
+  --selection: #000;
+  --selection-foreground: #fff;
+}
+
+.dark {
+  --background: #080c16;
+  --foreground: #f8fafc;
+
+  --card: #0a0f1c;
+  --card-foreground: #f8fafc;
+
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #171717;
+  --card-foreground: #fafafa;
+
+  --popover: #0a0f1c;
+  --popover-foreground: #f8fafc;
+
+  --primary: #00eaff;
+  --primary-foreground: #0f172a;
+
+  --secondary: #1d242f;
+  --secondary-foreground: #f8fafc;
+
+  --muted: #1d242f;
+  --muted-foreground: #94a3b8;
+
+  --accent: #0affe2cc;
+  --accent-foreground: #0f172a;
+
+  --destructive: #fe0c0c;
+  --destructive-foreground: #f8fafc;
+
+  --border: #232b39;
+  --input: #232b39;
+  --ring: #2ce8d2;
+
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #171717;
+  --card-foreground: #fafafa;
+  --popover: #171717;
+  --popover-foreground: #fafafa;
+  --primary: #e5e5e5;
+  --primary-foreground: #171717;
+  --secondary: #262626;
+  --secondary-foreground: #fafafa;
+  --muted: #262626;
+  --muted-foreground: #a1a1a1;
+  --accent: #404040;
+  --accent-foreground: #fafafa;
+  --destructive: #ff6568;
+  --destructive-foreground: #df2225;
+  --border: #ffffff1a;
+  --input: #ffffff26;
+  --ring: #737373;
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
+  --sidebar: #171717;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #1447e6;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #262626;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #ffffff1a;
+  --sidebar-ring: #525252;
+  --surface: #161616;
+  --surface-foreground: #a1a1a1;
+  --code: var(--surface);
+  --code-foreground: var(--surface-foreground);
+  --code-highlight: #262626;
+  --code-number: #a4a4a4;
+  --selection: #e5e5e5;
+  --selection-foreground: #171717;
+}
+
+:root[data-theme='blue'] {
+  --primary: #2563eb;
+
+  --primary-foreground: #ffffff;
+
+  --accent: #dbeafe;
+
+  --accent-foreground: #1e40af;
+
+  --ring: #60a5fa;
+}
+
+.dark[data-theme='blue'] {
+  --primary: #3b82f6;
+
+  --primary-foreground: #ffffff;
+
+  --accent: #1e3a8a;
+
+  --accent-foreground: #bfdbfe;
+
+  --ring: #93c5fd;
+}
+
+:root[data-theme='emerald'] {
+  --primary: #10b981;
+
+  --primary-foreground: #ffffff;
+
+  --accent: #d1fae5;
+
+  --accent-foreground: #065f46;
+
+  --ring: #34d399;
+}
+
+.dark[data-theme='emerald'] {
+  --primary: #34d399;
+
+  --primary-foreground: #052e16;
+
+  --accent: #064e3b;
+
+  --accent-foreground: #a7f3d0;
+
+  --ring: #6ee7b7;
+}
+
+:root[data-theme='violet'] {
+  --primary: #7c3aed;
+
+  --primary-foreground: #ffffff;
+
+  --accent: #ede9fe;
+
+  --accent-foreground: #5b21b6;
+
+  --ring: #a78bfa;
+}
+
+.dark[data-theme='violet'] {
+  --primary: #8b5cf6;
+
+  --primary-foreground: #ffffff;
+
+  --accent: #4c1d95;
+
+  --accent-foreground: #ddd6fe;
+
+  --ring: #c4b5fd;
+}
+
+:root[data-theme='rose'] {
+  --primary: #e11d48;
+
+  --primary-foreground: #ffffff;
+
+  --accent: #ffe4e6;
+
+  --accent-foreground: #9f1239;
+
+  --ring: #fb7185;
+}
+
+.dark[data-theme='rose'] {
+  --primary: #f43f5e;
+
+  --primary-foreground: #ffffff;
+
+  --accent: #881337;
+
+  --accent-foreground: #fecdd3;
+
+  --ring: #fda4af;
+}
+
+:root[data-theme='orange'] {
+  --primary: #ea580c;
+
+  --primary-foreground: #ffffff;
+
+  --accent: #ffedd5;
+
+  --accent-foreground: #9a3412;
+
+  --ring: #fb923c;
+}
+
+.dark[data-theme='orange'] {
+  --primary: #f97316;
+
+  --primary-foreground: #ffffff;
+
+  --accent: #7c2d12;
+
+  --accent-foreground: #fed7aa;
+
+  --ring: #fdba74;
+}
+
+:root[data-theme='cyan'] {
+  --primary: #0891b2;
+
+  --primary-foreground: #ffffff;
+
+  --accent: #cffafe;
+
+  --accent-foreground: #155e75;
+
+  --ring: #22d3ee;
+}
+
+.dark[data-theme='cyan'] {
+  --primary: #22d3ee;
+
+  --primary-foreground: #083344;
+
+  --accent: #164e63;
+
+  --accent-foreground: #a5f3fc;
+
+  --ring: #67e8f9;
+}
+
+/* Ẩn scrollbar ngang (dùng cho hàng phim cuộn ngang MovieRow) */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Loại bỏ gradient trong suốt - dùng màu solid */
+  }
+  /* Cards phải có background đậm, không trong suốt */
+  .card,
+  [class*='Card'],
+  [class*='card'] {
+    @apply bg-card;
+    backdrop-filter: none;
+  }
+  /* Modal/Dialog phải nổi bật hơn */
+  [role='dialog'],
+  [data-radix-dialog-content] {
+    @apply bg-popover;
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  .dark [role='dialog'],
+  .dark [data-radix-dialog-content] {
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.5),
+      0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  }
+}

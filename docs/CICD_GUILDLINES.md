@@ -7,6 +7,19 @@
 cd backend
 ```
 
+- Tạo virtual environment
+```
+python -m venv .venv
+.\.venv\Scripts\activate
+```
+
+
+-  Cài đặt công cụ dev (nếu chưa cài)
+```
+pip install black isort pytest
+```
+
+- Chạy các lệnh
 | Action | Type | Branch | Commands |
 |:---:|:---:|:---|:---|
 | **CI** | Lint | `dev`, `ci-cd` | `isort src`<br>`isort --check-only src` <br> `black src` <br> `black --check src` |

@@ -1,0 +1,17 @@
+# Build folders
+.next
+out
+build
+dist
+
+# Dependencies & system
+node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment files
+.env*
+
+# Static assets
+public/
