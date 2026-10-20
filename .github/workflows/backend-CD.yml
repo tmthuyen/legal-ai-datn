@@ -17,7 +17,7 @@ jobs:
     # Chạy khi push lên main hoặc production
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production'
     runs-on: ubuntu-latest
-    environment: production
+    # environment: production
     defaults:
       run:
         working-directory: backend

@@ -1,4 +1,4 @@
-name: Services CD
+name: SERVICES CD
 
 on:
   push:
