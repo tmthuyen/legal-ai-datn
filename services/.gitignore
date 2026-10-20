@@ -1,0 +1,7 @@
+# Bỏ qua file build & bí mật của Services (Golang)
+.env
+bin/
+tmp/
+*.exe
+*.out
+coverage.out
