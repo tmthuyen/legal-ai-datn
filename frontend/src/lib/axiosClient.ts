@@ -43,9 +43,6 @@ export const parseAxiosError = (
   };
 };
 
-const setAuthTokenInContext: ((token: string | null) => void) | null = null;
-const currentAccessToken: string | null = null;
-
 let isRefreshing = false;
 let failedQueue: any[] = [];
 

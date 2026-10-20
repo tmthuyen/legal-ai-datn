@@ -13,7 +13,7 @@ export default function ProfilePage() {
       <div className="animate-fade-in w-full space-y-6 pb-10">
         <PageHeader title={metadata.title} description={metadata.description} />
 
-        <ProfileForm metadata={metadata} />
+        <ProfileForm />
       </div>
     </>
   );

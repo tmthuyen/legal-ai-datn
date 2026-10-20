@@ -29,7 +29,7 @@
 Hệ thống Legal AI hoàn chỉnh gồm 3 khối độc lập nhưng giao tiếp thống nhất:
 
 ```
-[ Frontend: Next.js (port 3002) ]
+[ Frontend: Next.js (port 3003) ]
         │  ▲
         │  │  HTTP / REST (JWT accessToken Header + RefreshToken HttpOnly Cookie)
         ▼  │

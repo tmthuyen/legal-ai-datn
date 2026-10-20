@@ -47,6 +47,7 @@ function NavSection({ groupLabel, items }: NavSectionData) {
   );
 }
 
+/** Sidebar khu vực người dùng — Pháp luật + Cá nhân (chỉ hiện khi đã đăng nhập). */
 export function UserNavMain() {
   const user = useAuthStore((state) => state.user);
 
@@ -54,22 +55,17 @@ export function UserNavMain() {
     <div>
       <NavSection groupLabel={dataBar.user.groupLabel} items={dataBar.user.items} />
       {user && (
-        <NavSection groupLabel={dataBar.personal.groupLabel} items={dataBar.personal.items} />
-      )}
-      {user && (
         <NavSection groupLabel={dataBar.settings.groupLabel} items={dataBar.settings.items} />
       )}
     </div>
   );
 }
 
+/** Sidebar khu vực admin — Quản trị + Cá nhân. */
 export function NavMain() {
   return (
     <div>
-      <NavSection groupLabel={dataBar.learning.groupLabel} items={dataBar.learning.items} />
-      <NavSection groupLabel={dataBar.auth.groupLabel} items={dataBar.auth.items} />
       <NavSection groupLabel={dataBar.admin.groupLabel} items={dataBar.admin.items} />
-      <NavSection groupLabel={dataBar.interaction.groupLabel} items={dataBar.interaction.items} />
       <NavSection groupLabel={dataBar.settings.groupLabel} items={dataBar.settings.items} />
     </div>
   );

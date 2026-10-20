@@ -1,129 +1,102 @@
 'use client';
 
-import { useMemo, useState } from 'react';
-import { KeyRound } from 'lucide-react';
-import { AssignRolesDialog } from '@/components/admin/assign-roles-dialog';
+import { useEffect, useState } from 'react';
+import { Lock } from 'lucide-react';
 import { CrudToolbar } from '@/components/admin/crud-toolbar';
 import { CrudTableSkeleton, DataTable, DataTableColumn } from '@/components/admin/data-table';
-import { CrudDeleteDialog } from '@/components/admin/delete-dialog';
-import { CrudFormDialog, CrudFormField, useCrudFormValues } from '@/components/admin/form-dialog';
+import { ConfirmDialog } from '@/components/common/ConfirmDialog';
 import { DataPagination } from '@/components/common/DataPagination';
 import { EmptyState } from '@/components/common/EmptyState';
 import { ErrorState } from '@/components/common/ErrorState';
 import { Badge } from '@/components/ui/badge';
-import { AdminUserInput, adminUsers } from '@/hooks/tankstack/admin';
-import { useCrudPage } from '@/hooks/tankstack/admin-crud';
-import { User } from '@/shared/types/api.types';
+import { useAdminUsers, useUpdateUserStatus } from '@/hooks/tankstack/useAdminAnalytics';
+import { LegalUser } from '@/shared/types/legal.types';
 import { useAuthStore } from '@/stores/auth.store';
-import { z } from 'zod';
+import dateTimeUtils from '@/shared/utils/formatting';
 
-type UserForm = Record<string, unknown>;
-
-/** Form khi sửa — backend `PUT /users/:id` (`UpdateProfileDto`) chỉ nhận `fullName` ở đây. */
-const EDIT_FIELDS: CrudFormField[] = [{ name: 'fullName', label: 'Họ tên', placeholder: 'Nguyễn Văn A' }];
-
-const CREATE_FIELDS: CrudFormField[] = [
-  { name: 'email', label: 'Email', placeholder: 'user@example.com' },
-  { name: 'fullName', label: 'Họ tên', placeholder: 'Nguyễn Văn A' },
-  { name: 'password', label: 'Mật khẩu', placeholder: 'Tối thiểu 8 ký tự' },
-  { name: 'confirmPassword', label: 'Nhập lại mật khẩu' },
-];
-
-const editSchema = z.object({
-  fullName: z.string().min(1, 'Họ tên là bắt buộc'),
-}) as unknown as z.ZodType<UserForm>;
-
-const createSchema = z
-  .object({
-    email: z.string().min(1, 'Email là bắt buộc').email('Email không hợp lệ'),
-    fullName: z.string().min(1, 'Họ tên là bắt buộc'),
-    password: z.string().min(8, 'Mật khẩu tối thiểu 8 ký tự'),
-    confirmPassword: z.string().min(1, 'Vui lòng nhập lại mật khẩu'),
-  })
-  .refine((values) => values.password === values.confirmPassword, {
-    message: 'Mật khẩu không khớp',
-    path: ['confirmPassword'],
-  }) as unknown as z.ZodType<UserForm>;
-
-const COLUMNS: DataTableColumn<User>[] = [
-  {
-    key: 'fullName',
-    header: 'Họ tên',
-    render: (user) => <span className="font-medium">{user.fullName || '—'}</span>,
-  },
-  { key: 'email', header: 'Email', render: (user) => user.email },
-  {
-    key: 'status',
-    header: 'Trạng thái',
-    className: 'w-28',
-    render: (user) => (
-      <Badge variant="outline" className="capitalize">
-        {user.status || 'unknown'}
-      </Badge>
-    ),
-  },
-  {
-    key: 'roles',
-    header: 'Vai trò',
-    render: (user) =>
-      user.roles?.length ? (
-        <div className="flex flex-wrap gap-1">
-          {user.roles.map((role) => (
-            <Badge key={role.id} variant="secondary">
-              {role.name}
-            </Badge>
-          ))}
-        </div>
-      ) : (
-        <span className="text-muted-foreground">—</span>
-      ),
-  },
-];
-
-/** CRUD Người dùng — form thêm/sửa khác nhau theo mode + dialog phân quyền tái sử dụng CrudFormDialog. */
+/**
+ * Bảng quản lý người dùng (contract §4.4): danh sách phân trang + tìm kiếm theo
+ * email/username, khóa/mở khóa tài khoản (`PUT /admin/users/:id/status`).
+ * Không có API tạo/sửa/xóa user ở tầng Services nên UI không cung cấp.
+ */
 export function UsersClient() {
   const currentUser = useAuthStore((state) => state.user);
-  const [roleTarget, setRoleTarget] = useState<User | null>(null);
 
-  const mutations = {
-    create: adminUsers.useCreate(),
-    update: adminUsers.useUpdate(),
-    remove: adminUsers.useDelete(),
-  };
-  const state = useCrudPage<User, AdminUserInput>(mutations);
-  const list = adminUsers.useList({ page: state.page, limit: 10, keyword: state.keyword });
+  const [page, setPage] = useState(1);
+  const [keywordInput, setKeywordInput] = useState('');
+  const [search, setSearch] = useState('');
+  const [statusTarget, setStatusTarget] = useState<LegalUser | null>(null);
 
-  const fields = state.editing ? EDIT_FIELDS : CREATE_FIELDS;
-  const schema = state.editing ? editSchema : createSchema;
-  const defaultValues = useCrudFormValues<UserForm>(fields, state.editing);
+  // Debounce ô tìm kiếm, đưa về trang 1 khi từ khóa đổi.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearch(keywordInput.trim());
+      setPage(1);
+    }, 400);
+    return () => clearTimeout(timer);
+  }, [keywordInput]);
 
-  const handleSubmit = (values: UserForm) => {
-    if (state.editing) {
-      state.submit({ fullName: String(values.fullName ?? '') });
-      return;
-    }
-    state.submit({
-      email: String(values.email ?? ''),
-      fullName: String(values.fullName ?? ''),
-      password: String(values.password ?? ''),
-      confirmPassword: String(values.confirmPassword ?? ''),
-    });
-  };
+  const list = useAdminUsers({ page, limit: 10, search });
+  const updateStatus = useUpdateUserStatus();
 
   const selfId = currentUser?.id;
-  const title = useMemo(
-    () => (state.editing ? 'Sửa người dùng' : 'Thêm người dùng'),
-    [state.editing],
-  );
+  const items = list.data?.items ?? [];
+
+  const columns: DataTableColumn<LegalUser>[] = [
+    {
+      key: 'username',
+      header: 'Tên đăng nhập',
+      render: (user) => <span className="font-medium">{user.username}</span>,
+    },
+    { key: 'email', header: 'Email', render: (user) => user.email },
+    {
+      key: 'fullName',
+      header: 'Họ tên',
+      hideOnMobile: true,
+      render: (user) => user.fullName || '—',
+    },
+    {
+      key: 'role',
+      header: 'Vai trò',
+      className: 'w-28',
+      render: (user) => (
+        <Badge variant={user.role === 'admin' ? 'destructive' : 'secondary'} className="uppercase">
+          {user.role}
+        </Badge>
+      ),
+    },
+    {
+      key: 'status',
+      header: 'Trạng thái',
+      className: 'w-32',
+      render: (user) => (
+        <Badge variant={user.isActive ? 'default' : 'outline'}>
+          {user.isActive ? 'Hoạt động' : 'Đã khóa'}
+        </Badge>
+      ),
+    },
+    {
+      key: 'createdAt',
+      header: 'Ngày tạo',
+      hideOnMobile: true,
+      render: (user) => dateTimeUtils.formatShortDate(user.createdAt),
+    },
+  ];
+
+  const confirmStatusChange = async () => {
+    if (!statusTarget) return;
+    await updateStatus.mutateAsync({ id: statusTarget.id, isActive: !statusTarget.isActive });
+    setStatusTarget(null);
+  };
 
   return (
     <div className="flex w-full flex-col gap-4">
       <CrudToolbar
-        keyword={state.keywordInput}
-        onKeywordChange={state.setKeywordInput}
-        searchPlaceholder="Tìm theo tên hoặc email…"
-        onAdd={state.openCreate}
-        addLabel="Thêm người dùng"
+        keyword={keywordInput}
+        onKeywordChange={setKeywordInput}
+        searchPlaceholder="Tìm theo email hoặc tên đăng nhập…"
+        onAdd={() => {}}
+        hideAdd
       />
 
       {list.isLoading ? (
@@ -137,23 +110,21 @@ export function UsersClient() {
       ) : (
         <>
           <DataTable
-            columns={COLUMNS}
-            items={list.data?.items ?? []}
+            columns={columns}
+            items={items}
             rowKey={(user) => user.id}
             extraActions={[
               {
-                label: 'Phân quyền',
-                icon: <KeyRound className="size-4" aria-hidden="true" />,
-                onClick: (user) => setRoleTarget(user),
+                label: 'Khóa/Mở khóa',
+                icon: <Lock className="size-4" aria-hidden="true" />,
+                onClick: (user) => setStatusTarget(user),
+                hide: (user) => user.id === selfId,
               },
             ]}
-            onEdit={state.openEdit}
-            onDelete={(user) => state.setDeleteTarget(user)}
-            canDelete={(user) => user.id !== selfId}
             empty={
               <EmptyState
                 title="Không có người dùng nào"
-                description="Thêm người dùng đầu tiên hoặc kiểm tra bộ lọc tìm kiếm."
+                description="Kiểm tra lại bộ lọc tìm kiếm."
               />
             }
           />
@@ -162,7 +133,7 @@ export function UsersClient() {
               page={list.data.pagination.page}
               totalPages={list.data.pagination.totalPages}
               total={list.data.pagination.total}
-              onPageChange={state.setPage}
+              onPageChange={setPage}
               disabled={list.isFetching}
               ariaLabel="Phân trang người dùng"
             />
@@ -170,32 +141,18 @@ export function UsersClient() {
         </>
       )}
 
-      <CrudFormDialog
-        open={state.dialogOpen}
-        onOpenChange={state.setDialogOpen}
-        title={title}
-        schema={schema}
-        fields={fields}
-        defaultValues={defaultValues}
-        onSubmit={handleSubmit}
-        submitting={state.saving}
-      />
-
-      <AssignRolesDialog user={roleTarget} onCancel={() => setRoleTarget(null)} />
-
-      <CrudDeleteDialog
-        target={
-          state.deleteTarget
-            ? {
-              id: state.deleteTarget.id,
-              label: state.deleteTarget.fullName || state.deleteTarget.email,
-            }
-            : null
+      <ConfirmDialog
+        isOpen={statusTarget !== null}
+        variant={statusTarget?.isActive ? 'destructive' : 'default'}
+        title={statusTarget?.isActive ? 'Khóa tài khoản' : 'Mở khóa tài khoản'}
+        description={
+          statusTarget?.isActive
+            ? `Bạn có chắc muốn khóa tài khoản "${statusTarget?.username ?? ''}"? Người dùng sẽ không thể đăng nhập.`
+            : `Bạn có chắc muốn mở khóa tài khoản "${statusTarget?.username ?? ''}"?`
         }
-        onCancel={() => state.setDeleteTarget(null)}
-        onConfirm={state.confirmDelete}
-        isPending={state.deleting}
-        entityLabel="người dùng"
+        confirmText={statusTarget?.isActive ? 'Khóa' : 'Mở khóa'}
+        onConfirm={confirmStatusChange}
+        onCancel={() => setStatusTarget(null)}
       />
     </div>
   );

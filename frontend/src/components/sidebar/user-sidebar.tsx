@@ -19,11 +19,11 @@ export function UserSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader className="flex h-16 items-start justify-center border-b shadow-sm">
         <Link
-          href="/dashboard"
+          href="/"
           className="flex min-h-16 w-full items-center justify-start object-cover"
         >
-          <Image width={48} height={48} src="/logo2.png" alt="Logo" />
-          <h1 className="ml-2 text-lg font-bold text-gray-900 dark:text-white">Movie</h1>
+          <Image width={48} height={48} src="/logo.png" alt="Logo" />
+          <h1 className="ml-2 text-lg font-bold text-gray-900 dark:text-white">Legal AI</h1>
         </Link>
       </SidebarHeader>
       <SidebarContent>

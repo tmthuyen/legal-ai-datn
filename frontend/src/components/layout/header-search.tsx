@@ -1,16 +1,16 @@
-'use client';
+﻿'use client';
 
 import { Search, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState, type FormEvent } from 'react';
 
-/** Điều hướng tới trang danh sách phim với keyword trên URL (share được, seed được). */
+/** Điều hướng tới trang hỏi đáp pháp luật với câu hỏi trên URL (share được, seed được). */
 function useSearchSubmit() {
   const router = useRouter();
 
   return (keyword: string) => {
     const trimmed = keyword.trim();
-    router.push(trimmed ? `/movies?keyword=${encodeURIComponent(trimmed)}` : '/movies');
+    router.push(trimmed ? `/chat?q=${encodeURIComponent(trimmed)}` : '/chat');
   };
 }
 
@@ -31,7 +31,7 @@ export function DesktopSearch() {
   return (
     <form
       role="search"
-      aria-label="Tìm phim"
+      aria-label="Tra cứu câu hỏi pháp luật"
       onSubmit={handleSubmit}
       className="relative hidden w-full max-w-md md:flex"
     >
@@ -43,8 +43,8 @@ export function DesktopSearch() {
         type="search"
         value={value}
         onChange={(event) => setValue(event.target.value)}
-        placeholder="Tìm phim…"
-        aria-label="Tìm phim theo tên"
+        placeholder="Nhập câu hỏi pháp luật…"
+        aria-label="Nhập câu hỏi pháp luật"
         className="border-input bg-background/60 placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 h-9 w-full rounded-full border py-1.5 pr-3 pl-9 text-sm outline-none transition-colors focus-visible:ring-2"
       />
       <button
@@ -89,7 +89,7 @@ export function MobileSearchExpanded({ onClose }: { onClose: () => void }) {
   return (
     <form
       role="search"
-      aria-label="Tìm phim"
+      aria-label="Tra cứu câu hỏi pháp luật"
       onSubmit={handleSubmit}
       className="flex w-full items-center gap-2 md:hidden"
     >
@@ -106,8 +106,8 @@ export function MobileSearchExpanded({ onClose }: { onClose: () => void }) {
         autoFocus
         value={value}
         onChange={(event) => setValue(event.target.value)}
-        placeholder="Tìm phim…"
-        aria-label="Tìm phim theo tên"
+        placeholder="Nhập câu hỏi pháp luật…"
+        aria-label="Nhập câu hỏi pháp luật"
         className="border-input bg-background/60 placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 h-9 w-full min-w-0 rounded-full border px-3 text-sm outline-none transition-colors focus-visible:ring-2"
       />
       <button

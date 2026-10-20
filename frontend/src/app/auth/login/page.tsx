@@ -3,8 +3,8 @@ import { Suspense } from 'react';
 import LoginForm from './login-form';
 
 export const metadata: Metadata = {
-  title: 'Login',
-  description: 'Sign in to your account',
+  title: 'Đăng nhập | Legal AI',
+  description: 'Đăng nhập vào hệ thống trợ đáp pháp lý Legal AI.',
 };
 
 function LoginContent() {

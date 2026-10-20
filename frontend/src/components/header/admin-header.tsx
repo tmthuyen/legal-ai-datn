@@ -31,11 +31,11 @@ function AdminHeader({ className }: { className?: string }) {
         <SidebarTrigger className="-ml-1 shrink-0 cursor-pointer" />
 
         <Link
-          href="/dashboard"
+          href="/admin/dashboard"
           className="flex shrink-0 items-center gap-2 rounded-lg px-1 py-1 transition-opacity hover:opacity-80"
         >
-          <Image width={32} height={32} src="/logo2.png" alt="Logo" />
-          <span className="text-lg font-bold text-gray-900 dark:text-white">Admin</span>
+          <Image width={32} height={32} src="/logo.png" alt="Logo" />
+          <span className="text-lg font-bold text-gray-900 dark:text-white">Legal AI</span>
         </Link>
 
         <div className="ms-auto flex items-center gap-1 sm:gap-2">

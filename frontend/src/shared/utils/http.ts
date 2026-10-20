@@ -14,7 +14,7 @@ export interface FetchOptions extends Omit<RequestInit, 'method' | 'body'> {
   body?: any; // This will be JSON.stringified in the fetcher
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3002/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080/api/v1';
 console.log('API_BASE_URL:', API_BASE_URL);
 
 const BASE_HEADERS = {

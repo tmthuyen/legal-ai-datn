@@ -13,8 +13,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Movie Recommendation',
-  description: 'A movie recommendation system built with Next.js, React, and TypeScript.',
+  title: 'Legal AI — Trợ đáp pháp lý Việt Nam',
+  description:
+    'Hệ thống hỏi đáp pháp luật Việt Nam dựa trên Knowledge Graph và suy luận phản thực (GraphRAG).',
 };
 
 export default function RootLayout({

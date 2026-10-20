@@ -53,8 +53,8 @@ export default function UserHeader({ className }: { className?: string }) {
           href="/"
           className="flex shrink-0 items-center gap-2 rounded-lg px-1 py-1 transition-opacity hover:opacity-80"
         >
-          <Image width={32} height={32} src="/logo2.png" alt="Logo" />
-          <span className="text-lg font-bold text-gray-900 dark:text-white">Movie</span>
+          <Image width={32} height={32} src="/logo.png" alt="Logo" />
+          <span className="text-lg font-bold text-gray-900 dark:text-white">Legal AI</span>
         </Link>
 
         {/* Ô tìm kiếm inline (kiểu YouTube) — desktop */}

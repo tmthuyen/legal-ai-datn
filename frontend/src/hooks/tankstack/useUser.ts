@@ -1,8 +1,7 @@
 import { userApi } from '@/apis/user.api';
 import { parseAxiosError } from '@/lib/axiosClient';
-import { ApiResponse, UpdateProfileDto, User } from '@/shared/types/api.types';
+import { UpdateProfileDto } from '@/shared/types/api.types';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import React from 'react';
 import { toast } from 'sonner';
 
 // get all

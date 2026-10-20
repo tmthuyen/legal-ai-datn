@@ -20,9 +20,7 @@ export default function RoleLayout({ children }: { children: React.ReactNode }) 
     return <UserLayout>{children}</UserLayout>;
   }
 
-  const userRoleCodes = roleUtil.mapRoleToCodes(user.roles);
-
-  if (userRoleCodes.includes('ADMIN')) {
+  if (roleUtil.isAdmin(user)) {
     return <AdminLayout>{children}</AdminLayout>;
   }
 

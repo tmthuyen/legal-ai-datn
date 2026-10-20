@@ -68,7 +68,13 @@ export function useCreateComment(movieId: number | string) {
           parentId: null,
           replyCount: 0,
           createdAt: new Date().toISOString(),
-          user: user ? { id: user.id, fullName: user.fullName, avatarUrl: user.avatarUrl } : undefined,
+          user: user
+            ? {
+              id: user.id,
+              fullName: user.fullName ?? undefined,
+              avatarUrl: user.avatarUrl ?? undefined,
+            }
+            : undefined,
         };
         return { ...old, comments: [optimistic, ...old.comments], total: old.total + 1 };
       });

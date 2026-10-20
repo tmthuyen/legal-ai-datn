@@ -1,8 +1,7 @@
 import { authApi } from '@/apis/auth.api';
-import { userApi } from '@/apis/user.api';
 import { parseAxiosError } from '@/lib/axiosClient';
-import { ApiResponse, RegisterData, UpdateProfileDto, User } from '@/shared/types/api.types';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { RegisterData } from '@/shared/types/api.types';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
 // login

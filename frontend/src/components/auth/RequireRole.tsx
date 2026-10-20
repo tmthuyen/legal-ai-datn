@@ -56,7 +56,7 @@ export default function RequireRole({ requiredRoles, children }: RequireRoleProp
     return <Redirecting />;
   }
 
-  const userRoleCodes = roleUtil.mapRoleToCodes(user.roles);
+  const userRoleCodes = roleUtil.mapRoleToCodes(user);
 
   const hasRequiredRole = requiredRoles.some((requiredRole) =>
     userRoleCodes.includes(requiredRole),

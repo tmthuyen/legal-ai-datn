@@ -16,7 +16,7 @@ const SOCIAL_LINKS = [
 
 const exploreLinks = [
   { name: 'Trang chủ', href: '/' },
-  { name: 'Danh sách phim', href: '/movies' },
+  { name: 'Hỏi đáp pháp luật', href: '/chat' },
 ];
 
 const infoLinks = [
@@ -52,12 +52,12 @@ export function SiteFooter({ className }: { className?: string }) {
           {/* Giới thiệu */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <Image width={32} height={32} src="/logo2.png" alt="Logo" />
-              <span className="text-lg font-bold text-gray-900 dark:text-white">Movie</span>
+              <Image width={32} height={32} src="/logo.png" alt="Logo" />
+              <span className="text-lg font-bold text-gray-900 dark:text-white">Legal AI</span>
             </Link>
             <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
-              Ứng dụng gợi ý phim thông minh — khám phá, đánh giá và lưu giữ những bộ phim bạn yêu
-              thích.
+              Trợ lý hỏi đáp pháp luật Việt Nam dựa trên Knowledge Graph &amp; suy luận phản thực —
+              tra cứu điều luật và nhận trích dẫn minh bạch.
             </p>
             <div className="mt-4 flex items-center gap-3">
               {SOCIAL_LINKS.map((social) => (
@@ -112,7 +112,7 @@ export function SiteFooter({ className }: { className?: string }) {
         </div>
 
         <div className="border-border text-muted-foreground mt-8 border-t pt-6 text-center text-sm">
-          © {new Date().getFullYear()} Movie Recommendation. Tất cả quyền được bảo lưu.
+          © {new Date().getFullYear()} Legal AI. Tất cả quyền được bảo lưu.
         </div>
       </div>
     </footer>

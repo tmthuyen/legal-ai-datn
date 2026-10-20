@@ -285,7 +285,7 @@ Response `result`: `User`. Lỗi: `404` nếu không có user.
 | `JWT_SECRET` | Khóa ký access token | (>= 32 ký tự) |
 | `JWT_ACCESS_TTL_MINUTES` | Hạn access token | `15` |
 | `JWT_REFRESH_TTL_HOURS` | Hạn refresh token | `168` |
-| `CORS_ALLOWED_ORIGINS` | Origin FE, phân tách `,` | `http://localhost:3002` |
+| `CORS_ALLOWED_ORIGINS` | Origin FE, phân tách `,` | `http://localhost:3003` |
 | `AI_BACKEND_URL` | Base URL Backend | `http://localhost:8090` |
 | `AI_BACKEND_TIMEOUT_SECONDS` | Timeout gọi AI | `60` |
 | `COOKIE_SECURE` | Cookie Secure flag | `false` (dev) |
@@ -297,4 +297,4 @@ Response `result`: `User`. Lỗi: `404` nếu không có user.
 | Biến | Ý nghĩa | Giá trị |
 | ---- | ------- | ------- |
 | `NEXT_PUBLIC_API_BASE_URL` | Base URL Services | `http://localhost:8080/api/v1` |
-| `PORT` | Cổng FE | `3002` |
+| `PORT` | Cổng FE | `3003` |

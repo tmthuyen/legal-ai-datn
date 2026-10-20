@@ -1,22 +1,22 @@
-import { authApi } from '@/apis/auth.api';
-import { User } from '@/shared/types/api.types';
+import { legalAuthApi } from '@/apis/legal.api';
+import { LegalUser } from '@/shared/types/legal.types';
 import { toast } from 'sonner';
 import { create } from 'zustand';
 
 interface AuthState {
   accessToken: string | null;
-  user: User | null;
+  user: LegalUser | null;
   isLoading: boolean;
   isAuthenticated: boolean;
-  bootstrap: () => Promise<User | null>;
+  bootstrap: () => Promise<LegalUser | null>;
   setAccessToken: (token: string | null) => void;
-  setUser: (user: User) => void;
-  refreshUser: () => Promise<User | null>;
+  setUser: (user: LegalUser) => void;
+  refreshUser: () => Promise<LegalUser | null>;
   clearAuth: () => void;
   logout: () => Promise<void>;
 }
 
-let bootstrapping: Promise<User | null> | null = null;
+let bootstrapping: Promise<LegalUser | null> | null = null;
 
 export const useAuthStore = create<AuthState>((set) => ({
   accessToken: null,
@@ -24,22 +24,21 @@ export const useAuthStore = create<AuthState>((set) => ({
   isLoading: true,
   isAuthenticated: false,
 
-  // F5 / social callback: refresh → me
+  // F5: đọc cookie refreshToken → lấy accessToken mới → gọi /auth/me
   bootstrap: () => {
     bootstrapping ??= (async () => {
       set({ isLoading: true });
       try {
-        // refresh token
-        const refreshResult = await authApi.refresh();
-        if (!refreshResult.success || !refreshResult.result.accessToken) {
+        // Không có phiên hợp lệ (cookie thiếu/hết hạn) cũng là trạng thái bình thường → không toast.
+        const refreshResult = await legalAuthApi.refresh();
+        if (!refreshResult.success || !refreshResult.result?.accessToken) {
           set({ user: null, isAuthenticated: false });
-          toast.error('Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.');
           return null;
         }
         set({ accessToken: refreshResult.result.accessToken });
 
         // get me
-        const { result: data } = await authApi.getMe();
+        const { result: data } = await legalAuthApi.getMe();
         if (!data) {
           set({ user: null, isAuthenticated: false });
           toast.error('Không thể lấy thông tin người dùng. Vui lòng đăng nhập lại.');
@@ -49,7 +48,7 @@ export const useAuthStore = create<AuthState>((set) => ({
         set({ isAuthenticated: true });
         return data;
       } catch {
-        set({ user: null });
+        set({ user: null, isAuthenticated: false });
         return null;
       } finally {
         set({ isLoading: false });
@@ -65,7 +64,7 @@ export const useAuthStore = create<AuthState>((set) => ({
 
   refreshUser: async () => {
     try {
-      const { result: data } = await authApi.getMe();
+      const { result: data } = await legalAuthApi.getMe();
       if (!data) {
         set({ user: null, isAuthenticated: false });
         toast.error('Không thể lấy thông tin người dùng. Vui lòng đăng nhập lại.');
@@ -89,13 +88,22 @@ export const useAuthStore = create<AuthState>((set) => ({
     }),
 
   logout: async (): Promise<void> => {
-    await authApi.logout();
-    set({
-      accessToken: null,
-      user: null,
-      isLoading: false,
-      isAuthenticated: false,
-    });
+    try {
+      await legalAuthApi.logout();
+    } finally {
+      set({
+        accessToken: null,
+        user: null,
+        isLoading: false,
+        isAuthenticated: false,
+      });
+    }
     return Promise.resolve();
   },
 }));
+
+/**
+ * Helper RBAC dùng chung cho UI mới: kiểm tra người dùng hiện tại có vai trò `admin`.
+ * Contract chỉ có 2 vai trò (`user` | `admin`).
+ */
+export const isAdminUser = (user: LegalUser | null | undefined): boolean => user?.role === 'admin';

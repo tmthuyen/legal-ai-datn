@@ -1,19 +1,12 @@
 import {
-  Activity,
   BarChart4,
-  Bell,
-  Clock,
   ContactRound,
-  Film,
-  Flag,
-  Heart,
-  Home,
   LayoutDashboard,
   LogIn,
-  Palette,
-  Tag,
+  MessagesSquare,
+  Scale,
+  Settings,
   User as UserIcon,
-  UsersRound,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -31,116 +24,66 @@ export interface NavSectionData {
 /**
  * **Nguồn dữ liệu điều hướng duy nhất** — dùng chung cho sidebar (`nav-main`),
  * dropdown "Điều hướng nhanh" trên header (`quick-nav-dropdown`) và bottom nav
- * mobile (`mobile-bottom-nav`). Thêm/sửa route chỉ cần sửa ở đây.
+ * mobile (`mobile-bottom-nav`). Chỉ chứa route pháp luật của Legal AI.
  */
 export const NAV_SECTIONS = {
   user: {
-    groupLabel: 'Khám phá',
+    groupLabel: 'Pháp luật',
     items: [
       {
         title: 'Trang chủ',
         url: '/',
-        icon: Home,
+        icon: Scale,
       },
       {
-        title: 'Phim',
-        url: '/movies',
-        icon: Film,
-      },
-    ],
-  },
-  learning: {
-    groupLabel: 'Dashboard',
-    items: [
-      {
-        title: 'Dashboard',
-        url: '/dashboard',
-        icon: Home,
-      },
-    ],
-  },
-  auth: {
-    groupLabel: 'Auth',
-    items: [
-      {
-        title: 'Tài khoản',
-        url: '/admin/users',
-        icon: ContactRound,
+        title: 'Hỏi đáp pháp luật',
+        url: '/chat',
+        icon: MessagesSquare,
       },
       {
-        title: 'Vai trò',
-        url: '/admin/roles',
-        icon: BarChart4,
+        title: 'Hội thoại của tôi',
+        url: '/conversations',
+        icon: MessagesSquare,
       },
     ],
   },
   admin: {
-    groupLabel: 'Movie',
+    groupLabel: 'Quản trị',
     items: [
       {
-        title: 'Phim',
-        url: '/admin/movies',
-        icon: Film,
+        title: 'Tổng quan',
+        url: '/admin/dashboard',
+        icon: LayoutDashboard,
       },
       {
-        title: 'Thể loại',
-        url: '/admin/genres',
-        icon: Tag,
-      },
-      {
-        title: 'Quốc gia',
-        url: '/admin/countries',
-        icon: Flag,
-      },
-      {
-        title: 'Diễn viên & đạo diễn',
-        url: '/admin/people',
-        icon: UsersRound,
-      },
-    ],
-  },
-  interaction: {
-    groupLabel: 'Interaction',
-    items: [
-      {
-        title: 'Tương tác',
-        url: '/admin/interaction',
-        icon: Activity,
-      },
-    ],
-  },
-  personal: {
-    groupLabel: 'Cá nhân',
-    items: [
-      {
-        title: 'Lịch sử xem',
-        url: '/my-history',
-        icon: Clock,
-      },
-      {
-        title: 'Yêu thích',
-        url: '/my-favorites',
-        icon: Heart,
+        title: 'Người dùng',
+        url: '/admin/users',
+        icon: ContactRound,
       },
     ],
   },
   settings: {
-    groupLabel: 'Settings',
+    groupLabel: 'Cá nhân',
     items: [
-      {
-        title: 'Theme',
-        url: '/setting/theme',
-        icon: Palette,
-      },
       {
         title: 'Hồ sơ',
         url: '/profile',
-        icon: ContactRound,
+        icon: UserIcon,
       },
       {
-        title: 'Thông báo',
-        url: '/notification',
-        icon: Bell,
+        title: 'Cài đặt',
+        url: '/setting/theme',
+        icon: Settings,
+      },
+    ],
+  },
+  auth: {
+    groupLabel: 'Tài khoản',
+    items: [
+      {
+        title: 'Đăng nhập',
+        url: '/auth/login',
+        icon: LogIn,
       },
     ],
   },
@@ -162,21 +105,25 @@ export interface BottomNavItemData {
 
 /**
  * Item bottom nav mobile (`< md`) cho **cả user & admin** — tách khỏi sidebar vì
- * mobile không hiển thị sidebar; nhãn rút gọn để vừa 1 hàng 5 item.
+ * mobile không hiển thị sidebar; nhãn rút gọn để vừa 1 hàng.
  */
 export const BOTTOM_NAV: Record<'user' | 'admin', BottomNavItemData[]> = {
   user: [
-    { href: '/', label: 'Trang chủ', icon: Home, exact: true },
-    { href: '/movies', label: 'Phim', icon: Film },
-    { href: '/notification', label: 'Thông báo', icon: Bell, requiresAuth: true },
+    { href: '/', label: 'Trang chủ', icon: Scale, exact: true },
+    { href: '/chat', label: 'Hỏi đáp', icon: MessagesSquare },
+    { href: '/conversations', label: 'Hội thoại', icon: MessagesSquare, requiresAuth: true },
     { href: '/profile', label: 'Tài khoản', icon: UserIcon, requiresAuth: true },
     { href: '/auth/login', label: 'Đăng nhập', icon: LogIn, guestOnly: true },
   ],
   admin: [
-    { href: '/dashboard', label: 'Tổng quan', icon: LayoutDashboard, exact: true },
-    { href: '/admin/movies', label: 'Phim', icon: Film },
-    { href: '/admin/interaction', label: 'Tương tác', icon: Activity },
-    { href: '/admin/users', label: 'Tài khoản', icon: ContactRound },
+    { href: '/admin/dashboard', label: 'Tổng quan', icon: LayoutDashboard, exact: true },
+    { href: '/admin/users', label: 'Người dùng', icon: ContactRound },
+    { href: '/chat', label: 'Hỏi đáp', icon: MessagesSquare },
     { href: '/profile', label: 'Hồ sơ', icon: UserIcon },
   ],
 };
+
+/** Nhãn thống kê dùng chung cho dashboard admin (tránh lặp hằng số). */
+
+/** Icon đại diện nhóm thống kê admin. */
+export const ADMIN_ANALYTICS_ICON: LucideIcon = BarChart4;

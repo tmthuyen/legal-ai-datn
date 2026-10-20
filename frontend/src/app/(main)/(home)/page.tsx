@@ -1,401 +1,192 @@
-'use client';
-
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import {
   ArrowRight,
-  Play,
-  Star,
-  Eye,
-  Crown,
-  Calendar,
+  BookOpenCheck,
+  FileText,
+  MessagesSquare,
+  Network,
+  Scale,
+  ShieldCheck,
+  Sparkles,
 } from 'lucide-react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useMemo } from 'react';
-import { SectionHeader } from '@/components/common/SectionHeader';
-import { MovieRow, MovieRowSkeleton } from '@/components/movie/movie-row';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
-import useMovie from '@/hooks/tankstack/useMovie';
-import useGenre from '@/hooks/tankstack/useGenre';
-import useCountry from '@/hooks/tankstack/useCountry';
-import { getMovieTitle, getPosterUrl, getReleaseYear } from '@/shared/utils/movie';
-import { useAuthStore } from '@/stores/auth.store';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
-function HeroCarouselSkeleton() {
-  return (
-    <section className="from-primary/10 to-primary/5 relative overflow-hidden rounded-2xl border bg-gradient-to-br">
-      <div className="grid gap-6 p-6 md:grid-cols-2 md:p-10">
-        <div className="flex flex-col justify-center gap-4">
-          <Skeleton className="h-10 w-3/4" />
-          <Skeleton className="h-4 w-full" />
-          <Skeleton className="h-4 w-5/6" />
-          <Skeleton className="h-10 w-40" />
-        </div>
-        <Skeleton className="aspect-[2/3] w-full rounded-xl md:aspect-video" />
-      </div>
-    </section>
-  );
-}
+export const metadata: Metadata = {
+  title: 'Legal AI — Trợ đáp pháp lý Việt Nam',
+  description:
+    'Hệ thống hỏi đáp pháp luật Việt Nam dựa trên Knowledge Graph & suy luận phản thực (GraphRAG).',
+};
 
-function TopMovieCard({ movie, rank }: { movie: any; rank: number }) {
-  const poster = getPosterUrl(movie.posterPath || movie.backdropPath);
-  const title = getMovieTitle(movie);
-  const year = getReleaseYear(movie.releaseDate);
-  const rating = typeof movie.voteAverage === 'number' ? movie.voteAverage : 0;
-  const views = Number(movie.viewCount) || 0;
+/** Corpus giới hạn 5 văn bản theo phạm vi đồ án. */
+const CORPUS = [
+  { code: 'Hiến pháp 2013', note: 'Luật cơ bản của Nhà nước' },
+  { code: 'Bộ luật Dân sự 2015', note: 'Quan hệ dân sự, tài sản, thừa kế' },
+  { code: 'Nghị định 21/2021/NĐ-CP', note: 'Bảo đảm thực hiện nghĩa vụ' },
+  { code: 'Nghị định 19/2019/NĐ-CP', note: 'Họ, hụi, biêu, phường' },
+  { code: 'Nghị quyết 02/2022/NQ-HĐTP', note: 'Án lệ, hướng dẫn áp dụng' },
+];
 
-  return (
-    <Link href={`/movies/${movie.id}`} className="group block">
-      <article className="relative overflow-hidden rounded-lg border bg-card shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg">
-        <div className="relative aspect-[2/3] w-full">
-          {poster ? (
-            <Image
-              src={poster}
-              alt={title}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            />
-          ) : (
-            <div className="bg-muted flex h-full w-full items-center justify-center">
-              <Play className="text-muted-foreground size-8" />
-            </div>
-          )}
-          <div className="absolute top-3 left-3 flex items-center gap-2">
-            <div className="flex items-center gap-1 rounded-full bg-black/70 px-2 py-1 text-xs font-semibold text-white">
-              <Crown className="size-3" />
-              Top {rank}
-            </div>
-          </div>
-          <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-black/70 px-2 py-1 text-xs text-white">
-            <Star className="size-3 fill-yellow-400 text-yellow-400" />
-            {rating.toFixed(1)}
-          </div>
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-3">
-            <h3 className="line-clamp-2 font-semibold text-white">{title}</h3>
-            <div className="mt-1 flex items-center gap-3 text-xs text-white/80">
-              {year && (
-                <span className="flex items-center gap-1">
-                  <Calendar className="size-3" />
-                  {year}
-                </span>
-              )}
-              <span className="flex items-center gap-1">
-                <Eye className="size-3" />
-                {views.toLocaleString()}
-              </span>
-            </div>
-          </div>
-        </div>
-      </article>
-    </Link>
-  );
-}
-
-/** Section danh sách phim theo **1 hàng ngang** (cuộn ngang, responsive 2→6 card). */
-function MovieRowSection({
-  title,
-  description,
-  href,
-  movies,
-  isLoading,
-}: {
-  title: string;
-  description?: string;
-  href?: string;
-  movies?: any[];
-  isLoading?: boolean;
-}) {
-  if (isLoading) {
-    return (
-      <section className="space-y-4">
-        <SectionHeader title={title} description={description} />
-        <MovieRowSkeleton />
-      </section>
-    );
-  }
-
-  if (!movies || movies.length === 0) {
-    return null;
-  }
-
-  return (
-    <section className="space-y-4">
-      <SectionHeader
-        title={title}
-        description={description}
-        action={
-          href ? (
-            <Link
-              href={href}
-              className="text-primary inline-flex shrink-0 items-center gap-1 text-sm font-medium hover:underline"
-            >
-              Xem tất cả <ArrowRight className="size-4" />
-            </Link>
-          ) : undefined
-        }
-      />
-      <MovieRow movies={movies} max={12} />
-    </section>
-  );
-}
-
-function GenreSection() {
-  const { data: genres, isLoading } = useGenre.useGetAll({ limit: 100 });
-
-  if (isLoading) {
-    return (
-      <section className="space-y-4">
-        <SectionHeader title="Khám phá theo thể loại" />
-        <div className="flex flex-wrap gap-2">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <Skeleton key={i} className="h-9 w-24 rounded-full" />
-          ))}
-        </div>
-      </section>
-    );
-  }
-
-  if (!genres || genres.length === 0) {
-    return null;
-  }
-
-  return (
-    <section className="space-y-4">
-      <SectionHeader title="Khám phá theo thể loại" />
-      <div className="flex flex-wrap gap-2">
-        {genres.slice(0, 20).map((genre: any) => (
-          <Link
-            key={genre.id}
-            href={`/movies?genre=${genre.id}`}
-            className="bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full border px-4 py-2 text-sm font-medium transition-colors"
-          >
-            {genre.name}
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function CountrySection() {
-  const { data: countries, isLoading } = useCountry.useGetCountries();
-
-  if (isLoading) {
-    return (
-      <section className="space-y-4">
-        <SectionHeader title="Phim theo quốc gia" />
-        <div className="flex flex-wrap gap-2">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <Skeleton key={i} className="h-9 w-20 rounded-full" />
-          ))}
-        </div>
-      </section>
-    );
-  }
-
-  if (!countries || countries.length === 0) {
-    return null;
-  }
-
-  return (
-    <section className="space-y-4">
-      <SectionHeader title="Phim theo quốc gia" />
-      <div className="flex flex-wrap gap-2">
-        {countries.slice(0, 10).map((country: any) => (
-          <Link
-            key={country.id}
-            href={`/movies?country=${country.id}`}
-            className="bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full border px-4 py-2 text-sm font-medium transition-colors"
-          >
-            {country.name}
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-}
+const FEATURES = [
+  {
+    icon: MessagesSquare,
+    title: 'Hỏi đáp pháp luật',
+    description:
+      'Đặt câu hỏi bằng tiếng Việt tự nhiên, nhận câu trả lời tổng hợp kèm trích dẫn Điều/Khoản/Điểm liên quan.',
+  },
+  {
+    icon: Network,
+    title: 'Knowledge Graph pháp lý',
+    description:
+      'Đồ thị phân cấp Văn bản → Phần → Chương → Mục → Điều → Khoản → Điểm, liên kết tham chiếu giữa các điều luật.',
+  },
+  {
+    icon: BookOpenCheck,
+    title: 'Trích dẫn minh bạch',
+    description:
+      'Mỗi câu trả lời đều kèm phân cấp luật trích xuất và danh sách điều luật liên quan để đối chiếu.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Lưu lịch sử hội thoại',
+    description:
+      'Quản lý nhiều cuộc hội thoại, xem lại toàn bộ câu hỏi và câu trả lời bất cứ lúc nào.',
+  },
+];
 
 export default function HomePage() {
-  const { data: moviesData, isLoading: isMoviesLoading } = useMovie.useGetMovies({
-    page: 1,
-    limit: 24,
-  });
-  const movies = moviesData?.movies ?? [];
-  const { isAuthenticated, user } = useAuthStore();
-
-  const { topRated, mostViewed, newest } = useMemo(() => {
-    const sortedByRating = [...movies].sort((a, b) => (b.voteAverage ?? 0) - (a.voteAverage ?? 0));
-    const sortedByViews = [...movies].sort(
-      (a, b) => (Number(b.viewCount) || 0) - (Number(a.viewCount) || 0),
-    );
-    const sortedByNewest = [...movies].sort((a, b) => {
-      const dateA = new Date(a.releaseDate || a.createdAt).getTime();
-      const dateB = new Date(b.releaseDate || b.createdAt).getTime();
-      return dateB - dateA;
-    });
-
-    return {
-      topRated: sortedByRating.slice(0, 6),
-      mostViewed: sortedByViews.slice(0, 12),
-      newest: sortedByNewest.slice(0, 12),
-    };
-  }, [movies]);
-
   return (
-    <div className="animate-fade-in w-full space-y-10 pb-10">
-      {isMoviesLoading ? (
-        <HeroCarouselSkeleton />
-      ) : (
-        <section className="from-primary/10 via-primary/5 to-background relative overflow-hidden rounded-2xl border bg-gradient-to-br">
-          <div className="grid gap-6 p-6 md:grid-cols-2 md:p-10">
-            <div className="flex flex-col justify-center gap-4">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl lg:text-5xl">
-                  Khám phá thế giới điện ảnh
-                </h1>
-                <p className="text-muted-foreground max-w-xl text-lg">
-                  Tìm kiếm phim theo tên, thể loại và quốc gia. Đánh giá, bình luận và xây dựng danh
-                  sách phim yêu thích của bạn.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <Button asChild size="lg">
-                  <Link href="/movies">
-                    Khám phá phim <ArrowRight className="ml-2 size-4" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link href="/search">Tìm kiếm nâng cao</Link>
-                </Button>
-              </div>
-              {topRated.length > 0 && (
-                <div className="mt-4">
-                  <p className="text-muted-foreground text-sm font-medium">Top đánh giá</p>
-                  <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-3">
-                    {topRated.slice(0, 3).map((movie, idx) => (
-                      <TopMovieCard key={movie.id} movie={movie} rank={idx + 1} />
-                    ))}
-                  </div>
-                </div>
-              )}
+    <div className="animate-fade-in w-full space-y-12 pb-12">
+      {/* Hero */}
+      <section className="from-primary/10 via-primary/5 to-background relative overflow-hidden rounded-2xl border bg-gradient-to-br">
+        <div className="grid gap-8 p-6 md:grid-cols-2 md:p-10">
+          <div className="flex flex-col justify-center gap-5">
+            <Badge variant="secondary" className="w-fit">
+              <Sparkles className="size-3" aria-hidden /> GraphRAG · Legal Reasoning
+            </Badge>
+            <div className="space-y-3">
+              <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl lg:text-5xl">
+                Trợ lý pháp lý Việt Nam dựa trên tri thức
+              </h1>
+              <p className="text-muted-foreground max-w-xl text-lg">
+                Đặt câu hỏi về Hiến pháp, Bộ luật Dân sự và các nghị định, nghị quyết liên quan. Hệ
+                thống truy xuất đồ thị tri thức và suy luận để trả lời kèm trích dẫn điều luật.
+              </p>
             </div>
-            {newest.length > 0 && (
-              <div className="relative hidden md:block">
-                <div className="relative aspect-[2/3] overflow-hidden rounded-xl shadow-2xl">
-                  {getPosterUrl(newest[0].posterPath || newest[0].backdropPath) ? (
-                    <Image
-                      src={getPosterUrl(newest[0].posterPath || newest[0].backdropPath) as string}
-                      alt={getMovieTitle(newest[0])}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 50vw, 40vw"
-                      priority
-                    />
-                  ) : null}
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
-                    <h2 className="text-xl font-bold text-white">{getMovieTitle(newest[0])}</h2>
-                    <div className="mt-2 flex items-center gap-4 text-sm text-white/80">
-                      {getReleaseYear(newest[0].releaseDate) && (
-                        <span>{getReleaseYear(newest[0].releaseDate)}</span>
-                      )}
-                      <span className="flex items-center gap-1">
-                        <Star className="size-4 fill-yellow-400 text-yellow-400" />
-                        {(newest[0].voteAverage ?? 0).toFixed(1)}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Eye className="size-4" />
-                        {(Number(newest[0].viewCount) || 0).toLocaleString()}
-                      </span>
-                    </div>
-                    <Button asChild className="mt-4" size="sm">
-                      <Link href={`/movies/${newest[0].id}`}>
-                        Xem chi tiết <ArrowRight className="ml-2 size-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            )}
+            <div className="flex flex-wrap gap-3">
+              <Button asChild size="lg">
+                <Link href="/chat">
+                  <MessagesSquare className="mr-2 size-4" />
+                  Bắt đầu hỏi đáp
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/auth/signup">
+                  Tạo tài khoản <ArrowRight className="ml-2 size-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
-        </section>
-      )}
 
-      {isAuthenticated && (
-        <MovieRowSection
-          title={`Dành cho bạn, ${user?.fullName || 'thành viên'}`}
-          description="Gợi ý dựa trên sở thích và hoạt động gần đây"
-          href="/recommendations"
-          movies={newest.slice(0, 6)}
-          isLoading={isMoviesLoading}
-        />
-      )}
+          <div className="flex items-center justify-center">
+            <Card className="bg-background/70 w-full max-w-md backdrop-blur">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <Scale className="text-primary size-5" aria-hidden />
+                  Câu hỏi ví dụ
+                </CardTitle>
+                <CardDescription>Gợi ý nội dung bạn có thể tra cứu</CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-2">
+                {[
+                  'Điều 1 Hiến pháp 2013 quy định gì?',
+                  'Thừa kế theo pháp luật được chia như thế nào?',
+                  'Quy định về bảo đảm thực hiện nghĩa vụ theo NĐ 21/2021?',
+                  'Họ, hụi, biêu, phường được pháp luật điều chỉnh ra sao?',
+                ].map((question) => (
+                  <Link
+                    key={question}
+                    href="/chat"
+                    className="bg-muted/60 hover:bg-muted flex items-center justify-between gap-2 rounded-lg border px-3 py-2 text-sm transition-colors"
+                  >
+                    <span className="flex items-center gap-2">
+                      <FileText className="text-muted-foreground size-4" aria-hidden />
+                      {question}
+                    </span>
+                    <ArrowRight className="text-muted-foreground size-4 shrink-0" aria-hidden />
+                  </Link>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
 
-      <MovieRowSection
-        title="Phim mới nhất"
-        description="Những bộ phim vừa được cập nhật"
-        href="/movies?sort=newest"
-        movies={newest}
-        isLoading={isMoviesLoading}
-      />
-
-      <MovieRowSection
-        title="Được xem nhiều nhất"
-        description="Những bộ phim được yêu thích nhất hệ thống"
-        href="/movies?sort=popular"
-        movies={mostViewed}
-        isLoading={isMoviesLoading}
-      />
-
-      <MovieRowSection
-        title="Đánh giá cao nhất"
-        description="Những tác phẩm điện ảnh xuất sắc"
-        href="/movies?sort=rating"
-        movies={topRated}
-        isLoading={isMoviesLoading}
-      />
-
-      <GenreSection />
-
-      <CountrySection />
-
-      <section className="space-y-4">
-        <SectionHeader
-          title="Top bình luận (Chưa hoàn thiện)"
-          description="Những bình luận được yêu thích nhất"
-          action={
-            <Link
-              href="/movies"
-              className="text-primary inline-flex shrink-0 items-center gap-1 text-sm font-medium hover:underline"
-            >
-              Khám phá thêm <ArrowRight className="size-4" />
-            </Link>
-          }
-        />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <Card key={i} className="p-4">
-              <div className="flex items-start gap-3">
-                <Skeleton className="size-10 rounded-full" />
-                <div className="flex-1 space-y-2">
-                  <Skeleton className="h-4 w-1/3" />
-                  <Skeleton className="h-3 w-full" />
-                  <Skeleton className="h-3 w-3/4" />
-                  <div className="flex items-center gap-4">
-                    <Skeleton className="h-3 w-12" />
-                    <Skeleton className="h-3 w-16" />
-                  </div>
+      {/* Tính năng */}
+      <section className="space-y-6">
+        <div className="space-y-2">
+          <h2 className="text-2xl font-bold tracking-tight">Hệ thống hoạt động như thế nào</h2>
+          <p className="text-muted-foreground">
+            Knowledge Graph + suy luận phản thực giúp câu trả lời bám sát quy định pháp luật.
+          </p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {FEATURES.map((feature) => (
+            <Card key={feature.title} className="h-full">
+              <CardHeader>
+                <div className="bg-primary/10 text-primary mb-2 flex size-10 items-center justify-center rounded-lg">
+                  <feature.icon className="size-5" aria-hidden />
                 </div>
-              </div>
+                <CardTitle className="text-base">{feature.title}</CardTitle>
+                <CardDescription>{feature.description}</CardDescription>
+              </CardHeader>
             </Card>
           ))}
         </div>
       </section>
 
-      <section className="space-y-4">
-        <SectionHeader title="Sắp ra mắt" description="Những bộ phim sắp được công chiếu" />
-        <MovieRow movies={newest.slice(0, 12)} max={12} />
+      {/* Corpus */}
+      <section className="space-y-6">
+        <div className="space-y-2">
+          <h2 className="text-2xl font-bold tracking-tight">Phạm vi văn bản pháp luật</h2>
+          <p className="text-muted-foreground">
+            Hệ thống hiện hỏi đáp trong phạm vi 5 văn bản sau:
+          </p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {CORPUS.map((doc) => (
+            <Card key={doc.code}>
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Scale className="text-primary size-4" aria-hidden />
+                  <CardTitle className="text-base">{doc.code}</CardTitle>
+                </div>
+                <CardDescription>{doc.note}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="from-primary/15 via-primary/5 to-background flex flex-col items-center gap-4 rounded-2xl border bg-gradient-to-br p-8 text-center">
+        <h2 className="text-2xl font-bold tracking-tight">Sẵn sàng tra cứu pháp luật?</h2>
+        <p className="text-muted-foreground max-w-xl">
+          Đăng nhập để lưu lịch sử hội thoại và nhận câu trả lời kèm trích dẫn điều luật đầy đủ.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <Button asChild size="lg">
+            <Link href="/chat">
+              <MessagesSquare className="mr-2 size-4" />
+              Vào phòng hỏi đáp
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <Link href="/about">Tìm hiểu thêm</Link>
+          </Button>
+        </div>
       </section>
     </div>
   );

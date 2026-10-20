@@ -10,7 +10,7 @@
 ## 1. Sơ đồ tổng thể
 
 ```
-[ Frontend: Next.js 16 — port 3002 ]
+[ Frontend: Next.js 16 — port 3003 ]
         │  ▲
         │  │  HTTP/REST  (Authorization: Bearer <accessToken>)
         │  │              (refreshToken: HttpOnly Cookie, withCredentials)
@@ -24,7 +24,7 @@
 
 | Khối | Thư mục | Cổng | Vai trò |
 | ---- | ------- | ---- | ------- |
-| Frontend | `frontend/` | 3002 | Giao diện người dùng (Next.js 16, App Router, Tailwind v4, shadcn/ui) |
+| Frontend | `frontend/` | 3003 | Giao diện người dùng (Next.js 16, App Router, Tailwind v4, shadcn/ui) |
 | Services | `services/` | 8080 | Auth, User, RBAC, Chat/conversation, AI Gateway (Gin + GORM + PostgreSQL) |
 | Backend | `backend/` | 8090 | AI Worker: Knowledge Graph Retrieval & Reasoning (FastAPI, **giữ nguyên, không sửa**) |
 

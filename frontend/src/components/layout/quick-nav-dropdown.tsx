@@ -19,12 +19,12 @@ export type QuickNavVariant = 'user' | 'admin';
 
 /** Nhóm nav hiển thị trong dropdown, lấy từ `NAV_SECTIONS` (một nguồn dữ liệu duy nhất). */
 const QUICK_NAV_SECTIONS: Record<QuickNavVariant, NavSectionKey[]> = {
-  user: ['user', 'personal', 'settings'],
-  admin: ['learning', 'auth', 'admin', 'interaction'],
+  user: ['user', 'settings'],
+  admin: ['admin', 'settings'],
 };
 
 /** Nhóm chỉ dành cho người đã đăng nhập. */
-const AUTH_ONLY_SECTIONS: NavSectionKey[] = ['personal', 'settings'];
+const AUTH_ONLY_SECTIONS: NavSectionKey[] = ['settings'];
 
 /**
  * Dropdown **điều hướng nhanh** trên header (shadcn `DropdownMenu`): nhảy route và

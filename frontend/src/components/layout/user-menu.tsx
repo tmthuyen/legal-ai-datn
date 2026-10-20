@@ -1,15 +1,12 @@
 'use client';
 
 import {
-  Bell,
   ChevronsUpDown,
-  Clock,
-  Film,
-  Heart,
-  Home,
   LayoutDashboard,
   LogIn,
   LogOut,
+  MessagesSquare,
+  Scale,
   User as UserIcon,
 } from 'lucide-react';
 
@@ -60,14 +57,14 @@ export function UserMenuContent({
     );
   }
 
-  const isAdmin = roleUtil.mapRoleToCodes(user.roles ?? []).includes('ADMIN');
+  const isAdmin = roleUtil.isAdmin(user);
 
   return (
     <DropdownMenuContent align={align} side={side} {...props}>
       <DropdownMenuLabel className="p-0 font-normal">
         <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
           <Avatar className="h-8 w-8 rounded-lg">
-            <AvatarImage src={user.avatarUrl} alt={user.fullName} />
+            <AvatarImage src={user.avatarUrl ?? undefined} alt={user.fullName ?? user.username} />
             <AvatarFallback className="rounded-lg">CN</AvatarFallback>
           </Avatar>
           <div className="grid flex-1 text-left text-sm leading-tight">
@@ -80,26 +77,20 @@ export function UserMenuContent({
       <DropdownMenuGroup>
         <DropdownMenuItem className="cursor-pointer" asChild>
           <Link href="/">
-            <Home className="mr-2 h-4 w-4" />
+            <Scale className="mr-2 h-4 w-4" />
             Trang chủ
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer" asChild>
-          <Link href="/movies">
-            <Film className="mr-2 h-4 w-4" />
-            Phim
+          <Link href="/chat">
+            <MessagesSquare className="mr-2 h-4 w-4" />
+            Hỏi đáp pháp luật
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer" asChild>
-          <Link href="/my-history">
-            <Clock className="mr-2 h-4 w-4" />
-            Lịch sử xem
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer" asChild>
-          <Link href="/my-favorites">
-            <Heart className="mr-2 h-4 w-4" />
-            Yêu thích
+          <Link href="/conversations">
+            <MessagesSquare className="mr-2 h-4 w-4" />
+            Hội thoại của tôi
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer" asChild>
@@ -108,17 +99,11 @@ export function UserMenuContent({
             Hồ sơ
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer" asChild>
-          <Link href="/notification">
-            <Bell className="mr-2 h-4 w-4" />
-            Thông báo
-          </Link>
-        </DropdownMenuItem>
         {isAdmin && (
           <DropdownMenuItem className="cursor-pointer" asChild>
-            <Link href="/dashboard">
+            <Link href="/admin/dashboard">
               <LayoutDashboard className="mr-2 h-4 w-4" />
-              Dashboard
+              Quản trị
             </Link>
           </DropdownMenuItem>
         )}
@@ -163,7 +148,7 @@ export function UserMenu() {
           className="cursor-pointer rounded-full outline-none ring-ring transition-shadow focus-visible:ring-2"
         >
           <Avatar className="h-8 w-8 rounded-lg">
-            <AvatarImage src={user.avatarUrl} alt={user.fullName} />
+            <AvatarImage src={user.avatarUrl ?? undefined} alt={user.fullName ?? user.username} />
             <AvatarFallback className="rounded-lg">CN</AvatarFallback>
           </Avatar>
         </button>

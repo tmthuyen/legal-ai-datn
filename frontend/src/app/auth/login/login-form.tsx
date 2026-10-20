@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -20,18 +20,18 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Field, FieldError, FieldGroup, FieldLabel } from '@/components/ui/field';
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group';
 import { EyeIcon, EyeOffIcon } from 'lucide-react';
-import LoginGoogle from '@/app/auth/login/google-button';
-import { authApi } from '@/apis/auth.api';
+import { legalAuthApi } from '@/apis/legal.api';
 import { useAuthStore } from '@/stores/auth.store';
-import { User } from '@/shared/types/api.types';
+import { LegalUser } from '@/shared/types/legal.types';
 import { roleUtil } from '@/shared/utils/roleUtil';
 import Spining from '@/components/loading/spining';
 import Redirecting from '@/components/loading/redirecting';
 import { parseAxiosError } from '@/lib/axiosClient';
 
-const loginEmailPasswordSchema = z.object({
-  username: z.email('Vui lòng nhập email hợp lệ'),
-  password: z.string().min(6, 'Mật khẩu phải có ít nhất 6 ký tự'),
+// Contract `POST /auth/login` nhận `username` (không phải email) + mật khẩu tối thiểu 8 ký tự.
+const loginSchema = z.object({
+  username: z.string().min(3, 'Tên đăng nhập phải có ít nhất 3 ký tự'),
+  password: z.string().min(8, 'Mật khẩu phải có ít nhất 8 ký tự'),
 });
 
 function LoginForm() {
@@ -43,12 +43,12 @@ function LoginForm() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const loginForm = useForm<z.infer<typeof loginEmailPasswordSchema>>({
-    resolver: zodResolver(loginEmailPasswordSchema),
+  const loginForm = useForm<z.infer<typeof loginSchema>>({
+    resolver: zodResolver(loginSchema),
     mode: 'onChange',
     defaultValues: {
-      username: 'tranthuyen2222@gmail.com',
-      password: '123456',
+      username: '',
+      password: '',
     },
   });
 
@@ -58,9 +58,9 @@ function LoginForm() {
 
   useEffect(() => {
     if (user) {
-      router.push(returnPage || roleUtil.getHomeRouteByRole(user.roles));
+      router.push(returnPage || roleUtil.getHomeRouteByRole(user));
     }
-  }, [user, router]);
+  }, [user, router, returnPage]);
 
   if (!mounted) {
     return <Spining />;
@@ -77,52 +77,37 @@ function LoginForm() {
     formState: { isValid, isSubmitting },
   } = loginForm;
 
-  const onSubmit = async (data: z.infer<typeof loginEmailPasswordSchema>) => {
+  const onSubmit = async (data: z.infer<typeof loginSchema>) => {
     setError(null);
     const { username, password } = data;
 
     try {
-      // API login
-      const res = await authApi.login({ username, password });
-      if (!res.success) {
-        const errorMessage = res.message || 'Đăng nhập thất bại. Vui lòng thử lại.';
-        setError(errorMessage);
-        return;
-      }
-
-      if (!res.result.accessToken) {
-        setError('Đăng nhập thất bại. Không nhận được access token.');
+      // POST /auth/login → { accessToken, user }
+      const res = await legalAuthApi.login({ username, password });
+      if (!res.success || !res.result?.accessToken) {
+        setError(res.message || 'Đăng nhập thất bại. Vui lòng thử lại.');
         return;
       }
       useAuthStore.getState().setAccessToken(res.result.accessToken);
 
-      // API get me
-      const meRes = await authApi.getMe();
-      const user: User = meRes.result;
-      if (!meRes.success || !meRes.result) {
-        toast.error(
-          'Đăng nhập thất bại.' + (meRes.message || 'Không thể lấy thông tin người dùng.'),
-        );
+      // GET /auth/me — lấy profile hiện tại (nguồn sự thật cho quyền/role).
+      const meRes = await legalAuthApi.getMe();
+      const me: LegalUser | undefined = meRes.result;
+      if (!meRes.success || !me) {
+        setError(meRes.message || 'Không thể lấy thông tin người dùng.');
         return;
       }
-      useAuthStore.getState().setUser(meRes.result);
+      useAuthStore.getState().setUser(me);
 
-      // reset form
-      reset({
-        username: '',
-        password: '',
-      });
+      reset({ username: '', password: '' });
 
-      toast.success((res.message || 'Đăng nhập thành công.') + 'Đang chuyển trang...', {
-        duration: 900,
-      });
+      toast.success(res.message || 'Đăng nhập thành công.', { duration: 900 });
 
-      // chuyển trang theo role
-      const toRoute = returnPage || roleUtil.getHomeRouteByRole(user.roles);
+      const toRoute = returnPage || roleUtil.getHomeRouteByRole(me);
       router.push(toRoute);
-    } catch (error: any) {
-      const { statusCode, message } = parseAxiosError(error);
-      setError('Lỗi khi đăng nhập. ' + message || 'Vui lòng thử lại.');
+    } catch (err: unknown) {
+      const { message } = parseAxiosError(err);
+      setError(message || 'Lỗi khi đăng nhập. Vui lòng thử lại.');
     }
   };
 
@@ -130,10 +115,11 @@ function LoginForm() {
     <Card className="w-full max-w-md">
       <CardHeader className="space-y-1">
         <CardTitle className="text-2xl font-bold">Đăng nhập</CardTitle>
+        <CardDescription>Truy cập hệ thống trợ đáp pháp lý Legal AI</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
         <form id="login-form" onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* API err message */}
+          {/* Thông báo lỗi lấy từ envelope error */}
           {error && (
             <div className="text-destructive bg-destructive/10 border-destructive/20 rounded-lg border p-3 text-sm">
               {error}
@@ -146,13 +132,13 @@ function LoginForm() {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel htmlFor="username" className="cursor-pointer">
-                    Tài khoản (Email)
+                    Tên đăng nhập
                   </FieldLabel>
                   <Input
                     {...field}
                     id="username"
                     aria-invalid={fieldState.invalid}
-                    placeholder="you@example.com"
+                    placeholder="Tên đăng nhập của bạn"
                     autoComplete="username"
                   />
                   {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -173,7 +159,7 @@ function LoginForm() {
                       id="password"
                       type={showPassword ? 'text' : 'password'}
                       aria-invalid={fieldState.invalid}
-                      placeholder="Enter password"
+                      placeholder="Nhập mật khẩu"
                       autoComplete="current-password"
                     />
                     <InputGroupAddon
@@ -200,11 +186,6 @@ function LoginForm() {
         >
           {isSubmitting ? 'Đang đăng nhập...' : 'Đăng nhập'}
         </Button>
-
-        <div className="text-center text-sm">
-          <span className="text-muted-foreground">Đăng nhập bằng tài khoản khác</span>
-        </div>
-        <LoginGoogle />
       </CardContent>
 
       <CardFooter className="flex-col text-center">
