@@ -17,6 +17,7 @@ from src.graph.graph_repository import LegalGraphRepository
 from src.graph.graph_service import LegalGraphService
 from src.graph.neo4j_client import Neo4jClient
 from src.models.legal_model import LegalReasoningModel
+from src.retrieval.hybrid import BM25Searcher, HybridSearcher
 from src.retrieval.legal_query_extractor import LegalQueryExtractor
 from src.retrieval.retrieval_service import RetrievalService
 from src.retrieval.semantic import SemanticSearcher
@@ -76,6 +77,8 @@ class AppServices:
     query_extractor: LegalQueryExtractor
     retrieval_service: RetrievalService
     vector_store: object = None
+    bm25_service: Optional[BM25Searcher] = None
+    hybrid_service: Optional[HybridSearcher] = None
 
     def close(self) -> None:
         """Giải phóng tài nguyên dùng chung (đóng kết nối Neo4j)."""
@@ -136,6 +139,15 @@ def build_services(settings: Optional[Settings] = None) -> AppServices:
         neo4j_client=neo4j_client, embedder=embedder, vector_store=vector_store
     )
 
+    logger.info("Khởi tạo BM25 lexical searcher...")
+    bm25_service = BM25Searcher(neo4j_client=neo4j_client)
+
+    logger.info("Khởi tạo Hybrid searcher (Semantic + BM25 với RRF)...")
+    hybrid_service = HybridSearcher(
+        semantic_searcher=semantic_service,
+        bm25_searcher=bm25_service,
+    )
+
     logger.info("Nạp reasoning model: %s", settings.hf_model_id)
     legal_model = LegalReasoningModel(
         base_model_name=settings.hf_base_model,
@@ -148,6 +160,7 @@ def build_services(settings: Optional[Settings] = None) -> AppServices:
         legal_graph_service=graph_service,
         legal_query_extractor=query_extractor,
         semantic_service=semantic_service,
+        hybrid_service=hybrid_service,
     )
 
     logger.info("Khởi tạo service dùng chung hoàn tất.")
@@ -163,4 +176,6 @@ def build_services(settings: Optional[Settings] = None) -> AppServices:
         query_extractor=query_extractor,
         retrieval_service=retrieval_service,
         vector_store=vector_store,
+        bm25_service=bm25_service,
+        hybrid_service=hybrid_service,
     )
