@@ -8,6 +8,7 @@ from src.graph.graph_service import LegalGraphService
 from src.models.legal_model import BaseLegalModel
 from src.retrieval.legal_query_extractor import LegalQueryExtractor
 from src.retrieval.semantic import SemanticSearcher
+from src.retrieval.hybrid import HybridSearcher
 from src.utils.logger import setup_logger
 
 logger = setup_logger("retrieval_service", filename="retrieval_service.log")
@@ -187,6 +188,7 @@ class RetrievalService:
         legal_query_extractor: LegalQueryExtractor,
         legal_graph_service: LegalGraphService,
         semantic_service: SemanticSearcher,
+        hybrid_service: Optional[HybridSearcher] = None,
     ):
         """Khởi tạo orchestrator.
 
@@ -194,11 +196,12 @@ class RetrievalService:
             legal_graph_service: Service truy vấn đồ thị.
             legal_query_extractor: Bộ parse câu hỏi -> phân cấp.
             semantic_service: Service tìm kiếm ngữ nghĩa.
-            legal_model: Mô hình suy luận luật.
+            hybrid_service: Service tìm kiếm kết hợp Hybrid (Semantic + BM25).
         """
         self._semantic_service = semantic_service
         self._legal_graph_service = legal_graph_service
         self._extractor = legal_query_extractor
+        self._hybrid_service = hybrid_service
 
     def format_node(self, node: dict[str, Any]) -> dict[str, Any]:
         """Giữ nguyên toàn bộ field gốc của node và bổ sung `citation` tuyệt đối.
@@ -272,29 +275,34 @@ class RetrievalService:
             "relationships": [],
         }
 
-        node_type = hierarchy.get_node_type()
-        # Nếu type (label) là document thì search cả query
-        is_document_type = node_type == LegalHierarchyLabels.Document
+        is_document_type = False
+        if has_hierarchy:
+            try:
+                node_type = hierarchy.get_node_type()
+                is_document_type = node_type == LegalHierarchyLabels.Document
+            except CustomException:
+                has_hierarchy = False
 
-        # Lọc semantic kiểm trả document có chính xác hay tồn tại trong graph, nếu score thấp sẽ bỏ qua
-        semantic_search_documents = (
-            self._semantic_service.semantic_search_by_text_and_label(
-                text=hierarchy.document,
-                label=LegalHierarchyLabels.Document,
-                top_k=1,
-            )
-        )
+            if has_hierarchy and hierarchy.document:
+                # Lọc semantic kiểm trả document có chính xác hay tồn tại trong graph, nếu score thấp sẽ bỏ qua
+                semantic_search_documents = (
+                    self._semantic_service.semantic_search_by_text_and_label(
+                        text=hierarchy.document,
+                        label=LegalHierarchyLabels.Document,
+                        top_k=1,
+                    )
+                )
 
-        if (
-            not semantic_search_documents
-            or semantic_search_documents[0].get("score", 0)
-            < MinimumScoreThresholds.SEMANTIC_SEARCH_DOCUMENTS
-        ):
-            logger.warning(
-                f"Không tìm thấy document chính xác từ semantic search cho document: {hierarchy.document}"
-            )
-            hierarchy.document = None
-            has_hierarchy = False
+                if (
+                    not semantic_search_documents
+                    or semantic_search_documents[0].get("score", 0)
+                    < MinimumScoreThresholds.SEMANTIC_SEARCH_DOCUMENTS
+                ):
+                    logger.warning(
+                        f"Không tìm thấy document chính xác từ semantic search cho document: {hierarchy.document}"
+                    )
+                    hierarchy.document = None
+                    has_hierarchy = False
 
         # Nếu có cấu trúc phân cấp thì search theo phân cấp,
         if has_hierarchy and not is_document_type:
@@ -440,44 +448,52 @@ class RetrievalService:
                 ),
             }
 
-        # Nếu không có phân cấp: semantic search (V2) hoặc fallback search (V1) để tìm node liên quan.
+        # Nếu không có phân cấp: hybrid search (V2) hoặc semantic search (V1) để tìm node liên quan.
         if not has_hierarchy or is_document_type:
             logger.info(
-                f"Không tìm thấy phân cấp trong câu hỏi, sẽ tìm kiếm node liên quan bằng semantic search."
+                f"Không tìm thấy phân cấp trong câu hỏi, sẽ tìm kiếm node liên quan bằng Hybrid/Semantic search."
             )
 
-            # Tìm kiếm toàn graph theo semantic search
-            semantic_search_nodes = self._semantic_service.search(
+            # Ưu tiên Hybrid Search nếu được inject, ngược lại dùng Semantic Search
+            searcher = (
+                self._hybrid_service
+                if self._hybrid_service is not None
+                else self._semantic_service
+            )
+            search_nodes = searcher.search(
                 query=query_text,
                 top_k=10,
             )
 
-            if not semantic_search_nodes or "results" not in semantic_search_nodes:
+            if not search_nodes or "results" not in search_nodes:
                 logger.warning(
-                    "Không tìm thấy node hoặc document nào liên quan từ semantic search."
+                    "Không tìm thấy node hoặc document nào liên quan từ search service."
                 )
                 return EMPTY_RESULT
 
-            # semantic_results = semantic_search_nodes.get("results", {})
-            related_nodes_semantic = semantic_search_nodes.get("related_nodes", [])
-            related_documents_semantic = semantic_search_nodes.get(
+            related_nodes_found = search_nodes.get("related_nodes", [])
+            related_documents_found = search_nodes.get(
                 "related_documents", []
             )
 
             logger.info(
-                f"Kết quả tìm kiếm ngữ nghĩa: {len(related_nodes_semantic)} nodes, {len(related_documents_semantic)} documents."
+                f"Kết quả tìm kiếm liên quan: {len(related_nodes_found)} nodes, {len(related_documents_found)} documents."
             )
 
-            if not related_nodes_semantic and not related_documents_semantic:
+            if not related_nodes_found and not related_documents_found:
                 logger.warning(
-                    "Không tìm thấy node hoặc document nào liên quan từ semantic search."
+                    "Không tìm thấy node hoặc document nào liên quan từ search service."
                 )
                 return EMPTY_RESULT
 
-            # Duyệt kết quả semantic để tìm kiếm thêm node liên quan
-            # Kết quả semantic thu hẹp phạm vi node cần kiểm tra
-            # nhưng có thể chưa đủ thông tin cần thiết
-            for node in related_nodes_semantic:
+            # Gom trước các document đã tìm thấy từ tầng search
+            for doc in related_documents_found:
+                did = doc.get("node_id") or doc.get("document_id")
+                if did and did not in related_documents:
+                    related_documents[did] = doc
+
+            # Duyệt kết quả tìm kiếm làm Seed Nodes để mở rộng đồ thị
+            for node in related_nodes_found:
                 node_id = node.get("node_id")
                 if not node_id:
                     logger.error(f"Node không có node_id, bỏ qua: {node}")
@@ -485,23 +501,33 @@ class RetrievalService:
 
                 # check score threshold
                 score = node.get("score", 0)
+                is_hybrid = (
+                    node.get("retrieval_source", "").startswith("hybrid")
+                    or "rrf_score" in node
+                )
                 node_text = (
                     node.get("title")
                     or node.get("text")
                     or node.get("full_text")
                     or "Unknown"
                 )
-                if score < MinimumScoreThresholds.SEMANTIC_SEARCH_NODES:
-                    logger.warning(
-                        f"Node {node_text} (node_id: {node_id}) bị loại bỏ do score thấp ({score} < {MinimumScoreThresholds.SEMANTIC_SEARCH_NODES})."
-                    )
-                    continue
 
-                # thêm node vào tập kết quả
+                if is_hybrid:
+                    # Với Hybrid RRF, loại bỏ các kết quả có score <= 0
+                    if score <= 0:
+                        continue
+                else:
+                    # Với Semantic Cosine thuần, lọc theo ngưỡng tối thiểu
+                    if score < MinimumScoreThresholds.SEMANTIC_SEARCH_NODES:
+                        logger.warning(
+                            f"Node {node_text} (node_id: {node_id}) bị loại bỏ do score thấp ({score} < {MinimumScoreThresholds.SEMANTIC_SEARCH_NODES})."
+                        )
+                        continue
+
+                # thêm seed node vào tập kết quả
                 related_nodes[node_id] = node
 
                 # check label node thuộc cấp nào, duyệt các node con dựa trên cấp
-                # tránh mở rộng qua nhiếu node con khi node cấp cao (Document, Part, Chapter) có nhiều con
                 label = node.get("label")
                 if label is None:
                     logger.warning(
@@ -526,11 +552,6 @@ class RetrievalService:
                     logger.info(
                         f"Node {node_text} (node_id: {node_id}) là cấp cao ({label})"
                     )
-                    logger.info(
-                        f"Duyệt thông minh và lọc các node con liên quan câu hỏi nhất"
-                    )
-                    # Duyệt lai graph và sắp xếp mực đô liên quan các node hậu duệ
-
                 elif label in low_level_labels:
                     logger.info(
                         f"Node {node_text} (node_id: {node_id}) là cấp thấp ({label})"
@@ -539,7 +560,14 @@ class RetrievalService:
                     seed_ids = [node_id]
                     nodes = self._collect_related_nodes(seed_ids)
                     for n in nodes:
-                        related_nodes[n["node_id"]] = n
+                        nid = n.get("node_id")
+                        if not nid:
+                            continue
+                        if nid in related_nodes:
+                            # Bảo toàn metadata truy xuất (score, rank, retrieval_source...) của seed node
+                            related_nodes[nid] = {**n, **related_nodes[nid]}
+                        else:
+                            related_nodes[nid] = n
 
                     # related relationships
                     legal_relationships = self._collect_legal_relationships(seed_ids)
@@ -547,29 +575,30 @@ class RetrievalService:
 
                     logger.info(f"Quan hệ pháp lý liên quan: {legal_relationships}.")
 
-        # ======================================================
-        # Xử lý các node và những quan hệ để gom đủ thông tin trả về
-        # =====================================================
-        logger.info(
-            "Chưa triển khai gom các node liên quan và quan hệ pháp lý từ semantic search, sẽ triển khai ở giai đoạn sau."
-        )
+            # Gom bổ sung các document tương ứng cho tất cả các node trong related_nodes
+            for n in list(related_nodes.values()):
+                doc_id = n.get("document_id")
+                if doc_id and doc_id not in related_documents:
+                    doc = self._legal_graph_service.get_document(doc_id)
+                    if doc:
+                        related_documents[doc_id] = doc
 
-        # Format output
-        return {
-            "input": query_text,
-            "extracted_hierarchy": None,
-            "node_information": None,
-            "related_documents": [
-                self.format_node(doc) for doc in related_documents_semantic
-            ],
-            "related_nodes": [
-                self.format_node(node) for node in related_nodes_semantic
-            ],
-            "relationships": self._build_relationships(
-                nodes=list(related_nodes.values()),
-                legal_relationships=related_relationships,
-            ),
-        }
+            # Format output chuẩn 6-key
+            return {
+                "input": query_text,
+                "extracted_hierarchy": None,
+                "node_information": None,
+                "related_documents": [
+                    self.format_node(doc) for doc in related_documents.values()
+                ],
+                "related_nodes": [
+                    self.format_node(node) for node in related_nodes.values()
+                ],
+                "relationships": self._build_relationships(
+                    nodes=list(related_nodes.values()),
+                    legal_relationships=related_relationships,
+                ),
+            }
 
     def _collect_related_nodes(self, seed_ids: list[str]) -> list[dict[str, Any]]:
         """Gom node đích/seed + cha + con + con cháu, khử trùng theo node_id.
