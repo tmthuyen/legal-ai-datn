@@ -4,62 +4,73 @@ Script nạp dữ liệu Knowledge Graph pháp lý vào cơ sở dữ liệu Neo
 
 Quy trình thực hiện:
 1. Đọc dữ liệu từ backend/data/processed/ (nodes.json và relations.json).
-2. Kiểm tra tính hợp lệ của dữ liệu trước khi nạp (Pre-import Validation).
-3. Đảm bảo Constraint duy nhất cho node_id trên label :LegalNode.
-4. Nạp Nodes theo thứ tự cấu trúc với đa nhãn (:LegalNode:<Type>), sử dụng batching + MERGE.
-5. Nạp Relationships (:CONTAINS, :REFERENCES), sử dụng batching + MERGE (không tự sinh từ parent_id).
-6. Truy vấn đối chiếu số liệu thực tế trong Neo4j để đảm bảo tính toàn vẹn 100%.
+2. Kiểm tra tính hợp lệ toàn vẹn của dữ liệu bằng KnowledgeGraphSyncVerifier (Pre-import Validation).
+   Bắt buộc trạng thái PASS (kể cả WARN cũng bị chặn). Nếu có lỗi, script DỪNG NGAY và KHÔNG kết nối/ghi Neo4j.
+3. Đảm bảo Unique Constraint cho node_id trên nhãn :LegalNode.
+4. Nạp Nodes và Relationships trong MỘT TRANSACTION DUY NHẤT (Single Write Transaction).
+5. Deep Transaction Verification: Trước khi commit transaction, đối chiếu toàn bộ node IDs, labels,
+   properties, relationship keys và properties. Nếu phát hiện bất kỳ sai khác nào, rollback toàn bộ.
 """
 
-import os
-import sys
-import json
-import time
 import argparse
+from collections import defaultdict
+import json
+import os
 import pathlib
-from collections import defaultdict, Counter
-from typing import List, Dict, Any
+import sys
+import time
+from typing import Any, Dict, List, Optional, Tuple
 
 from dotenv import load_dotenv
-from neo4j import GraphDatabase, Driver
+from neo4j import Driver, GraphDatabase
 
 # Cấu hình UTF-8 cho Windows terminal
-if sys.stdout.encoding != 'utf-8':
+if sys.stdout.encoding != "utf-8":
     try:
-        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stdout.reconfigure(encoding="utf-8")
     except Exception:
         pass
 
-# Đường dẫn mặc định
-BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
-ENV_PATH = BASE_DIR / '.env'
-DATA_DIR = BASE_DIR / 'data' / 'processed'
-NODES_FILE = DATA_DIR / 'nodes.json'
-RELATIONS_FILE = DATA_DIR / 'relations.json'
 
-# Whitelist Labels và Types hợp lệ
-ALLOWED_NODE_TYPES = {
-    'Document', 'Part', 'Chapter', 'Section', 'SubSection', 
-    'Article', 'Clause', 'Point', 'Precedent'
-}
-ALLOWED_REL_TYPES = {
-    'CONTAINS', 'REFERENCES', 'IMPLEMENTS', 'INTERPRETED_BY', 
-    'AMENDS', 'REPEALS', 'REPLACED_BY', 'RELATED_TO'
-}
+def find_backend_dir() -> pathlib.Path:
+    current = pathlib.Path(__file__).resolve()
+    for p in current.parents:
+        if p.name == "backend" or (p / "data" / "processed").exists():
+            return p
+    return current.parents[3]
+
+
+BACKEND_DIR = find_backend_dir()
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
+
+ENV_PATH = BACKEND_DIR / ".env"
+DATA_DIR = BACKEND_DIR / "data" / "processed"
+NODES_FILE = DATA_DIR / "nodes.json"
+RELATIONS_FILE = DATA_DIR / "relations.json"
+
+from src.graph.sync_verifier import KnowledgeGraphSyncVerifier
 
 
 class Neo4jLegalImporter:
-    def __init__(self, uri: str, user: str, password: str, database: str = 'neo4j', batch_size: int = 1000):
+    def __init__(self, uri: str, user: str, password: str, database: str = "neo4j", batch_size: int = 1000):
         self.uri = uri
         self.user = user
         self.password = password
         self.database = database
         self.batch_size = batch_size
-        self.driver: Driver = GraphDatabase.driver(self.uri, auth=(self.user, self.password))
+        self._driver: Optional[Driver] = None
+
+    @property
+    def driver(self) -> Driver:
+        if self._driver is None:
+            self._driver = GraphDatabase.driver(self.uri, auth=(self.user, self.password))
+        return self._driver
 
     def close(self):
-        if self.driver:
-            self.driver.close()
+        if self._driver:
+            self._driver.close()
+            self._driver = None
 
     def test_connection(self) -> bool:
         """Kiểm tra kết nối tới cơ sở dữ liệu Neo4j."""
@@ -82,77 +93,67 @@ class Neo4jLegalImporter:
             session.run(cypher)
             print(">> Đã xác nhận Unique Constraint: (n:LegalNode) REQUIRE n.node_id IS UNIQUE")
 
-    def validate_files(self) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
-        """Đọc và kiểm tra sơ bộ các file JSON trước khi import."""
-        if not NODES_FILE.exists():
-            raise FileNotFoundError(f"Không tìm thấy file: {NODES_FILE}")
-        if not RELATIONS_FILE.exists():
-            raise FileNotFoundError(f"Không tìm thấy file: {RELATIONS_FILE}")
+    def preflight_validate(
+        self,
+        nodes_path: Optional[pathlib.Path] = None,
+        relations_path: Optional[pathlib.Path] = None,
+    ) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+        """Xác thực toàn bộ cấu trúc đồ thị trước khi import bằng KnowledgeGraphSyncVerifier."""
+        n_file = pathlib.Path(nodes_path) if nodes_path else NODES_FILE
+        r_file = pathlib.Path(relations_path) if relations_path else RELATIONS_FILE
 
-        with open(NODES_FILE, 'r', encoding='utf-8') as f:
+        verifier = KnowledgeGraphSyncVerifier(backend_dir=BACKEND_DIR)
+        val_res = verifier.validate_graph_data(nodes_path=n_file, relations_path=r_file)
+
+        if val_res["status"] != "PASS":
+            print("\n" + "=" * 80)
+            print("❌ [PREFLIGHT THẤT BẠI] DỮ LIỆU ĐỒ THỊ KHÔNG HỢP LỆ!")
+            print("=" * 80)
+            for err in val_res["errors"]:
+                print(f"  - {err}")
+            print(">> Đã CHẶN toàn bộ kết nối và thao tác import Neo4j để đảm bảo an toàn cơ sở dữ liệu.")
+            raise ValueError(
+                f"Preflight requires PASS (got {val_res['status']}); errors={len(val_res['errors'])}; "
+                f"warnings={len(val_res['warnings'])}. " + "; ".join(val_res["warnings"][:5])
+            )
+
+        if val_res["warnings"]:
+            print(f"\n⚠️ [PREFLIGHT CẢNH BÁO] Có {len(val_res['warnings'])} cảnh báo:")
+            for w in val_res["warnings"][:5]:
+                print(f"  - {w}")
+
+        with open(n_file, "r", encoding="utf-8") as f:
             nodes = json.load(f)
-        with open(RELATIONS_FILE, 'r', encoding='utf-8') as f:
+        with open(r_file, "r", encoding="utf-8") as f:
             relations = json.load(f)
 
-        print(f">> Đọc thành công {len(nodes):,} nodes từ {NODES_FILE.name}")
-        print(f">> Đọc thành công {len(relations):,} relations từ {RELATIONS_FILE.name}")
-
-        # Kiểm tra tính hợp lệ của node_id
-        node_ids = set()
-        for idx, n in enumerate(nodes):
-            nid = n.get('node_id')
-            ntype = n.get('type')
-            if not nid:
-                raise ValueError(f"Node tại vị trí {idx} thiếu 'node_id'")
-            if ntype not in ALLOWED_NODE_TYPES:
-                raise ValueError(f"Node {nid} có type không hợp lệ: '{ntype}'")
-            if nid in node_ids:
-                raise ValueError(f"Trùng lặp node_id trong file: '{nid}'")
-            node_ids.add(nid)
-
-        # Kiểm tra tính hợp lệ của relation
-        for idx, r in enumerate(relations):
-            sid = r.get('source_id')
-            tid = r.get('target_id')
-            rtype = r.get('type')
-            if not sid or not tid or not rtype:
-                raise ValueError(f"Relation tại vị trí {idx} thiếu source_id, target_id hoặc type")
-            if rtype not in ALLOWED_REL_TYPES:
-                raise ValueError(f"Relation tại vị trí {idx} có type không hợp lệ: '{rtype}'")
-            if sid not in node_ids:
-                raise ValueError(f"Relation có source_id không tồn tại: '{sid}'")
-            if tid not in node_ids:
-                raise ValueError(f"Relation có target_id không tồn tại: '{tid}'")
-
-        print(">> Kiểm tra dữ liệu: ĐẠT CHUẨN 100%! Sẵn sàng import.")
+        print(f">> [PREFLIGHT THÀNH CÔNG] Đạt chuẩn 100%! Đã xác thực {len(nodes):,} nodes và {len(relations):,} relations.")
         return nodes, relations
 
-    def clear_database(self):
-        """Xóa toàn bộ dữ liệu đồ thị hiện tại (chỉ dùng khi truyền cờ --clear-db)."""
-        print("\n[CẢNH BÁO] Đang tiến hành xóa toàn bộ nodes và relationships trong database...")
+    def clear_database(self, confirm: bool = False):
+        """Xóa toàn bộ dữ liệu đồ thị hiện tại (chỉ dùng khi truyền kèm cờ --confirm-clear-production-db)."""
+        if not confirm:
+            raise RuntimeError(
+                "[AN TOÀN BẢO VỆ] Cờ --clear-db yêu cầu xác nhận rõ ràng với --confirm-clear-production-db. "
+                "Tuyệt đối không xóa database trong quy trình mở rộng thông thường!"
+            )
+        print("\n[CẢNH BÁO CAO ĐỘ] Đang tiến hành xóa toàn bộ nodes và relationships trong Neo4j database...")
         with self.driver.session(database=self.database) as session:
             session.run("MATCH (n:LegalNode) DETACH DELETE n")
         print(">> Đã làm sạch database.")
 
     def import_nodes(self, nodes: List[Dict[str, Any]]):
-        """
-        Nạp nodes vào Neo4j:
-        - Sử dụng đa nhãn: (:LegalNode:<Type>)
-        - Phân nhóm theo type để tối ưu hóa execution plan và batching.
-        - Dùng MERGE để đảm bảo tính Idempotent (chạy lại nhiều lần không trùng).
-        """
+        """Nạp nodes vào Neo4j (phương thức phụ trợ backward-compatibility)."""
         print("\n--- BẮT ĐẦU IMPORT NODES ---")
         start_time = time.time()
 
-        # Phân loại nodes theo type
         nodes_by_type = defaultdict(list)
         for n in nodes:
-            ntype = n.get('type')
-            # Lọc bỏ các giá trị None để tránh gán null thừa
-            props = {k: v for k, v in n.items() if v is not None and k != 'type'}
+            ntype = n.get("type") or n.get("label")
+            props = self._properties(n, ("type", "label"))
             nodes_by_type[ntype].append({
-                'node_id': n['node_id'],
-                'props': props
+                "node_id": n["node_id"],
+                "props": props,
             })
 
         total_imported = 0
@@ -164,13 +165,11 @@ class Neo4jLegalImporter:
                 SET n:{ntype}
                 SET n += row.props
                 """
-                
-                # Chia batch
                 count = len(type_nodes)
                 for i in range(0, count, self.batch_size):
                     batch = type_nodes[i:i + self.batch_size]
                     session.run(cypher, batch=batch)
-                
+
                 total_imported += count
                 print(f"  + Đã nạp (:LegalNode:{ntype:<12}): {count:>5,} nodes")
 
@@ -178,27 +177,18 @@ class Neo4jLegalImporter:
         print(f">> Hoàn thành nạp {total_imported:,} nodes trong {elapsed:.2f}s!")
 
     def import_relations(self, relations: List[Dict[str, Any]]):
-        """
-        Nạp relations vào Neo4j:
-        - Phân nhóm theo relation type (:CONTAINS, :REFERENCES).
-        - Nối giữa các (s:LegalNode)-[:TYPE]->(t:LegalNode) thông qua node_id.
-        - Dùng MERGE để đảm bảo tính Idempotent (không tạo cạnh duplicate khi chạy lại).
-        """
+        """Nạp relations vào Neo4j (phương thức phụ trợ backward-compatibility)."""
         print("\n--- BẮT ĐẦU IMPORT RELATIONSHIPS ---")
         start_time = time.time()
 
-        # Phân loại relations theo type
         rels_by_type = defaultdict(list)
         for r in relations:
-            rtype = r.get('type')
-            props = {
-                k: v for k, v in r.items() 
-                if v is not None and k not in ('source_id', 'target_id', 'type')
-            }
+            rtype = r.get("type")
+            props = self._properties(r, ("type", "source_id", "target_id", "from", "to"))
             rels_by_type[rtype].append({
-                'source_id': r['source_id'],
-                'target_id': r['target_id'],
-                'props': props
+                "source_id": r.get("source_id") or r.get("from"),
+                "target_id": r.get("target_id") or r.get("to"),
+                "props": props,
             })
 
         total_imported = 0
@@ -211,94 +201,213 @@ class Neo4jLegalImporter:
                 MERGE (s)-[r:{rtype}]->(t)
                 SET r += row.props
                 """
-                
                 count = len(type_rels)
                 for i in range(0, count, self.batch_size):
                     batch = type_rels[i:i + self.batch_size]
                     session.run(cypher, batch=batch)
-                    
+
                 total_imported += count
                 print(f"  + Đã nạp [:{rtype:<14}]: {count:>5,} quan hệ")
 
         elapsed = time.time() - start_time
         print(f">> Hoàn thành nạp {total_imported:,} relations trong {elapsed:.2f}s!")
 
-    def verify_database(self, expected_node_count: int, expected_rel_count: int):
-        """Truy vấn kiểm tra đối chiếu trực tiếp dữ liệu thực tế trong Neo4j."""
-        print("\n====================================================================")
-        print("          KẾT QUẢ ĐỐI CHIẾU DỮ LIỆU THỰC TẾ TRONG NEO4J")
-        print("====================================================================")
-        
+    @staticmethod
+    def _properties(source: Dict[str, Any], excluded: tuple) -> Dict[str, Any]:
+        """Chuẩn hóa thuộc tính: bỏ các giá trị None và các trường topology."""
+        return {k: v for k, v in source.items() if k not in excluded and v is not None}
+
+    @staticmethod
+    def _normalized(value: Any) -> str:
+        return json.dumps(value, ensure_ascii=False, sort_keys=True, default=str)
+
+    def _verify_in_transaction(self, tx, expected_nodes: List[Dict[str, Any]], expected_relations: List[Dict[str, Any]]):
+        """Kiểm tra toàn bộ snapshot bên trong transaction trước khi commit; nếu sai khác sẽ rollback."""
+        db_nodes = tx.run("MATCH (n:LegalNode) RETURN n.node_id AS id, labels(n) AS labels, properties(n) AS props").data()
+        expected_by_id = {n["node_id"]: n for n in expected_nodes}
+        actual_by_id = {r["id"]: r for r in db_nodes}
+
+        if set(expected_by_id) != set(actual_by_id):
+            missing = list(set(expected_by_id) - set(actual_by_id))[:5]
+            extra = list(set(actual_by_id) - set(expected_by_id))[:5]
+            raise RuntimeError(f"Node ID mismatch: missing={missing}, extra={extra}")
+
+        for nid, node in expected_by_id.items():
+            actual = actual_by_id[nid]
+            expected_type = node.get("type") or node.get("label")
+            if set(actual["labels"]) != {"LegalNode", expected_type}:
+                raise RuntimeError(f"Node labels mismatch at {nid}: {actual['labels']}")
+            expected_props = self._properties(node, ("type", "label"))
+            if self._normalized(expected_props) != self._normalized(actual["props"]):
+                raise RuntimeError(f"Node properties mismatch at {nid}")
+
+        db_rels = tx.run("""MATCH (s:LegalNode)-[r]->(t:LegalNode)
+            RETURN s.node_id AS source_id, type(r) AS rel_type, t.node_id AS target_id, properties(r) AS props
+        """).data()
+        actual_rel = {(r["source_id"], r["rel_type"], r["target_id"]): r["props"] for r in db_rels}
+        expected_rel = {}
+        for r in expected_relations:
+            key = (r.get("source_id") or r.get("from"), r["type"], r.get("target_id") or r.get("to"))
+            if key in expected_rel:
+                raise RuntimeError(f"Duplicate relation in JSON: {key}")
+            expected_rel[key] = self._properties(r, ("type", "source_id", "target_id", "from", "to"))
+
+        if set(actual_rel) != set(expected_rel):
+            missing = list(set(expected_rel) - set(actual_rel))[:5]
+            extra = list(set(actual_rel) - set(expected_rel))[:5]
+            raise RuntimeError(f"Relationship mismatch: missing={missing}, extra={extra}")
+
+        for key, props in expected_rel.items():
+            if self._normalized(props) != self._normalized(actual_rel[key]):
+                raise RuntimeError(f"Relationship properties mismatch at {key}")
+
+        return {"nodes": len(expected_by_id), "relationships": len(expected_rel)}
+
+    def _verify_transaction(self, tx, expected_nodes: List[Dict[str, Any]], expected_relations: List[Dict[str, Any]]):
+        """Bí danh phục vụ kiểm thử và tương thích giao diện transaction verify."""
+        return self._verify_in_transaction(tx, expected_nodes, expected_relations)
+
+    def atomic_import(self, nodes: List[Dict[str, Any]], relations: List[Dict[str, Any]], *, clear_db: bool = False):
+        """Thực hiện toàn bộ quá trình nạp và xác thực trong MỘT WRITE TRANSACTION DUY NHẤT.
+        Không có trạng thái trung gian dở dang nào nếu bất kỳ bước nào thất bại.
+        """
+        allowed_node_types = {
+            "Document", "Part", "Chapter", "Section", "SubSection",
+            "Article", "Clause", "Point", "Precedent"
+        }
+        allowed_rel_types = {
+            "CONTAINS", "REFERENCES", "IMPLEMENTS", "INTERPRETED_BY",
+            "AMENDS", "REPEALS", "REPLACED_BY", "RELATED_TO"
+        }
+
+        nodes_by_type = defaultdict(list)
+        rels_by_type = defaultdict(list)
+
+        for n in nodes:
+            ntype = n.get("type") or n.get("label")
+            if ntype not in allowed_node_types:
+                raise ValueError(f"Unsafe node label: {ntype}")
+            nodes_by_type[ntype].append({
+                "node_id": n["node_id"],
+                "props": self._properties(n, ("type", "label")),
+            })
+
+        for r in relations:
+            rtype = r.get("type")
+            if rtype not in allowed_rel_types:
+                raise ValueError(f"Unsafe relationship type: {rtype}")
+            rels_by_type[rtype].append({
+                "source_id": r.get("source_id") or r.get("from"),
+                "target_id": r.get("target_id") or r.get("to"),
+                "props": self._properties(r, ("type", "source_id", "target_id", "from", "to")),
+            })
+
+        def write_and_verify(tx):
+            if clear_db:
+                tx.run("MATCH (n:LegalNode) DETACH DELETE n").consume()
+
+            for ntype, rows in nodes_by_type.items():
+                for i in range(0, len(rows), self.batch_size):
+                    tx.run(f"""UNWIND $batch AS row
+                        MERGE (n:LegalNode {{node_id: row.node_id}})
+                        SET n:{ntype}
+                        SET n = row.props
+                    """, batch=rows[i:i + self.batch_size]).consume()
+
+            for rtype, rows in rels_by_type.items():
+                for i in range(0, len(rows), self.batch_size):
+                    tx.run(f"""UNWIND $batch AS row
+                        MATCH (s:LegalNode {{node_id: row.source_id}})
+                        MATCH (t:LegalNode {{node_id: row.target_id}})
+                        MERGE (s)-[r:{rtype}]->(t)
+                        SET r = row.props
+                    """, batch=rows[i:i + self.batch_size]).consume()
+
+            return self._verify_transaction(tx, nodes, relations)
+
         with self.driver.session(database=self.database) as session:
-            # 1. Đếm tổng số nodes
-            res_nodes = session.run("MATCH (n:LegalNode) RETURN count(n) AS total").single()
-            actual_nodes = res_nodes["total"] if res_nodes else 0
-            
-            # 2. Đếm số lượng từng loại node
-            res_labels = session.run("""
-            MATCH (n:LegalNode)
-            UNWIND labels(n) AS lbl
-            WITH lbl, count(*) AS cnt
-            WHERE lbl <> 'LegalNode'
-            RETURN lbl, cnt ORDER BY cnt DESC
-            """)
-            print(f"Tổng số nodes (:LegalNode) trong DB: {actual_nodes:,} (Kỳ vọng: {expected_node_count:,})")
-            for r in res_labels:
-                print(f"  - {r['lbl']:<15}: {r['cnt']:,}")
+            return session.execute_write(write_and_verify)
 
-            # 3. Đếm tổng số relationships
-            res_rels = session.run("MATCH (:LegalNode)-[r]->(:LegalNode) RETURN count(r) AS total").single()
-            actual_rels = res_rels["total"] if res_rels else 0
-            
-            # 4. Đếm số lượng từng loại relationship
-            res_types = session.run("""
-            MATCH (:LegalNode)-[r]->(:LegalNode)
-            RETURN type(r) AS rel_type, count(r) AS cnt ORDER BY cnt DESC
-            """)
-            print(f"\nTổng số relations trong DB: {actual_rels:,} (Kỳ vọng: {expected_rel_count:,})")
-            for r in res_types:
-                print(f"  - {r['rel_type']:<15}: {r['cnt']:,}")
-
-            print("====================================================================")
-            if actual_nodes == expected_node_count and actual_rels == expected_rel_count:
-                print(">> XÁC NHẬN: DỮ LIỆU TRONG NEO4J KHỚP CHÍNH XÁC 100% VỚI FILE JSON!")
-            else:
-                print("[CẢNH BÁO] Có sự chênh lệch giữa số lượng trong DB và file JSON!")
+    def verify_database(self, expected_nodes: List[Dict[str, Any]], expected_relations: List[Dict[str, Any]]):
+        with self.driver.session(database=self.database) as session:
+            return session.execute_read(self._verify_in_transaction, expected_nodes, expected_relations)
 
 
 def main():
     parser = argparse.ArgumentParser(description="Import Legal Knowledge Graph vào Neo4j")
     parser.add_argument("--batch-size", type=int, default=1000, help="Kích thước batch import (mặc định: 1000)")
     parser.add_argument("--clear-db", action="store_true", help="Xóa dữ liệu cũ trước khi nạp mới")
+    parser.add_argument(
+        "--confirm-clear-production-db",
+        action="store_true",
+        help="Cờ bắt buộc xác nhận để thực thi --clear-db (ngăn chặn thao tác xóa ngoài ý muốn).",
+    )
+    parser.add_argument("--nodes-file", type=str, default=None, help="Đường dẫn file nodes.json tùy chọn")
+    parser.add_argument("--relations-file", type=str, default=None, help="Đường dẫn file relations.json tùy chọn")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Chế độ kiểm thử an toàn: chỉ chạy preflight validation, tuyệt đối không kết nối/ghi vào Neo4j",
+    )
     args = parser.parse_args()
 
-    # Load biến môi trường từ .env
+    nodes_file = pathlib.Path(args.nodes_file) if args.nodes_file else NODES_FILE
+    relations_file = pathlib.Path(args.relations_file) if args.relations_file else RELATIONS_FILE
+
+    # Kiểm tra bảo vệ đối với --clear-db
+    if args.clear_db:
+        if not args.confirm_clear_production_db:
+            print(
+                "\n[AN TOÀN BẢO VỆ] Cờ --clear-db yêu cầu cờ xác nhận rõ ràng: --confirm-clear-production-db.\n"
+                "Thao tác xóa đã bị hủy bỏ để bảo vệ toàn vẹn dữ liệu."
+            )
+            sys.exit(1)
+
     load_dotenv(ENV_PATH)
-    uri = os.getenv('NEO4J_URI', 'bolt://localhost:7687')
-    user = os.getenv('NEO4J_USERNAME', 'neo4j')
-    password = os.getenv('NEO4J_PASSWORD', 'thang123')
-    database = os.getenv('NEO4J_DATABASE', 'neo4j')
+    uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+    user = os.getenv("NEO4J_USERNAME", "neo4j")
+    password = os.getenv("NEO4J_PASSWORD")
+    database = os.getenv("NEO4J_DATABASE", "neo4j")
 
+    if not args.dry_run and not password:
+        parser.error("NEO4J_PASSWORD must be set in the environment or backend/.env")
+
+    importer = Neo4jLegalImporter(uri, user, password or "", database, batch_size=args.batch_size)
+
+    # Chế độ DRY-RUN: Preflight validation duy nhất, không đụng tới Neo4j
+    if args.dry_run:
+        print(">> [DRY-RUN] Tiến hành Preflight Validation dữ liệu đồ thị (KHÔNG kết nối Neo4j):")
+        try:
+            nodes, relations = importer.preflight_validate(nodes_file, relations_file)
+            print(f">> [DRY-RUN KẾT QUẢ: PASS] Dữ liệu hoàn toàn hợp lệ ({len(nodes):,} nodes, {len(relations):,} relations).")
+            sys.exit(0)
+        except Exception as e:
+            print(f">> [DRY-RUN KẾT QUẢ: FAIL] Lỗi xác thực: {e}")
+            sys.exit(1)
+
+    # Chế độ LIVE ATOMIC IMPORT
     print(f">> Cấu hình kết nối: URI={uri}, User={user}, Database={database}")
-    importer = Neo4jLegalImporter(uri, user, password, database, batch_size=args.batch_size)
-
     try:
+        # 1. Bắt buộc Preflight validation trước khi kết nối ghi
+        nodes, relations = importer.preflight_validate(nodes_file, relations_file)
+
+        # 2. Kết nối Neo4j
         if not importer.test_connection():
+            print("[LỖI] Neo4j không phản hồi. Import dừng lại.")
             sys.exit(1)
 
         importer.ensure_constraints()
-        nodes, relations = importer.validate_files()
 
-        if args.clear_db:
-            importer.clear_database()
+        # Atomic import + full verification before commit; rollback on any mismatch.
+        counts = importer.atomic_import(nodes, relations, clear_db=args.clear_db)
+        print(f">> [COMMIT] Verified {counts['nodes']} nodes and {counts['relationships']} relationships atomically.")
 
-        importer.import_nodes(nodes)
-        importer.import_relations(relations)
-        importer.verify_database(len(nodes), len(relations))
-
+    except Exception as e:
+        print(f"\n❌ [IMPORT THẤT BẠI]: {e}")
+        sys.exit(1)
     finally:
         importer.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
