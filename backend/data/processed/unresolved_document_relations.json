@@ -7,7 +7,6 @@
     "evidence": "Nghị quyết số 203/2025/QH15 của Quốc hội sửa đổi, bổ sung một số điều của Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam",
     "source_type": "MANUAL",
     "status": "EXTERNAL_DOCUMENT_RELATION",
-    "source_name": "Nghị quyết số 203/2025/QH15",
     "evidence_type": "OFFICIAL_GAZETTE"
   },
   {
@@ -106,7 +105,6 @@
     "evidence": "Nghị quyết này thay thế Nghị quyết số 03/2006/NQ-HĐTP ngày 08 tháng 7 năm 2006 của Hội đồng Thẩm phán Tòa án nhân dân tối cao hướng dẫn áp dụng một số quy định của Bộ luật Dân sự năm 2005 về bồi thường thiệt hại ngoài hợp đồng.",
     "source_type": "MANUAL",
     "status": "EXTERNAL_DOCUMENT_RELATION",
-    "source_name": "Nghị quyết số 03/2006/NQ-HĐTP",
     "evidence_type": "VERBATIM"
   },
   {
@@ -127,6 +125,17 @@
     "target_name": "Bộ luật Dân sự năm 2005",
     "target_so_hieu": "33/2005/QH11",
     "evidence": "2. Đối với những trường hợp bồi thường thiệt hại ngoài hợp đồng phát sinh trước ngày 01 tháng 01 năm 2017 (ngày Bộ luật Dân sự có hiệu lực), thì áp dụng quy định của Bộ luật Dân sự năm 2005, các văn bản pháp luật hướng dẫn áp dụng Bộ luật Dân sự năm 2005 và Nghị quyết số 03/2006/NQ-HĐTP ngày 08 tháng 7 năm 2006 của Hội đồng Thẩm phán Tòa án nhân dân tối cao để giải quyết, trừ hướng dẫn về thời hiệu tại Điều 5 Nghị quyết này.",
+    "source_type": "MANUAL",
+    "status": "EXTERNAL_DOCUMENT_RELATION",
+    "evidence_type": "VERBATIM"
+  },
+  {
+    "source_id": "LUAT_HNGD_2014",
+    "type": "REPEALS",
+    "target_id": "LUAT_HNGD_2000",
+    "target_name": "Luật hôn nhân và gia đình số 22/2000/QH10",
+    "target_so_hieu": "22/2000/QH10",
+    "evidence": "Luật hôn nhân và gia đình số 22/2000/QH10 hết hiệu lực kể từ ngày Luật này có hiệu lực.",
     "source_type": "MANUAL",
     "status": "EXTERNAL_DOCUMENT_RELATION",
     "evidence_type": "VERBATIM"

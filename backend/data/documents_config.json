@@ -319,5 +319,52 @@
         "evidence_type": "VERBATIM"
       }
     ]
+  },
+  {
+    "document_id": "LUAT_HNGD_2014",
+    "file_path": "van_ban/52_2014_QH13_238640.docx",
+    "metadata": {
+      "document_id": "LUAT_HNGD_2014",
+      "ten_file": "52_2014_QH13_238640.docx",
+      "duong_dan_file": "van_ban/52_2014_QH13_238640.docx",
+      "ten_van_ban": "Luật Hôn nhân và gia đình 2014",
+      "loai_van_ban": "LUAT",
+      "co_quan_ban_hanh": "Quốc hội",
+      "so_hieu": "52/2014/QH13",
+      "effective_from": "2015-01-01",
+      "effective_to": null,
+      "status": "CON_HIEU_LUC",
+      "source_file": "52_2014_QH13_238640.docx",
+      "metadata_source": "DOCX nguồn: van_ban/52_2014_QH13_238640.docx; effective_from: Điều 132",
+      "verified_at": "2026-10-30",
+      "verification_scope": "effective_from verified via Điều 132; status verified via CSDL Quốc gia VBPL",
+      "status_verified_at": "2026-10-30",
+      "source_url": null,
+      "effective_from_source_url": null
+    },
+    "parser_profile": "default",
+    "aliases": [
+      "Luật Hôn nhân và gia đình số 52/2014/QH13",
+      "Luật Hôn nhân và gia đình năm 2014",
+      "Luật Hôn nhân và gia đình 2014",
+      "Luật Hôn nhân và gia đình",
+      "Luật hôn nhân và gia đình",
+      "Luật HNGD 2014",
+      "Luật HNGD",
+      "52/2014/QH13"
+    ],
+    "external_relations": [
+      {
+        "source_id": "LUAT_HNGD_2014",
+        "type": "REPEALS",
+        "target_id": "LUAT_HNGD_2000",
+        "target_name": "Luật hôn nhân và gia đình số 22/2000/QH10",
+        "target_so_hieu": "22/2000/QH10",
+        "evidence": "Luật hôn nhân và gia đình số 22/2000/QH10 hết hiệu lực kể từ ngày Luật này có hiệu lực.",
+        "source_type": "MANUAL",
+        "evidence_type": "VERBATIM"
+      }
+    ],
+    "relations": []
   }
 ]

@@ -4,7 +4,7 @@
     "patterns": {
       "phan": "^Phần\\s+(?P<so>.+?)(?:\\.\\s*(?P<ten>.*))?$",
       "chuong": "^Chương\\s+(?P<so>[IVXLCDM]+)(?:\\.\\s*(?P<ten>.*))?$",
-      "muc": "^Mục\\s+(?P<so>\\d+)(?:\\.\\s*(?P<ten>.*))?$",
+      "muc": "^Mục\\s+(?P<so>\\d+)(?:[.:]\\s*(?P<ten>.*))?$",
       "tieu_muc": "^Tiểu mục\\s+(?P<so>\\d+)(?:\\.\\s*(?P<ten>.*))?$",
       "dieu": "^Điều\\s+(?P<so>\\d+)(?:\\.\\s*(?P<tieu_de>.*))?$",
       "khoan": "^(?P<so>\\d+)\\.\\s+(?P<noi_dung>.+)$",
