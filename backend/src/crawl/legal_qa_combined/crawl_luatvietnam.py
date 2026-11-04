@@ -19,8 +19,59 @@ from urllib3.util.retry import Retry
 BASE = "https://luatvietnam.vn"
 LIST = BASE + "/luat-su-tu-van/dan-su-65.html?page={}"
 HEADERS = {
-    "User-Agent": "LegalResearchCrawler/1.0 (academic research; polite rate-limited requests) Mozilla/5.0"
+    "User-Agent": "Mozilla/5.0 (Linux; Android 16; Pixel 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36"
 }
+
+TOPICS = [
+    # {
+    #     "name": "Dân sự",
+    #     "url": "https://luatvietnam.vn/luat-su-tu-van/dan-su-65.html?page={}",
+    # },
+    {
+        "name": "Lao động - Tiền lương",
+        "url": "https://luatvietnam.vn/luat-su-tu-van/lao-dong-tien-luong-7.html?page={}",
+    },
+    {
+        "name": "Đất đai - Nhà ở",
+        "url": "https://luatvietnam.vn/luat-su-tu-van/dat-dai-nha-o-3.html?page={}",
+    },
+    {
+        "name": "Doanh nghiệp",
+        "url": "https://luatvietnam.vn/luat-su-tu-van/doanh-nghiep-24.html?page={}",
+    },
+    {
+        "name": "Hình sự",
+        "url": "https://luatvietnam.vn/luat-su-tu-van/hinh-su-66.html?page={}",
+    },
+    {
+        "name": "Hôn nhân - Gia đình",
+        "url": "https://luatvietnam.vn/luat-su-tu-van/hon-nhan-gia-dinh-64.html?page={}",
+    },
+    {
+        "name": "Bảo hiểm",
+        "url": "https://luatvietnam.vn/luat-su-tu-van/bao-hiem-57.html?page={}",
+    },
+    {
+        "name": "Giao thông",
+        "url": "https://luatvietnam.vn/luat-su-tu-van/giao-thong-28.html?page={}",
+    },
+    {
+        "name": "Thuế - Phí - Lệ phí",
+        "url": "https://luatvietnam.vn/luat-su-tu-van/thue-phi-le-phi-4.html?page={}",
+    },
+    {
+        "name": "Hành chính",
+        "url": "https://luatvietnam.vn/luat-su-tu-van/hanh-chinh-27.html?page={}",
+    },
+]
+
+# https://luatvietnam.vn/luat-su-tu-van/doanh-nghiep-24.html
+# https://luatvietnam.vn/luat-su-tu-van/hinh-su-66.html
+# https://luatvietnam.vn/luat-su-tu-van/hon-nhan-gia-dinh-64.html
+# https://luatvietnam.vn/luat-su-tu-van/bao-hiem-57.html
+# https://luatvietnam.vn/luat-su-tu-van/giao-thong-28.html
+# https://luatvietnam.vn/luat-su-tu-van/thue-phi-le-phi-4.html
+# https://luatvietnam.vn/luat-su-tu-van/hanh-chinh-27.html
 
 
 def normalize(url):
@@ -56,7 +107,7 @@ def get(s: requests.Session, u: str, delay: float = 0.0) -> str:
     return r.text
 
 
-def list_page(soup, page):
+def list_page(soup, page, topic):
     result = []
     for title in soup.select("h3.article-hoi-dap a[href]"):
         href = title.get("href", "")
@@ -74,6 +125,7 @@ def list_page(soup, page):
                 "listed_date": clean_text(date) or None,
                 "listing_page": page,
                 "source": "LuatVietnam",
+                "topic": topic,
             }
         )
     return result
@@ -154,7 +206,6 @@ def parse_article(html, url, meta=None):
         "id": hashlib.sha256(normalize(url).encode()).hexdigest()[:20],
         "url": normalize(url),
         "source": "LuatVietnam",
-        "category": "Dân sự",
         "title": clean_text(h),
         "question_number": clean_text(raw_num).lstrip("#")
         or meta.get("question_number"),
@@ -198,49 +249,76 @@ def run(args):
     issues = []
     empty = 0
     pages = 0
+
+    # file_path with date
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    url_file_path = out / f"article_urls_{date_str}.csv"
+    url_file_path_jsonl = out / f"article_urls_{date_str}.jsonl"
+
     # PHASE 1: collect ALL article URLs from ALL pages before fetching details.
-    for page in range(1, args.max_pages + 1):
-        u = LIST.format(page)
-        try:
-            html = get(s, u, args.delay)
-            soup = BeautifulSoup(html, "html5lib")
-            links = list_page(soup, page)
-            if not links:
-                empty += 1
+    for topic in TOPICS:
+        name = topic["name"]
+        topic_url = topic["url"]
+        print(f"[TOPIC] {name} {topic_url}", flush=True)
+        for page in range(1, args.max_pages + 1):
+            print(f"[PAGE] {name} page={page}", flush=True)
+            u = topic_url.format(page)
+            try:
+                html = get(s, u, args.delay)
+                soup = BeautifulSoup(html, "html5lib")
+                links = list_page(soup, page, name)
+                if not links:
+                    empty += 1
+                    print(f"[EMPTY] page={page} url={u}", flush=True)
+                    issues.append(
+                        {
+                            "stage": "listing",
+                            "page": page,
+                            "url": u,
+                            "error": "No matching article links",
+                            "topic": name,
+                        }
+                    )
+                    if empty >= args.stop_after_empty:
+                        break
+                    continue
+                empty = 0
+                pages += 1
+                for row in links:
+                    seen.setdefault(row["url"], row)
+                print(
+                    f"[LIST] page={page} entries={len(links)} unique_total={len(seen)}",
+                    flush=True,
+                )
+                write_csv(url_file_path, list(seen.values()))
+            except Exception as e:
                 issues.append(
                     {
                         "stage": "listing",
                         "page": page,
                         "url": u,
-                        "error": "No matching article links",
+                        "error": str(e),
+                        "topic": name,
                     }
                 )
-                if empty >= args.stop_after_empty:
+                print(f"[ERROR] listing page={page}: {e}", flush=True)
+                # A failed page may mean temporary network issues. Never silently mark crawl complete.
+                if not args.continue_on_error:
                     break
-                continue
-            empty = 0
-            pages += 1
-            for row in links:
-                seen.setdefault(row["url"], row)
-            print(
-                f"[LIST] page={page} entries={len(links)} unique_total={len(seen)}",
-                flush=True,
-            )
-            write_csv(out / "article_urls.csv", list(seen.values()))
-        except Exception as e:
-            issues.append({"stage": "listing", "page": page, "url": u, "error": str(e)})
-            print(f"[ERROR] listing page={page}: {e}", flush=True)
-            # A failed page may mean temporary network issues. Never silently mark crawl complete.
-            if not args.continue_on_error:
-                break
+
+        print(
+            f"[TOPIC COMPLETE] {name} pages={pages} unique_total={len(seen)}",
+            flush=True,
+        )
+
     rows = list(seen.values())
-    write_csv(out / "article_urls.csv", rows)
-    write_jsonl(out / "article_urls.jsonl", rows)
+    write_csv(url_file_path, rows)
+    write_jsonl(url_file_path_jsonl, rows)
     print(
         f"[LINK COLLECTION COMPLETE] pages={pages}, unique_urls={len(rows)}", flush=True
     )
     # PHASE 2: crawl detail URLs; incremental saving supports resuming after interruption.
-    details_path = out / "legal_qa.jsonl"
+    details_path = out / f"legal_qa_{date_str}.jsonl"
     completed = set()
     if details_path.exists() and not args.fresh:
         for line in details_path.read_text(encoding="utf-8").splitlines():
@@ -258,13 +336,15 @@ def run(args):
             try:
                 html = get(s, u, args.delay)
                 data = parse_article(html, u, meta)
+                data["topic"] = meta.get("topic")
+                data["category"] = meta.get("topic")  # map topic to category
                 f.write(json.dumps(data, ensure_ascii=False) + "\n")
                 f.flush()
                 print(f"[DETAIL] {i}/{len(rows)} {u}", flush=True)
             except Exception as e:
                 issues.append({"stage": "detail", "url": u, "error": str(e)})
                 print(f"[ERROR] detail {u}: {e}", flush=True)
-    (out / "crawl_errors.json").write_text(
+    (out / f"crawl_errors_{date_str}.json").write_text(
         json.dumps(issues, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     print(

@@ -16,13 +16,27 @@ from urllib.parse import urlsplit, urlunsplit
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
-START = "https://vnexpress.net/phap-luat/tu-van/dan-su"
+# START = "https://vnexpress.net/phap-luat/tu-van/dan-su"
+START = "https://vnexpress.net/phap-luat/tu-van/hon-nhan"
 SELECTOR = "#list-news article.item-news h4.title-news a[href]"
 LEGAL_RE = re.compile(
     r"(?:(?:các?\s+)?(?:khoản\s+[\d]+(?:\s*[,và]+\s*khoản\s*\d+)*\s*)?(?:điểm\s+[a-zđ]\s+)?Điều\s+\d+(?:\s*[,và]+\s*Điều\s*\d+)*)\s+(?:của\s+)?(?:Bộ luật|Luật|Nghị định|Nghị quyết|Thông tư)[^\n.;:]{0,125}",
     re.IGNORECASE,
 )
 ARTICLE_RE = re.compile(r"-(\d{6,9})\.html$")
+# CATEGORY = "Dân sự"
+CATEGORY = "Hôn nhân gia đình"
+SOURCE = "VnExpress"
+
+TOPICS = [
+    {"name": "Dân sự", "url": "https://vnexpress.net/phap-luat/tu-van/dan-su"},
+    {
+        "name": "Hôn nhân gia đình",
+        "url": "https://vnexpress.net/phap-luat/tu-van/hon-nhan",
+    },
+    {"name": "Đất đai", "url": "https://vnexpress.net/phap-luat/tu-van/dat-dai"},
+    {"name": "Hình sự", "url": "https://vnexpress.net/phap-luat/tu-van/hinh-su"},
+]
 
 
 def canonical(url):
@@ -44,7 +58,7 @@ def lines_of(node):
     ]
 
 
-def parse_listing(html):
+def parse_listing(html, category: str):
     soup = BeautifulSoup(html, "html.parser")
     items = []
     for article in soup.select("#list-news article.item-news"):
@@ -60,8 +74,8 @@ def parse_listing(html):
                 "url": url,
                 "title": clean(a.get_text(" ", strip=True)),
                 "description": clean(lead.get_text(" ", strip=True)) if lead else "",
-                "source": "VnExpress",
-                "category": "Dân sự",
+                "source": SOURCE,
+                "category": category,
                 "source_category_url": START,
             }
         )
@@ -69,7 +83,7 @@ def parse_listing(html):
     return items, container.get("data-next-page") if container else None
 
 
-def parse_article(html, url):
+def parse_article(html, url, category: str):
     soup = BeautifulSoup(html, "html.parser")
     root = soup.select_one("article.fck_detail") or soup.select_one(".fck_detail")
     if not root:
@@ -143,8 +157,8 @@ def parse_article(html, url):
         ),
         "url": url,
         "title": clean(title.get_text(" ", strip=True)) if title else None,
-        "source": "VnExpress",
-        "category": "Dân sự",
+        "source": SOURCE,
+        "category": category,
         "source_category_url": START,
         "published_at_raw": date,
         "question": question,
@@ -192,6 +206,16 @@ def crawl(out, max_scrolls, delay, headless):
     urls = {}
     errors = []
     articles = []
+
+    # date
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    url_csv_path = out / f"article_urls_{date_str}.csv"
+    url_jsonl_path = out / f"article_urls_{date_str}.jsonl"
+    legal_qa_csv_path = out / f"legal_qa_{date_str}.csv"
+    legal_qa_jsonl_path = out / f"legal_qa_{date_str}.jsonl"
+    errors_path = out / f"crawl_errors_{date_str}.jsonl"
+    category = CATEGORY
+
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless)
         page = browser.new_page(viewport={"width": 1440, "height": 900}, locale="vi-VN")
@@ -199,16 +223,16 @@ def crawl(out, max_scrolls, delay, headless):
         page.locator("#list-news article.item-news").first.wait_for(timeout=30000)
         stagnation = 0
         for i in range(max_scrolls + 1):
-            batch, next_page = parse_listing(page.content())
+            batch, next_page = parse_listing(page.content(), category=category)
             before = len(urls)
             for item in batch:
                 urls[item["url"]] = item
             print(
                 f"[LIST] step={i} total={len(urls)} next_page={next_page}", flush=True
             )
-            write_jsonl(out / "article_urls.jsonl", list(urls.values()))
+            write_jsonl(url_jsonl_path, list(urls.values()))
             write_csv(
-                out / "article_urls.csv",
+                url_csv_path,
                 list(urls.values()),
                 [
                     "url",
@@ -256,7 +280,9 @@ def crawl(out, max_scrolls, delay, headless):
             try:
                 detail.goto(meta["url"], wait_until="domcontentloaded", timeout=45000)
                 detail.locator("article.fck_detail").wait_for(timeout=10000)
-                row = parse_article(detail.content(), meta["url"])
+                row = parse_article(
+                    detail.content(), meta["url"], category=meta["category"]
+                )
                 row["listing_description"] = meta["description"]
                 articles.append(row)
                 print(
@@ -266,13 +292,17 @@ def crawl(out, max_scrolls, delay, headless):
             except Exception as e:
                 errors.append({"url": meta["url"], "error": str(e)})
                 print(f'[ERROR] {j}/{len(urls)} {meta["url"]}: {e}', flush=True)
-            write_jsonl(out / "legal_qa.jsonl", articles)
-            write_jsonl(out / "crawl_errors.jsonl", errors)
+
+            # Lưu data jsonl
+            write_jsonl(legal_qa_jsonl_path, articles)
+            write_jsonl(errors_path, errors)
             time.sleep(delay + random.uniform(0, 0.35))
         browser.close()
+
+    # Lưu all data csv
     write_csv(
-        out / "legal_qa.csv",
-        articles,
+        legal_qa_csv_path,
+        list(urls.values()),
         [
             "id",
             "url",
@@ -291,6 +321,10 @@ def crawl(out, max_scrolls, delay, headless):
             "content_sha256",
         ],
     )
+
+    # Lưu all data jsonl
+    write_jsonl(legal_qa_jsonl_path, articles)
+
     print(f"Done: {len(urls)} URLs, {len(articles)} articles, {len(errors)} failures")
 
 
@@ -302,3 +336,6 @@ if __name__ == "__main__":
     ap.add_argument("--headed", action="store_true")
     args = ap.parse_args()
     crawl(args.out, args.max_scrolls, args.delay, not args.headed)
+
+
+# python crawl_vnexpress.py --max-scrolls 300 --delay 2 --out output/vnexpress

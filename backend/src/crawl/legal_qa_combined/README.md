@@ -5,7 +5,7 @@
 ```
 pip install -r requirements.txt
 python -m playwright install chromium
-python crawl_vnexpress.py --max-scrolls 150 --delay 2 --out output/vnexpress
+python crawl_vnexpress.py --max-scrolls 300 --delay 2 --out output/vnexpress
 ```
 
 - Duyệt danh sách `#list-news article.item-news h4.title-news a[href]`, cuộn cuối trang và chờ số lượng bài tăng. Dừng sau 3 lần liên tiếp không có URL mới (hoặc `--max-scrolls`). Lưu URL liên tục trước khi vào trang chi tiết.
