@@ -7,7 +7,7 @@ Mục đích:
   để API và script tái sử dụng, tránh lặp cấu hình ở từng client.
 - `build_services` nạp model ngay khi được gọi (model nạp một lần, dùng cho mọi request).
 """
-
+import torch
 from dataclasses import dataclass
 from typing import Optional
 
@@ -113,10 +113,15 @@ def build_services(settings: Optional[Settings] = None) -> AppServices:
     graph_repository = LegalGraphRepository(db=neo4j_client)
     graph_service = LegalGraphService(repository=graph_repository)
 
-    logger.info("Nạp embedding model: %s", settings.embedding_model_name)
+    
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    logger.info("Device được chọn tự động: %s", device)
+
+    logger.info("Nạp embedding model: %s (device=%s)", settings.embedding_model_name, device)
     embedder = NodeEmbedder(
         model_name=settings.embedding_model_name,
-        device=settings.embedding_device,
+        device=device,
         batch_size=settings.embedding_batch_size,
     )
     embedder.load_model()
