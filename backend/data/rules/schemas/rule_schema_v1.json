@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://legal-ai-datn.local/schemas/rule_schema_v1.json",
+  "title": "Legal Rule Specification V1 - Minimal Core + Extensible Metadata",
+  "description": "JSON Schema cho biểu diễn quy tắc pháp lý (Legal Rule V1) phục vụ suy luận trên đồ thị tri thức",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "source",
+    "kind",
+    "when",
+    "then",
+    "unless",
+    "links",
+    "meta",
+    "extensions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Phiên bản đặc tả cấu trúc JSON của rule (khác với meta.revision và source.document_version)."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9_]+$",
+      "description": "Định danh duy nhất và ổn định của rule (ví dụ: HNGD_D35_K2_01)."
+    },
+    "source": {
+      "type": "object",
+      "required": ["node_ids", "document_version"],
+      "additionalProperties": false,
+      "properties": {
+        "node_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Danh sách node_id chính xác tồn tại trong Knowledge Graph (nodes.json)."
+        },
+        "document_version": {
+          "type": "string",
+          "enum": ["ORIGINAL", "AMENDED", "CONSOLIDATED"],
+          "description": "Phiên bản văn bản quy phạm pháp luật mà rule này trích xuất."
+        }
+      }
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "REQUIREMENT",
+        "PROHIBITION",
+        "PERMISSION",
+        "NON_RECOGNITION",
+        "LIABILITY",
+        "DERIVATION"
+      ],
+      "description": "Phân loại bản chất quy phạm của rule."
+    },
+    "when": {
+      "$ref": "#/$defs/condition_expr",
+      "description": "Biểu thức điều kiện kích hoạt quy tắc (Applicability condition)."
+    },
+    "then": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/effect_item"
+      },
+      "description": "Danh sách hệ quả pháp lý hoặc yêu cầu tuân thủ khi rule có hiệu lực áp dụng."
+    },
+    "unless": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/condition_expr"
+      },
+      "description": "Danh sách các điều kiện ngoại lệ trực tiếp loại trừ việc áp dụng rule."
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rule_link"
+      },
+      "description": "Tham chiếu có cấu trúc tới các rule liên quan (V1 chỉ kiểm tra tính hợp lệ và truy vết, không tự động suy luận đa bước)."
+    },
+    "meta": {
+      "type": "object",
+      "required": ["status", "revision", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["DRAFT", "PENDING_REVIEW", "VERIFIED", "DEPRECATED"],
+          "description": "Trạng thái rà soát và kiểm định ngữ nghĩa pháp lý của rule."
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Số thứ tự bản sửa đổi của nội dung rule này."
+        },
+        "description": {
+          "type": "string",
+          "minLength": 5,
+          "description": "Tóm tắt ngắn gọn nội dung quy tắc pháp lý."
+        }
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Trường mở rộng cho các metadata bổ sung (như ghi chú hiệu lực chuyển tiếp, mã giải thích, yêu cầu rule đi kèm)."
+    }
+  },
+  "$defs": {
+    "operator": {
+      "type": "string",
+      "enum": ["eq", "neq", "gt", "gte", "lt", "lte", "in", "not_in", "exists"]
+    },
+    "atomic_condition": {
+      "type": "array",
+      "prefixItems": [
+        { "type": "string", "pattern": "^[a-z][a-z0-9_.]*$" },
+        { "$ref": "#/$defs/operator" },
+        {}
+      ],
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "Bộ ba [predicate, operator, value]."
+    },
+    "condition_expr": {
+      "oneOf": [
+        { "$ref": "#/$defs/atomic_condition" },
+        {
+          "type": "object",
+          "required": ["all"],
+          "additionalProperties": false,
+          "properties": {
+            "all": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/condition_expr" }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["any"],
+          "additionalProperties": false,
+          "properties": {
+            "any": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/condition_expr" }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["not"],
+          "additionalProperties": false,
+          "properties": {
+            "not": { "$ref": "#/$defs/condition_expr" }
+          }
+        }
+      ]
+    },
+    "effect_item": {
+      "type": "object",
+      "required": ["effect", "predicate", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "effect": {
+          "type": "string",
+          "enum": [
+            "REQUIRE",
+            "PROHIBIT",
+            "PERMIT",
+            "DENY_RECOGNITION",
+            "DERIVE"
+          ]
+        },
+        "predicate": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.]*$"
+        },
+        "operator": {
+          "$ref": "#/$defs/operator",
+          "description": "Toán tử kiểm tra sự tuân thủ (mặc định là 'eq' nếu lược bỏ)."
+        },
+        "value": {}
+      }
+    },
+    "rule_link": {
+      "type": "object",
+      "required": ["rule_id", "relation", "source_node_id"],
+      "additionalProperties": false,
+      "properties": {
+        "rule_id": {
+          "type": "string",
+          "pattern": "^[A-Z0-9_]+$"
+        },
+        "relation": {
+          "type": "string",
+          "enum": [
+            "RELATED_PROVISION",
+            "REQUIRES_STATUTORY_GROUND",
+            "EXCEPTION_REFERENCE",
+            "PREREQUISITE_CONDITION",
+            "CONSEQUENCE_OF_VIOLATION"
+          ]
+        },
+        "source_node_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

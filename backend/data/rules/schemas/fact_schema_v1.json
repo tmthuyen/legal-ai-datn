@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://legal-ai-datn.local/schemas/fact_schema_v1.json",
+  "title": "Legal Case Fact & Evaluation Expectation Schema V1",
+  "description": "JSON Schema cho một tình huống kiểm thử (Legal Case) bao gồm tập dữ kiện đầu vào (facts) và kết quả kỳ vọng tách biệt Applicability và Compliance.",
+  "type": "object",
+  "required": ["case_id", "rule_id", "description", "facts", "expected"],
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9_]+$",
+      "description": "Định danh duy nhất của test case."
+    },
+    "rule_id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9_]+$",
+      "description": "Mã rule đích cần kiểm thử."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Mô tả tình huống pháp lý bằng tiếng Việt."
+    },
+    "facts": {
+      "type": "object",
+      "description": "Từ điển ánh xạ tên predicate (dạng dot-notation) sang giá trị thực tế của tình huống (hoặc null nếu chưa rõ)."
+    },
+    "expected": {
+      "type": "object",
+      "required": ["applicability_status", "compliance_status", "missing_facts"],
+      "additionalProperties": false,
+      "properties": {
+        "applicability_status": {
+          "type": "string",
+          "enum": [
+            "APPLICABLE",
+            "NOT_APPLICABLE",
+            "INDETERMINATE",
+            "EXCEPTED",
+            "EXCEPTION_INDETERMINATE"
+          ],
+          "description": "Trạng thái kích hoạt của quy tắc (when & unless)."
+        },
+        "compliance_status": {
+          "type": "string",
+          "enum": [
+            "COMPLIANT",
+            "VIOLATED",
+            "DERIVED",
+            "INDETERMINATE",
+            "NOT_EVALUATED"
+          ],
+          "description": "Trạng thái đáp ứng yêu cầu pháp lý hoặc suy diễn hệ quả (then) sau khi quy tắc được xác định là APPLICABLE."
+        },
+        "missing_facts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Danh sách các predicate còn thiếu (UNKNOWN) cần thu thập thêm để giải quyết trạng thái INDETERMINATE."
+        },
+        "derived_facts": {
+          "type": "object",
+          "description": "Các dữ kiện pháp lý mới được suy ra hoặc ấn định từ phần then (nếu rule APPLICABLE và effect là DERIVE hoặc DENY_RECOGNITION)."
+        }
+      }
+    }
+  }
+}
+
