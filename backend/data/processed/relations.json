@@ -37238,5 +37238,41 @@
     "evidence": "Bộ luật Dân sự 2015 được hướng dẫn áp dụng bởi Nghị quyết 02/2022/NQ-HĐTP về trách nhiệm bồi thường thiệt hại ngoài hợp đồng",
     "source_type": "MANUAL",
     "confidence": 1.0
+  },
+  {
+    "source_id": "BLDS_2015_D26",
+    "type": "REFERENCES",
+    "target_id": "LUAT_HNGD_2014",
+    "evidence": "Cha đẻ, mẹ đẻ được quy định trong Bộ luật này là cha, mẹ được xác định dựa trên sự kiện sinh đẻ; người nhờ mang thai hộ với người được sinh ra từ việc mang thai hộ theo quy định của Luật hôn nhân và gia đình.",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0,
+    "properties": {
+      "citation": "Luật hôn nhân và gia đình",
+      "is_cross_document": true
+    }
+  },
+  {
+    "source_id": "BLDS_2015_D39_K2",
+    "type": "REFERENCES",
+    "target_id": "LUAT_HNGD_2014",
+    "evidence": "2. Cá nhân thực hiện quyền nhân thân trong hôn nhân và gia đình theo quy định của Bộ luật này, Luật hôn nhân và gia đình và luật khác có liên quan.",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0,
+    "properties": {
+      "citation": "Luật hôn nhân và gia đình",
+      "is_cross_document": true
+    }
+  },
+  {
+    "source_id": "BLDS_2015_D73_K4",
+    "type": "REFERENCES",
+    "target_id": "LUAT_HNGD_2014",
+    "evidence": "4. Quan hệ tài sản giữa vợ và chồng được giải quyết theo quy định của Bộ luật này, Luật hôn nhân và gia đình.",
+    "source_type": "EXPLICIT",
+    "confidence": 1.0,
+    "properties": {
+      "citation": "Luật hôn nhân và gia đình",
+      "is_cross_document": true
+    }
   }
 ]
