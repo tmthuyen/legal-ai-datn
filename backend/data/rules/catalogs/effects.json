@@ -1,0 +1,46 @@
+{
+  "catalog_version": "1.0",
+  "description": "Danh mục chuẩn hóa các loại quy tắc (rule kind) và loại tác động pháp lý (effect) trong phần then, phân biệt rõ hành vi bắt buộc/cấm (Compliance check) và suy diễn trạng thái pháp lý (Legal Derivation).",
+  "rule_kinds": {
+    "REQUIREMENT": {
+      "description": "Quy tắc đặt ra điều kiện hoặc nghĩa vụ pháp lý bắt buộc phải đáp ứng khi thuộc phạm vi điều chỉnh."
+    },
+    "PROHIBITION": {
+      "description": "Quy tắc nghiêm cấm thực hiện một hành vi cụ thể khi thuộc phạm vi điều chỉnh."
+    },
+    "PERMISSION": {
+      "description": "Quy tắc cho phép chủ thể thực hiện một quyền hoặc cơ chế pháp lý (ví dụ: ủy quyền giữa vợ chồng)."
+    },
+    "NON_RECOGNITION": {
+      "description": "Quy tắc tuyên bố Nhà nước không thừa nhận một quan hệ/trạng thái pháp lý (không đồng nhất với quy phạm cấm trực tiếp)."
+    },
+    "LIABILITY": {
+      "description": "Quy tắc xác lập trách nhiệm pháp lý (như trách nhiệm bồi thường thiệt hại ngoài hợp đồng)."
+    },
+    "DERIVATION": {
+      "description": "Quy tắc xác lập hoặc suy diễn hệ quả hiệu lực pháp lý (ví dụ: giao dịch vô hiệu hoặc không bị vô hiệu)."
+    }
+  },
+  "effects": {
+    "REQUIRE": {
+      "evaluation_mode": "COMPLIANCE_CHECK",
+      "description": "Đòi hỏi vị từ đích trong facts phải thỏa mãn giá trị/toán tử quy định (TRUE -> COMPLIANT, FALSE -> VIOLATED, UNKNOWN -> INDETERMINATE)."
+    },
+    "PROHIBIT": {
+      "evaluation_mode": "PROHIBITION_CHECK",
+      "description": "Nghiêm cấm vị từ đích mang giá trị bị cấm trong facts (nếu vị từ khớp giá trị cấm TRUE -> VIOLATED, nếu FALSE -> COMPLIANT, nếu UNKNOWN -> INDETERMINATE)."
+    },
+    "PERMIT": {
+      "evaluation_mode": "DERIVATION",
+      "description": "Xác nhận quyền hoặc khả năng pháp lý được phép thực hiện khi đủ điều kiện (suy ra derived_facts và trả về DERIVED)."
+    },
+    "DENY_RECOGNITION": {
+      "evaluation_mode": "DERIVATION",
+      "description": "Xác lập hệ quả Nhà nước không công nhận trạng thái pháp lý (suy ra derived_facts với giá trị false và trả về DERIVED)."
+    },
+    "DERIVE": {
+      "evaluation_mode": "DERIVATION",
+      "description": "Suy diễn trực tiếp một trạng thái/hệ quả pháp lý mới vào derived_facts khi when=TRUE và unless=FALSE (trả về DERIVED)."
+    }
+  }
+}
