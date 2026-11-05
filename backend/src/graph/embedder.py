@@ -91,7 +91,7 @@ class NodeEmbedder:
     ):
         settings = get_settings()
         self.model_name = model_name or settings.embedding_model_name
-        self.device = device or settings.embedding_device
+        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         self.batch_size = (
             batch_size if batch_size is not None else settings.embedding_batch_size
         )

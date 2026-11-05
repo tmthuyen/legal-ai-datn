@@ -11,6 +11,8 @@ Mục đích:
 from dataclasses import dataclass
 from typing import Optional
 
+import torch
+
 from src.common.setting_config import Settings, get_settings
 from src.graph.embedder import NodeEmbedder
 from src.graph.graph_repository import LegalGraphRepository
@@ -113,10 +115,15 @@ def build_services(settings: Optional[Settings] = None) -> AppServices:
     graph_repository = LegalGraphRepository(db=neo4j_client)
     graph_service = LegalGraphService(repository=graph_repository)
 
-    logger.info("Nạp embedding model: %s", settings.embedding_model_name)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    logger.info("Device được chọn tự động: %s", device)
+
+    logger.info(
+        "Nạp embedding model: %s (device=%s)", settings.embedding_model_name, device
+    )
     embedder = NodeEmbedder(
         model_name=settings.embedding_model_name,
-        device=settings.embedding_device,
+        device=device,
         batch_size=settings.embedding_batch_size,
     )
     embedder.load_model()
