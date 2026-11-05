@@ -10,5 +10,131 @@
     "citation": "khoản 18 Điều 3",
     "evidence": "...loại xe tương tự theo quy định tại khoản 18 Điều 3 của Luật Giao thông đường bộ năm 2...",
     "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D31_K2",
+    "citation": "Luật quốc tịch Việt Nam",
+    "target_document_hint": "LUAT_QUOC_TICH",
+    "evidence": "2. Việc xác định, thay đổi, nhập, thôi, trở lại quốc tịch Việt Nam do Luật quốc tịch Việt Nam quy định.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D35_K3",
+    "citation": "Luật hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác",
+    "target_document_hint": "LUAT_HIEN_MO_XAC",
+    "evidence": "3. Việc hiến, lấy mô, bộ phận cơ thể người, hiến, lấy xác phải tuân thủ theo các điều kiện và được thực hiện theo quy định của Bộ luật này, Luật hiến, lấy, ghép mô, bộ phận cơ thể người và hiến, lấy xác và luật khác có liên quan.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D75_K3",
+    "citation": "Luật doanh nghiệp",
+    "target_document_hint": "LUAT_DOANH_NGHIEP",
+    "evidence": "3. Việc thành lập, hoạt động và chấm dứt pháp nhân thương mại được thực hiện theo quy định của Bộ luật này, Luật doanh nghiệp và quy định khác của pháp luật có liên quan.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D101_K2",
+    "citation": "Luật đất đai",
+    "target_document_hint": "LUAT_DAT_DAI",
+    "evidence": "2. Việc xác định chủ thể của quan hệ dân sự có sự tham gia của hộ gia đình sử dụng đất được thực hiện theo quy định của Luật đất đai.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D155_K3",
+    "citation": "Luật đất đai",
+    "target_document_hint": "LUAT_DAT_DAI",
+    "evidence": "3. Tranh chấp về quyền sử dụng đất theo quy định của Luật đất đai.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D196_K2",
+    "citation": "Luật di sản văn hóa",
+    "target_document_hint": "LUAT_DI_SAN_VAN_HOA",
+    "evidence": "2. Khi tài sản đem bán là tài sản thuộc di tích lịch sử - văn hóa theo quy định của Luật di sản văn hóa thì Nhà nước có quyền ưu tiên mua.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D214_K1",
+    "citation": "Luật nhà ở",
+    "target_document_hint": "LUAT_NHA_O",
+    "evidence": "1. Phần diện tích, trang thiết bị và các tài sản khác dùng chung trong nhà chung cư theo quy định của Luật nhà ở thuộc sở hữu chung hợp nhất của tất cả chủ sở hữu các căn hộ trong nhà đó và không phân chia, trừ trường hợp luật có quy định khác hoặc tất cả các chủ sở hữu có thỏa thuận khác.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D222",
+    "citation": "Luật sở hữu trí tuệ",
+    "target_document_hint": "LUAT_SO_HUU_TRI_TUE",
+    "evidence": "Người tiến hành hoạt động sáng tạo có quyền sở hữu đối với tài sản có được từ hoạt động sáng tạo theo quy định của Luật sở hữu trí tuệ.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D229",
+    "citation": "Luật di sản văn hóa",
+    "target_document_hint": "LUAT_DI_SAN_VAN_HOA",
+    "evidence": "a) Tài sản được tìm thấy là tài sản thuộc di tích lịch sử - văn hóa theo quy định của Luật di sản văn hóa thì thuộc về Nhà nước; người tìm thấy tài sản đó được hưởng một khoản tiền thưởng theo quy định của pháp luật;",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D230",
+    "citation": "Luật di sản văn hóa",
+    "target_document_hint": "LUAT_DI_SAN_VAN_HOA",
+    "evidence": "b) Trường hợp tài sản bị đánh rơi, bị bỏ quên là tài sản thuộc di tích lịch sử - văn hóa theo quy định của Luật di sản văn hóa thì tài sản đó thuộc về Nhà nước; người nhặt được tài sản được hưởng một khoản tiền thưởng theo quy định của pháp luật.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D272_K4",
+    "citation": "Luật đất đai",
+    "target_document_hint": "LUAT_DAT_DAI",
+    "evidence": "4. Quyền sử dụng đất có quyền bề mặt bị thu hồi theo quy định của Luật đất đai.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D384",
+    "citation": "Luật phá sản",
+    "target_document_hint": "LUAT_PHA_SAN",
+    "evidence": "Trường hợp phá sản thì nghĩa vụ chấm dứt theo quy định của Luật phá sản.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D430",
+    "citation": "Luật nhà ở",
+    "target_document_hint": "LUAT_NHA_O",
+    "evidence": "Hợp đồng mua bán nhà ở, mua bán nhà để sử dụng vào mục đích khác được thực hiện theo quy định của Bộ luật này, Luật nhà ở và luật khác có liên quan.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D432",
+    "citation": "Luật bảo vệ quyền lợi người tiêu dùng",
+    "target_document_hint": "LUAT_BVQL_NGUOI_TIEU_DUNG",
+    "evidence": "Trường hợp không có tiêu chuẩn về chất lượng của tài sản đã được công bố, quy định của cơ quan nhà nước có thẩm quyền và tiêu chuẩn ngành nghề thì chất lượng của tài sản mua bán được xác định theo tiêu chuẩn thông thường hoặc theo tiêu chuẩn riêng phù hợp với mục đích giao kết hợp đồng và theo quy định của Luật bảo vệ quyền lợi người tiêu dùng.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D472",
+    "citation": "Luật nhà ở",
+    "target_document_hint": "LUAT_NHA_O",
+    "evidence": "Hợp đồng thuê nhà ở, hợp đồng thuê nhà để sử dụng vào mục đích khác được thực hiện theo quy định của Bộ luật này, Luật nhà ở và quy định khác của pháp luật có liên quan.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D500",
+    "citation": "Luật đất đai",
+    "target_document_hint": "LUAT_DAT_DAI",
+    "evidence": "Hợp đồng về quyền sử dụng đất là sự thỏa thuận giữa các bên, theo đó người sử dụng đất chuyển đổi, chuyển nhượng, cho thuê, cho thuê lại, tặng cho, thế chấp, góp vốn quyền sử dụng đất hoặc thực hiện quyền khác theo quy định của Luật đất đai cho bên kia; bên kia thực hiện quyền, nghĩa vụ theo hợp đồng với người sử dụng đất.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D503",
+    "citation": "Luật đất đai",
+    "target_document_hint": "LUAT_DAT_DAI",
+    "evidence": "Việc chuyển quyền sử dụng đất có hiệu lực kể từ thời điểm đăng ký theo quy định của Luật đất đai.",
+    "reason": "EXTERNAL_DOCUMENT"
+  },
+  {
+    "source_id": "BLDS_2015_D598",
+    "citation": "Luật trách nhiệm bồi thường của Nhà nước",
+    "target_document_hint": "LUAT_TNBT_NHA_NUOC",
+    "evidence": "Nhà nước có trách nhiệm bồi thường thiệt hại do hành vi trái pháp luật của người thi hành công vụ gây ra theo quy định của Luật trách nhiệm bồi thường của Nhà nước.",
+    "reason": "EXTERNAL_DOCUMENT"
   }
 ]

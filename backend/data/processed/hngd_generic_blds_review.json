@@ -1,0 +1,218 @@
+[
+  {
+    "source_node_id": "LUAT_HNGD_2014_D6",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": "Áp dụng quy định của Bộ luật dân sự và các luật khác có liên quan Các quy định của Bộ luật dân sự và các luật khác có liên quan đến quan hệ hôn nhân và gia đình được áp dụng đối với quan hệ hôn nhân và gia đình trong trường hợp Luật này không quy định."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D16_K1",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Quan hệ tài sản, nghĩa vụ và hợp đồng của nam, nữ chung sống với nhau như vợ chồng mà không đăng ký kết hôn được giải quyết theo thỏa thuận giữa các bên; trong trường hợp không có thỏa thuận thì giải quyết theo quy định của Bộ luật dân sự và các quy định khác của pháp luật có li"
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D18",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": "Bảo vệ quyền, nghĩa vụ về nhân thân của vợ, chồng Quyền, nghĩa vụ về nhân thân của vợ, chồng quy định tại Luật này, Bộ luật dân sự và các luật khác có liên quan được tôn trọng và bảo vệ."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D24_K1",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Việc đại diện giữa vợ và chồng trong xác lập, thực hiện, chấm dứt giao dịch được xác định theo quy định của Luật này, Bộ luật dân sự và các luật khác có liên quan."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D24_K2",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Vợ, chồng có thể ủy quyền cho nhau xác lập, thực hiện và chấm dứt giao dịch mà theo quy định của Luật này, Bộ luật dân sự và các luật khác có liên quan phải có sự đồng ý của cả hai vợ chồng."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D24_K3",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Vợ, chồng đại diện cho nhau khi một bên mất năng lực hành vi dân sự mà bên kia có đủ điều kiện làm người giám hộ hoặc khi một bên bị hạn chế năng lực hành vi dân sự mà bên kia được Tòa án chỉ định làm người đại diện theo pháp luật cho người đó, trừ trường hợp theo quy định của p"
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D32_K2",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Trong giao dịch với người thứ ba ngay tình thì vợ, chồng đang chiếm hữu động sản mà theo quy định của pháp luật không phải đăng ký quyền sở hữu được coi là người có quyền xác lập, thực hiện giao dịch liên quan đến tài sản đó trong trường hợp Bộ luật dân sự có quy định về việc bả"
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D37_K5",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Nghĩa vụ bồi thường thiệt hại do con gây ra mà theo quy định của Bộ luật dân sự thì cha mẹ phải bồi thường;"
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D42_K2_DIEM_E",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Nghĩa vụ khác về tài sản theo quy định của Luật này, Bộ luật dân sự và quy định khác của pháp luật có liên quan."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D50_K1_DIEM_A",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Không tuân thủ điều kiện có hiệu lực của giao dịch được quy định tại Bộ luật dân sự và các luật khác có liên quan;"
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D60_K2",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Trong trường hợp có tranh chấp về quyền, nghĩa vụ tài sản thì áp dụng quy định tại các điều 27, 37 và 45 của Luật này và quy định của Bộ luật dân sự để giải quyết."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D66_K3",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Trong trường hợp việc chia di sản ảnh hưởng nghiêm trọng đến đời sống của vợ hoặc chồng còn sống, gia đình thì vợ, chồng còn sống có quyền yêu cầu Tòa án hạn chế phân chia di sản theo quy định của Bộ luật dân sự."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D68_K1",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Quyền và nghĩa vụ của cha mẹ và con theo quy định tại Luật này, Bộ luật dân sự và các luật khác có liên quan được tôn trọng và bảo vệ."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D68_K2",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Con sinh ra không phụ thuộc vào tình trạng hôn nhân của cha mẹ đều có quyền và nghĩa vụ như nhau đối với cha mẹ của mình được quy định tại Luật này, Bộ luật dân sự và các luật khác có liên quan."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D68_K3",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Giữa con nuôi và cha nuôi, mẹ nuôi có các quyền và nghĩa vụ của cha mẹ và con được quy định tại Luật này, Luật nuôi con nuôi, Bộ luật dân sự và các luật khác có liên quan."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D69_K3",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Giám hộ hoặc đại diện theo quy định của Bộ luật dân sự cho con chưa thành niên, con đã thành niên mất năng lực hành vi dân sự."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D73_K4",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Cha, mẹ phải chịu trách nhiệm liên đới về việc thực hiện giao dịch liên quan đến tài sản của con được quy định tại khoản 2 và khoản 3 Điều này và theo quy định của Bộ luật dân sự."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D74",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": "Bồi thường thiệt hại do con gây ra Cha mẹ phải bồi thường thiệt hại do con chưa thành niên, con đã thành niên mất năng lực hành vi dân sự gây ra theo quy định của Bộ luật dân sự."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D76_K3",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Cha mẹ không quản lý tài sản riêng của con trong trường hợp con đang được người khác giám hộ theo quy định của Bộ luật dân sự; người tặng cho tài sản hoặc để lại tài sản thừa kế theo di chúc cho người con đã chỉ định người khác quản lý tài sản đó hoặc trường hợp khác theo quy đị"
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D76_K4",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Trong trường hợp cha mẹ đang quản lý tài sản riêng của con chưa thành niên, con đã thành niên mất năng lực hành vi dân sự mà con được giao cho người khác giám hộ thì tài sản riêng của con được giao lại cho người giám hộ quản lý theo quy định của Bộ luật dân sự."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D78_K3",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Quyền, nghĩa vụ giữa cha đẻ, mẹ đẻ và con đẻ được khôi phục kể từ thời điểm quan hệ nuôi con nuôi chấm dứt. Trong trường hợp cha đẻ, mẹ đẻ không còn hoặc không có đủ điều kiện để nuôi con chưa thành niên, con đã thành niên mất năng lực hành vi dân sự hoặc không có khả năng lao đ"
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D81_K1",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Sau khi ly hôn, cha mẹ vẫn có quyền, nghĩa vụ trông nom, chăm sóc, nuôi dưỡng, giáo dục con chưa thành niên, con đã thành niên mất năng lực hành vi dân sự hoặc không có khả năng lao động và không có tài sản để tự nuôi mình theo quy định của Luật này, Bộ luật dân sự và các luật k"
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D84_K4",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Trong trường hợp xét thấy cả cha và mẹ đều không đủ điều kiện trực tiếp nuôi con thì Tòa án quyết định giao con cho người giám hộ theo quy định của Bộ luật dân sự."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D87_K2",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Việc trông nom, chăm sóc, giáo dục con và quản lý tài sản riêng của con chưa thành niên được giao cho người giám hộ theo quy định của Bộ luật dân sự và Luật này trong các trường hợp sau đây:"
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D98_K4",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Giữa con sinh ra từ việc mang thai hộ với các thành viên khác của gia đình bên nhờ mang thai hộ có các quyền, nghĩa vụ theo quy định của Luật này, Bộ luật dân sự và luật khác có liên quan."
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D99_K2",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Trong trường hợp chưa giao đứa trẻ mà cả hai vợ chồng bên nhờ mang thai hộ chết hoặc mất năng lực hành vi dân sự thì bên mang thai hộ có quyền nhận nuôi đứa trẻ; nếu bên mang thai hộ không nhận nuôi đứa trẻ thì việc giám hộ và cấp dưỡng đối với đứa trẻ được thực hiện theo quy đị"
+  },
+  {
+    "source_node_id": "LUAT_HNGD_2014_D103_K1",
+    "target_mention": "Bộ luật dân sự",
+    "target_document_id": null,
+    "resolution": "REVIEW_REQUIRED",
+    "reason": "Tên BLDS không có số hiệu/năm; không tự suy ra BLDS 2015",
+    "evidence_excerpt": " Các thành viên gia đình có quyền, nghĩa vụ quan tâm, chăm sóc, giúp đỡ, tôn trọng nhau. Quyền, lợi ích hợp pháp về nhân thân và tài sản của các thành viên gia đình quy định tại Luật này, Bộ luật dân sự và các luật khác có liên quan được pháp luật bảo vệ."
+  }
+]

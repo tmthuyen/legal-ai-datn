@@ -1,0 +1,890 @@
+[
+  {
+    "source_node_id": "BLDS_2015_D9_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "2. Việc cá nhân, pháp nhân không thực hiện quyền dân sự của mình không phải là căn cứ làm chấm dứt quyền, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D13",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp các bên có thỏa thuận khác hoặc luật có quy định khác",
+    "evidence": "Cá nhân, pháp nhân có quyền dân sự bị xâm phạm được bồi thường toàn bộ thiệt hại, trừ trường hợp các bên có thỏa thuận khác hoặc luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D27",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch quy định",
+    "evidence": "h) Trường hợp khác do pháp luật về hộ tịch quy định.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D28",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch quy định",
+    "evidence": "g) Trường hợp khác do pháp luật về hộ tịch quy định.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D30_K4",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch quy định",
+    "evidence": "4. Việc khai sinh, khai tử do pháp luật về hộ tịch quy định.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D33_K2",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về khám bệnh",
+    "evidence": "2. Khi phát hiện người bị tai nạn, bệnh tật mà tính mạng bị đe dọa thì người phát hiện có trách nhiệm hoặc yêu cầu cá nhân, cơ quan, tổ chức khác có điều kiện cần thiết đưa ngay đến cơ sở khám bệnh, chữa bệnh nơi gần nhất; cơ sở khám bệnh, chữa bệnh có trách nhiệm thực hiện việc khám bệnh, chữa bệnh theo quy định của pháp luật về khám bệnh, chữa bệnh.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D34",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật liên quan có quy định khác",
+    "evidence": "Việc bảo vệ danh dự, nhân phẩm, uy tín có thể được thực hiện sau khi cá nhân chết theo yêu cầu của vợ, chồng hoặc con thành niên; trường hợp không có những người này thì theo yêu cầu của cha, mẹ của người đã chết, trừ trường hợp luật liên quan có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D36_K3",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch",
+    "evidence": "3. Cá nhân đã thực hiện việc xác định lại giới tính có quyền, nghĩa vụ đăng ký thay đổi hộ tịch theo quy định của pháp luật về hộ tịch; có quyền nhân thân phù hợp với giới tính đã được xác định lại theo quy định của Bộ luật này và luật khác có liên quan.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D37",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch",
+    "evidence": "Việc chuyển đổi giới tính được thực hiện theo quy định của luật. Cá nhân đã chuyển đổi giới tính có quyền, nghĩa vụ đăng ký thay đổi hộ tịch theo quy định của pháp luật về hộ tịch; có quyền nhân thân phù hợp với giới tính đã được chuyển đổi theo quy định của Bộ luật này và luật khác có liên quan.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D38_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "2. Việc thu thập, lưu giữ, sử dụng, công khai thông tin liên quan đến đời sống riêng tư, bí mật cá nhân phải được người đó đồng ý, việc thu thập, lưu giữ, sử dụng, công khai thông tin liên quan đến bí mật gia đình phải được các thành viên gia đình đồng ý, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D46_K3",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch",
+    "evidence": "3. Việc giám hộ phải được đăng ký tại cơ quan nhà nước có thẩm quyền theo quy định của pháp luật về hộ tịch.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D56_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "2. Quản lý tài sản của người được giám hộ, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D60_K3",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch",
+    "evidence": "3. Thủ tục thay đổi người giám hộ được thực hiện theo quy định của pháp luật về hộ tịch.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D62_K2",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch",
+    "evidence": "2. Thủ tục chấm dứt việc giám hộ thực hiện theo quy định của pháp luật về hộ tịch.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D63_K2",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về thừa kế",
+    "evidence": "2. Trường hợp người được giám hộ chết thì trong thời hạn 03 tháng, kể từ ngày chấm dứt việc giám hộ, người giám hộ thanh toán tài sản với người thừa kế hoặc giao tài sản cho người quản lý di sản của người được giám hộ, chuyển giao quyền, nghĩa vụ phát sinh từ giao dịch dân sự vì lợi ích của người được giám hộ cho người thừa kế của người được giám hộ; nếu hết thời hạn đó mà chưa xác định được người thừa kế thì người giám hộ tiếp tục quản lý tài sản của người được giám hộ cho đến khi tài sản được giải quyết theo quy định của pháp luật về thừa kế và thông báo cho Ủy ban nhân dân cấp xã nơi cư trú của người được giám hộ.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D64",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về tố tụng dân sự",
+    "evidence": "Khi một người biệt tích 06 tháng liền trở lên thì những người có quyền, lợi ích liên quan có quyền yêu cầu Tòa án thông báo tìm kiếm người vắng mặt tại nơi cư trú theo quy định của pháp luật về tố tụng dân sự và có thể yêu cầu Tòa án áp dụng biện pháp quản lý tài sản của người vắng mặt tại nơi cư trú quy định tại Điều 65 của Bộ luật này.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D68_K2",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hôn nhân",
+    "evidence": "2. Trường hợp vợ hoặc chồng của người bị tuyên bố mất tích xin ly hôn thì Tòa án giải quyết cho ly hôn theo quy định của pháp luật về hôn nhân và gia đình.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D68_K3",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch",
+    "evidence": "3. Quyết định của Tòa án tuyên bố một người mất tích phải được gửi cho Ủy ban nhân dân cấp xã nơi cư trú cuối cùng của người bị tuyên bố mất tích để ghi chú theo quy định của pháp luật về hộ tịch.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D70_K4",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch",
+    "evidence": "4. Quyết định của Tòa án hủy bỏ quyết định tuyên bố một người mất tích phải được gửi cho Ủy ban nhân dân cấp xã nơi cư trú của người bị tuyên bố mất tích để ghi chú theo quy định của pháp luật về hộ tịch.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D71",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "c) Bị tai nạn hoặc thảm họa, thiên tai mà sau 02 năm, kể từ ngày tai nạn hoặc thảm hoạ, thiên tai đó chấm dứt vẫn không có tin tức xác thực là còn sống, trừ trường hợp pháp luật có quy định khác;",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D71_K3",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch",
+    "evidence": "3. Quyết định của Tòa án tuyên bố một người là đã chết phải được gửi cho Ủy ban nhân dân cấp xã nơi cư trú của người bị tuyên bố là đã chết để ghi chú theo quy định của pháp luật về hộ tịch.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D72_K2",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về thừa kế",
+    "evidence": "2. Quan hệ tài sản của người bị Tòa án tuyên bố là đã chết được giải quyết như đối với người đã chết; tài sản của người đó được giải quyết theo quy định của pháp luật về thừa kế.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D73_K5",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hộ tịch",
+    "evidence": "5. Quyết định của Tòa án hủy bỏ quyết định tuyên bố một người là đã chết phải được gửi cho Ủy ban nhân dân cấp xã nơi cư trú của người bị tuyên bố là đã chết để ghi chú theo quy định của pháp luật về hộ tịch.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D74_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "2. Mọi cá nhân, pháp nhân đều có quyền thành lập pháp nhân, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D87",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác",
+    "evidence": "Pháp nhân chịu trách nhiệm dân sự về nghĩa vụ do sáng lập viên hoặc đại diện của sáng lập viên xác lập, thực hiện để thành lập, đăng ký pháp nhân, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D87_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "2. Pháp nhân chịu trách nhiệm dân sự bằng tài sản của mình; không chịu trách nhiệm thay cho người của pháp nhân đối với nghĩa vụ dân sự do người của pháp nhân xác lập, thực hiện không nhân danh pháp nhân, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D87_K3",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "3. Người của pháp nhân không chịu trách nhiệm dân sự thay cho pháp nhân đối với nghĩa vụ dân sự do pháp nhân xác lập, thực hiện, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D94_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp quy định tại khoản 3 Điều này hoặc pháp luật có quy định khác",
+    "evidence": "2. Sau khi đã thanh toán hết chi phí giải thể pháp nhân và các khoản nợ, phần còn lại thuộc về chủ sở hữu pháp nhân, các thành viên góp vốn, trừ trường hợp quy định tại khoản 3 Điều này hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D95",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về phá sản",
+    "evidence": "Việc phá sản pháp nhân được thực hiện theo quy định của pháp luật về phá sản.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D96",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về phá sản",
+    "evidence": "b) Bị tuyên bố phá sản theo quy định của pháp luật về phá sản.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D98",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về chức năng",
+    "evidence": "Việc đại diện cho Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam, cơ quan nhà nước ở trung ương, ở địa phương tham gia quan hệ dân sự được thực hiện theo quy định của pháp luật về chức năng, nhiệm vụ, quyền hạn và tổ chức bộ máy của cơ quan nhà nước. Việc đại diện thông qua cá nhân, pháp nhân khác chỉ được thực hiện trong các trường hợp và theo trình tự, thủ tục do pháp luật quy định.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D99_K4",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật liên quan có quy định khác",
+    "evidence": "4. Cơ quan nhà nước ở Trung ương, ở địa phương không chịu trách nhiệm về nghĩa vụ dân sự của Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam, cơ quan nhà nước khác ở Trung ương, ở địa phương, trừ trường hợp luật liên quan có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D102_K3",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "3. Việc xác định tài sản chung của các thành viên của tổ chức khác không có tư cách pháp nhân, quyền, nghĩa vụ đối với tài sản này được xác định theo thỏa thuận của các thành viên, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D106_K1",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về đăng ký tài sản",
+    "evidence": "1. Quyền sở hữu, quyền khác đối với tài sản là bất động sản được đăng ký theo quy định của Bộ luật này và pháp luật về đăng ký tài sản.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D106_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật về đăng ký tài sản có quy định khác",
+    "evidence": "2. Quyền sở hữu, quyền khác đối với tài sản là động sản không phải đăng ký, trừ trường hợp pháp luật về đăng ký tài sản có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D122",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp Bộ luật này có quy định khác",
+    "evidence": "Giao dịch dân sự không có một trong các điều kiện được quy định tại Điều 117 của Bộ luật này thì vô hiệu, trừ trường hợp Bộ luật này có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D141_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "2. Trường hợp không xác định được cụ thể phạm vi đại diện theo quy định tại khoản 1 Điều này thì người đại diện theo pháp luật có quyền xác lập, thực hiện mọi giao dịch dân sự vì lợi ích của người được đại diện, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D141_K3",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "3. Một cá nhân, pháp nhân có thể đại diện cho nhiều cá nhân hoặc pháp nhân khác nhau nhưng không được nhân danh người được đại diện để xác lập, thực hiện giao dịch dân sự với chính mình hoặc với bên thứ ba mà mình cũng là người đại diện của người đó, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D145_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "1. Cách tính thời hạn được áp dụng theo quy định của Bộ luật này, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D154_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "1. Thời hiệu khởi kiện vụ án dân sự được tính từ ngày người có quyền yêu cầu biết hoặc phải biết quyền, lợi ích hợp pháp của mình bị xâm phạm, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D154_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "2. Thời hiệu yêu cầu giải quyết việc dân sự được tính từ ngày phát sinh quyền yêu cầu, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D172",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về bảo vệ môi trường",
+    "evidence": "Khi thực hiện quyền sở hữu, quyền khác đối với tài sản thì chủ thể phải tuân theo quy định của pháp luật về bảo vệ môi trường; nếu làm ô nhiễm môi trường thì phải chấm dứt hành vi gây ô nhiễm, thực hiện các biện pháp để khắc phục hậu quả và bồi thường thiệt hại.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D174",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về xây dựng",
+    "evidence": "Khi xây dựng công trình, chủ sở hữu, chủ thể có quyền khác đối với tài sản phải tuân theo pháp luật về xây dựng, bảo đảm an toàn, không được xây vượt quá độ cao, khoảng cách mà pháp luật về xây dựng quy định và không được xâm phạm đến quyền, lợi ích hợp pháp của chủ sở hữu, người có quyền khác đối với tài sản là bất động sản liền kề và xung quanh.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D174",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về xây dựng quy định",
+    "evidence": "Khi xây dựng công trình, chủ sở hữu, chủ thể có quyền khác đối với tài sản phải tuân theo pháp luật về xây dựng, bảo đảm an toàn, không được xây vượt quá độ cao, khoảng cách mà pháp luật về xây dựng quy định và không được xâm phạm đến quyền, lợi ích hợp pháp của chủ sở hữu, người có quyền khác đối với tài sản là bất động sản liền kề và xung quanh.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D177_K2",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về xây dựng quy định",
+    "evidence": "2. Khi đào giếng, đào ao hoặc xây dựng công trình dưới mặt đất, chủ sở hữu công trình phải đào, xây cách mốc giới một khoảng cách do pháp luật về xây dựng quy định.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D178_K1",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về xây dựng",
+    "evidence": "1. Chủ sở hữu nhà chỉ được trổ cửa ra vào, cửa sổ quay sang nhà bên cạnh, nhà đối diện và đường đi chung theo quy định của pháp luật về xây dựng.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D200_K1",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về doanh nghiệp",
+    "evidence": "1. Khi tài sản thuộc sở hữu toàn dân được đầu tư vào doanh nghiệp thì Nhà nước thực hiện quyền của chủ sở hữu đối với tài sản đó theo quy định của pháp luật về doanh nghiệp, quản lý, sử dụng vốn nhà nước đầu tư vào sản xuất, kinh doanh tại doanh nghiệp và quy định khác của pháp luật có liên quan.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D212_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "2. Việc chiếm hữu, sử dụng, định đoạt tài sản chung của các thành viên gia đình được thực hiện theo phương thức thỏa thuận. Trường hợp định đoạt tài sản là bất động sản, động sản có đăng ký, tài sản là nguồn thu nhập chủ yếu của gia đình phải có sự thỏa thuận của tất cả các thành viên gia đình là người thành niên có năng lực hành vi dân sự đầy đủ, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D213_K5",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về hôn nhân",
+    "evidence": "5. Trường hợp vợ chồng lựa chọn chế độ tài sản theo thỏa thuận theo quy định của pháp luật về hôn nhân và gia đình thì tài sản chung của vợ chồng được áp dụng theo chế độ tài sản này.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D214_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "1. Phần diện tích, trang thiết bị và các tài sản khác dùng chung trong nhà chung cư theo quy định của Luật nhà ở thuộc sở hữu chung hợp nhất của tất cả chủ sở hữu các căn hộ trong nhà đó và không phân chia, trừ trường hợp luật có quy định khác hoặc tất cả các chủ sở hữu có thỏa thuận khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D214_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "2. Chủ sở hữu các căn hộ trong nhà chung cư có quyền, nghĩa vụ ngang nhau trong việc quản lý, sử dụng tài sản quy định tại khoản 1 Điều này, trừ trường hợp luật có quy định khác hoặc có thỏa thuận khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D216",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "Các chủ sở hữu chung cùng quản lý tài sản chung theo nguyên tắc nhất trí, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D217_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "1. Mỗi chủ sở hữu chung theo phần có quyền khai thác công dụng, hưởng hoa lợi, lợi tức từ tài sản chung tương ứng với phần quyền sở hữu của mình, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D219_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "2. Trường hợp có người yêu cầu một người trong số các chủ sở hữu chung thực hiện nghĩa vụ thanh toán và chủ sở hữu chung đó không có tài sản riêng hoặc tài sản riêng không đủ để thanh toán thì người yêu cầu có quyền yêu cầu chia tài sản chung và tham gia vào việc chia tài sản chung, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D228",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "Người đã phát hiện, người đang quản lý tài sản vô chủ là động sản thì có quyền sở hữu tài sản đó, trừ trường hợp luật có quy định khác; nếu tài sản là bất động sản thì thuộc về Nhà nước.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D241_K4",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về đất đai",
+    "evidence": "4. Việc xử lý quyền sử dụng đất được thực hiện theo quy định của pháp luật về đất đai.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D247",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật liên quan có quy định khác",
+    "evidence": "Quyền đối với bất động sản liền kề có hiệu lực đối với mọi cá nhân, pháp nhân và được chuyển giao khi bất động sản được chuyển giao, trừ trường hợp luật liên quan có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D259",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật liên quan có quy định khác",
+    "evidence": "Quyền hưởng dụng được xác lập từ thời điểm nhận chuyển giao tài sản, trừ trường hợp có thỏa thuận khác hoặc luật liên quan có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D259",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật liên quan có quy định khác",
+    "evidence": "Quyền hưởng dụng đã được xác lập có hiệu lực đối với mọi cá nhân, pháp nhân, trừ trường hợp luật liên quan có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D266",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác",
+    "evidence": "Tài sản là đối tượng của quyền hưởng dụng phải được hoàn trả cho chủ sở hữu khi chấm dứt quyền hưởng dụng, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D269",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật liên quan có quy định khác",
+    "evidence": "Quyền bề mặt có hiệu lực từ thời điểm chủ thể có quyền sử dụng đất chuyển giao mặt đất, mặt nước, khoảng không gian trên mặt đất, mặt nước và lòng đất cho chủ thể có quyền bề mặt, trừ trường hợp có thỏa thuận khác hoặc luật liên quan có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D269",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật liên quan có quy định khác",
+    "evidence": "Quyền bề mặt có hiệu lực đối với mọi cá nhân, pháp nhân, trừ trường hợp luật liên quan có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D271_K1",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về đất đai",
+    "evidence": "1. Chủ thể quyền bề mặt có quyền khai thác, sử dụng mặt đất, mặt nước, khoảng không gian trên mặt đất, mặt nước và lòng đất thuộc quyền sử dụng đất của người khác để xây dựng công trình, trồng cây, canh tác nhưng không được trái với quy định của Bộ luật này, pháp luật về đất đai, xây dựng, quy hoạch, tài nguyên, khoáng sản và quy định khác của pháp luật có liên quan.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D294_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "1. Trường hợp bảo đảm thực hiện nghĩa vụ trong tương lai, các bên có quyền thỏa thuận cụ thể về phạm vi nghĩa vụ được bảo đảm và thời hạn thực hiện nghĩa vụ được bảo đảm, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D296_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "1. Một tài sản có thể được dùng để bảo đảm thực hiện nhiều nghĩa vụ, nếu có giá trị tại thời điểm xác lập giao dịch bảo đảm lớn hơn tổng giá trị các nghĩa vụ được bảo đảm, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D301",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật liên quan có quy định khác",
+    "evidence": "Trường hợp người đang giữ tài sản không giao tài sản thì bên nhận bảo đảm có quyền yêu cầu Tòa án giải quyết, trừ trường hợp luật liên quan có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D302",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "Trước thời điểm xử lý tài sản bảo đảm mà bên bảo đảm thực hiện đầy đủ nghĩa vụ của mình đối với bên nhận bảo đảm và thanh toán chi phí phát sinh do việc chậm thực hiện nghĩa vụ thì có quyền nhận lại tài sản đó, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D303_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "2. Trường hợp không có thỏa thuận về phương thức xử lý tài sản bảo đảm theo quy định tại khoản 1 Điều này thì tài sản được bán đấu giá, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D304_K1",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về bán đấu giá tài sản",
+    "evidence": "1. Việc bán đấu giá tài sản cầm cố, thế chấp được thực hiện theo quy định của pháp luật về bán đấu giá tài sản.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D310_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác",
+    "evidence": "1. Hợp đồng cầm cố tài sản có hiệu lực từ thời điểm giao kết, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D319_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác",
+    "evidence": "1. Hợp đồng thế chấp tài sản có hiệu lực từ thời điểm giao kết, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D320_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "1. Giao giấy tờ liên quan đến tài sản thế chấp trong trường hợp các bên có thỏa thuận, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D323_K6",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "6. Giữ giấy tờ liên quan đến tài sản thế chấp trong trường hợp các bên có thỏa thuận, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D341_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận hoặc pháp luật có quy định khác",
+    "evidence": "1. Trường hợp bên bảo lãnh phải thực hiện nghĩa vụ bảo lãnh mà bên nhận bảo lãnh miễn việc thực hiện nghĩa vụ cho bên bảo lãnh thì bên được bảo lãnh không phải thực hiện nghĩa vụ đối với bên nhận bảo lãnh, trừ trường hợp có thỏa thuận hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D351_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "2. Trường hợp bên có nghĩa vụ không thực hiện đúng nghĩa vụ do sự kiện bất khả kháng thì không phải chịu trách nhiệm dân sự, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D359",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "Bên có quyền chậm tiếp nhận việc thực hiện nghĩa vụ làm phát sinh thiệt hại cho bên có nghĩa vụ thì phải bồi thường thiệt hại cho bên đó và phải chịu mọi rủi ro, chi phí phát sinh kể từ thời điểm chậm tiếp nhận, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D360",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác",
+    "evidence": "Trường hợp có thiệt hại do vi phạm nghĩa vụ gây ra thì bên có nghĩa vụ phải bồi thường toàn bộ thiệt hại, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D376_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "1. Nghĩa vụ chấm dứt khi bên có quyền miễn việc thực hiện nghĩa vụ cho bên có nghĩa vụ, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D378_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "1. Trường hợp các bên cùng có nghĩa vụ về tài sản cùng loại đối với nhau thì khi cùng đến hạn họ không phải thực hiện nghĩa vụ đối với nhau và nghĩa vụ được xem là chấm dứt, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D388",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật liên quan có quy định khác",
+    "evidence": "b) Nếu bên đề nghị không ấn định thì đề nghị giao kết hợp đồng có hiệu lực kể từ khi bên được đề nghị nhận được đề nghị đó, trừ trường hợp luật liên quan có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D401_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật liên quan có quy định khác",
+    "evidence": "1. Hợp đồng được giao kết hợp pháp có hiệu lực từ thời điểm giao kết, trừ trường hợp có thỏa thuận khác hoặc luật liên quan có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D418_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật liên quan có quy định khác",
+    "evidence": "2. Mức phạt vi phạm do các bên thỏa thuận, trừ trường hợp luật liên quan có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D427",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "Trường hợp các bên cùng có nghĩa vụ hoàn trả thì việc hoàn trả phải được thực hiện cùng một thời điểm, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D441_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác",
+    "evidence": "1. Bên bán chịu rủi ro đối với tài sản trước khi tài sản được giao cho bên mua, bên mua chịu rủi ro đối với tài sản kể từ thời điểm nhận tài sản, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D442_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "1. Chi phí vận chuyển và chi phí liên quan đến việc chuyển quyền sở hữu do các bên thỏa thuận, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D451",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "Tài sản có thể được đem bán đấu giá theo ý chí của chủ sở hữu hoặc theo quy định của pháp luật. Tài sản thuộc sở hữu chung đem bán đấu giá phải có sự đồng ý của tất cả các chủ sở hữu chung, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D451",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về bán đấu giá tài sản",
+    "evidence": "Việc bán đấu giá tài sản phải đảm bảo nguyên tắc khách quan, công khai, minh bạch, bảo đảm quyền, lợi ích hợp pháp của các bên tham gia và được thực hiện theo quy định của pháp luật về bán đấu giá tài sản.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D454",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật liên quan có quy định khác",
+    "evidence": "Thời hạn chuộc lại tài sản do các bên thỏa thuận; trường hợp không có thỏa thuận thì thời hạn chuộc lại không quá 01 năm đối với động sản và 05 năm đối với bất động sản kể từ thời điểm giao tài sản, trừ trường hợp luật liên quan có quy định khác. Trong thời hạn này, bên bán có quyền chuộc lại bất cứ lúc nào, nhưng phải báo trước cho bên mua trong một thời gian hợp lý. Giá chuộc lại là giá thị trường tại thời điểm và địa điểm chuộc lại, trừ trường hợp có thỏa thuận khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D456",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "Trường hợp tài sản trao đổi chênh lệch về giá trị thì các bên phải thanh toán cho nhau phần chênh lệch đó, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D466_K4",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác",
+    "evidence": "4. Trường hợp vay không có lãi mà khi đến hạn bên vay không trả nợ hoặc trả không đầy đủ thì bên cho vay có quyền yêu cầu trả tiền lãi với mức lãi suất theo quy định tại khoản 2 Điều 468 của Bộ luật này trên số tiền chậm trả tương ứng với thời gian chậm trả, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D470_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác",
+    "evidence": "2. Đối với hợp đồng vay có kỳ hạn và có lãi thì bên vay có quyền trả lại tài sản trước kỳ hạn, nhưng phải trả toàn bộ lãi theo kỳ hạn, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D473_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp luật có quy định khác",
+    "evidence": "1. Giá thuê do các bên thỏa thuận hoặc do người thứ ba xác định theo yêu cầu của các bên, trừ trường hợp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D481_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "2. Trường hợp các bên thỏa thuận việc trả tiền thuê theo kỳ hạn thì bên cho thuê có quyền đơn phương chấm dứt thực hiện hợp đồng, nếu bên thuê không trả tiền trong ba kỳ liên tiếp, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D484",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "Đối tượng của hợp đồng thuê khoán có thể là đất đai, rừng, mặt nước chưa khai thác, gia súc, cơ sở sản xuất, kinh doanh, tư liệu sản xuất khác cùng trang thiết bị cần thiết để khai thác công dụng, hưởng hoa lợi, lợi tức, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D501_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "1. Quy định chung về hợp đồng và nội dung của hợp đồng thông dụng có liên quan trong Bộ luật này cũng được áp dụng với hợp đồng về quyền sử dụng đất, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D501_K2",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về đất đai",
+    "evidence": "2. Nội dung của hợp đồng về quyền sử dụng đất không được trái với quy định về mục đích sử dụng, thời hạn sử dụng đất, quy hoạch, kế hoạch sử dụng đất và các quyền, nghĩa vụ khác theo quy định của pháp luật về đất đai và quy định khác của pháp luật có liên quan.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D502_K1",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về đất đai",
+    "evidence": "1. Hợp đồng về quyền sử dụng đất phải được lập thành văn bản theo hình thức phù hợp với quy định của Bộ luật này, pháp luật về đất đai và quy định khác của pháp luật có liên quan.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D502_K2",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về đất đai",
+    "evidence": "2. Việc thực hiện hợp đồng về quyền sử dụng đất phải đúng trình tự, thủ tục theo quy định của pháp luật về đất đai và quy định khác của pháp luật có liên quan.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D509",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp hợp đồng hợp tác hoặc luật có quy định khác",
+    "evidence": "Các thành viên hợp tác chịu trách nhiệm dân sự chung bằng tài sản chung; nếu tài sản chung không đủ để thực hiện nghĩa vụ chung thì thành viên hợp tác phải chịu trách nhiệm bằng tài sản riêng theo phần tương ứng với phần đóng góp của mình, trừ trường hợp hợp đồng hợp tác hoặc luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D528_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "2. Bên vận chuyển không phải bồi thường thiệt hại về tính mạng, sức khỏe và hành lý của hành khách nếu thiệt hại xảy ra hoàn toàn do lỗi của hành khách, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D534_K5",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "5. Bồi thường thiệt hại cho bên thuê vận chuyển trong trường hợp bên vận chuyển để mất, hư hỏng tài sản, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D539_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "2. Chịu chi phí xếp, dỡ tài sản vận chuyển, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D541_K3",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "3. Trường hợp bất khả kháng dẫn đến tài sản vận chuyển bị mất, hư hỏng hoặc bị hủy hoại trong quá trình vận chuyển thì bên vận chuyển không phải chịu trách nhiệm bồi thường thiệt hại, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D551_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác",
+    "evidence": "1. Mỗi bên đều có quyền đơn phương chấm dứt thực hiện hợp đồng gia công, nếu việc tiếp tục thực hiện hợp đồng không mang lại lợi ích cho mình, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác, nhưng phải báo cho bên kia biết trước một thời gian hợp lý.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D582",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp Bộ luật này có quy định khác",
+    "evidence": "Trường hợp người chiếm hữu, người sử dụng tài sản mà không có căn cứ pháp luật đã giao tài sản cho người thứ ba thì khi bị chủ sở hữu, chủ thể có quyền khác đối với tài sản yêu cầu hoàn trả, người thứ ba có nghĩa vụ hoàn trả tài sản đó, trừ trường hợp Bộ luật này có quy định khác; nếu tài sản đó đã được trả bằng tiền hoặc có đền bù thì người thứ ba có quyền yêu cầu người đã giao tài sản cho mình bồi thường thiệt hại.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D584_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác",
+    "evidence": "2. Người gây thiệt hại không phải chịu trách nhiệm bồi thường thiệt hại trong trường hợp thiệt hại phát sinh là do sự kiện bất khả kháng hoặc hoàn toàn do lỗi của bên bị thiệt hại, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D585_K1",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "1. Thiệt hại thực tế phải được bồi thường toàn bộ và kịp thời. Các bên có thể thỏa thuận về mức bồi thường, hình thức bồi thường bằng tiền, bằng hiện vật hoặc thực hiện một công việc, phương thức bồi thường một lần hoặc nhiều lần, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D601",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "b) Thiệt hại xảy ra trong trường hợp bất khả kháng hoặc tình thế cấp thiết, trừ trường hợp pháp luật có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D617",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật có quy định khác",
+    "evidence": "a) Lập danh mục di sản; thu hồi tài sản thuộc di sản của người chết mà người khác đang chiếm hữu, trừ trường hợp pháp luật có quy định khác;",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  },
+  {
+    "source_node_id": "BLDS_2015_D641_K2",
+    "category": "DOMAIN_REFERRAL",
+    "target_for_rules": "links_and_extensions",
+    "raw_phrase": "pháp luật về công chứng",
+    "evidence": "2. Trường hợp tổ chức hành nghề công chứng lưu giữ bản di chúc thì phải bảo quản, giữ gìn theo quy định của Bộ luật này và pháp luật về công chứng.",
+    "note": "Viện dẫn theo ngành luật/chế định chuyên ngành; dùng cho trường 'links'/'extensions' của Legal Rule hoặc gán nhãn LegalDomain trên KG."
+  },
+  {
+    "source_node_id": "BLDS_2015_D673_K2",
+    "category": "OPEN_EXCEPTION",
+    "target_for_rules": "unless",
+    "raw_phrase": "trừ trường hợp pháp luật Việt Nam có quy định khác",
+    "evidence": "2. Người nước ngoài tại Việt Nam có năng lực pháp luật dân sự như công dân Việt Nam, trừ trường hợp pháp luật Việt Nam có quy định khác.",
+    "note": "Quy phạm ngoại lệ mở; cần đối chiếu các điều kiện loại trừ tương ứng để thiết lập trong mảng 'unless' của Legal Rule."
+  }
+]
