@@ -25,13 +25,14 @@ Theo `AGENTS.md` (repo hiện tại):
 | 3 | cicd | ci-cd-split-workflows | [V3_cicd_ci-cd-split-workflows.md](./V3_cicd_ci-cd-split-workflows.md) | Hoàn thành | Chia CI/CD thành 6 workflow | `.github/workflows/*` |
 | 4 | services | services-frontend-integration | [V4_services_frontend_integration.md](./V4_services_frontend_integration.md) | Hoàn thành (Golang `services/` done; FE ở V5) | Tích hợp Golang Services & NextJS Frontend | `services/*`, `frontend/*` |
 | 5 | frontend | legal-ai-ui | [V5_frontend_legal-ai-ui.md](./V5_frontend_legal-ai-ui.md) | Hoàn thành | Giao diện Legal AI kết nối Services (auth/chat/profile/admin) | `frontend/*` |
+| 6 | backend | refactor-services-server-modular | [V6_backend_refactor-services-server-modular.md](./V6_backend_refactor-services-server-modular.md) | Hoàn thành | Refactor services/server sang cấu trúc modules/infra/shared | `services/server/*` |
 
 > **Ghi chú naming cần xác nhận:** `V4_services_frontend_integration.md` dùng `scope = services` (ngoài tập `backend|frontend|cicd|ai` trong AGENTS.md) và `task_name` có dấu `_` thay vì kebab-case. Đề xuất đổi thành `V4_frontend_services-integration.md` hoặc tách scope rõ ràng — **chỉ rename sau khi user xác nhận**, sau đó cập nhật lại dòng này.
 
 ## Next index
 
-- **Max index:** 5  
-- **next_index:** 6
+- **Max index:** 6  
+- **next_index:** 7
 
 ## Cách dùng bởi agent
 

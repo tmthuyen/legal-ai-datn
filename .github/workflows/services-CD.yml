@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, production]
     paths:
-      - 'services/**'
+      - 'services/server/**'
       - '.github/workflows/services-CD.yml'
   workflow_dispatch:
 
@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: scan
         run: |
-          cnt=$(find services -name 'Dockerfile' 2>/dev/null | wc -l)
+          cnt=$(find services/server -name 'Dockerfile' 2>/dev/null | wc -l)
           echo "has_docker=$cnt" >> $GITHUB_OUTPUT
         shell: bash
 
