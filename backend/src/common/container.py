@@ -19,6 +19,7 @@ from src.graph.graph_repository import LegalGraphRepository
 from src.graph.graph_service import LegalGraphService
 from src.graph.neo4j_client import Neo4jClient
 from src.models.legal_model import LegalReasoningModel
+from src.retrieval.graph_traverse import GraphTraverse
 from src.retrieval.hybrid import BM25Searcher, HybridSearcher
 from src.retrieval.legal_query_extractor import LegalQueryExtractor
 from src.retrieval.retrieval_service import RetrievalService
@@ -155,19 +156,29 @@ def build_services(settings: Optional[Settings] = None) -> AppServices:
         bm25_searcher=bm25_service,
     )
 
-    logger.info("Nạp reasoning model: %s", settings.hf_model_id)
-    legal_model = LegalReasoningModel(
-        base_model_name=settings.hf_base_model,
-        model_id=settings.hf_model_id,
-        revision=settings.hf_revision,
-    )
+    # legal_model = LegalReasoningModel(
+    #     base_model_name=settings.hf_base_model,
+    #     model_id=settings.hf_model_id,
+    #     revision=settings.hf_revision,
+    # )
+    legal_model = None
+    if legal_model is None:
+        logger.warning(
+            "LegalReasoningModel chưa được nạp. "
+            "Các chức năng trích xuất phân cấp luật từ câu truy vấn sẽ chỉ dựa trên regex."
+        )
+    else:
+        logger.info("Đã nạp reasoning model: %s", settings.hf_model_id)
+
     query_extractor = LegalQueryExtractor(legal_model=legal_model)
+    graph_traverse = GraphTraverse(graph_service=graph_service)
 
     retrieval_service = RetrievalService(
         legal_graph_service=graph_service,
         legal_query_extractor=query_extractor,
         semantic_service=semantic_service,
         hybrid_service=hybrid_service,
+        graph_traverse=graph_traverse,
     )
 
     logger.info("Khởi tạo service dùng chung hoàn tất.")

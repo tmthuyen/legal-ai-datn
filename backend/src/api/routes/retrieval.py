@@ -8,6 +8,7 @@ from fastapi import APIRouter, Depends
 from src.api.api_schemas import (
     ApiResponse,
     ErrorResponse,
+    HybridGraphResult,
     RetrievalRequest,
     RetrievalResult,
     SuccessResponse,
@@ -45,3 +46,31 @@ def retrieval(
     """
     result = service.retrieve(query_text=payload.query_text)
     return success(RetrievalResult(**result), message="Truy vấn thành công")
+
+
+@router.post(
+    "/retrieval/hybrid-graph",
+    response_model=ApiResponse[HybridGraphResult],
+    responses={
+        400: {"model": ErrorResponse},
+        422: {"model": ErrorResponse},
+        500: {"model": ErrorResponse},
+    },
+    summary="Truy vấn Hybrid Search + Graph Traverse (không dùng LLM)",
+)
+def retrieval_hybrid_graph(
+    payload: RetrievalRequest,
+    service: RetrievalService = Depends(get_retrieval_service),
+) -> SuccessResponse[HybridGraphResult]:
+    """Chạy Hybrid Search rồi mở rộng đồ thị, trả về node luật kèm quan hệ.
+
+    Args:
+        payload: Câu hỏi truy vấn của người dùng.
+        service: Service Retrieval dùng chung được inject từ app state.
+
+    Returns:
+        SuccessResponse bọc `HybridGraphResult` gồm input, node luật liên quan
+        (kèm quan hệ lồng nhau) và văn bản gốc.
+    """
+    result = service.retrieve_hybrid_and_graph(query_text=payload.query_text)
+    return success(HybridGraphResult(**result), message="Truy vấn thành công")

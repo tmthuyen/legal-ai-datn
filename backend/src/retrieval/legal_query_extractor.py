@@ -13,14 +13,20 @@ logger = setup_logger("legal_query_extractor", "legal_query_extractor.log")
 
 
 class LegalQueryExtractor:
-    def __init__(self, legal_model: BaseLegalModel):
+    def __init__(self, legal_model: BaseLegalModel = None):
         """Khởi tạo bộ phân tách cấu trúc luật từ truy vấn
 
         Args:
-            legal_model (BaseLegalModel): Mô hình suy luận luật để trích xuất phân cấp từ câu truy vấn.
+            legal_model (BaseLegalModel) có thể None: Mô hình suy luận luật để trích xuất phân cấp từ câu truy vấn.
         Raises:
             CustomException: Nếu mô hình suy luận luật chưa được khởi tạo hoặc không hợp lệ.
         """
+        if legal_model is None:
+            logger.warning(
+                "LegalQueryExtractor được khởi tạo mà không có mô hình suy luận luật. "
+                "Chỉ có thể trích xuất phân cấp dựa trên regex."
+            )
+
         if legal_model is not None and not isinstance(legal_model, BaseLegalModel):
             raise CustomException(
                 message="Legal Model chưa có",

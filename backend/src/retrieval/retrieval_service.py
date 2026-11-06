@@ -5,7 +5,7 @@ from src.common.constants import LegalHierarchyLabels, MinimumScoreThresholds
 from src.common.custom_exception import CustomException
 from src.common.schemas import LegalHierarchy
 from src.graph.graph_service import LegalGraphService
-from src.models.legal_model import BaseLegalModel
+from src.retrieval.graph_traverse import GraphTraverse
 from src.retrieval.hybrid import HybridSearcher
 from src.retrieval.legal_query_extractor import LegalQueryExtractor
 from src.retrieval.semantic import SemanticSearcher
@@ -13,182 +13,17 @@ from src.utils.logger import setup_logger
 
 logger = setup_logger("retrieval_service", filename="retrieval_service.log")
 
-#  Duyệt đồ thị neuro symbolic theo các yêu cầu từ retrieval service
-#  Được sử dụng trực tiếp với retrieval service
-
-
-from src.graph.graph_service import LegalGraphService
-
-
-class GraphTraverse:
-    def __init__(self, graph_service: LegalGraphService):
-        self._legal_graph_service = graph_service
-
-    # Duyệt các nốt hậu duệ của node hiện tại
-
-    # Lọc các document trong danh sách các nodes truyền vào chứa document_id
-
-    # Tìm kiếm các quan hệ pháp lý của một nốt với các node khác ngoại trừ CONTAINS
-
-    # Duyệt các quan hệ của danh sach các nodes
-
-    def collect_related_nodes(self, seed_ids: list[str]) -> list[dict[str, Any]]:
-        """Gom node đích/seed + cha + con + con cháu, khử trùng theo node_id.
-
-        Node `Document` bị loại khỏi `related_nodes` vì đã phản ánh trong `related_documents`.
-
-        Args:
-            seed_ids: Danh sách node_id gốc đã chạm được.
-
-        Returns:
-            Danh sách node theo thứ tự: seed trước, rồi cha, con, con cháu.
-        """
-        collected: dict[str, dict[str, Any]] = {}
-
-        def add(node: Optional[dict[str, Any]]) -> None:
-            """Thêm node vào tập kết quả nếu hợp lệ và chưa có."""
-            if not node:
-                return
-            node_id = node.get("node_id")
-            if not node_id or node_id in collected:
-                return
-            if node.get("label") == "Document":
-                return
-            collected[node_id] = node
-
-        for seed_id in seed_ids:
-            if not seed_id:
-                continue
-            add(self._legal_graph_service.get_node_by_id(seed_id))
-            for ancestor in self._legal_graph_service.get_breadcrumbs(seed_id):
-                add(ancestor)
-            for child in self._legal_graph_service.get_children(seed_id):
-                add(child)
-            for descendant in self._legal_graph_service.get_descendants(
-                seed_id, max_depth=5, limit=200
-            ):
-                add(descendant)
-
-        return list(collected.values())
-
-    def collect_legal_relationships(
-        self, seed_ids: list[str]
-    ) -> list[tuple[str, dict[str, Any]]]:
-        """Lấy quan hệ pháp lý của từng seed, gắn kèm node gốc để định hướng cạnh.
-
-        Args:
-            seed_ids: Danh sách node_id gốc.
-
-        Returns:
-            Danh sách cặp (node_id gốc, bản ghi quan hệ).
-        """
-        relationships: list[tuple[str, dict[str, Any]]] = []
-        for seed_id in seed_ids:
-            if not seed_id:
-                continue
-            for relationship in self._legal_graph_service.get_related_laws(
-                seed_id, limit=50
-            ):
-                relationships.append((seed_id, relationship))
-        return relationships
-
-    def collect_related_documents(
-        self,
-        document_ids: list[str],
-        nodes: list[dict[str, Any]],
-        legal_relationships: list[tuple[str, dict[str, Any]]],
-    ) -> list[dict[str, Any]]:
-        """Gom provenance các văn bản liên quan (văn bản resolve + văn bản của node/quan hệ).
-
-        Args:
-            document_ids: Document_id khởi điểm (văn bản resolve được).
-            nodes: Các node đã gom.
-            legal_relationships: Các quan hệ pháp lý đã gom.
-
-        Returns:
-            Danh sách provenance đã chuẩn hoá, khử trùng theo document_id.
-        """
-        collected: dict[str, dict[str, Any]] = {}
-
-        def add_document(document_id: Optional[str]) -> None:
-            """Thêm provenance của một văn bản nếu chưa có."""
-            if not document_id or document_id in collected:
-                return
-            provenance = self._legal_graph_service.get_document_provenance(document_id)
-            if provenance:
-                collected[document_id] = provenance
-
-        for document_id in document_ids:
-            add_document(document_id)
-        for node in nodes:
-            add_document(node.get("document_id"))
-        for _, relationship in legal_relationships:
-            for key in ("target_node", "source_node", "related_node"):
-                related_node = relationship.get(key)
-                if related_node:
-                    add_document(related_node.get("document_id"))
-
-        return list(collected.values())
-
-    def build_relationships(
-        self,
-        nodes: list[dict[str, Any]],
-        legal_relationships: list[tuple[str, dict[str, Any]]],
-    ) -> list[dict[str, Any]]:
-        """Gộp quan hệ cấu trúc (CONTAINS) và quan hệ pháp lý thành mảng phẳng.
-
-        Args:
-            nodes: Các node đã gom (dùng `parent_id` để suy cạnh CONTAINS).
-            legal_relationships: Các cặp (node gốc, bản ghi quan hệ pháp lý).
-
-        Returns:
-            Danh sách quan hệ {from_node_id, to_node_id, relationship_type}, khử trùng lặp.
-        """
-        collected: dict[tuple[str, str, str], dict[str, Any]] = {}
-
-        def add(
-            from_node_id: Optional[str],
-            to_node_id: Optional[str],
-            relationship_type: Optional[str],
-        ) -> None:
-            """Thêm một cạnh nếu đủ thông tin và chưa tồn tại."""
-            if not from_node_id or not to_node_id or not relationship_type:
-                return
-            key = (from_node_id, relationship_type, to_node_id)
-            if key in collected:
-                return
-            collected[key] = {
-                "from_node_id": from_node_id,
-                "to_node_id": to_node_id,
-                "relationship_type": relationship_type,
-            }
-
-        # Cạnh cấu trúc CONTAINS suy từ parent_id của các node đã gom.
-        for node in nodes:
-            add(node.get("parent_id"), node.get("node_id"), "CONTAINS")
-
-        # Cạnh quan hệ pháp lý (REFERENCES, IMPLEMENTS, INTERPRETED_BY...).
-        for root_id, relationship in legal_relationships:
-            relationship_type = relationship.get("relation_type")
-            if relationship.get("direction") == "INCOMING":
-                source = relationship.get("source_node") or {}
-                add(source.get("node_id"), root_id, relationship_type)
-            else:
-                target = relationship.get("target_node") or {}
-                add(root_id, target.get("node_id"), relationship_type)
-
-        return list(collected.values())
-
 
 class RetrievalService:
-    """Điều phối pipeline Retrieval V1 và dựng output 6 key theo đặc tả."""
+    """Điều phối hai luồng Retrieval: theo phân cấp và Hybrid + Graph."""
 
     def __init__(
         self,
         legal_query_extractor: LegalQueryExtractor,
         legal_graph_service: LegalGraphService,
         semantic_service: SemanticSearcher,
-        hybrid_service: Optional[HybridSearcher] = None,
+        hybrid_service: HybridSearcher,
+        graph_traverse: GraphTraverse,
     ):
         """Khởi tạo orchestrator.
 
@@ -197,11 +32,30 @@ class RetrievalService:
             legal_query_extractor: Bộ parse câu hỏi -> phân cấp.
             semantic_service: Service tìm kiếm ngữ nghĩa.
             hybrid_service: Service tìm kiếm kết hợp Hybrid (Semantic + BM25).
+            graph_traverse: Bộ duyệt đồ thị; mặc định tự khởi tạo từ graph service.
         """
+        # Check parameter
+        if not legal_query_extractor:
+            logger.warning("Thiếu legal_query_extractor khi khởi tạo RetrievalService")
+        if (
+            not legal_graph_service
+            or not semantic_service
+            or not hybrid_service
+            or not graph_traverse
+        ):
+            raise CustomException(
+                message="Thiếu tham số khởi tạo RetrievalService",
+                status_code=500,
+                error_code="INTERNAL_SERVER_ERROR",
+            )
+
         self._semantic_service = semantic_service
         self._legal_graph_service = legal_graph_service
         self._extractor = legal_query_extractor
         self._hybrid_service = hybrid_service
+        self._graph_traverse = graph_traverse
+
+        logger.info("Khởi tạo RetrievalService thành công.")
 
     def format_node(self, node: dict[str, Any]) -> dict[str, Any]:
         """Giữ nguyên toàn bộ field gốc của node và bổ sung `citation` tuyệt đối.
@@ -376,21 +230,22 @@ class RetrievalService:
 
                 logger.info(f"Tìm thấy node với node_id {node_id}")
 
-                # tìm các node con, cháu và thêm vào tập kết quả (khử trùng theo node_id)
                 related_nodes[node_id] = node
-                seed_ids = [node_id]
 
-                # gom các node liên quan (cha, con, con cháu) và quan hệ pháp lý
                 logger.info(
-                    f"Gom các node liên quan (cha, con, con cháu) và quan hệ pháp lý"
+                    "Gom các node liên quan (cha, con, con cháu) và quan hệ pháp lý"
                 )
-                nodes = self._collect_related_nodes(seed_ids)
-                for n in nodes:
-                    related_nodes[n["node_id"]] = n
+                for related_node in self._graph_traverse.traverse_node_hierarchy(
+                    node_id
+                ):
+                    related_nodes[related_node["node_id"]] = related_node
 
-                # related relationships
-                logger.info(f"Gom các quan hệ pháp lý của các node liên quan")
-                legal_relationships = self._collect_legal_relationships(seed_ids)
+                legal_relationships = [
+                    (node_id, relation)
+                    for relation in self._graph_traverse.traverse_legal_relations(
+                        node_id
+                    )
+                ]
                 related_relationships.extend(legal_relationships)
 
                 logger.info(f"Quan hệ pháp lý liên quan: {legal_relationships}.")
@@ -442,7 +297,7 @@ class RetrievalService:
                 "related_nodes": [
                     self.format_node(node) for node in related_nodes.values()
                 ],
-                "relationships": self._build_relationships(
+                "relationships": self._graph_traverse.build_flat_relationships(
                     nodes=list(related_nodes.values()),
                     legal_relationships=related_relationships,
                 ),
@@ -554,9 +409,7 @@ class RetrievalService:
                     logger.info(
                         f"Node {node_text} (node_id: {node_id}) là cấp thấp ({label})"
                     )
-                    # gom các node liên quan (cha, con, con cháu) và quan hệ pháp lý
-                    seed_ids = [node_id]
-                    nodes = self._collect_related_nodes(seed_ids)
+                    nodes = self._graph_traverse.traverse_node_hierarchy(node_id)
                     for n in nodes:
                         nid = n.get("node_id")
                         if not nid:
@@ -567,8 +420,12 @@ class RetrievalService:
                         else:
                             related_nodes[nid] = n
 
-                    # related relationships
-                    legal_relationships = self._collect_legal_relationships(seed_ids)
+                    legal_relationships = [
+                        (node_id, relation)
+                        for relation in self._graph_traverse.traverse_legal_relations(
+                            node_id
+                        )
+                    ]
                     related_relationships.extend(legal_relationships)
 
                     logger.info(f"Quan hệ pháp lý liên quan: {legal_relationships}.")
@@ -592,155 +449,86 @@ class RetrievalService:
                 "related_nodes": [
                     self.format_node(node) for node in related_nodes.values()
                 ],
-                "relationships": self._build_relationships(
+                "relationships": self._graph_traverse.build_flat_relationships(
                     nodes=list(related_nodes.values()),
                     legal_relationships=related_relationships,
                 ),
             }
 
-    def _collect_related_nodes(self, seed_ids: list[str]) -> list[dict[str, Any]]:
-        """Gom node đích/seed + cha + con + con cháu, khử trùng theo node_id.
-
-        Node `Document` bị loại khỏi `related_nodes` vì đã phản ánh trong `related_documents`.
-
-        Args:
-            seed_ids: Danh sách node_id gốc đã chạm được.
-
-        Returns:
-            Danh sách node theo thứ tự: seed trước, rồi cha, con, con cháu.
-        """
-        collected: dict[str, dict[str, Any]] = {}
-
-        def add(node: Optional[dict[str, Any]]) -> None:
-            """Thêm node vào tập kết quả nếu hợp lệ và chưa có."""
-            if not node:
-                return
-            node_id = node.get("node_id")
-            if not node_id or node_id in collected:
-                return
-            if node.get("label") == "Document":
-                return
-            collected[node_id] = node
-
-        for seed_id in seed_ids:
-            if not seed_id:
-                continue
-            add(self._legal_graph_service.get_node_by_id(seed_id))
-            for ancestor in self._legal_graph_service.get_breadcrumbs(seed_id):
-                add(ancestor)
-            for child in self._legal_graph_service.get_children(seed_id):
-                add(child)
-            for descendant in self._legal_graph_service.get_descendants(
-                seed_id, max_depth=5, limit=200
-            ):
-                add(descendant)
-
-        return list(collected.values())
-
-    def _collect_legal_relationships(
-        self, seed_ids: list[str]
-    ) -> list[tuple[str, dict[str, Any]]]:
-        """Lấy quan hệ pháp lý của từng seed, gắn kèm node gốc để định hướng cạnh.
-
-        Args:
-            seed_ids: Danh sách node_id gốc.
-
-        Returns:
-            Danh sách cặp (node_id gốc, bản ghi quan hệ).
-        """
-        relationships: list[tuple[str, dict[str, Any]]] = []
-        for seed_id in seed_ids:
-            if not seed_id:
-                continue
-            for relationship in self._legal_graph_service.get_related_laws(
-                seed_id, limit=50
-            ):
-                relationships.append((seed_id, relationship))
-        return relationships
-
-    def _collect_related_documents(
+    def retrieve_hybrid_and_graph(
         self,
-        document_ids: list[str],
-        nodes: list[dict[str, Any]],
-        legal_relationships: list[tuple[str, dict[str, Any]]],
-    ) -> list[dict[str, Any]]:
-        """Gom provenance các văn bản liên quan (văn bản resolve + văn bản của node/quan hệ).
+        query_text: str,
+        top_k: int = 5,
+    ) -> dict[str, Any]:
+        """Truy vấn Hybrid Search rồi mở rộng đồ thị, không dùng LLM.
 
         Args:
-            document_ids: Document_id khởi điểm (văn bản resolve được).
-            nodes: Các node đã gom.
-            legal_relationships: Các quan hệ pháp lý đã gom.
+            query_text: Câu hỏi người dùng.
+            top_k: Số seed node lấy từ Hybrid/Semantic Search.
 
         Returns:
-            Danh sách provenance đã chuẩn hoá, khử trùng theo document_id.
+            {
+                "input": query_text,
+                "relevant_laws": list[dict],  # seed node kèm relationships lồng nhau
+                "relevant_documents": list[dict],  # văn bản gốc chứa các node trên
+            }
         """
-        collected: dict[str, dict[str, Any]] = {}
+        logger.info(f"Nhận câu hỏi (hybrid + graph): {query_text}")
 
-        def add_document(document_id: Optional[str]) -> None:
-            """Thêm provenance của một văn bản nếu chưa có."""
-            if not document_id or document_id in collected:
-                return
-            provenance = self._legal_graph_service.get_document_provenance(document_id)
-            if provenance:
-                collected[document_id] = provenance
+        searcher = (
+            self._hybrid_service
+            if self._hybrid_service is not None
+            else self._semantic_service
+        )
+        search_result = searcher.search(query=query_text, top_k=top_k)
 
-        for document_id in document_ids:
-            add_document(document_id)
-        for node in nodes:
-            add_document(node.get("document_id"))
-        for _, relationship in legal_relationships:
-            for key in ("target_node", "source_node", "related_node"):
-                related_node = relationship.get(key)
-                if related_node:
-                    add_document(related_node.get("document_id"))
+        latency_info = {
+            "total_found": search_result.get("total_found", 0),
+            "search_time_ms": search_result.get("search_time_ms", 0.0),
+            "semantic_time_ms": search_result.get("semantic_time_ms", 0.0),
+            "bm25_time_ms": search_result.get("bm25_time_ms", 0.0),
+        }
 
-        return list(collected.values())
+        logger.info("Hybrid Latency: %s", json.dumps(latency_info, ensure_ascii=False))
 
-    def _build_relationships(
-        self,
-        nodes: list[dict[str, Any]],
-        legal_relationships: list[tuple[str, dict[str, Any]]],
-    ) -> list[dict[str, Any]]:
-        """Gộp quan hệ cấu trúc (CONTAINS) và quan hệ pháp lý thành mảng phẳng.
+        # log keys
+        logger.info(
+            "Hybrid Search Result Keys: %s",
+            json.dumps(list(search_result.keys()), ensure_ascii=False),
+        )
 
-        Args:
-            nodes: Các node đã gom (dùng `parent_id` để suy cạnh CONTAINS).
-            legal_relationships: Các cặp (node gốc, bản ghi quan hệ pháp lý).
+        seed_nodes: list[dict] = search_result.get("results") or search_result.get(
+            "related_nodes", []
+        )
 
-        Returns:
-            Danh sách quan hệ {from_node_id, to_node_id, relationship_type}, khử trùng lặp.
-        """
-        collected: dict[tuple[str, str, str], dict[str, Any]] = {}
-
-        def add(
-            from_node_id: Optional[str],
-            to_node_id: Optional[str],
-            relationship_type: Optional[str],
-        ) -> None:
-            """Thêm một cạnh nếu đủ thông tin và chưa tồn tại."""
-            if not from_node_id or not to_node_id or not relationship_type:
-                return
-            key = (from_node_id, relationship_type, to_node_id)
-            if key in collected:
-                return
-            collected[key] = {
-                "from_node_id": from_node_id,
-                "to_node_id": to_node_id,
-                "relationship_type": relationship_type,
+        if not seed_nodes:
+            logger.warning("Không tìm thấy seed node nào từ Hybrid Search.")
+            return {
+                "input": query_text,
+                "relevant_laws": [],
+                "relevant_documents": [],
             }
 
-        # Cạnh cấu trúc CONTAINS suy từ parent_id của các node đã gom.
-        for node in nodes:
-            add(node.get("parent_id"), node.get("node_id"), "CONTAINS")
+        # related nodes keys
+        logger.info(
+            "Hybrid Search Related Nodes Keys: %s",
+            json.dumps(
+                seed_nodes[0].keys() if seed_nodes else [],
+                ensure_ascii=False,
+            ),
+        )
 
-        # Cạnh quan hệ pháp lý (REFERENCES, IMPLEMENTS, INTERPRETED_BY...).
-        for root_id, relationship in legal_relationships:
-            relationship_type = relationship.get("relation_type")
-            if relationship.get("direction") == "INCOMING":
-                source = relationship.get("source_node") or {}
-                add(source.get("node_id"), root_id, relationship_type)
-            else:
-                target = relationship.get("target_node") or {}
-                add(root_id, target.get("node_id"), relationship_type)
+        relevant_laws, relevant_documents = self._graph_traverse.build_relevant_laws(
+            seed_nodes
+        )
+        logger.info(
+            "Hybrid + Graph hoàn tất: %d law nodes, %d documents.",
+            len(relevant_laws),
+            len(relevant_documents),
+        )
 
-        return list(collected.values())
+        return {
+            "input": query_text,
+            "relevant_laws": relevant_laws,
+            "relevant_documents": relevant_documents,
+        }

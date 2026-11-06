@@ -37,6 +37,7 @@ python scripts/embed_nodes.py
 
 # 3. Test retrieval trước
 python scripts/test_retrieval.py
+python scripts/test_hybrid_graph_retrieval.py
 
 # 4. Test reasoning
 python scripts/test_reasoning.py

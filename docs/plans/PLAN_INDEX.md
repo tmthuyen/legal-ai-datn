@@ -26,13 +26,14 @@ Theo `AGENTS.md` (repo hiện tại):
 | 4 | services | services-frontend-integration | [V4_services_frontend_integration.md](./V4_services_frontend_integration.md) | Hoàn thành (Golang `services/` done; FE ở V5) | Tích hợp Golang Services & NextJS Frontend | `services/*`, `frontend/*` |
 | 5 | frontend | legal-ai-ui | [V5_frontend_legal-ai-ui.md](./V5_frontend_legal-ai-ui.md) | Hoàn thành | Giao diện Legal AI kết nối Services (auth/chat/profile/admin) | `frontend/*` |
 | 6 | backend | refactor-services-server-modular | [V6_backend_refactor-services-server-modular.md](./V6_backend_refactor-services-server-modular.md) | Hoàn thành | Refactor services/server sang cấu trúc modules/infra/shared | `services/server/*` |
+| 7 | backend | fast-retrieval-graph-traverse | [V7_backend_fast-retrieval-graph-traverse.md](./V7_backend_fast-retrieval-graph-traverse.md) | Hoàn thành code (chờ smoke live Neo4j) | `retrieve_hybrid_and_graph` không LLM, tách GraphTraverse, xoá dead code, API có type | `backend/src/retrieval/*`, `backend/src/api/*`, `backend/src/common/container.py` |
 
 > **Ghi chú naming cần xác nhận:** `V4_services_frontend_integration.md` dùng `scope = services` (ngoài tập `backend|frontend|cicd|ai` trong AGENTS.md) và `task_name` có dấu `_` thay vì kebab-case. Đề xuất đổi thành `V4_frontend_services-integration.md` hoặc tách scope rõ ràng — **chỉ rename sau khi user xác nhận**, sau đó cập nhật lại dòng này.
 
 ## Next index
 
-- **Max index:** 6  
-- **next_index:** 7
+- **Max index:** 7  
+- **next_index:** 8
 
 ## Cách dùng bởi agent
 

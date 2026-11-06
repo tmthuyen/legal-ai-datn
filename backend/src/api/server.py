@@ -12,6 +12,7 @@ import sys
 from contextlib import asynccontextmanager
 from typing import Any
 
+import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
@@ -232,7 +233,6 @@ app = create_app()
 
 
 if __name__ == "__main__":
-    import uvicorn
 
     settings = get_settings()
     uvicorn.run(

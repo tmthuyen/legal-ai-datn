@@ -36,4 +36,13 @@ Content-Type: {{contentType}}
 }
 ### "query_text": "Hiến pháp 2013, nói về vấn đề gì?"
 ### "query_text": "Điều số 5 Khoản 1 Bộ luật Dân sự 2015, nói về vấn đề gì?"
-# # NNe
+
+### POST: /api/retrieval/hybrid-graph
+POST {{baseUrl}}/retrieval/hybrid-graph
+Accept: application/json
+Content-Type: {{contentType}}
+
+{
+  "query_text": "Hợp đồng trao đổi là gì?"
+}
+### "query_text": "Hợp đồng mua bán tài sản là gì?"
