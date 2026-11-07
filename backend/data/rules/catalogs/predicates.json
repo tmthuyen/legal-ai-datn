@@ -1,0 +1,277 @@
+{
+  "catalog_version": "1.0",
+  "description": "Danh mục chuẩn hóa các vị từ dữ kiện pháp lý (Legal Fact Predicates) dùng chung cho Luật HNGĐ 2014 và BLDS 2015.",
+  "predicates": {
+    "asset.ownership": {
+      "type": "enum",
+      "allowed_values": ["JOINT_SPOUSAL", "SEPARATE", "OTHER_CO_OWNERSHIP"],
+      "domain": "asset",
+      "description": "Hình thức sở hữu tài sản (tài sản chung vợ chồng, tài sản riêng, hoặc đồng sở hữu khác)."
+    },
+    "asset.category": {
+      "type": "enum",
+      "allowed_values": ["REAL_ESTATE", "MOVABLE", "OTHER"],
+      "domain": "asset",
+      "description": "Phân loại tài sản theo tính chất vật lý/pháp lý (bất động sản, động sản, loại khác)."
+    },
+    "asset.is_registered_movable": {
+      "type": "boolean",
+      "domain": "asset",
+      "description": "Tài sản là động sản mà theo quy định của pháp luật phải đăng ký quyền sở hữu."
+    },
+    "asset.is_primary_family_income_source": {
+      "type": "boolean",
+      "domain": "asset",
+      "description": "Tài sản đang là nguồn tạo ra thu nhập chủ yếu của gia đình."
+    },
+    "asset.registration_required": {
+      "type": "boolean",
+      "domain": "asset",
+      "description": "Tài sản thuộc loại pháp luật quy định phải đăng ký quyền sở hữu/quyền sử dụng."
+    },
+    "asset.was_registered_at_competent_authority": {
+      "type": "boolean",
+      "domain": "asset",
+      "description": "Tài sản đã được đăng ký tại cơ quan nhà nước có thẩm quyền."
+    },
+    "transaction.type": {
+      "type": "enum",
+      "allowed_values": ["DISPOSAL", "MANAGEMENT", "USE", "ESTABLISHMENT"],
+      "domain": "transaction",
+      "description": "Loại hành vi giao dịch đối với tài sản (định đoạt, quản lý, sử dụng, xác lập)."
+    },
+    "transaction.written_spousal_agreement": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Giao dịch có sự thỏa thuận bằng văn bản của hai vợ chồng."
+    },
+    "transaction.requires_both_spouses_consent": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Giao dịch theo quy định của pháp luật phải có sự đồng ý của cả hai vợ chồng."
+    },
+    "transaction.spousal_authorization_established": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Vợ hoặc chồng có xác lập việc ủy quyền cho bên kia thực hiện giao dịch."
+    },
+    "transaction.spousal_authorization_valid": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Việc ủy quyền giữa vợ và chồng đáp ứng điều kiện hợp lệ về hình thức và nội dung theo quy định pháp luật."
+    },
+    "transaction.is_civil_transaction": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Hành vi đang xét là một giao dịch dân sự (hợp đồng hoặc hành vi pháp lý đơn phương)."
+    },
+    "transaction.participants_have_appropriate_capacity": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Chủ thể có năng lực pháp luật dân sự, năng lực hành vi dân sự phù hợp với giao dịch dân sự được xác lập."
+    },
+    "transaction.participants_voluntary": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Chủ thể tham gia giao dịch dân sự hoàn toàn tự nguyện."
+    },
+    "transaction.purpose_and_content_lawful_and_moral": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Mục đích và nội dung của giao dịch dân sự không vi phạm điều cấm của luật, không trái đạo đức xã hội."
+    },
+    "transaction.form_required_by_law": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Pháp luật có quy định hình thức là điều kiện có hiệu lực đối với loại giao dịch dân sự này (theo khoản 2 Điều 117 và Điều 119 BLDS 2015)."
+    },
+    "transaction.form_compliant": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Hình thức của giao dịch dân sự tuân thủ quy định của luật (về văn bản, công chứng, chứng thực, đăng ký)."
+    },
+    "transaction.recognized_valid_under_d129_form_exception": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Giao dịch vi phạm hình thức nhưng thuộc trường hợp được Tòa án công nhận hiệu lực theo Điều 129 BLDS 2015 (đã thực hiện ít nhất 2/3 nghĩa vụ)."
+    },
+    "transaction.has_other_blds_validity_exception": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Giao dịch thuộc trường hợp ngoại lệ khác mà Bộ luật Dân sự quy định không bị vô hiệu."
+    },
+    "transaction.is_invalid_under_d122": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Hệ quả pháp lý: Giao dịch dân sự vô hiệu theo Điều 122 BLDS 2015 do thiếu điều kiện tại Điều 117 và không thuộc ngoại lệ."
+    },
+    "prior_transaction.is_invalid": {
+      "type": "boolean",
+      "domain": "third_party_transaction",
+      "description": "Giao dịch dân sự ban đầu (trước khi chuyển giao cho người thứ ba) bị vô hiệu."
+    },
+    "third_party_transaction.transferred_to_third_party": {
+      "type": "boolean",
+      "domain": "third_party_transaction",
+      "description": "Tài sản đã được chuyển giao bằng một giao dịch dân sự khác cho người thứ ba."
+    },
+    "third_party.is_bona_fide": {
+      "type": "boolean",
+      "domain": "third_party_transaction",
+      "description": "Người thứ ba nhận chuyển giao tài sản là người thứ ba ngay tình."
+    },
+    "third_party_transaction.relied_on_registration": {
+      "type": "boolean",
+      "domain": "third_party_transaction",
+      "description": "Người thứ ba ngay tình đã căn cứ vào việc tài sản đã đăng ký tại cơ quan nhà nước có thẩm quyền để xác lập, thực hiện giao dịch."
+    },
+    "third_party_transaction.acquired_via_competent_auction": {
+      "type": "boolean",
+      "domain": "third_party_transaction",
+      "description": "Người thứ ba ngay tình nhận được tài sản thông qua bán đấu giá tại tổ chức có thẩm quyền."
+    },
+    "third_party_transaction.transacted_with_judgment_recognized_owner_later_annulled": {
+      "type": "boolean",
+      "domain": "third_party_transaction",
+      "description": "Người thứ ba ngay tình giao dịch với người mà theo bản án, quyết định của cơ quan nhà nước có thẩm quyền là chủ sở hữu nhưng sau đó bản án, quyết định bị hủy, sửa."
+    },
+    "third_party_transaction.is_not_invalid": {
+      "type": "boolean",
+      "domain": "third_party_transaction",
+      "description": "Hệ quả pháp lý: Giao dịch dân sự xác lập, thực hiện với người thứ ba ngay tình không bị vô hiệu."
+    },
+    "third_party_transaction.is_invalid": {
+      "type": "boolean",
+      "domain": "third_party_transaction",
+      "description": "Hệ quả pháp lý: Giao dịch dân sự với người thứ ba bị vô hiệu."
+    },
+    "marriage.couple_type": {
+      "type": "enum",
+      "allowed_values": ["MALE_FEMALE", "SAME_SEX"],
+      "domain": "marriage",
+      "description": "Giới tính của hai bên kết hôn (nam và nữ hoặc cùng giới tính)."
+    },
+    "marriage.is_marriage_registration": {
+      "type": "boolean",
+      "domain": "marriage",
+      "description": "Tình huống đang xét việc xác lập quan hệ kết hôn giữa hai bên."
+    },
+    "person.male_age": {
+      "type": "integer",
+      "domain": "person",
+      "description": "Tuổi tròn của bên nam tại thời điểm kết hôn (tính theo năm đủ tuổi)."
+    },
+    "person.female_age": {
+      "type": "integer",
+      "domain": "person",
+      "description": "Tuổi tròn của bên nữ tại thời điểm kết hôn (tính theo năm đủ tuổi)."
+    },
+    "marriage.is_voluntary": {
+      "type": "boolean",
+      "domain": "marriage",
+      "description": "Việc kết hôn do hai bên tự nguyện quyết định."
+    },
+    "marriage.parties_not_lost_civil_capacity": {
+      "type": "boolean",
+      "domain": "marriage",
+      "description": "Cả hai bên kết hôn đều không bị mất năng lực hành vi dân sự."
+    },
+    "marriage.violates_prohibited_cases_d5_k2_abcd": {
+      "type": "boolean",
+      "domain": "marriage",
+      "description": "Việc kết hôn thuộc một trong các trường hợp cấm kết hôn tại các điểm a, b, c và d khoản 2 Điều 5 Luật HNGĐ 2014."
+    },
+    "marriage.state_recognized": {
+      "type": "boolean",
+      "domain": "marriage",
+      "description": "Quan hệ hôn nhân được Nhà nước thừa nhận."
+    },
+    "marriage.act_type": {
+      "type": "enum",
+      "allowed_values": ["MARRIAGE_REGISTRATION", "DIVORCE_REQUEST", "COHABITATION", "OTHER"],
+      "domain": "marriage",
+      "description": "Loại hành vi pháp lý trong lĩnh vực hôn nhân và gia đình."
+    },
+    "marriage.is_sham_act": {
+      "type": "boolean",
+      "domain": "marriage",
+      "description": "Hành vi kết hôn hoặc ly hôn là giả tạo (nhằm mục đích khác mà không nhằm xác lập/chấm dứt quan hệ vợ chồng thực sự)."
+    },
+    "tort.caused_by_child": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Có thiệt hại thực tế do người con gây ra cho người khác."
+    },
+    "child.age": {
+      "type": "integer",
+      "domain": "tort",
+      "description": "Tuổi tròn của người con gây thiệt hại tại thời điểm gây thiệt hại."
+    },
+    "child.is_minor": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Người con gây thiệt hại là người chưa thành niên (chưa đủ 18 tuổi)."
+    },
+    "child.is_adult_lost_civil_capacity": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Người con gây thiệt hại đã thành niên nhưng bị mất năng lực hành vi dân sự."
+    },
+    "child.has_living_parents": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Người chưa đủ 15 tuổi gây thiệt hại mà còn cha, mẹ."
+    },
+    "tort.blds_parental_liability_grounds_satisfied": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Đáp ứng đủ căn cứ phát sinh trách nhiệm bồi thường của cha mẹ theo quy định tương ứng của Bộ luật Dân sự (Điều 586 BLDS 2015)."
+    },
+    "tort.exempted_under_blds_d599": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Thuộc trường hợp trường học, bệnh viện, pháp nhân khác trực tiếp quản lý có lỗi và phải bồi thường theo Điều 599 BLDS 2015."
+    },
+    "parent.tort_compensation_liability": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý: Cha mẹ phát sinh trách nhiệm bồi thường thiệt hại do con gây ra."
+    },
+    "parent.primary_compensation_obligation": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo đoạn 1 khoản 2 Điều 586 BLDS 2015: Nghĩa vụ bồi thường ban đầu của cha mẹ khi con chưa đủ 15 tuổi gây thiệt hại (nếu tài sản cha mẹ không đủ thì mới lấy tài sản riêng của con bù phần thiếu)."
+    },
+    "parent.property_sufficient_for_compensation": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Tài sản của cha mẹ đủ để bồi thường toàn bộ thiệt hại do con chưa đủ 15 tuổi gây ra."
+    },
+    "child.has_own_property": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Người con chưa thành niên gây thiệt hại có tài sản riêng."
+    },
+    "child.own_property_used_for_deficiency": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo đoạn 1 khoản 2 Điều 586 BLDS 2015: Lấy tài sản riêng của con chưa thành niên để bồi thường phần còn thiếu khi tài sản của cha mẹ không đủ."
+    },
+    "child.must_compensate_with_own_property": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo đoạn 2 khoản 2 Điều 586 BLDS 2015: Người từ đủ 15 tuổi đến chưa đủ 18 tuổi gây thiệt hại phải bồi thường bằng tài sản của mình."
+    },
+    "child.property_sufficient_for_compensation": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Tài sản của người từ đủ 15 tuổi đến chưa đủ 18 tuổi đủ để bồi thường thiệt hại do mình gây ra."
+    },
+    "parent.must_compensate_deficiency": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo đoạn 2 khoản 2 Điều 586 BLDS 2015: Cha mẹ phải bồi thường phần còn thiếu bằng tài sản của mình khi con từ đủ 15 đến chưa đủ 18 không đủ tài sản để bồi thường."
+    }
+  }
+}
+

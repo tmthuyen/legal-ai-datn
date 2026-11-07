@@ -1,0 +1,492 @@
+[
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D117_K1_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D117_K1",
+        "BLDS_2015_D117_K1_DIEM_A",
+        "BLDS_2015_D117_K1_DIEM_B",
+        "BLDS_2015_D117_K1_DIEM_C"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "REQUIREMENT",
+    "when": {
+      "all": [
+        ["transaction.is_civil_transaction", "eq", true]
+      ]
+    },
+    "then": [
+      {
+        "effect": "REQUIRE",
+        "predicate": "transaction.participants_have_appropriate_capacity",
+        "value": true
+      },
+      {
+        "effect": "REQUIRE",
+        "predicate": "transaction.participants_voluntary",
+        "value": true
+      },
+      {
+        "effect": "REQUIRE",
+        "predicate": "transaction.purpose_and_content_lawful_and_moral",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D117_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D117_K2",
+        "note": "Điều kiện về hình thức giao dịch dân sự được quy định riêng tại khoản 2 Điều 117."
+      },
+      {
+        "rule_id": "BLDS_D122_01",
+        "relation": "CONSEQUENCE_OF_VIOLATION",
+        "source_node_id": "BLDS_2015_D122",
+        "note": "Giao dịch dân sự không có một trong các điều kiện tại Điều 117 thì xem xét hiệu lực theo Điều 122 và các ngoại lệ liên quan."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 2,
+      "description": "Điều kiện có hiệu lực về nội dung và chủ thể của giao dịch dân sự theo khoản 1 Điều 117 BLDS 2015: chủ thể có năng lực phù hợp, hoàn toàn tự nguyện, mục đích và nội dung không vi phạm điều cấm của luật, không trái đạo đức xã hội."
+    },
+    "extensions": {
+      "article_label": "Khoản 1 Điều 117 Bộ luật Dân sự 2015"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D117_K2_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D117_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "REQUIREMENT",
+    "when": {
+      "all": [
+        ["transaction.is_civil_transaction", "eq", true],
+        ["transaction.form_required_by_law", "eq", true]
+      ]
+    },
+    "then": [
+      {
+        "effect": "REQUIRE",
+        "predicate": "transaction.form_compliant",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D117_K1_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D117_K1",
+        "note": "Các điều kiện có hiệu lực về năng lực, tự nguyện và mục đích/nội dung quy định tại khoản 1 Điều 117."
+      },
+      {
+        "rule_id": "BLDS_D122_01",
+        "relation": "CONSEQUENCE_OF_VIOLATION",
+        "source_node_id": "BLDS_2015_D122",
+        "note": "Vi phạm điều kiện hình thức bắt buộc dẫn đến xem xét vô hiệu theo Điều 122, trừ trường hợp công nhận hiệu lực theo Điều 129."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 2,
+      "description": "Điều kiện có hiệu lực về hình thức theo khoản 2 Điều 117 BLDS 2015: Hình thức của giao dịch dân sự là điều kiện có hiệu lực trong trường hợp luật có quy định (phân biệt rõ trường hợp luật không quy định hình thức bắt buộc)."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 117 Bộ luật Dân sự 2015"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D122_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D122"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        ["transaction.is_civil_transaction", "eq", true],
+        {
+          "any": [
+            ["transaction.participants_have_appropriate_capacity", "eq", false],
+            ["transaction.participants_voluntary", "eq", false],
+            ["transaction.purpose_and_content_lawful_and_moral", "eq", false],
+            {
+              "all": [
+                ["transaction.form_required_by_law", "eq", true],
+                ["transaction.form_compliant", "eq", false]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "transaction.is_invalid_under_d122",
+        "value": true
+      }
+    ],
+    "unless": [
+      {
+        "all": [
+          ["transaction.form_required_by_law", "eq", true],
+          ["transaction.form_compliant", "eq", false],
+          ["transaction.recognized_valid_under_d129_form_exception", "eq", true]
+        ]
+      },
+      ["transaction.has_other_blds_validity_exception", "eq", true]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D117_K1_01",
+        "relation": "PREREQUISITE_CONDITION",
+        "source_node_id": "BLDS_2015_D117_K1",
+        "note": "Đối chiếu điều kiện có hiệu lực về chủ thể, ý chí, mục đích/nội dung tại khoản 1 Điều 117."
+      },
+      {
+        "rule_id": "BLDS_D117_K2_01",
+        "relation": "PREREQUISITE_CONDITION",
+        "source_node_id": "BLDS_2015_D117_K2",
+        "note": "Đối chiếu điều kiện có hiệu lực về hình thức tại khoản 2 Điều 117."
+      },
+      {
+        "rule_id": "BLDS_D133_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D133_K2",
+        "note": "Khi giao dịch ban đầu vô hiệu theo Điều 122, việc bảo vệ quyền lợi của người thứ ba ngay tình được giải quyết riêng theo Điều 133 mà không làm giao dịch ban đầu này đương nhiên có hiệu lực."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 3,
+      "description": "Giao dịch dân sự không có một trong các điều kiện quy định tại Điều 117 BLDS 2015 thì vô hiệu, trừ trường hợp có quy định khác (như ngoại lệ công nhận hiệu lực khi vi phạm hình thức theo Điều 129). Điều 133 chỉ giải quyết bảo vệ giao dịch với người thứ ba ngay tình, không dùng để hủy kết luận vô hiệu của giao dịch ban đầu."
+    },
+    "extensions": {
+      "article_label": "Điều 122 Bộ luật Dân sự 2015"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D133_K2_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D133_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        ["prior_transaction.is_invalid", "eq", true],
+        ["asset.was_registered_at_competent_authority", "eq", true],
+        ["third_party_transaction.transferred_to_third_party", "eq", true],
+        ["third_party.is_bona_fide", "eq", true],
+        ["third_party_transaction.relied_on_registration", "eq", true]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "third_party_transaction.is_not_invalid",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D133_K2_02",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D133_K2",
+        "note": "Nhánh 2 của khoản 2 Điều 133 áp dụng khi tài sản phải đăng ký mà chưa được đăng ký tại cơ quan nhà nước có thẩm quyền."
+      },
+      {
+        "rule_id": "BLDS_D122_01",
+        "relation": "PREREQUISITE_CONDITION",
+        "source_node_id": "BLDS_2015_D122",
+        "note": "Quy tắc chỉ áp dụng khi giao dịch ban đầu bị vô hiệu theo Điều 122 hoặc các căn cứ vô hiệu khác của Bộ luật Dân sự."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 3,
+      "description": "Bảo vệ người thứ ba ngay tình (Nhánh 1 - Khoản 2 Điều 133 BLDS 2015): Giao dịch ban đầu vô hiệu nhưng tài sản đã được đăng ký tại cơ quan nhà nước có thẩm quyền, người thứ ba ngay tình căn cứ vào đăng ký đó để giao dịch thì giao dịch với người thứ ba không bị vô hiệu. Quy tắc không đòi hỏi điều kiện asset.registration_required vì nguyên văn luật chỉ yêu cầu tài sản đã được đăng ký."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 133 Bộ luật Dân sự 2015 (Nhánh 1 - Tài sản đã đăng ký)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D133_K2_02",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D133_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        ["prior_transaction.is_invalid", "eq", true],
+        ["asset.registration_required", "eq", true],
+        ["asset.was_registered_at_competent_authority", "eq", false],
+        ["third_party_transaction.transferred_to_third_party", "eq", true]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "third_party_transaction.is_invalid",
+        "value": true
+      }
+    ],
+    "unless": [
+      {
+        "all": [
+          ["third_party.is_bona_fide", "eq", true],
+          ["third_party_transaction.acquired_via_competent_auction", "eq", true]
+        ]
+      },
+      {
+        "all": [
+          ["third_party.is_bona_fide", "eq", true],
+          ["third_party_transaction.transacted_with_judgment_recognized_owner_later_annulled", "eq", true]
+        ]
+      }
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D133_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D133_K2",
+        "note": "Nhánh 1 của khoản 2 Điều 133 áp dụng khi tài sản đã được đăng ký quyền sở hữu tại cơ quan nhà nước có thẩm quyền."
+      },
+      {
+        "rule_id": "BLDS_D122_01",
+        "relation": "PREREQUISITE_CONDITION",
+        "source_node_id": "BLDS_2015_D122",
+        "note": "Quy tắc phát sinh trên cơ sở giao dịch ban đầu đã bị vô hiệu."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 3,
+      "description": "Bảo vệ người thứ ba ngay tình (Nhánh 2 - Khoản 2 Điều 133 BLDS 2015): Khi giao dịch ban đầu vô hiệu và tài sản phải đăng ký nhưng chưa đăng ký thì giao dịch với người thứ ba bị vô hiệu, trừ trường hợp người thứ ba ngay tình nhận qua bán đấu giá hoặc giao dịch với người được bản án/quyết định xác định là chủ sở hữu nhưng sau đó bị hủy, sửa (hai ngoại lệ chỉ áp dụng khi người thứ ba ngay tình)."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 133 Bộ luật Dân sự 2015 (Nhánh 2 - Tài sản phải đăng ký nhưng chưa đăng ký)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D586_K2_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D586_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "LIABILITY",
+    "when": {
+      "all": [
+        ["tort.caused_by_child", "eq", true],
+        ["child.age", "lt", 15],
+        ["child.has_living_parents", "eq", true]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "tort.blds_parental_liability_grounds_satisfied",
+        "value": true
+      },
+      {
+        "effect": "DERIVE",
+        "predicate": "parent.primary_compensation_obligation",
+        "value": true
+      }
+    ],
+    "unless": [
+      ["tort.exempted_under_blds_d599", "eq", true]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D586_K2_02",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D586_K2",
+        "note": "Cơ chế bồi thường phần còn thiếu bằng tài sản riêng của con chưa thành niên khi tài sản cha mẹ không đủ."
+      },
+      {
+        "rule_id": "HNGD_D74_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "LUAT_HNGD_2014_D74",
+        "note": "Cung cấp căn cứ pháp lý từ Bộ luật Dân sự 2015 cho quy phạm viện dẫn tại Điều 74 Luật HNGĐ 2014."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 2,
+      "description": "Theo đoạn 1 khoản 2 Điều 586 BLDS 2015: Người chưa đủ 15 tuổi gây thiệt hại mà còn cha mẹ thì cha mẹ phát sinh trách nhiệm bồi thường toàn bộ thiệt hại ban đầu (trừ trường hợp Điều 599 BLDS 2015). Nếu tài sản cha mẹ không đủ mà con có tài sản riêng thì lấy tài sản đó bồi thường phần còn thiếu (theo quy tắc BLDS_D586_K2_02)."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 586 Bộ luật Dân sự 2015 (Đoạn 1 - Con chưa đủ 15 tuổi)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D586_K2_02",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D586_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "LIABILITY",
+    "when": {
+      "all": [
+        ["tort.caused_by_child", "eq", true],
+        ["child.age", "lt", 15],
+        ["child.has_living_parents", "eq", true],
+        ["parent.property_sufficient_for_compensation", "eq", false],
+        ["child.has_own_property", "eq", true]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "child.own_property_used_for_deficiency",
+        "value": true
+      }
+    ],
+    "unless": [
+      ["tort.exempted_under_blds_d599", "eq", true]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D586_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D586_K2",
+        "note": "Nguyên tắc bồi thường ban đầu của cha mẹ đối với con chưa đủ 15 tuổi."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo đoạn 1 khoản 2 Điều 586 BLDS 2015: Nếu tài sản của cha mẹ không đủ để bồi thường thiệt hại do con chưa đủ 15 tuổi gây ra mà con có tài sản riêng thì lấy tài sản đó để bồi thường phần còn thiếu (trừ trường hợp Điều 599 BLDS 2015)."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 586 Bộ luật Dân sự 2015 (Đoạn 1 - Dùng tài sản riêng của con bù phần thiếu)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D586_K2_03",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D586_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "LIABILITY",
+    "when": {
+      "all": [
+        ["tort.caused_by_child", "eq", true],
+        ["child.age", "gte", 15],
+        ["child.age", "lt", 18]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "child.must_compensate_with_own_property",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D586_K2_04",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D586_K2",
+        "note": "Cơ chế cha mẹ bồi thường phần còn thiếu khi con từ đủ 15 đến chưa đủ 18 tuổi không đủ tài sản."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 2,
+      "description": "Theo đoạn 2 khoản 2 Điều 586 BLDS 2015: Người từ đủ 15 tuổi đến chưa đủ 18 tuổi gây thiệt hại thì phải bồi thường bằng tài sản của chính mình (nghĩa vụ của người con, không phụ thuộc việc còn cha mẹ)."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 586 Bộ luật Dân sự 2015 (Đoạn 2 - Con từ 15 đến dưới 18 tuổi tự bồi thường)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D586_K2_04",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D586_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "LIABILITY",
+    "when": {
+      "all": [
+        ["tort.caused_by_child", "eq", true],
+        ["child.age", "gte", 15],
+        ["child.age", "lt", 18],
+        ["child.has_living_parents", "eq", true],
+        ["child.property_sufficient_for_compensation", "eq", false]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "tort.blds_parental_liability_grounds_satisfied",
+        "value": true
+      },
+      {
+        "effect": "DERIVE",
+        "predicate": "parent.must_compensate_deficiency",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D586_K2_03",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D586_K2",
+        "note": "Nguyên tắc bồi thường bằng tài sản của con từ đủ 15 đến chưa đủ 18 tuổi."
+      },
+      {
+        "rule_id": "HNGD_D74_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "LUAT_HNGD_2014_D74",
+        "note": "Căn cứ BLDS xác lập trách nhiệm bồi thường phần còn thiếu của cha mẹ theo Điều 74 Luật HNGĐ 2014."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo đoạn 2 khoản 2 Điều 586 BLDS 2015: Người từ đủ 15 tuổi đến chưa đủ 18 tuổi gây thiệt hại mà không đủ tài sản để bồi thường thì cha mẹ phải bồi thường phần còn thiếu bằng tài sản của mình."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 586 Bộ luật Dân sự 2015 (Đoạn 2 - Cha mẹ bồi thường phần còn thiếu)"
+    }
+  }
+]
