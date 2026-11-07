@@ -1,0 +1,15 @@
+{
+  "catalog_version": "1.0",
+  "description": "Khung giải thích chuẩn hóa theo trạng thái Applicability và Compliance của Rule Engine V1.",
+  "status_templates": {
+    "NOT_APPLICABLE": "Quy tắc [{rule_id}] không áp dụng cho tình huống này vì điều kiện kích hoạt (when) không thỏa mãn.",
+    "INDETERMINATE": "Chưa đủ dữ kiện để xác định khả năng áp dụng của quy tắc [{rule_id}]. Cần bổ sung: {missing_facts}.",
+    "EXCEPTED": "Quy tắc [{rule_id}] đáp ứng điều kiện kích hoạt ban đầu nhưng bị loại trừ do thỏa mãn điều kiện ngoại lệ (unless).",
+    "EXCEPTION_INDETERMINATE": "Quy tắc [{rule_id}] thỏa mãn điều kiện kích hoạt (when), nhưng chưa thể kết luận áp dụng vì còn thiếu dữ kiện để kiểm tra ngoại lệ (unless): {missing_facts}.",
+    "APPLICABLE_COMPLIANT": "Quy tắc [{rule_id}] có áp dụng và tình huống đã đáp ứng đầy đủ yêu cầu pháp lý (COMPLIANT).",
+    "APPLICABLE_VIOLATED": "Quy tắc [{rule_id}] có áp dụng nhưng tình huống vi phạm điều kiện/yêu cầu pháp lý bắt buộc (VIOLATED).",
+    "APPLICABLE_DERIVED": "Quy tắc [{rule_id}] có áp dụng và không vướng ngoại lệ; hệ thống suy diễn hệ quả pháp lý: {derived_facts}.",
+    "APPLICABLE_INDETERMINATE": "Quy tắc [{rule_id}] có áp dụng cho tình huống này, nhưng thiếu dữ kiện để đánh giá mức độ tuân thủ yêu cầu pháp lý (then): {missing_facts}."
+  }
+}
+
