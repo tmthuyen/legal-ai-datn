@@ -11,19 +11,23 @@ Các chỉ số hỗ trợ:
 - Thống kê tổng hợp (Overall) và phân rã theo nhóm độ khó (hop_type).
 """
 
-from collections import defaultdict
 import math
 import statistics
+from collections import defaultdict
 from typing import Any, Dict, List, Optional, Set
 
 
-def compute_hit_at_k(retrieved_ids: List[str], ground_truth_set: Set[str], k: int) -> int:
+def compute_hit_at_k(
+    retrieved_ids: List[str], ground_truth_set: Set[str], k: int
+) -> int:
     """Tính Hit@K: 1 nếu có ít nhất 1 node đúng trong top-k, ngược lại 0."""
     top_k = retrieved_ids[:k]
     return 1 if any(nid in ground_truth_set for nid in top_k) else 0
 
 
-def compute_recall_at_k(retrieved_ids: List[str], ground_truth_set: Set[str], k: int) -> float:
+def compute_recall_at_k(
+    retrieved_ids: List[str], ground_truth_set: Set[str], k: int
+) -> float:
     """Tính Recall@K: tỷ lệ các node đúng được tìm thấy trong top-k trên tổng số node đúng."""
     if not ground_truth_set:
         return 0.0
@@ -32,7 +36,9 @@ def compute_recall_at_k(retrieved_ids: List[str], ground_truth_set: Set[str], k:
     return len(intersect) / len(ground_truth_set)
 
 
-def compute_mrr_at_k(retrieved_ids: List[str], ground_truth_set: Set[str], k: int = 10) -> float:
+def compute_mrr_at_k(
+    retrieved_ids: List[str], ground_truth_set: Set[str], k: int = 10
+) -> float:
     """Tính Reciprocal Rank trong top-k: 1 / rank của node đúng đầu tiên."""
     if not ground_truth_set:
         return 0.0
@@ -42,7 +48,9 @@ def compute_mrr_at_k(retrieved_ids: List[str], ground_truth_set: Set[str], k: in
     return 0.0
 
 
-def compute_ndcg_at_k(retrieved_ids: List[str], ground_truth_set: Set[str], k: int = 10) -> float:
+def compute_ndcg_at_k(
+    retrieved_ids: List[str], ground_truth_set: Set[str], k: int = 10
+) -> float:
     """Tính NDCG@K với binary relevance."""
     if not ground_truth_set:
         return 0.0
@@ -72,7 +80,7 @@ def evaluate_single_query(
 ) -> Dict[str, Any]:
     """Tính toán toàn bộ metric cho một query cụ thể."""
     gt_set = set(ground_truth_ids)
-    
+
     # Xác định vị trí hit đầu tiên
     first_hit_rank = None
     for rank, nid in enumerate(retrieved_ids, start=1):
@@ -151,7 +159,9 @@ def aggregate_query_metrics(query_records: List[Dict[str, Any]]) -> Dict[str, An
     ndcg_10 = sum(q.get("ndcg@10", 0.0) for q in query_records) / n
 
     # Thời gian lỗi không đại diện cho độ trễ truy xuất thành công.
-    latencies = sorted(q.get("latency_ms", 0.0) for q in query_records if q.get("status") != "ERROR")
+    latencies = sorted(
+        q.get("latency_ms", 0.0) for q in query_records if q.get("status") != "ERROR"
+    )
     if not latencies:
         latencies = [0.0]
     avg_lat = sum(latencies) / len(latencies)
@@ -159,7 +169,9 @@ def aggregate_query_metrics(query_records: List[Dict[str, Any]]) -> Dict[str, An
     p95_position = 0.95 * (n - 1)
     lower = int(math.floor(p95_position))
     upper = int(math.ceil(p95_position))
-    p95_lat = latencies[lower] + (p95_position - lower) * (latencies[upper] - latencies[lower])
+    p95_lat = latencies[lower] + (p95_position - lower) * (
+        latencies[upper] - latencies[lower]
+    )
 
     return {
         "total_queries": n,
@@ -198,4 +210,3 @@ def compute_evaluation_report(query_records: List[Dict[str, Any]]) -> Dict[str, 
         "by_hop_type": hop_breakdown,
         "queries": query_records,
     }
-

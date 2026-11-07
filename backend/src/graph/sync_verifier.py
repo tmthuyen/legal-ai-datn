@@ -4,13 +4,13 @@ Module kiểm tra tính toàn vẹn của Knowledge Graph và đối soát đồ
 giữa nodes.json, relations.json, Neo4j, BM25, ChromaDB, và NPZ cache trước và sau khi mở rộng văn bản luật.
 """
 
-from collections import Counter, defaultdict
 import datetime
 import hashlib
 import json
 import logging
-from pathlib import Path
 import sqlite3
+from collections import Counter, defaultdict
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
 import numpy as np
@@ -18,13 +18,26 @@ import numpy as np
 logger = logging.getLogger(__name__)
 
 ALLOWED_NODE_TYPES = {
-    "Document", "Part", "Chapter", "Section", "SubSection",
-    "Article", "Clause", "Point", "Precedent"
+    "Document",
+    "Part",
+    "Chapter",
+    "Section",
+    "SubSection",
+    "Article",
+    "Clause",
+    "Point",
+    "Precedent",
 }
 
 ALLOWED_REL_TYPES = {
-    "CONTAINS", "REFERENCES", "IMPLEMENTS", "INTERPRETED_BY",
-    "AMENDS", "REPEALS", "REPLACED_BY", "RELATED_TO"
+    "CONTAINS",
+    "REFERENCES",
+    "IMPLEMENTS",
+    "INTERPRETED_BY",
+    "AMENDS",
+    "REPEALS",
+    "REPLACED_BY",
+    "RELATED_TO",
 }
 
 # Quy định chặt chẽ cấu trúc phân cấp pháp luật hợp lệ (Legal Hierarchy Invariants)
@@ -48,7 +61,9 @@ KNOWN_MODEL_DIMENSIONS = {
 }
 
 
-def compute_article_corpus_hash(articles: List[Dict[str, Any]], node_map: Dict[str, Dict[str, Any]]) -> str:
+def compute_article_corpus_hash(
+    articles: List[Dict[str, Any]], node_map: Dict[str, Dict[str, Any]]
+) -> str:
     """Tính SHA256 mã băm ngữ liệu chuẩn theo enriched text của Article nodes."""
     from src.graph.embedder import build_enriched_text
     from src.vector.embedding_pipeline import compute_corpus_hash
@@ -56,7 +71,14 @@ def compute_article_corpus_hash(articles: List[Dict[str, Any]], node_map: Dict[s
     # Sắp xếp các node theo node_id tăng dần để đảm bảo tính tất định
     sorted_articles = sorted(articles, key=lambda x: str(x.get("node_id", "")))
     node_ids = [str(a.get("node_id", "")) for a in sorted_articles]
-    texts = [build_enriched_text(a, node_map) if node_map else str(a.get("full_text") or a.get("text") or "") for a in sorted_articles]
+    texts = [
+        (
+            build_enriched_text(a, node_map)
+            if node_map
+            else str(a.get("full_text") or a.get("text") or "")
+        )
+        for a in sorted_articles
+    ]
 
     return compute_corpus_hash(node_ids, texts)
 
@@ -76,13 +98,21 @@ class KnowledgeGraphSyncVerifier:
         # Đọc cấu hình động từ get_settings() nếu có thể
         try:
             from src.common.setting_config import get_settings
+
             settings = get_settings()
             self.expected_model_name = settings.embedding_model_name
-            self.expected_dimension = KNOWN_MODEL_DIMENSIONS.get(self.expected_model_name, 1024)
+            self.expected_dimension = KNOWN_MODEL_DIMENSIONS.get(
+                self.expected_model_name, 1024
+            )
             self.target_chroma_collection = settings.chroma_collection
             self.active_vector_backend = settings.vector_backend
             slug = self.expected_model_name.replace("/", "_")
-            self.npz_path = self.backend_dir / "data" / "embeddings" / f"article_embeddings_{slug}_enriched.npz"
+            self.npz_path = (
+                self.backend_dir
+                / "data"
+                / "embeddings"
+                / f"article_embeddings_{slug}_enriched.npz"
+            )
         except Exception:
             self.expected_model_name = "darklethelong/vnlegal-lal"
             self.expected_dimension = 1024
@@ -114,7 +144,9 @@ class KnowledgeGraphSyncVerifier:
             Dict chứa trạng thái (PASS/FAIL/WARN), danh sách lỗi, cảnh báo và thống kê chi tiết.
         """
         n_path = Path(nodes_path) if nodes_path else self.data_dir / "nodes.json"
-        r_path = Path(relations_path) if relations_path else self.data_dir / "relations.json"
+        r_path = (
+            Path(relations_path) if relations_path else self.data_dir / "relations.json"
+        )
 
         errors: List[str] = []
         warnings: List[str] = []
@@ -166,14 +198,20 @@ class KnowledgeGraphSyncVerifier:
             # Kiểm tra quy ước định danh Article
             if ntype == "Article":
                 if "_D" not in nid:
-                    naming_format_warnings.append((nid, "Article node_id không tuân thủ mẫu {DOC_ID}_D{number}"))
+                    naming_format_warnings.append(
+                        (nid, "Article node_id không tuân thủ mẫu {DOC_ID}_D{number}")
+                    )
                 if not n.get("full_text") and not n.get("text"):
                     warnings.append(f"Article {nid} không có nội dung text/full_text.")
 
         if duplicate_ids:
-            errors.append(f"Phát hiện {len(duplicate_ids)} node_id bị trùng lặp: {duplicate_ids[:10]}")
+            errors.append(
+                f"Phát hiện {len(duplicate_ids)} node_id bị trùng lặp: {duplicate_ids[:10]}"
+            )
         if invalid_types:
-            errors.append(f"Phát hiện {len(invalid_types)} node có type không hợp lệ: {invalid_types[:5]}")
+            errors.append(
+                f"Phát hiện {len(invalid_types)} node có type không hợp lệ: {invalid_types[:5]}"
+            )
 
         # 1.2 Kiểm tra quan hệ parent-child, cấu trúc phân cấp và document_id đồng nhất
         missing_parents: List[Tuple[str, str, str]] = []
@@ -187,7 +225,9 @@ class KnowledgeGraphSyncVerifier:
 
             if ntype == "Document":
                 if pid is not None:
-                    warnings.append(f"Node Document {nid} có parent_id: {pid} (nên là None).")
+                    warnings.append(
+                        f"Node Document {nid} có parent_id: {pid} (nên là None)."
+                    )
                 continue
 
             if not pid:
@@ -217,11 +257,17 @@ class KnowledgeGraphSyncVerifier:
                 document_mismatches.append((nid, doc_id, pid, expected_doc_id))
 
         if missing_parents:
-            errors.append(f"Phát hiện {len(missing_parents)} node có parent_id không tồn tại: {missing_parents[:5]}")
+            errors.append(
+                f"Phát hiện {len(missing_parents)} node có parent_id không tồn tại: {missing_parents[:5]}"
+            )
         if invalid_hierarchy:
-            errors.append(f"Phát hiện {len(invalid_hierarchy)} vi phạm cấu trúc phân cấp pháp luật: {invalid_hierarchy[:5]}")
+            errors.append(
+                f"Phát hiện {len(invalid_hierarchy)} vi phạm cấu trúc phân cấp pháp luật: {invalid_hierarchy[:5]}"
+            )
         if document_mismatches:
-            errors.append(f"Phát hiện {len(document_mismatches)} node có document_id không khớp với parent: {document_mismatches[:5]}")
+            errors.append(
+                f"Phát hiện {len(document_mismatches)} node có document_id không khớp với parent: {document_mismatches[:5]}"
+            )
 
         # 1.3 Phát hiện chu trình (Cycle Detection) bằng thuật toán 3-color DFS (bất kỳ độ sâu nào)
         # 0: WHITE (unvisited), 1: GRAY (in current path), 2: BLACK (fully explored)
@@ -249,7 +295,9 @@ class KnowledgeGraphSyncVerifier:
                 dfs_cycle(nid, [nid])
 
         if cycles:
-            errors.append(f"Phát hiện {len(cycles)} chu trình bất thường trong quan hệ parent_id: {cycles[:3]}")
+            errors.append(
+                f"Phát hiện {len(cycles)} chu trình bất thường trong quan hệ parent_id: {cycles[:3]}"
+            )
 
         # 1.4 Kiểm tra tính toàn vẹn của relations.json và đối chiếu với cây CONTAINS
         invalid_rel_endpoints: List[Tuple[str, str, str]] = []
@@ -267,7 +315,9 @@ class KnowledgeGraphSyncVerifier:
             rtype = r.get("type")
 
             if not sid or not tid or not rtype:
-                errors.append(f"Relation tại vị trí {idx} thiếu source_id, target_id hoặc type.")
+                errors.append(
+                    f"Relation tại vị trí {idx} thiếu source_id, target_id hoặc type."
+                )
                 continue
 
             triplet = (sid, rtype, tid)
@@ -292,7 +342,9 @@ class KnowledgeGraphSyncVerifier:
                 # Xác nhận node con không phải Document
                 target_type = node_map[tid].get("type") or node_map[tid].get("label")
                 if target_type == "Document":
-                    errors.append(f"Cạnh CONTAINS bất hợp lệ: target {tid} là Document.")
+                    errors.append(
+                        f"Cạnh CONTAINS bất hợp lệ: target {tid} là Document."
+                    )
 
                 # Xác nhận parent_id của target khớp với source
                 target_pid = node_map[tid].get("parent_id")
@@ -303,13 +355,21 @@ class KnowledgeGraphSyncVerifier:
                     )
 
         if duplicate_relations:
-            errors.append(f"Phát hiện {len(duplicate_relations)} quan hệ bị trùng lặp: {duplicate_relations[:5]}")
+            errors.append(
+                f"Phát hiện {len(duplicate_relations)} quan hệ bị trùng lặp: {duplicate_relations[:5]}"
+            )
         if invalid_rel_endpoints:
-            errors.append(f"Phát hiện {len(invalid_rel_endpoints)} relation có source hoặc target không tồn tại: {invalid_rel_endpoints[:5]}")
+            errors.append(
+                f"Phát hiện {len(invalid_rel_endpoints)} relation có source hoặc target không tồn tại: {invalid_rel_endpoints[:5]}"
+            )
         if invalid_rel_types:
-            errors.append(f"Phát hiện {len(invalid_rel_types)} relation có loại không hợp lệ: {invalid_rel_types[:5]}")
+            errors.append(
+                f"Phát hiện {len(invalid_rel_types)} relation có loại không hợp lệ: {invalid_rel_types[:5]}"
+            )
         if self_loop_relations:
-            warnings.append(f"Phát hiện {len(self_loop_relations)} quan hệ tự trỏ chính nó: {self_loop_relations[:5]}")
+            warnings.append(
+                f"Phát hiện {len(self_loop_relations)} quan hệ tự trỏ chính nó: {self_loop_relations[:5]}"
+            )
 
         # 1.5 Đối chiếu 1-1 giữa parent_id của cây và quan hệ CONTAINS trong relations.json
         missing_contains_edges: List[Tuple[str, str]] = []
@@ -385,8 +445,7 @@ class KnowledgeGraphSyncVerifier:
 
         node_map = {n["node_id"]: n for n in all_nodes if n.get("node_id")}
         json_articles = [
-            n for n in all_nodes
-            if (n.get("type") or n.get("label")) == "Article"
+            n for n in all_nodes if (n.get("type") or n.get("label")) == "Article"
         ]
         json_article_ids = sorted([str(a["node_id"]) for a in json_articles])
         json_id_set = set(json_article_ids)
@@ -458,17 +517,22 @@ class KnowledgeGraphSyncVerifier:
                 cur = conn.cursor()
 
                 # 1. Tìm collection id chính xác
-                cur.execute("SELECT id, dimension FROM collections WHERE name = ?", (target_coll_name,))
+                cur.execute(
+                    "SELECT id, dimension FROM collections WHERE name = ?",
+                    (target_coll_name,),
+                )
                 coll_row = cur.fetchone()
                 if not coll_row:
-                    raise ValueError(f"Collection '{target_coll_name}' không tồn tại trong ChromaDB.")
+                    raise ValueError(
+                        f"Collection '{target_coll_name}' không tồn tại trong ChromaDB."
+                    )
 
                 coll_id, coll_dim_col = coll_row[0], coll_row[1]
 
                 # 2. Lấy metadata của đúng collection này
                 cur.execute(
                     "SELECT key, str_value, int_value FROM collection_metadata WHERE collection_id = ?",
-                    (coll_id,)
+                    (coll_id,),
                 )
                 meta_dict = {}
                 for k, s_val, i_val in cur.fetchall():
@@ -481,12 +545,15 @@ class KnowledgeGraphSyncVerifier:
                     chroma_dim = int(chroma_dim)
 
                 # 3. Lấy đúng danh sách embedding_id thuộc về collection này
-                cur.execute("""
+                cur.execute(
+                    """
                     SELECT DISTINCT e.embedding_id
                     FROM embeddings e
                     JOIN segments s ON e.segment_id = s.id
                     WHERE s.collection = ?
-                """, (coll_id,))
+                """,
+                    (coll_id,),
+                )
                 chroma_ids = [r[0] for r in cur.fetchall()]
                 chroma_id_set = set(chroma_ids)
                 conn.close()
@@ -510,6 +577,7 @@ class KnowledgeGraphSyncVerifier:
             # Thử qua chromadb PersistentClient
             try:
                 import chromadb
+
                 client = chromadb.PersistentClient(path=str(c_path))
                 coll = client.get_collection(target_coll_name)
                 coll_data = coll.get(include=[])
@@ -549,7 +617,9 @@ class KnowledgeGraphSyncVerifier:
                 from src.graph.neo4j_client import Neo4jClient
 
                 neo_client = Neo4jClient()
-                rows = neo_client.execute_read("MATCH (n:Article) RETURN n.node_id AS node_id")
+                rows = neo_client.execute_read(
+                    "MATCH (n:Article) RETURN n.node_id AS node_id"
+                )
                 neo4j_ids = [str(r["node_id"]) for r in rows if r.get("node_id")]
                 neo4j_id_set = set(neo4j_ids)
                 sync_details["neo4j"] = {
@@ -590,7 +660,9 @@ class KnowledgeGraphSyncVerifier:
                     f"Chroma có {len(extra_in_chroma)} node thừa."
                 )
         elif self.active_vector_backend == "chroma" and strict:
-            errors.append(f"ChromaDB collection '{target_coll_name}' không có dữ liệu Article IDs.")
+            errors.append(
+                f"ChromaDB collection '{target_coll_name}' không có dữ liệu Article IDs."
+            )
 
         if neo4j_id_set:
             missing_in_neo = json_id_set - neo4j_id_set
@@ -619,9 +691,13 @@ class KnowledgeGraphSyncVerifier:
 
         # 2.7 Kiểm tra Model & Dimension
         if npz_dim not in ("UNKNOWN", self.expected_dimension):
-            errors.append(f"NPZ dimension sai lệch: {npz_dim} (kỳ vọng {self.expected_dimension}).")
+            errors.append(
+                f"NPZ dimension sai lệch: {npz_dim} (kỳ vọng {self.expected_dimension})."
+            )
         if chroma_dim not in ("UNKNOWN", self.expected_dimension):
-            errors.append(f"Chroma dimension sai lệch: {chroma_dim} (kỳ vọng {self.expected_dimension}).")
+            errors.append(
+                f"Chroma dimension sai lệch: {chroma_dim} (kỳ vọng {self.expected_dimension})."
+            )
 
         status = "FAIL" if errors else ("WARN" if warnings else "PASS")
 
@@ -714,25 +790,31 @@ class KnowledgeGraphSyncVerifier:
                             resolved_target_doc = mapped_id
                             break
 
-            source_exists = source_id and (source_id in all_target_doc_ids or source_id in node_map)
+            source_exists = source_id and (
+                source_id in all_target_doc_ids or source_id in node_map
+            )
 
             # Chỉ RESOLVABLE khi CẢ SOURCE VÀ TARGET ĐỀU XÁC ĐỊNH VÀ TỒN TẠI
             if source_exists and resolved_target_doc:
-                resolvable_doc_relations.append({
-                    "source_id": source_id,
-                    "relation_type": rel_type,
-                    "target_id": resolved_target_doc,
-                    "evidence": item.get("evidence"),
-                    "action": f"KÍCH HOẠT QUAN HỆ ':{rel_type}' GIỮA {source_id} VÀ {resolved_target_doc}",
-                })
+                resolvable_doc_relations.append(
+                    {
+                        "source_id": source_id,
+                        "relation_type": rel_type,
+                        "target_id": resolved_target_doc,
+                        "evidence": item.get("evidence"),
+                        "action": f"KÍCH HOẠT QUAN HỆ ':{rel_type}' GIỮA {source_id} VÀ {resolved_target_doc}",
+                    }
+                )
             elif source_exists or resolved_target_doc:
-                candidate_review_doc_relations.append({
-                    "source_id": source_id,
-                    "relation_type": rel_type,
-                    "target_id": resolved_target_doc or target_id,
-                    "reason": "Chỉ có 1 đầu endpoint tồn tại; cần văn bản bổ sung để kích hoạt cạnh.",
-                    "evidence": item.get("evidence"),
-                })
+                candidate_review_doc_relations.append(
+                    {
+                        "source_id": source_id,
+                        "relation_type": rel_type,
+                        "target_id": resolved_target_doc or target_id,
+                        "reason": "Chỉ có 1 đầu endpoint tồn tại; cần văn bản bổ sung để kích hoạt cạnh.",
+                        "evidence": item.get("evidence"),
+                    }
+                )
             else:
                 unresolved_doc_remaining.append(item)
 
@@ -761,28 +843,33 @@ class KnowledgeGraphSyncVerifier:
             target_article_id = None
             if matched_doc and citation:
                 import re
+
                 d_match = re.search(r"điều\s+(\d+)", citation, re.IGNORECASE)
                 if d_match:
                     target_article_id = f"{matched_doc}_D{d_match.group(1)}"
 
             if source_exists and target_article_id and target_article_id in node_map:
-                resolvable_article_refs.append({
-                    "source_id": src,
-                    "citation": citation,
-                    "target_node_id": target_article_id,
-                    "evidence": item.get("evidence"),
-                    "resolved_by_document": matched_doc,
-                    "action": f"KÍCH HOẠT DẪN CHIẾU ':REFERENCES' TỪ {src} TỚI {target_article_id}",
-                })
+                resolvable_article_refs.append(
+                    {
+                        "source_id": src,
+                        "citation": citation,
+                        "target_node_id": target_article_id,
+                        "evidence": item.get("evidence"),
+                        "resolved_by_document": matched_doc,
+                        "action": f"KÍCH HOẠT DẪN CHIẾU ':REFERENCES' TỪ {src} TỚI {target_article_id}",
+                    }
+                )
             elif matched_doc:
                 # Đã khớp văn bản nhưng chưa có node Điều cụ thể trong đồ thị
-                candidate_review_article_refs.append({
-                    "source_id": src,
-                    "citation": citation,
-                    "target_document": matched_doc,
-                    "reason": f"Khớp văn bản {matched_doc} nhưng node Điều tương ứng ({target_article_id or 'chưa rõ'}) chưa có trong đồ thị.",
-                    "evidence": item.get("evidence"),
-                })
+                candidate_review_article_refs.append(
+                    {
+                        "source_id": src,
+                        "citation": citation,
+                        "target_document": matched_doc,
+                        "reason": f"Khớp văn bản {matched_doc} nhưng node Điều tương ứng ({target_article_id or 'chưa rõ'}) chưa có trong đồ thị.",
+                        "evidence": item.get("evidence"),
+                    }
+                )
             else:
                 unresolved_article_remaining.append(item)
 
@@ -794,7 +881,9 @@ class KnowledgeGraphSyncVerifier:
             "total_unresolved_article_references": len(unres_refs),
             "resolvable_article_references": resolvable_article_refs,
             "candidate_review_article_references": candidate_review_article_refs,
-            "remaining_unresolved_article_references": len(unresolved_article_remaining),
+            "remaining_unresolved_article_references": len(
+                unresolved_article_remaining
+            ),
         }
 
     # =========================================================================
@@ -811,8 +900,7 @@ class KnowledgeGraphSyncVerifier:
         val_res = self.validate_graph_data(nodes_path, relations_path)
         sync_res = self.check_retrieval_sync(nodes_path, strict=strict)
         ref_res = self.check_resolvable_references(
-            nodes_path=nodes_path,
-            candidate_doc_ids=set(candidate_doc_ids or [])
+            nodes_path=nodes_path, candidate_doc_ids=set(candidate_doc_ids or [])
         )
 
         overall_status = "PASS"
@@ -828,7 +916,9 @@ class KnowledgeGraphSyncVerifier:
             "validation": val_res,
             "retrieval_synchronization": sync_res,
             "unresolved_references_analysis": ref_res,
-            "recommended_actions": self._build_recommended_actions(val_res, sync_res, ref_res),
+            "recommended_actions": self._build_recommended_actions(
+                val_res, sync_res, ref_res
+            ),
         }
         return report
 
@@ -840,19 +930,30 @@ class KnowledgeGraphSyncVerifier:
     ) -> List[str]:
         actions = []
         if val_res["errors"]:
-            actions.append("SỬA LỖI DỮ LIỆU ĐỒ THỊ: Khắc phục duplicate IDs, parent_id thiếu hoặc chu trình trước khi nạp Neo4j.")
+            actions.append(
+                "SỬA LỖI DỮ LIỆU ĐỒ THỊ: Khắc phục duplicate IDs, parent_id thiếu hoặc chu trình trước khi nạp Neo4j."
+            )
         if sync_res["errors"]:
-            actions.append("ĐỒNG BỘ LẠI VECTOR EMBEDDING: Chạy 'python scripts/embed_nodes.py --store dual' để đồng bộ ChromaDB và NPZ với nodes.json.")
-        if ref_res["resolvable_doc_relations"] or ref_res["resolvable_article_references"]:
+            actions.append(
+                "ĐỒNG BỘ LẠI VECTOR EMBEDDING: Chạy 'python scripts/embed_nodes.py --store dual' để đồng bộ ChromaDB và NPZ với nodes.json."
+            )
+        if (
+            ref_res["resolvable_doc_relations"]
+            or ref_res["resolvable_article_references"]
+        ):
             actions.append(
                 f"KÍCH HOẠT LIÊN KẾT CHÉO: Có {len(ref_res['resolvable_doc_relations'])} quan hệ văn bản và "
                 f"{len(ref_res['resolvable_article_references'])} dẫn chiếu đã đủ 2 đầu endpoint, có thể chuyển thành cạnh trong KG."
             )
         if not actions:
-            actions.append("Hệ thống đạt chuẩn đồng bộ 100%. Sẵn sàng mở rộng văn bản mới an toàn.")
+            actions.append(
+                "Hệ thống đạt chuẩn đồng bộ 100%. Sẵn sàng mở rộng văn bản mới an toàn."
+            )
         return actions
 
-    def export_markdown_report(self, report_data: Dict[str, Any], output_path: Path) -> Path:
+    def export_markdown_report(
+        self, report_data: Dict[str, Any], output_path: Path
+    ) -> Path:
         """Xuất báo cáo định dạng Markdown trực quan."""
         output_path = Path(output_path)
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -885,37 +986,49 @@ class KnowledgeGraphSyncVerifier:
             for w in val["warnings"]:
                 lines.append(f"- {w}")
 
-        lines.extend([
-            "",
-            "## 2. Kết Quả Đối Soát Đồng Bộ Retrieval Đa Tầng",
-            "",
-        ])
+        lines.extend(
+            [
+                "",
+                "## 2. Kết Quả Đối Soát Đồng Bộ Retrieval Đa Tầng",
+                "",
+            ]
+        )
 
         sync = report_data["retrieval_synchronization"]
         lines.append(f"- **Trạng thái:** `{sync['status']}`")
         details = sync.get("sync_details", {})
 
-        lines.append("\n| Kho lưu trữ | Số lượng Article | Corpus Hash SHA256 | Model | Dimension |")
+        lines.append(
+            "\n| Kho lưu trữ | Số lượng Article | Corpus Hash SHA256 | Model | Dimension |"
+        )
         lines.append("| :--- | :---: | :---: | :---: | :---: |")
 
         nj = details.get("nodes_json", {})
-        lines.append(f"| nodes.json | {nj.get('article_count', 'N/A')} | `{str(nj.get('expected_corpus_hash', 'N/A'))[:12]}...` | - | - |")
+        lines.append(
+            f"| nodes.json | {nj.get('article_count', 'N/A')} | `{str(nj.get('expected_corpus_hash', 'N/A'))[:12]}...` | - | - |"
+        )
 
         npz = details.get("npz_cache", {})
         if npz.get("exists"):
-            lines.append(f"| NPZ Cache | {npz.get('article_count', 'N/A')} | `{str(npz.get('corpus_hash', 'N/A'))[:12]}...` | {npz.get('model_name', 'N/A')} | {npz.get('dimension', 'N/A')} |")
+            lines.append(
+                f"| NPZ Cache | {npz.get('article_count', 'N/A')} | `{str(npz.get('corpus_hash', 'N/A'))[:12]}...` | {npz.get('model_name', 'N/A')} | {npz.get('dimension', 'N/A')} |"
+            )
         else:
             lines.append("| NPZ Cache | KHÔNG TỒN TẠI | - | - | - |")
 
         ch = details.get("chroma_db", {})
         if ch.get("exists") and "article_count" in ch:
-            lines.append(f"| ChromaDB | {ch.get('article_count', 'N/A')} | `{str(ch.get('corpus_hash', 'N/A'))[:12]}...` | {ch.get('model_name', 'N/A')} | {ch.get('dimension', 'N/A')} |")
+            lines.append(
+                f"| ChromaDB | {ch.get('article_count', 'N/A')} | `{str(ch.get('corpus_hash', 'N/A'))[:12]}...` | {ch.get('model_name', 'N/A')} | {ch.get('dimension', 'N/A')} |"
+            )
         else:
             lines.append(f"| ChromaDB | OFFLINE / LỖI | - | - | - |")
 
         neo = details.get("neo4j", {})
         if neo.get("online"):
-            lines.append(f"| Neo4j (ONLINE) | {neo.get('article_count', 0)} | (Live Graph) | - | - |")
+            lines.append(
+                f"| Neo4j (ONLINE) | {neo.get('article_count', 0)} | (Live Graph) | - | - |"
+            )
         else:
             lines.append(f"| Neo4j | OFFLINE | - | - | - |")
 
@@ -924,40 +1037,58 @@ class KnowledgeGraphSyncVerifier:
             for err in sync["errors"]:
                 lines.append(f"- {err}")
 
-        lines.extend([
-            "",
-            "## 3. Phân Tích Liên Kết Chéo & Dẫn Chiếu Treo",
-            "",
-        ])
+        lines.extend(
+            [
+                "",
+                "## 3. Phân Tích Liên Kết Chéo & Dẫn Chiếu Treo",
+                "",
+            ]
+        )
         ref = report_data["unresolved_references_analysis"]
-        lines.append(f"- **Tổng số quan hệ văn bản chưa giải quyết:** {ref.get('total_unresolved_doc_relations', 0)}")
-        lines.append(f"- **Tổng số dẫn chiếu điều luật chưa giải quyết:** {ref.get('total_unresolved_article_references', 0)}")
+        lines.append(
+            f"- **Tổng số quan hệ văn bản chưa giải quyết:** {ref.get('total_unresolved_doc_relations', 0)}"
+        )
+        lines.append(
+            f"- **Tổng số dẫn chiếu điều luật chưa giải quyết:** {ref.get('total_unresolved_article_references', 0)}"
+        )
 
         if ref.get("resolvable_doc_relations"):
-            lines.append("\n### 🔗 Quan Hệ Văn Bản Đủ Điều Kiện Kích Hoạt (2 Đầu Endpoint Hợp Lệ):")
+            lines.append(
+                "\n### 🔗 Quan Hệ Văn Bản Đủ Điều Kiện Kích Hoạt (2 Đầu Endpoint Hợp Lệ):"
+            )
             for r in ref["resolvable_doc_relations"]:
-                lines.append(f"- **{r['source_id']}** --`:{r['relation_type']}`--> **{r['target_id']}** (Căn cứ: *{r.get('evidence', '')[:100]}...*)")
+                lines.append(
+                    f"- **{r['source_id']}** --`:{r['relation_type']}`--> **{r['target_id']}** (Căn cứ: *{r.get('evidence', '')[:100]}...*)"
+                )
 
         if ref.get("candidate_review_doc_relations"):
-            lines.append("\n### 🔍 Quan Hệ Cần Rà Soát (Chỉ có 1 đầu Endpoint hoặc cần thêm văn bản):")
+            lines.append(
+                "\n### 🔍 Quan Hệ Cần Rà Soát (Chỉ có 1 đầu Endpoint hoặc cần thêm văn bản):"
+            )
             for r in ref["candidate_review_doc_relations"]:
-                lines.append(f"- **{r['source_id']}** --`:{r['relation_type']}`--> **{r['target_id']}** ({r.get('reason')})")
+                lines.append(
+                    f"- **{r['source_id']}** --`:{r['relation_type']}`--> **{r['target_id']}** ({r.get('reason')})"
+                )
 
         if ref.get("resolvable_article_references"):
             lines.append("\n### 🔗 Dẫn Chiếu Điều Luật Đủ Điều Kiện Kích Hoạt:")
             for r in ref["resolvable_article_references"]:
-                lines.append(f"- **{r['source_id']}** dẫn chiếu *{r['citation']}* tới node **{r['target_node_id']}**")
+                lines.append(
+                    f"- **{r['source_id']}** dẫn chiếu *{r['citation']}* tới node **{r['target_node_id']}**"
+                )
 
         if ref.get("candidate_review_article_refs"):
             lines.append("\n### 🔍 Dẫn Chiếu Điều Luật Chờ Bổ Sung Node Điều:")
             for r in ref["candidate_review_article_refs"]:
                 lines.append(f"- **{r['source_id']}** ({r['citation']}): {r['reason']}")
 
-        lines.extend([
-            "",
-            "## 4. Hành Động Khuyến Nghị Tiếp Theo",
-            "",
-        ])
+        lines.extend(
+            [
+                "",
+                "## 4. Hành Động Khuyến Nghị Tiếp Theo",
+                "",
+            ]
+        )
         for act in report_data.get("recommended_actions", []):
             lines.append(f"- {act}")
 

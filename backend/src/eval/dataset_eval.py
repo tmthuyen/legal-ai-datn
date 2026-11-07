@@ -9,9 +9,9 @@ Nhiệm vụ:
 - Giữ nguyên nhãn gốc, không tự ý lọc bỏ câu hỏi khó, phân loại theo hop_type.
 """
 
-from dataclasses import dataclass, field
 import json
 import logging
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
@@ -144,9 +144,7 @@ class EvaluationDatasetLoader:
             seen_query_ids.add(qid)
 
             # 2. Trích xuất question text
-            qtext = str(
-                item.get("question") or item.get("query") or ""
-            ).strip()
+            qtext = str(item.get("question") or item.get("query") or "").strip()
             if not qtext:
                 empty_question_count += 1
                 logger.warning("Query rỗng tại id: %s", qid)
@@ -198,7 +196,17 @@ class EvaluationDatasetLoader:
             meta = {
                 k: v
                 for k, v in item.items()
-                if k not in {"query_id", "id", "question", "query", "ground_truth_node_ids", "expected_ids", "hop_type", "source_dataset"}
+                if k
+                not in {
+                    "query_id",
+                    "id",
+                    "question",
+                    "query",
+                    "ground_truth_node_ids",
+                    "expected_ids",
+                    "hop_type",
+                    "source_dataset",
+                }
             }
 
             queries.append(
@@ -226,12 +234,17 @@ class EvaluationDatasetLoader:
             "kg_validation_available": bool(self.known_all_node_ids),
             "hop_type_distribution": hop_type_counts,
             "unmatched_kg_nodes": unmatched_kg_nodes,
-            "is_valid": (len(queries) > 0 and missing_ground_truth_count == 0
-                         and empty_question_count == 0 and duplicate_id_count == 0
-                         and duplicate_question_count == 0 and duplicate_gt_count == 0
-                         and not unmatched_kg_nodes and not non_article_gt_nodes
-                         and bool(self.known_all_node_ids)),
+            "is_valid": (
+                len(queries) > 0
+                and missing_ground_truth_count == 0
+                and empty_question_count == 0
+                and duplicate_id_count == 0
+                and duplicate_question_count == 0
+                and duplicate_gt_count == 0
+                and not unmatched_kg_nodes
+                and not non_article_gt_nodes
+                and bool(self.known_all_node_ids)
+            ),
         }
 
         return queries, report
-

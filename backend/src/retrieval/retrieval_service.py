@@ -6,9 +6,9 @@ from src.common.custom_exception import CustomException
 from src.common.schemas import LegalHierarchy
 from src.graph.graph_service import LegalGraphService
 from src.models.legal_model import BaseLegalModel
+from src.retrieval.hybrid import HybridSearcher
 from src.retrieval.legal_query_extractor import LegalQueryExtractor
 from src.retrieval.semantic import SemanticSearcher
-from src.retrieval.hybrid import HybridSearcher
 from src.utils.logger import setup_logger
 
 logger = setup_logger("retrieval_service", filename="retrieval_service.log")
@@ -472,9 +472,7 @@ class RetrievalService:
                 return EMPTY_RESULT
 
             related_nodes_found = search_nodes.get("related_nodes", [])
-            related_documents_found = search_nodes.get(
-                "related_documents", []
-            )
+            related_documents_found = search_nodes.get("related_documents", [])
 
             logger.info(
                 f"Kết quả tìm kiếm liên quan: {len(related_nodes_found)} nodes, {len(related_documents_found)} documents."

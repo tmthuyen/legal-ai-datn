@@ -10,7 +10,6 @@ Nhiệm vụ:
 - Khử trùng lặp theo định danh pháp lý (node_id) và bảo toàn Unified Data Contract cho Graph Traversal.
 """
 
-from collections import Counter, defaultdict
 import json
 import math
 import pathlib
@@ -18,6 +17,7 @@ import re
 import sys
 import time
 import unicodedata
+from collections import Counter, defaultdict
 from typing import Any, Dict, List, Optional, Tuple
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -57,7 +57,9 @@ def tokenize_vietnamese_legal(
     text = unicodedata.normalize("NFC", text.lower())
 
     # 2. Bóc tách các từ/âm tiết tiếng Việt và số hiệu điều khoản
-    pattern = r"[a-z0-9àáâãèéêìíòóôõùúýăđơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]+"
+    pattern = (
+        r"[a-z0-9àáâãèéêìíòóôõùúýăđơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]+"
+    )
     syllables = re.findall(pattern, text)
     if not syllables:
         return []
@@ -98,7 +100,9 @@ class BM25Okapi:
         self.corpus_size = len(corpus_tokens)
         self.doc_lens = [len(doc) for doc in corpus_tokens]
         self.avgdl = (
-            sum(self.doc_lens) / max(self.corpus_size, 1) if self.corpus_size > 0 else 0.0
+            sum(self.doc_lens) / max(self.corpus_size, 1)
+            if self.corpus_size > 0
+            else 0.0
         )
 
         # Tính tần số xuất hiện của từng từ trong tài liệu (TF) và trong cả tập (DF)
@@ -116,9 +120,7 @@ class BM25Okapi:
         negative_idfs = []
         for term, freq in self.doc_freqs.items():
             # Công thức Robertson-Spärck Jones có làm mịn tránh chia cho 0
-            val = math.log(
-                1.0 + (self.corpus_size - freq + 0.5) / (freq + 0.5)
-            )
+            val = math.log(1.0 + (self.corpus_size - freq + 0.5) / (freq + 0.5))
             self.idf[term] = val
             if val < 0:
                 negative_idfs.append(term)
@@ -126,9 +128,7 @@ class BM25Okapi:
         # Xử lý các từ có IDF âm bằng giá trị epsilon * average_idf
         if self.idf:
             positive_idfs = [v for v in self.idf.values() if v > 0]
-            avg_idf = (
-                sum(positive_idfs) / len(positive_idfs) if positive_idfs else 0.0
-            )
+            avg_idf = sum(positive_idfs) / len(positive_idfs) if positive_idfs else 0.0
             eps = self.epsilon * avg_idf
             for term in negative_idfs:
                 self.idf[term] = eps
@@ -214,7 +214,9 @@ class BM25Searcher:
                 rows = self.client.execute_read(cypher_articles)
                 if rows:
                     articles = rows
-                    logger.info("Đã nạp %d Article nodes từ Neo4j cho BM25.", len(articles))
+                    logger.info(
+                        "Đã nạp %d Article nodes từ Neo4j cho BM25.", len(articles)
+                    )
 
                 cypher_docs = """
                 MATCH (d:Document)
@@ -248,7 +250,9 @@ class BM25Searcher:
                                 "label": "Article",
                                 "number": item.get("number"),
                                 "title": item.get("title") or "",
-                                "full_text": item.get("full_text") or item.get("text") or "",
+                                "full_text": item.get("full_text")
+                                or item.get("text")
+                                or "",
                                 "document_id": item.get("document_id"),
                                 "parent_id": item.get("parent_id"),
                             }
@@ -261,7 +265,9 @@ class BM25Searcher:
                                 "label": "Document",
                                 "number": item.get("number"),
                                 "title": item.get("title") or "",
-                                "full_text": item.get("full_text") or item.get("text") or "",
+                                "full_text": item.get("full_text")
+                                or item.get("text")
+                                or "",
                                 "document_id": did,
                                 "parent_id": item.get("parent_id"),
                             }

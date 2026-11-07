@@ -16,11 +16,11 @@ import argparse
 import csv
 import datetime
 import json
-import statistics
 import logging
-from pathlib import Path
+import statistics
 import sys
 import time
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
 import numpy as np
@@ -49,10 +49,14 @@ class StandaloneGraphHydrator:
     def __init__(self, node_map: Dict[str, Dict[str, Any]]):
         self.node_map = node_map
 
-    def execute_read(self, query: str, params: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+    def execute_read(
+        self, query: str, params: Optional[Dict[str, Any]] = None
+    ) -> List[Dict[str, Any]]:
         return self.execute_query(query, params)
 
-    def execute_query(self, query: str, params: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+    def execute_query(
+        self, query: str, params: Optional[Dict[str, Any]] = None
+    ) -> List[Dict[str, Any]]:
         if not params or "hits" not in params:
             return []
         hits = params["hits"]
@@ -63,22 +67,24 @@ class StandaloneGraphHydrator:
             n = self.node_map.get(nid, {})
             if doc_filter and n.get("document_id") != doc_filter:
                 continue
-            rows.append({
-                "node_id": nid,
-                "label": n.get("label") or n.get("type") or "Article",
-                "number": n.get("number"),
-                "title": n.get("title") or "",
-                "full_text": n.get("full_text") or n.get("text") or "",
-                "document_id": n.get("document_id"),
-                "parent_id": n.get("parent_id"),
-                "score": h.get("score", 0.0),
-                "doc_node_id": n.get("document_id"),
-                "doc_label": "Document",
-                "doc_title": "",
-                "doc_full_text": "",
-                "doc_document_id": n.get("document_id"),
-                "doc_parent_id": None,
-            })
+            rows.append(
+                {
+                    "node_id": nid,
+                    "label": n.get("label") or n.get("type") or "Article",
+                    "number": n.get("number"),
+                    "title": n.get("title") or "",
+                    "full_text": n.get("full_text") or n.get("text") or "",
+                    "document_id": n.get("document_id"),
+                    "parent_id": n.get("parent_id"),
+                    "score": h.get("score", 0.0),
+                    "doc_node_id": n.get("document_id"),
+                    "doc_label": "Document",
+                    "doc_title": "",
+                    "doc_full_text": "",
+                    "doc_document_id": n.get("document_id"),
+                    "doc_parent_id": None,
+                }
+            )
         return rows
 
 
@@ -97,7 +103,9 @@ class NpzVectorStore:
         norms[norms == 0] = 1.0
         self.vectors = self.vectors / norms
 
-    def query(self, vector: List[float], top_k: int = 5, document_filter: Optional[str] = None) -> List[Dict[str, Any]]:
+    def query(
+        self, vector: List[float], top_k: int = 5, document_filter: Optional[str] = None
+    ) -> List[Dict[str, Any]]:
         q_vec = np.array(vector, dtype=np.float32)
         q_norm = np.linalg.norm(q_vec)
         if q_norm > 0:
@@ -106,7 +114,12 @@ class NpzVectorStore:
             raise ValueError("Embedding dimension không trùng với NPZ")
         sims = np.dot(self.vectors, q_vec)
         if document_filter:
-            mask = np.array([self.node_map.get(nid, {}).get("document_id") == document_filter for nid in self.node_ids])
+            mask = np.array(
+                [
+                    self.node_map.get(nid, {}).get("document_id") == document_filter
+                    for nid in self.node_ids
+                ]
+            )
             sims[~mask] = -1e9
         valid_indices = np.where(sims > -1e8)[0]
         top_indices = valid_indices[np.argsort(sims[valid_indices])[::-1][:top_k]]
@@ -115,7 +128,9 @@ class NpzVectorStore:
             nid = self.node_ids[idx]
             sim = float(sims[idx])
             score = max(0.0, min(1.0, (1.0 + sim) / 2.0))
-            hits.append({"node_id": nid, "score": score, "metadata": self.node_map.get(nid, {})})
+            hits.append(
+                {"node_id": nid, "score": score, "metadata": self.node_map.get(nid, {})}
+            )
         return hits
 
 
@@ -196,17 +211,24 @@ class RetrievalEvaluator:
                 if store.count() <= 0:
                     raise ValueError("Chroma collection rỗng")
                 self.backend_info["vector"] = "chroma"
-                logger.info("Đã mở ChromaVectorStore: %d Article vectors.", store.count())
+                logger.info(
+                    "Đã mở ChromaVectorStore: %d Article vectors.", store.count()
+                )
                 return store
             except Exception as e:
-                logger.warning("Không thể mở ChromaVectorStore (%s). Thử nạp từ NPZ cache...", e)
+                logger.warning(
+                    "Không thể mở ChromaVectorStore (%s). Thử nạp từ NPZ cache...", e
+                )
 
         # Fallback nạp ma trận vector .npz
         if self.npz_path.exists():
             try:
                 npz_store = NpzVectorStore(self.npz_path, self.node_map)
                 self.backend_info["vector"] = "npz_fallback"
-                logger.info("Đã nạp NpzVectorStore: %d Article vectors.", len(npz_store.node_ids))
+                logger.info(
+                    "Đã nạp NpzVectorStore: %d Article vectors.",
+                    len(npz_store.node_ids),
+                )
                 return npz_store
             except Exception as e:
                 logger.error("Lỗi khi nạp NPZ vector cache: %s", e)
@@ -217,10 +239,14 @@ class RetrievalEvaluator:
 
     def _init_bm25(self) -> BM25Searcher:
         logger.info("Khởi tạo BM25Searcher...")
-        client = self.neo4j_client if isinstance(self.neo4j_client, Neo4jClient) else None
+        client = (
+            self.neo4j_client if isinstance(self.neo4j_client, Neo4jClient) else None
+        )
         searcher = BM25Searcher(neo4j_client=client, corpus_path=self.nodes_file)
         self.backend_info["bm25_corpus_size"] = len(searcher.articles)
-        self.backend_info["bm25_corpus_ids"] = [str(a.get("node_id")) for a in searcher.articles if a.get("node_id")]
+        self.backend_info["bm25_corpus_ids"] = [
+            str(a.get("node_id")) for a in searcher.articles if a.get("node_id")
+        ]
         return searcher
 
     def _init_semantic(self) -> SemanticSearcher:
@@ -391,9 +417,7 @@ def export_evaluation_results(
         "timestamp": datetime.datetime.now().isoformat(),
         "top_k": top_k,
         "validation_report": validation_report,
-        "overall_summary": {
-            method: rep["overall"] for method, rep in results.items()
-        },
+        "overall_summary": {method: rep["overall"] for method, rep in results.items()},
         "by_hop_type_summary": {
             method: rep["by_hop_type"] for method, rep in results.items()
         },
@@ -405,14 +429,24 @@ def export_evaluation_results(
     md_path = output_dir / f"retrieval_evaluation_report_{timestamp_str}.md"
     with open(md_path, "w", encoding="utf-8") as f:
         f.write("# Báo Cáo Thực Nghiệm Đánh Giá Retrieval (Ablation Study)\n\n")
-        f.write(f"- **Thời gian thực nghiệm:** {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write(f"- **Tập dữ liệu:** `{validation_report.get('dataset_file')}` ({validation_report.get('total_queries')} câu hỏi)\n")
-        f.write(f"- **Phân bố độ phức tạp:** `{validation_report.get('hop_type_distribution')}`\n")
+        f.write(
+            f"- **Thời gian thực nghiệm:** {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+        )
+        f.write(
+            f"- **Tập dữ liệu:** `{validation_report.get('dataset_file')}` ({validation_report.get('total_queries')} câu hỏi)\n"
+        )
+        f.write(
+            f"- **Phân bố độ phức tạp:** `{validation_report.get('hop_type_distribution')}`\n"
+        )
         f.write(f"- **Ngưỡng cắt Top-K:** {top_k}\n\n")
 
         f.write("## 1. Bảng So Sánh Hiệu Năng Tổng Thể (Overall Performance)\n\n")
-        f.write("| Phương pháp | Hit@1 (%) | Hit@5 (%) | Hit@10 (%) | Recall@1 (%) | Recall@5 (%) | Recall@10 (%) | MRR@10 | NDCG@10 | Latency TB (ms) |\n")
-        f.write("| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n")
+        f.write(
+            "| Phương pháp | Hit@1 (%) | Hit@5 (%) | Hit@10 (%) | Recall@1 (%) | Recall@5 (%) | Recall@10 (%) | MRR@10 | NDCG@10 | Latency TB (ms) |\n"
+        )
+        f.write(
+            "| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n"
+        )
 
         for m_key, m_name in [
             ("bm25", "BM25 (Lexical)"),
@@ -431,7 +465,9 @@ def export_evaluation_results(
         all_hops = sorted(validation_report.get("hop_type_distribution", {}).keys())
         for ht in all_hops:
             f.write(f"### Nhóm: `{ht}`\n\n")
-            f.write("| Phương pháp | Hit@1 (%) | Hit@5 (%) | Hit@10 (%) | Recall@5 (%) | Recall@10 (%) | MRR@10 |\n")
+            f.write(
+                "| Phương pháp | Hit@1 (%) | Hit@5 (%) | Hit@10 (%) | Recall@5 (%) | Recall@10 (%) | MRR@10 |\n"
+            )
             f.write("| :--- | :---: | :---: | :---: | :---: | :---: | :---: |\n")
             for m_key, m_name in [
                 ("bm25", "BM25"),
@@ -447,16 +483,26 @@ def export_evaluation_results(
             f.write("\n")
 
         f.write("## 3. Nhận Xét & Kết Luận Khoa Học\n\n")
-        f.write("- **BM25:** Kết quả và độ trễ được đo trên tập câu hỏi này; không suy rộng sang mọi truy vấn.\n")
-        f.write("- **Dense Semantic:** So sánh các metric trong bảng; cần kiểm thử thêm để kết luận khả năng xử lý diễn đạt khác từ khóa.\n")
+        f.write(
+            "- **BM25:** Kết quả và độ trễ được đo trên tập câu hỏi này; không suy rộng sang mọi truy vấn.\n"
+        )
+        f.write(
+            "- **Dense Semantic:** So sánh các metric trong bảng; cần kiểm thử thêm để kết luận khả năng xử lý diễn đạt khác từ khóa.\n"
+        )
         if "semantic" in results and "hybrid" in results:
             sem = results["semantic"]["overall"]
             hyb = results["hybrid"]["overall"]
             for metric in ("hit@1", "hit@5", "recall@5", "recall@10", "mrr@10"):
                 diff = hyb[metric] - sem[metric]
-                relation = "cao hơn" if diff > 0 else ("thấp hơn" if diff < 0 else "bằng")
-                f.write(f"- **Hybrid so với Semantic – {metric}:** {relation} ({hyb[metric]} so với {sem[metric]}).\n")
-            f.write("- **Lưu ý:** Đây là kết quả retrieval trước graph traversal. Không thể suy ra Hybrid vượt trội trên mọi tình huống chỉ từ benchmark này.\n")
+                relation = (
+                    "cao hơn" if diff > 0 else ("thấp hơn" if diff < 0 else "bằng")
+                )
+                f.write(
+                    f"- **Hybrid so với Semantic – {metric}:** {relation} ({hyb[metric]} so với {sem[metric]}).\n"
+                )
+            f.write(
+                "- **Lưu ý:** Đây là kết quả retrieval trước graph traversal. Không thể suy ra Hybrid vượt trội trên mọi tình huống chỉ từ benchmark này.\n"
+            )
 
     return csv_path, json_path, md_path
 
@@ -507,7 +553,9 @@ def resolve_path(path_str: str, base_dir: Path) -> Path:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Chạy Retrieval Evaluation độc lập (BM25 vs Semantic vs Hybrid).")
+    parser = argparse.ArgumentParser(
+        description="Chạy Retrieval Evaluation độc lập (BM25 vs Semantic vs Hybrid)."
+    )
     parser.add_argument(
         "--dataset",
         type=str,
@@ -533,7 +581,9 @@ def main():
         help="Thư mục xuất báo cáo CSV, JSON và Markdown.",
     )
     parser.add_argument(
-        "--strict", action="store_true", help="Yêu cầu Neo4j và Chroma, không cho phép fallback"
+        "--strict",
+        action="store_true",
+        help="Yêu cầu Neo4j và Chroma, không cho phép fallback",
     )
     parser.add_argument(
         "--rrf_k",
@@ -550,7 +600,9 @@ def main():
     methods = [m.strip().lower() for m in args.methods.split(",") if m.strip()]
 
     print(f">> Nạp dataset: {dataset_path}")
-    loader = EvaluationDatasetLoader(kg_nodes_path=backend_dir / "data" / "processed" / "nodes.json")
+    loader = EvaluationDatasetLoader(
+        kg_nodes_path=backend_dir / "data" / "processed" / "nodes.json"
+    )
     queries, val_report = loader.load_dataset(dataset_path)
 
     print(f">> Đã nạp {len(queries)} queries.")
@@ -558,34 +610,51 @@ def main():
     if not val_report.get("is_valid"):
         raise ValueError(f"Dataset không hợp lệ: {val_report}")
     if val_report.get("unmatched_kg_nodes"):
-        print(f"   CẢNH BÁO node không có trong KG: {val_report.get('unmatched_kg_nodes')}")
+        print(
+            f"   CẢNH BÁO node không có trong KG: {val_report.get('unmatched_kg_nodes')}"
+        )
 
     evaluator = RetrievalEvaluator(backend_dir=backend_dir, rrf_k=args.rrf_k)
-    if args.strict and (evaluator.backend_info.get("graph") != "neo4j" or evaluator.backend_info.get("vector") != "chroma"):
-        raise RuntimeError(f"Strict mode yêu cầu Neo4j và Chroma thực: {evaluator.backend_info}")
+    if args.strict and (
+        evaluator.backend_info.get("graph") != "neo4j"
+        or evaluator.backend_info.get("vector") != "chroma"
+    ):
+        raise RuntimeError(
+            f"Strict mode yêu cầu Neo4j và Chroma thực: {evaluator.backend_info}"
+        )
     if args.top_k < 10:
         raise ValueError("Cần --top_k >= 10 vì báo cáo có Hit@10/Recall@10")
     if not evaluator.bm25_searcher.articles or evaluator.vector_store is None:
-        raise RuntimeError("Không có corpus BM25 hoặc Vector Store để benchmark công bằng")
+        raise RuntimeError(
+            "Không có corpus BM25 hoặc Vector Store để benchmark công bằng"
+        )
     bm_ids = set(evaluator.backend_info["bm25_corpus_ids"])
     if isinstance(evaluator.vector_store, NpzVectorStore):
         vec_ids = set(evaluator.vector_store.node_ids)
         missing = bm_ids - vec_ids
         extra = vec_ids - bm_ids
         if missing or extra:
-            raise RuntimeError(f"BM25/NPZ không cùng Article corpus: BM25-only={len(missing)} Vector-only={len(extra)}; ví dụ={list(sorted(missing))[:5]}")
+            raise RuntimeError(
+                f"BM25/NPZ không cùng Article corpus: BM25-only={len(missing)} Vector-only={len(extra)}; ví dụ={list(sorted(missing))[:5]}"
+            )
     else:
         collection = evaluator.vector_store.collection
         vec_ids = set()
         total = collection.count()
         for offset in range(0, total, 1000):
-            page = collection.get(limit=min(1000, total - offset), offset=offset, include=[])
+            page = collection.get(
+                limit=min(1000, total - offset), offset=offset, include=[]
+            )
             vec_ids.update(page["ids"])
         missing = bm_ids - vec_ids
         extra = vec_ids - bm_ids
         if missing or extra:
-            raise RuntimeError(f"BM25/Chroma không cùng Article corpus: BM25-only={len(missing)} Vector-only={len(extra)}; ví dụ={list(sorted(missing))[:5]}")
-    results = evaluator.run_benchmark(queries=queries, methods=methods, top_k=args.top_k)
+            raise RuntimeError(
+                f"BM25/Chroma không cùng Article corpus: BM25-only={len(missing)} Vector-only={len(extra)}; ví dụ={list(sorted(missing))[:5]}"
+            )
+    results = evaluator.run_benchmark(
+        queries=queries, methods=methods, top_k=args.top_k
+    )
 
     print_comparison_table(results)
 
