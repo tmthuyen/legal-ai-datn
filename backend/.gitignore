@@ -1,6 +1,7 @@
-# 1. Môi trường ảo (Quan trọng nhất)
+# Môi trường ảo)
 .venv/
-# 2. Python rác
+
+# Python rác
 __pycache__/
 *.pyc
 *.pyo
@@ -9,14 +10,14 @@ __pycache__/
 dist/
 build/
 
-# 1. Bỏ qua toàn bộ Data (Siêu nặng)
+# data
 data/*
 
-# 2. Bỏ qua Logs (Rác sinh ra hàng ngày)
+# logs
 logs/*
 !logs/.gitkeep
 
-# 5. Logs & Notebooks
+# Logs & Notebooks
 logs/*.log
 .ipynb_checkpoints/
 
@@ -29,13 +30,6 @@ logs/
 .vscode/
 .idea/
 
-# Python
-__pycache__/
-*.pyc
-
-# Virtual environment
-.venv/
-venv/
 
 # Data 
 *.npy
@@ -51,3 +45,12 @@ venv/
 
 # model cache
 models/.cache/
+
+# test
+.coverage
+
+# secret file
+.env
+.env.production
+.env.development
+.env.local
