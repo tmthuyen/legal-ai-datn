@@ -60,6 +60,11 @@
       "domain": "transaction",
       "description": "Việc ủy quyền giữa vợ và chồng đáp ứng điều kiện hợp lệ về hình thức và nội dung theo quy định pháp luật."
     },
+    "transaction.spousal_authorization_permitted": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Hệ quả pháp lý: vợ hoặc chồng được phép ủy quyền cho nhau đối với giao dịch cần sự đồng ý của cả hai, sau khi việc ủy quyền đã được xác định hợp lệ."
+    },
     "transaction.is_civil_transaction": {
       "type": "boolean",
       "domain": "transaction",
