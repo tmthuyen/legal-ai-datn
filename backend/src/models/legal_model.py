@@ -92,9 +92,6 @@ class LegalReasoningModel(BaseLegalModel):
         super().__init__(
             base_model_name=base_model_name, model_id=model_id, revision=revision
         )
-        if tasks:
-            self.tasks.update(tasks)
-
         self.tasks = {
             "LEGAL_QUERY_REFERENCE_HIERARCHY_EXTRACTION": {
                 "prompt": Prompt.LEGAL_QRHE_PROMPT,
@@ -110,8 +107,16 @@ class LegalReasoningModel(BaseLegalModel):
                 ],
                 "output_type": "json",  # json, list, str, boolean
                 "max_new_tokens": 128,
-            }
+            },
+            "LEGAL_FACT_EXTRACTION": {
+                "prompt": Prompt.LEGAL_FACT_EXTRACTION_PROMPT,
+                "required_keys": ["facts", "missing_facts", "evidence"],
+                "output_type": "json",
+                "max_new_tokens": 256,
+            },
         }
+        if tasks:
+            self.tasks.update(tasks)
 
         logger.info(f"Tasks đã đăng ký: {list(self.tasks.keys())}")
 

@@ -6,11 +6,25 @@ Module: backend.src.reasoning.evaluator
 """
 
 import json
-from typing import Any, Dict, List, Tuple
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
 
 TRUE = "TRUE"
 FALSE = "FALSE"
 UNKNOWN = "UNKNOWN"
+
+_DEFAULT_EXPLANATIONS_PATH = (
+    Path(__file__).resolve().parents[2]
+    / "data"
+    / "rules"
+    / "catalogs"
+    / "explanations.json"
+)
+
+
+def _load_default_explanations() -> Dict[str, str]:
+    with _DEFAULT_EXPLANATIONS_PATH.open("r", encoding="utf-8") as f:
+        return json.load(f)["status_templates"]
 
 
 def _dedup_preserve_order(items: List[str]) -> List[str]:
@@ -111,9 +125,11 @@ def eval_condition_k3(expr: Any, facts: Dict[str, Any]) -> Tuple[str, List[str]]
 def evaluate_rule(
     rule: Dict[str, Any],
     facts: Dict[str, Any],
-    explanations_templates: Dict[str, str],
+    explanations_templates: Optional[Dict[str, str]] = None,
 ) -> Dict[str, Any]:
     rule_id = rule["id"]
+    if explanations_templates is None:
+        explanations_templates = _load_default_explanations()
 
     # Bước 1: Đánh giá điều kiện kích hoạt (when)
     when_val, when_missing = eval_condition_k3(rule["when"], facts)

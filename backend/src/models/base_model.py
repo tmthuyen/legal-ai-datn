@@ -316,8 +316,26 @@ class Prompt:
     Tuân thủ đúng schema đầu ra.
     """
 
+    LEGAL_FACT_EXTRACTION_PROMPT = """
+    TASK: LEGAL_FACT_EXTRACTION
+
+    Nhiệm vụ:
+    Trích xuất các dữ kiện thực tế được nêu rõ trong input theo danh sách predicate được cung cấp.
+    Chỉ trả về JSON hợp lệ với cấu trúc:
+        {
+            "facts": {"predicate.name": value},
+            "missing_facts": ["predicate.name"],
+            "evidence": {"predicate.name": "đoạn bằng chứng trong input"}
+        }
+
+        Chỉ sử dụng predicate và giá trị được cung cấp trong input.
+        Không tự suy diễn kết luận pháp lý, không tự điền giá trị khi input không đủ căn cứ.
+        Dữ kiện không xác định phải đưa vào missing_facts và không đưa vào facts.
+        """
+
 
 class LegalModelTaskID:
     LEGAL_QUERY_REFERENCE_HIERARCHY_EXTRACTION = (
         "LEGAL_QUERY_REFERENCE_HIERARCHY_EXTRACTION"
     )
+    LEGAL_FACT_EXTRACTION = "LEGAL_FACT_EXTRACTION"
