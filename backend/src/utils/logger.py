@@ -4,16 +4,23 @@ from datetime import datetime
 
 
 def setup_logger(name="project_logger", filename=None):
+    """Tạo logger
+    Tên file log sẽ được tạo theo name và ngày tháng (VD: logs/train_2026-02-23.log)
+
+    Args:
+        name (str, optional): Tên của logger. Defaults to "project_logger".
+        filename (str, optional): Không dùng nữa
+
+    Returns:
+        _type_: Logger đã được tạo.
+    """
     # 1. Tạo thư mục logs nếu chưa có
     if not os.path.exists("logs"):
         os.makedirs("logs")
 
     # 2. Tạo tên file log theo ngày tháng (VD: logs/train_2026-02-23.log)
-    if filename is None:
-        current_time = datetime.now().strftime("%Y-%m-%d")
-        log_file = f"logs/{name}_{current_time}.log"
-    else:
-        log_file = f"logs/{filename}"
+    current_time = datetime.now().strftime("%Y-%m-%d")
+    log_file = f"logs/{name}_{current_time}.log"
 
     # 3. Cấu hình logger
     logger = logging.getLogger(name)

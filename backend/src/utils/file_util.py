@@ -4,10 +4,47 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.utils.logger import setup_logger
 
+class FileUtil:
+    @staticmethod
+    def get_project_root() -> Path:
+        """
+        Get the root directory of the project.
+        {repo}/backend
+        file_util.py is located in {repo}/backend/src/utils/file_util.py
+        """
+        path = Path(__file__).resolve().parent.parent.parent
+        if path.name != "backend":
+            raise Exception(
+                f"Expected project root to be 'backend', but got '{path.name}'"
+            )
 
-class FileUtils:
+        return path
+
+    @staticmethod
+    def get_data_dir() -> Path:
+        """
+        Get the data directory of the project.
+        {repo}/backend/data
+        """
+        path = FileUtil.get_project_root() / "data"
+        if not path.exists():
+            print(f"Data directory not found: {path}. Creating it.")
+            os.makedirs(path, exist_ok=True)
+        return path
+
+    @staticmethod
+    def get_models_dir() -> Path:
+        """
+        Get the models directory of the project.
+        {repo}/backend/models
+        """
+        path = FileUtil.get_project_root() / "models"
+        if not path.exists():
+            print(f"Models directory not found: {path}. Creating it.")
+            os.makedirs(path, exist_ok=True)
+        return path
+
     @staticmethod
     def load_json_file(file_path: Path) -> list[dict]:
         """
@@ -49,7 +86,7 @@ class FileUtils:
         file_name = file_name.replace(".json", "").replace(".csv", "")
 
         # Save JSON
-        json_path = FileUtils.save_json_file(data, dir, file_name + ".json")
+        json_path = FileUtil.save_json_file(data, dir, file_name + ".json")
         print(f"Data saved to {json_path}")
 
         # Save CSV

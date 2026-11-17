@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 
-class FileUtils:
+class CrawlFileUtil:
     @staticmethod
     def write_csv(path: Path, rows: list[dict], columns: list[str]):
         if not rows:

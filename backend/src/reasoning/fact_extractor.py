@@ -132,9 +132,7 @@ class FactExtractor:
         result["prompt"] = prompt
         return result
 
-    def validate_output(
-        self, output: Any, rule: Mapping[str, Any]
-    ) -> dict[str, Any]:
+    def validate_output(self, output: Any, rule: Mapping[str, Any]) -> dict[str, Any]:
         """Kiểm tra output facts về predicate, kiểu dữ liệu và enum."""
         if not isinstance(output, dict):
             raise FactExtractionError("Output fact phải là một object JSON.")

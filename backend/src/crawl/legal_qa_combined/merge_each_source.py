@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.crawl.legal_qa_combined.utils import FileUtils
+from src.crawl.legal_qa_combined.utils import CrawlFileUtil
 
 
 def merge_vnexpress(
@@ -32,17 +32,17 @@ def merge_vnexpress(
 
     columns = set()
     for jsonl_file in jsonl_files:
-        rows = FileUtils.read_jsonl(path=jsonl_file)
+        rows = CrawlFileUtil.read_jsonl(path=jsonl_file)
         legal_qa_jsonl_rows.extend(rows)
         columns.update(rows[0].keys() if rows else [])
 
     for csv_file in csv_files:
-        rows = FileUtils.read_csv(path=csv_file)
+        rows = CrawlFileUtil.read_csv(path=csv_file)
         legal_qa_csv_rows.extend(rows)
         columns.update(rows[0].keys() if rows else [])
 
     for url_file in url_files:
-        rows = FileUtils.read_csv(path=url_file)
+        rows = CrawlFileUtil.read_csv(path=url_file)
         url_rows.extend(rows)
 
     print(f"[INFO] {len(url_rows)} rows from {len(url_files)} URL CSV files")
@@ -78,11 +78,11 @@ def merge_vnexpress(
     # write merged CSV and JSONL files
     columns_list = list(columns)
     print("[INFO] Columns: ", columns_list)
-    FileUtils.write_csv(
+    CrawlFileUtil.write_csv(
         path=final_csv_path, rows=all_legal_qa_rows, columns=columns_list
     )
-    FileUtils.write_jsonl(path=final_jsonl_path, rows=all_legal_qa_rows)
-    FileUtils.write_csv(
+    CrawlFileUtil.write_jsonl(path=final_jsonl_path, rows=all_legal_qa_rows)
+    CrawlFileUtil.write_csv(
         path=final_url_csv_path,
         rows=url_rows,
         columns=url_rows[0].keys() if url_rows else [],
@@ -119,17 +119,17 @@ def merge_lvn(output_path: str, prefix_final_file_name: str = "all_legal_qa"):
 
     columns = set()
     for jsonl_file in jsonl_files:
-        rows = FileUtils.read_jsonl(path=jsonl_file)
+        rows = CrawlFileUtil.read_jsonl(path=jsonl_file)
         legal_qa_jsonl_rows.extend(rows)
         columns.update(rows[0].keys() if rows else [])
 
     for csv_file in csv_files:
-        rows = FileUtils.read_csv(path=csv_file)
+        rows = CrawlFileUtil.read_csv(path=csv_file)
         legal_qa_csv_rows.extend(rows)
         columns.update(rows[0].keys() if rows else [])
 
     for url_file in url_files:
-        rows = FileUtils.read_csv(path=url_file)
+        rows = CrawlFileUtil.read_csv(path=url_file)
         url_rows.extend(rows)
 
     print(f"[INFO] {len(url_rows)} rows from {len(url_files)} URL CSV files")
@@ -168,14 +168,14 @@ def merge_lvn(output_path: str, prefix_final_file_name: str = "all_legal_qa"):
     # write merged CSV and JSONL files
     columns_list = list(columns)
     print("[INFO] Columns: ", columns_list)
-    FileUtils.write_csv(
+    CrawlFileUtil.write_csv(
         path=final_csv_path, rows=all_legal_qa_rows, columns=columns_list
     )
-    FileUtils.write_jsonl(path=final_jsonl_path, rows=all_legal_qa_rows)
+    CrawlFileUtil.write_jsonl(path=final_jsonl_path, rows=all_legal_qa_rows)
 
     url_columns = list(dict.fromkeys(key for row in url_rows for key in row.keys()))
 
-    FileUtils.write_csv(path=final_url_csv_path, rows=url_rows, columns=url_columns)
+    CrawlFileUtil.write_csv(path=final_url_csv_path, rows=url_rows, columns=url_columns)
 
     print(
         f"[INFO] Merged CSV written to {final_csv_path}, JSONL written to {final_jsonl_path}, URL CSV written to {final_url_csv_path}"
