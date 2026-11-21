@@ -14,7 +14,11 @@
     "kind": "REQUIREMENT",
     "when": {
       "all": [
-        ["transaction.is_civil_transaction", "eq", true]
+        [
+          "transaction.is_civil_transaction",
+          "eq",
+          true
+        ]
       ]
     },
     "then": [
@@ -70,8 +74,16 @@
     "kind": "REQUIREMENT",
     "when": {
       "all": [
-        ["transaction.is_civil_transaction", "eq", true],
-        ["transaction.form_required_by_law", "eq", true]
+        [
+          "transaction.is_civil_transaction",
+          "eq",
+          true
+        ],
+        [
+          "transaction.form_required_by_law",
+          "eq",
+          true
+        ]
       ]
     },
     "then": [
@@ -117,16 +129,40 @@
     "kind": "DERIVATION",
     "when": {
       "all": [
-        ["transaction.is_civil_transaction", "eq", true],
+        [
+          "transaction.is_civil_transaction",
+          "eq",
+          true
+        ],
         {
           "any": [
-            ["transaction.participants_have_appropriate_capacity", "eq", false],
-            ["transaction.participants_voluntary", "eq", false],
-            ["transaction.purpose_and_content_lawful_and_moral", "eq", false],
+            [
+              "transaction.participants_have_appropriate_capacity",
+              "eq",
+              false
+            ],
+            [
+              "transaction.participants_voluntary",
+              "eq",
+              false
+            ],
+            [
+              "transaction.purpose_and_content_lawful_and_moral",
+              "eq",
+              false
+            ],
             {
               "all": [
-                ["transaction.form_required_by_law", "eq", true],
-                ["transaction.form_compliant", "eq", false]
+                [
+                  "transaction.form_required_by_law",
+                  "eq",
+                  true
+                ],
+                [
+                  "transaction.form_compliant",
+                  "eq",
+                  false
+                ]
               ]
             }
           ]
@@ -143,12 +179,28 @@
     "unless": [
       {
         "all": [
-          ["transaction.form_required_by_law", "eq", true],
-          ["transaction.form_compliant", "eq", false],
-          ["transaction.recognized_valid_under_d129_form_exception", "eq", true]
+          [
+            "transaction.form_required_by_law",
+            "eq",
+            true
+          ],
+          [
+            "transaction.form_compliant",
+            "eq",
+            false
+          ],
+          [
+            "transaction.recognized_valid_under_d129_form_exception",
+            "eq",
+            true
+          ]
         ]
       },
-      ["transaction.has_other_blds_validity_exception", "eq", true]
+      [
+        "transaction.has_other_blds_validity_exception",
+        "eq",
+        true
+      ]
     ],
     "links": [
       {
@@ -191,11 +243,31 @@
     "kind": "DERIVATION",
     "when": {
       "all": [
-        ["prior_transaction.is_invalid", "eq", true],
-        ["asset.was_registered_at_competent_authority", "eq", true],
-        ["third_party_transaction.transferred_to_third_party", "eq", true],
-        ["third_party.is_bona_fide", "eq", true],
-        ["third_party_transaction.relied_on_registration", "eq", true]
+        [
+          "prior_transaction.is_invalid",
+          "eq",
+          true
+        ],
+        [
+          "asset.was_registered_at_competent_authority",
+          "eq",
+          true
+        ],
+        [
+          "third_party_transaction.transferred_to_third_party",
+          "eq",
+          true
+        ],
+        [
+          "third_party.is_bona_fide",
+          "eq",
+          true
+        ],
+        [
+          "third_party_transaction.relied_on_registration",
+          "eq",
+          true
+        ]
       ]
     },
     "then": [
@@ -241,10 +313,26 @@
     "kind": "DERIVATION",
     "when": {
       "all": [
-        ["prior_transaction.is_invalid", "eq", true],
-        ["asset.registration_required", "eq", true],
-        ["asset.was_registered_at_competent_authority", "eq", false],
-        ["third_party_transaction.transferred_to_third_party", "eq", true]
+        [
+          "prior_transaction.is_invalid",
+          "eq",
+          true
+        ],
+        [
+          "asset.registration_required",
+          "eq",
+          true
+        ],
+        [
+          "asset.was_registered_at_competent_authority",
+          "eq",
+          false
+        ],
+        [
+          "third_party_transaction.transferred_to_third_party",
+          "eq",
+          true
+        ]
       ]
     },
     "then": [
@@ -257,14 +345,30 @@
     "unless": [
       {
         "all": [
-          ["third_party.is_bona_fide", "eq", true],
-          ["third_party_transaction.acquired_via_competent_auction", "eq", true]
+          [
+            "third_party.is_bona_fide",
+            "eq",
+            true
+          ],
+          [
+            "third_party_transaction.acquired_via_competent_auction",
+            "eq",
+            true
+          ]
         ]
       },
       {
         "all": [
-          ["third_party.is_bona_fide", "eq", true],
-          ["third_party_transaction.transacted_with_judgment_recognized_owner_later_annulled", "eq", true]
+          [
+            "third_party.is_bona_fide",
+            "eq",
+            true
+          ],
+          [
+            "third_party_transaction.transacted_with_judgment_recognized_owner_later_annulled",
+            "eq",
+            true
+          ]
         ]
       }
     ],
@@ -303,9 +407,21 @@
     "kind": "LIABILITY",
     "when": {
       "all": [
-        ["tort.caused_by_child", "eq", true],
-        ["child.age", "lt", 15],
-        ["child.has_living_parents", "eq", true]
+        [
+          "tort.caused_by_child",
+          "eq",
+          true
+        ],
+        [
+          "child.age",
+          "lt",
+          15
+        ],
+        [
+          "child.has_living_parents",
+          "eq",
+          true
+        ]
       ]
     },
     "then": [
@@ -321,7 +437,11 @@
       }
     ],
     "unless": [
-      ["tort.exempted_under_blds_d599", "eq", true]
+      [
+        "tort.exempted_under_blds_d599",
+        "eq",
+        true
+      ]
     ],
     "links": [
       {
@@ -358,11 +478,31 @@
     "kind": "LIABILITY",
     "when": {
       "all": [
-        ["tort.caused_by_child", "eq", true],
-        ["child.age", "lt", 15],
-        ["child.has_living_parents", "eq", true],
-        ["parent.property_sufficient_for_compensation", "eq", false],
-        ["child.has_own_property", "eq", true]
+        [
+          "tort.caused_by_child",
+          "eq",
+          true
+        ],
+        [
+          "child.age",
+          "lt",
+          15
+        ],
+        [
+          "child.has_living_parents",
+          "eq",
+          true
+        ],
+        [
+          "parent.property_sufficient_for_compensation",
+          "eq",
+          false
+        ],
+        [
+          "child.has_own_property",
+          "eq",
+          true
+        ]
       ]
     },
     "then": [
@@ -373,7 +513,11 @@
       }
     ],
     "unless": [
-      ["tort.exempted_under_blds_d599", "eq", true]
+      [
+        "tort.exempted_under_blds_d599",
+        "eq",
+        true
+      ]
     ],
     "links": [
       {
@@ -404,9 +548,21 @@
     "kind": "LIABILITY",
     "when": {
       "all": [
-        ["tort.caused_by_child", "eq", true],
-        ["child.age", "gte", 15],
-        ["child.age", "lt", 18]
+        [
+          "tort.caused_by_child",
+          "eq",
+          true
+        ],
+        [
+          "child.age",
+          "gte",
+          15
+        ],
+        [
+          "child.age",
+          "lt",
+          18
+        ]
       ]
     },
     "then": [
@@ -446,11 +602,31 @@
     "kind": "LIABILITY",
     "when": {
       "all": [
-        ["tort.caused_by_child", "eq", true],
-        ["child.age", "gte", 15],
-        ["child.age", "lt", 18],
-        ["child.has_living_parents", "eq", true],
-        ["child.property_sufficient_for_compensation", "eq", false]
+        [
+          "tort.caused_by_child",
+          "eq",
+          true
+        ],
+        [
+          "child.age",
+          "gte",
+          15
+        ],
+        [
+          "child.age",
+          "lt",
+          18
+        ],
+        [
+          "child.has_living_parents",
+          "eq",
+          true
+        ],
+        [
+          "child.property_sufficient_for_compensation",
+          "eq",
+          false
+        ]
       ]
     },
     "then": [
@@ -487,6 +663,1936 @@
     },
     "extensions": {
       "article_label": "Khoản 2 Điều 586 Bộ luật Dân sự 2015 (Đoạn 2 - Cha mẹ bồi thường phần còn thiếu)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D328_K2_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D328_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "deposit.is_deposit_transaction",
+          "eq",
+          true
+        ],
+        [
+          "deposit.depositor_refused_to_conclude_or_perform",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "deposit.property_belongs_to_recipient",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "deposit.parties_have_other_agreement",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D328_K2_02",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D328_K2",
+        "note": "Quy tắc áp dụng cho trường hợp bên nhận đặt cọc từ chối giao kết hoặc thực hiện hợp đồng."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo đoạn giữa khoản 2 Điều 328 BLDS 2015: Nếu bên đặt cọc từ chối việc giao kết, thực hiện hợp đồng thì tài sản đặt cọc thuộc về bên nhận đặt cọc, trừ trường hợp có thỏa thuận khác."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 328 Bộ luật Dân sự 2015 (Bên đặt cọc từ chối)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D328_K2_02",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D328_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "LIABILITY",
+    "when": {
+      "all": [
+        [
+          "deposit.is_deposit_transaction",
+          "eq",
+          true
+        ],
+        [
+          "deposit.recipient_refused_to_conclude_or_perform",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "deposit.recipient_must_return_deposit_and_pay_penalty",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "deposit.parties_have_other_agreement",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D328_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D328_K2",
+        "note": "Quy tắc đối ứng khi bên đặt cọc từ chối việc giao kết hoặc thực hiện hợp đồng."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo đoạn cuối khoản 2 Điều 328 BLDS 2015: Nếu bên nhận đặt cọc từ chối việc giao kết, thực hiện hợp đồng thì phải trả cho bên đặt cọc tài sản đặt cọc và một khoản tiền tương đương giá trị tài sản đặt cọc (phạt cọc), trừ trường hợp có thỏa thuận khác."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 328 Bộ luật Dân sự 2015 (Bên nhận đặt cọc từ chối - Phạt cọc)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D328_K2_03",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D328_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "deposit.is_deposit_transaction",
+          "eq",
+          true
+        ],
+        [
+          "deposit.contract_concluded_or_performed",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "deposit.property_returned_or_deducted_from_payment_obligation",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "deposit.parties_have_other_agreement",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D328_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D328_K2",
+        "note": "Quy tắc áp dụng khi hợp đồng không được giao kết do bên đặt cọc từ chối."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo đoạn đầu khoản 2 Điều 328 BLDS 2015: Trường hợp hợp đồng được giao kết, thực hiện thì tài sản đặt cọc được trả lại cho bên đặt cọc hoặc được trừ để thực hiện nghĩa vụ trả tiền, trừ trường hợp có thỏa thuận khác."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 328 Bộ luật Dân sự 2015 (Hợp đồng được giao kết, thực hiện)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D418_K3_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D418_K3"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "contract.penalty_clause_agreed",
+          "eq",
+          true
+        ],
+        [
+          "contract.party_breached_obligation",
+          "eq",
+          true
+        ],
+        [
+          "contract.agreed_both_penalty_and_damages",
+          "eq",
+          false
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "contract.breaching_party_only_liable_for_penalty",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo đoạn 2 khoản 3 Điều 418 BLDS 2015: Trường hợp các bên có thỏa thuận về phạt vi phạm nhưng không thỏa thuận về việc vừa phải chịu phạt vi phạm và vừa phải bồi thường thiệt hại thì bên vi phạm nghĩa vụ chỉ phải chịu phạt vi phạm."
+    },
+    "extensions": {
+      "article_label": "Khoản 3 Điều 418 Bộ luật Dân sự 2015 (Chỉ chịu phạt vi phạm)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D123_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D123"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "transaction.is_civil_transaction",
+          "eq",
+          true
+        ],
+        {
+          "any": [
+            [
+              "transaction.purpose_violates_prohibition_or_morals",
+              "eq",
+              true
+            ],
+            [
+              "transaction.content_violates_prohibition_or_morals",
+              "eq",
+              true
+            ]
+          ]
+        }
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "transaction.is_invalid",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D122_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D122",
+        "note": "Điều kiện có hiệu lực chung của giao dịch dân sự và căn cứ vô hiệu theo Điều 122."
+      },
+      {
+        "rule_id": "BLDS_D131_K1_K2_01",
+        "relation": "CONSEQUENCE_OF_VIOLATION",
+        "source_node_id": "BLDS_2015_D131_K1",
+        "note": "Hậu quả pháp lý khi giao dịch dân sự bị vô hiệu do vi phạm điều cấm của luật hoặc trái đạo đức xã hội."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo Điều 123 BLDS 2015: Giao dịch dân sự có mục đích, nội dung vi phạm điều cấm của luật, trái đạo đức xã hội thì vô hiệu tuyệt đối."
+    },
+    "extensions": {
+      "article_label": "Điều 123 Bộ luật Dân sự 2015 (Vô hiệu do vi phạm điều cấm của luật, trái đạo đức xã hội)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D124_K1_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D124_K1"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "transaction.is_civil_transaction",
+          "eq",
+          true
+        ],
+        [
+          "transaction.is_sham_to_conceal_another_transaction",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "transaction.sham_transaction_is_invalid",
+        "value": true
+      },
+      {
+        "effect": "DERIVE",
+        "predicate": "transaction.concealed_transaction_is_valid",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "transaction.concealed_transaction_invalid_under_law",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D124_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D124_K2",
+        "note": "Trường hợp xác lập giao dịch dân sự giả tạo nhằm trốn tránh nghĩa vụ với người thứ ba tại khoản 2 Điều 124."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 1 Điều 124 BLDS 2015: Khi các bên xác lập giao dịch dân sự giả tạo nhằm che giấu một giao dịch khác thì giao dịch giả tạo vô hiệu, giao dịch bị che giấu vẫn có hiệu lực (trừ khi giao dịch đó cũng vô hiệu theo quy định pháp luật)."
+    },
+    "extensions": {
+      "article_label": "Khoản 1 Điều 124 Bộ luật Dân sự 2015 (Giả tạo che giấu giao dịch khác)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D124_K2_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D124_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "transaction.is_civil_transaction",
+          "eq",
+          true
+        ],
+        [
+          "transaction.is_sham_to_evade_third_party_obligations",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "transaction.is_invalid",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D124_K1_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D124_K1",
+        "note": "Trường hợp giả tạo nhằm che giấu một giao dịch dân sự khác tại khoản 1 Điều 124."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 2 Điều 124 BLDS 2015: Trường hợp xác lập giao dịch dân sự giả tạo nhằm trốn tránh nghĩa vụ với người thứ ba thì giao dịch dân sự đó vô hiệu."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 124 Bộ luật Dân sự 2015 (Giả tạo trốn tránh nghĩa vụ với người thứ ba)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D126_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D126_K1",
+        "BLDS_2015_D126_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "transaction.is_civil_transaction",
+          "eq",
+          true
+        ],
+        [
+          "transaction.mistake_prevents_purpose",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "transaction.party_entitled_to_request_court_declaration_of_invalidity",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "transaction.purpose_achieved_despite_mistake",
+        "eq",
+        true
+      ],
+      [
+        "transaction.mistake_immediately_remedied",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D127_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D127",
+        "note": "Cùng cơ chế yêu cầu Tòa án tuyên bố vô hiệu do khiếm khuyết về ý chí (lừa dối, đe dọa, cưỡng ép)."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo Điều 126 BLDS 2015: Khi giao dịch được xác lập có sự nhầm lẫn làm cho không đạt được mục đích thì bên bị nhầm lẫn có quyền yêu cầu Tòa án tuyên bố vô hiệu, trừ trường hợp mục đích vẫn đạt được hoặc có thể khắc phục ngay được sự nhầm lẫn."
+    },
+    "extensions": {
+      "article_label": "Điều 126 Bộ luật Dân sự 2015 (Vô hiệu do bị nhầm lẫn)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D127_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D127"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "transaction.is_civil_transaction",
+          "eq",
+          true
+        ],
+        {
+          "any": [
+            [
+              "transaction.induced_by_deception",
+              "eq",
+              true
+            ],
+            [
+              "transaction.induced_by_threat_or_coercion",
+              "eq",
+              true
+            ]
+          ]
+        }
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "transaction.party_entitled_to_request_court_declaration_of_invalidity",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D126_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D126_K1",
+        "note": "Quy tắc về quyền yêu cầu Tòa án tuyên bố vô hiệu do nhầm lẫn tại Điều 126."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo Điều 127 BLDS 2015: Khi một bên tham gia giao dịch dân sự do bị lừa dối hoặc bị đe dọa, cưỡng ép thì có quyền yêu cầu Tòa án tuyên bố giao dịch dân sự đó là vô hiệu."
+    },
+    "extensions": {
+      "article_label": "Điều 127 Bộ luật Dân sự 2015 (Vô hiệu do bị lừa dối, đe dọa, cưỡng ép)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D131_K1_K2_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D131_K1",
+        "BLDS_2015_D131_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "transaction.is_civil_transaction",
+          "eq",
+          true
+        ],
+        [
+          "transaction.is_invalid",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "transaction.no_civil_rights_or_obligations_arise",
+        "value": true
+      },
+      {
+        "effect": "DERIVE",
+        "predicate": "transaction.parties_must_restore_status_quo_ante_and_return_received",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D122_01",
+        "relation": "PREREQUISITE_CONDITION",
+        "source_node_id": "BLDS_2015_D122",
+        "note": "Căn cứ xác định giao dịch dân sự bị vô hiệu theo quy định chung của Điều 122."
+      },
+      {
+        "rule_id": "BLDS_D123_01",
+        "relation": "PREREQUISITE_CONDITION",
+        "source_node_id": "BLDS_2015_D123",
+        "note": "Căn cứ xác định giao dịch vô hiệu do vi phạm điều cấm của luật hoặc trái đạo đức xã hội."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 1 và khoản 2 Điều 131 BLDS 2015: Giao dịch vô hiệu không làm phát sinh, thay đổi, chấm dứt quyền, nghĩa vụ kể từ thời điểm xác lập; các bên khôi phục lại tình trạng ban đầu, hoàn trả cho nhau những gì đã nhận."
+    },
+    "extensions": {
+      "article_label": "Khoản 1 và Khoản 2 Điều 131 Bộ luật Dân sự 2015 (Hậu quả pháp lý của giao dịch vô hiệu)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D611_K1_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D611_K1"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "inheritance.is_inheritance_case",
+          "eq",
+          true
+        ],
+        {
+          "any": [
+            [
+              "person.is_deceased",
+              "eq",
+              true
+            ],
+            [
+              "person.declared_dead_by_court",
+              "eq",
+              true
+            ]
+          ]
+        }
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "inheritance.estate_opening_time_established",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 1 Điều 611 BLDS 2015: Thời điểm mở thừa kế là thời điểm người có tài sản chết; trường hợp Tòa án tuyên bố một người là đã chết thì thời điểm mở thừa kế là ngày được xác định tại khoản 2 Điều 71."
+    },
+    "extensions": {
+      "article_label": "Khoản 1 Điều 611 Bộ luật Dân sự 2015 (Thời điểm mở thừa kế)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D620_K1_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D620_K1"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "inheritance.is_inheritance_case",
+          "eq",
+          true
+        ],
+        [
+          "heir.is_legal_or_testamentary_heir",
+          "eq",
+          true
+        ],
+        [
+          "heir.declares_renunciation_of_estate",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "heir.estate_renunciation_is_valid",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "heir.renunciation_aims_to_evade_property_obligations",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D644_K1_DIEM_A_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D644_K1_DIEM_A",
+        "note": "Người từ chối nhận di sản hợp lệ không được hưởng suất thừa kế bắt buộc theo khoản 2 Điều 644."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 1 Điều 620 BLDS 2015: Người thừa kế có quyền từ chối nhận di sản, trừ trường hợp việc từ chối nhằm trốn tránh việc thực hiện nghĩa vụ tài sản của mình đối với người khác."
+    },
+    "extensions": {
+      "article_label": "Khoản 1 Điều 620 Bộ luật Dân sự 2015 (Quyền từ chối nhận di sản)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D621_K1_DIEM_A_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D621_K1_DIEM_A",
+        "BLDS_2015_D621_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "inheritance.is_inheritance_case",
+          "eq",
+          true
+        ],
+        {
+          "any": [
+            [
+              "heir.convicted_intentional_infringement_of_decedent_life_health",
+              "eq",
+              true
+            ],
+            [
+              "heir.severely_mistreated_tortured_decedent",
+              "eq",
+              true
+            ],
+            [
+              "heir.severely_infringed_decedent_honor_dignity",
+              "eq",
+              true
+            ]
+          ]
+        }
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "heir.disqualified_from_inheriting",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "decedent.knew_acts_and_still_bequeathed_in_will",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D621_K1_DIEM_B_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D621_K1_DIEM_B",
+        "note": "Căn cứ tước quyền thừa kế do vi phạm nghiêm trọng nghĩa vụ nuôi dưỡng tại điểm b khoản 1 Điều 621."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo điểm a khoản 1 và khoản 2 Điều 621 BLDS 2015: Người bị kết án về hành vi cố ý xâm phạm tính mạng, sức khỏe hoặc ngược đãi nghiêm trọng, hành hạ, xâm phạm nghiêm trọng danh dự, nhân phẩm của người để lại di sản thì không được quyền hưởng di sản, trừ khi người để lại di sản đã biết nhưng vẫn cho hưởng theo di chúc."
+    },
+    "extensions": {
+      "article_label": "Điểm a Khoản 1 Điều 621 Bộ luật Dân sự 2015 (Xâm phạm tính mạng, sức khỏe, danh dự người để lại di sản)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D621_K1_DIEM_B_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D621_K1_DIEM_B",
+        "BLDS_2015_D621_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "inheritance.is_inheritance_case",
+          "eq",
+          true
+        ],
+        [
+          "heir.severely_breached_support_obligation_to_decedent",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "heir.disqualified_from_inheriting",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "decedent.knew_acts_and_still_bequeathed_in_will",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D621_K1_DIEM_A_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D621_K1_DIEM_A",
+        "note": "Căn cứ tước quyền thừa kế do xâm phạm tính mạng, sức khỏe, ngược đãi tại điểm a khoản 1 Điều 621."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo điểm b khoản 1 và khoản 2 Điều 621 BLDS 2015: Người vi phạm nghiêm trọng nghĩa vụ nuôi dưỡng người để lại di sản thì không được quyền hưởng di sản, trừ khi người để lại di sản đã biết nhưng vẫn cho hưởng theo di chúc."
+    },
+    "extensions": {
+      "article_label": "Điểm b Khoản 1 Điều 621 Bộ luật Dân sự 2015 (Vi phạm nghiêm trọng nghĩa vụ nuôi dưỡng)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D621_K1_DIEM_C_D_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D621_K1_DIEM_C",
+        "BLDS_2015_D621_K1_DIEM_D",
+        "BLDS_2015_D621_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "inheritance.is_inheritance_case",
+          "eq",
+          true
+        ],
+        {
+          "any": [
+            [
+              "heir.convicted_killing_other_heir_for_estate",
+              "eq",
+              true
+            ],
+            [
+              "heir.deceived_coerced_obstructed_will_making",
+              "eq",
+              true
+            ],
+            [
+              "heir.forged_altered_destroyed_concealed_will_for_estate",
+              "eq",
+              true
+            ]
+          ]
+        }
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "heir.disqualified_from_inheriting",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "decedent.knew_acts_and_still_bequeathed_in_will",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D621_K1_DIEM_A_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D621_K1_DIEM_A",
+        "note": "Căn cứ tước quyền thừa kế do hành vi đối với người để lại di sản tại điểm a khoản 1 Điều 621."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo điểm c, d khoản 1 và khoản 2 Điều 621 BLDS 2015: Người bị kết án về hành vi xâm phạm tính mạng người thừa kế khác nhằm chiếm di sản, hoặc có hành vi lừa dối, cưỡng ép, giả mạo, hủy, che giấu di chúc thì không được quyền hưởng di sản, trừ khi người để lại di sản biết nhưng vẫn cho hưởng theo di chúc."
+    },
+    "extensions": {
+      "article_label": "Điểm c, d Khoản 1 Điều 621 Bộ luật Dân sự 2015 (Xâm phạm người thừa kế khác hoặc can thiệp di chúc)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D644_K1_DIEM_A_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D644_K1_DIEM_A",
+        "BLDS_2015_D644_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "inheritance.is_inheritance_case",
+          "eq",
+          true
+        ],
+        [
+          "inheritance.has_valid_will",
+          "eq",
+          true
+        ],
+        {
+          "any": [
+            [
+              "heir.is_minor_child",
+              "eq",
+              true
+            ],
+            [
+              "heir.is_parent",
+              "eq",
+              true
+            ],
+            [
+              "heir.is_spouse",
+              "eq",
+              true
+            ]
+          ]
+        },
+        {
+          "any": [
+            [
+              "heir.omitted_from_will",
+              "eq",
+              true
+            ],
+            [
+              "heir.bequeathed_less_than_two_thirds_legal_share",
+              "eq",
+              true
+            ]
+          ]
+        }
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "heir.entitled_to_two_thirds_statutory_share",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "heir.estate_renunciation_is_valid",
+        "eq",
+        true
+      ],
+      [
+        "heir.disqualified_from_inheriting",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D620_K1_01",
+        "relation": "EXCEPTION_REFERENCE",
+        "source_node_id": "BLDS_2015_D620_K1",
+        "note": "Dẫn chiếu ngoại lệ không áp dụng Điều 644 cho người từ chối nhận di sản theo Điều 620."
+      },
+      {
+        "rule_id": "BLDS_D621_K1_DIEM_A_01",
+        "relation": "EXCEPTION_REFERENCE",
+        "source_node_id": "BLDS_2015_D621_K1_DIEM_A",
+        "note": "Dẫn chiếu ngoại lệ không áp dụng Điều 644 cho người không có quyền hưởng di sản theo Điều 621."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo điểm a khoản 1 và khoản 2 Điều 644 BLDS 2015: Con chưa thành niên, cha, mẹ, vợ, chồng vẫn được hưởng 2/3 một suất thừa kế theo pháp luật nếu không được cho hưởng hoặc cho hưởng ít hơn 2/3 suất đó, trừ người từ chối nhận di sản hoặc người không có quyền hưởng di sản."
+    },
+    "extensions": {
+      "article_label": "Điểm a Khoản 1 Điều 644 Bộ luật Dân sự 2015 (Thừa kế không phụ thuộc di chúc: Con chưa thành niên, cha mẹ, vợ chồng)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D644_K1_DIEM_B_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D644_K1_DIEM_B",
+        "BLDS_2015_D644_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "inheritance.is_inheritance_case",
+          "eq",
+          true
+        ],
+        [
+          "inheritance.has_valid_will",
+          "eq",
+          true
+        ],
+        [
+          "heir.is_adult_child",
+          "eq",
+          true
+        ],
+        [
+          "heir.lacks_working_capacity",
+          "eq",
+          true
+        ],
+        {
+          "any": [
+            [
+              "heir.omitted_from_will",
+              "eq",
+              true
+            ],
+            [
+              "heir.bequeathed_less_than_two_thirds_legal_share",
+              "eq",
+              true
+            ]
+          ]
+        }
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "heir.entitled_to_two_thirds_statutory_share",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "heir.estate_renunciation_is_valid",
+        "eq",
+        true
+      ],
+      [
+        "heir.disqualified_from_inheriting",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D644_K1_DIEM_A_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D644_K1_DIEM_A",
+        "note": "Cùng quy định về thừa kế bắt buộc không phụ thuộc nội dung di chúc cho nhóm chủ thể con chưa thành niên, cha mẹ, vợ chồng."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo điểm b khoản 1 và khoản 2 Điều 644 BLDS 2015: Con thành niên mà không có khả năng lao động vẫn được hưởng 2/3 một suất thừa kế theo pháp luật nếu không được cho hưởng hoặc cho hưởng ít hơn 2/3 suất đó, trừ trường hợp từ chối nhận di sản hoặc không có quyền hưởng di sản."
+    },
+    "extensions": {
+      "article_label": "Điểm b Khoản 1 Điều 644 Bộ luật Dân sự 2015 (Thừa kế không phụ thuộc di chúc: Con thành niên mất khả năng lao động)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D651_K1_K2_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D651_K1_DIEM_A",
+        "BLDS_2015_D651_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "inheritance.is_inheritance_case",
+          "eq",
+          true
+        ],
+        [
+          "inheritance.applies_statutory_inheritance",
+          "eq",
+          true
+        ],
+        [
+          "heir.belongs_to_first_heir_rank",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "heir.entitled_to_statutory_estate_share",
+        "value": true
+      },
+      {
+        "effect": "DERIVE",
+        "predicate": "heir.shares_equally_with_same_rank",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "heir.is_deceased_before_or_with_decedent",
+        "eq",
+        true
+      ],
+      [
+        "heir.disqualified_from_inheriting",
+        "eq",
+        true
+      ],
+      [
+        "heir.estate_renunciation_is_valid",
+        "eq",
+        true
+      ],
+      [
+        "heir.disinherited_by_decedent",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D651_K3_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D651_K3",
+        "note": "Nguyên tắc hàng thừa kế sau chỉ được hưởng khi hàng trước không còn ai."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo điểm a khoản 1 và khoản 2 Điều 651 BLDS 2015: Hàng thừa kế thứ nhất gồm vợ, chồng, cha mẹ đẻ/nuôi, con đẻ/nuôi; những người thừa kế cùng hàng được hưởng phần di sản bằng nhau (trừ trường hợp chết trước/cùng thời điểm, bị tước quyền, từ chối nhận hoặc bị truất quyền)."
+    },
+    "extensions": {
+      "article_label": "Điểm a Khoản 1 và Khoản 2 Điều 651 Bộ luật Dân sự 2015 (Hàng thừa kế thứ nhất & chia đều)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D651_K3_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D651_K3"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "inheritance.is_inheritance_case",
+          "eq",
+          true
+        ],
+        [
+          "inheritance.applies_statutory_inheritance",
+          "eq",
+          true
+        ],
+        [
+          "heir.belongs_to_subsequent_heir_rank",
+          "eq",
+          true
+        ],
+        [
+          "inheritance.prior_rank_has_no_eligible_heirs",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "heir.entitled_to_statutory_estate_share",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "heir.is_deceased_before_or_with_decedent",
+        "eq",
+        true
+      ],
+      [
+        "heir.disqualified_from_inheriting",
+        "eq",
+        true
+      ],
+      [
+        "heir.estate_renunciation_is_valid",
+        "eq",
+        true
+      ],
+      [
+        "heir.disinherited_by_decedent",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D651_K1_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D651_K1_DIEM_A",
+        "note": "Quy tắc phân chia di sản cho hàng thừa kế thứ nhất."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 3 Điều 651 BLDS 2015: Những người ở hàng thừa kế sau chỉ được hưởng thừa kế nếu không còn ai ở hàng thừa kế trước do đã chết, không có quyền hưởng di sản, bị truất quyền hưởng di sản hoặc từ chối nhận di sản."
+    },
+    "extensions": {
+      "article_label": "Khoản 3 Điều 651 Bộ luật Dân sự 2015 (Thứ tự hưởng của hàng thừa kế sau)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D652_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D652"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "inheritance.is_inheritance_case",
+          "eq",
+          true
+        ],
+        [
+          "inheritance.applies_statutory_inheritance",
+          "eq",
+          true
+        ],
+        [
+          "heir.is_grandchild_or_great_grandchild",
+          "eq",
+          true
+        ],
+        [
+          "heir.parent_died_before_or_with_decedent",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "heir.entitled_to_substitute_inheritance",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "heir.is_deceased_before_or_with_decedent",
+        "eq",
+        true
+      ],
+      [
+        "heir.disqualified_from_inheriting",
+        "eq",
+        true
+      ],
+      [
+        "heir.estate_renunciation_is_valid",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D651_K1_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D651_K1_DIEM_A",
+        "note": "Thừa kế thế vị hưởng phần di sản mà cha/mẹ của cháu (thuộc hàng thừa kế thứ nhất) được hưởng nếu còn sống."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo Điều 652 BLDS 2015: Trường hợp con của người để lại di sản chết trước hoặc cùng một thời điểm với người để lại di sản thì cháu được hưởng phần di sản mà cha hoặc mẹ của cháu được hưởng nếu còn sống; nếu cháu cũng chết trước/cùng thì chắt được thế vị."
+    },
+    "extensions": {
+      "article_label": "Điều 652 Bộ luật Dân sự 2015 (Thừa kế thế vị)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D584_K1_K2_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D584_K1",
+        "BLDS_2015_D584_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "LIABILITY",
+    "when": {
+      "all": [
+        [
+          "tort.is_tort_case",
+          "eq",
+          true
+        ],
+        [
+          "tort.has_infringing_act",
+          "eq",
+          true
+        ],
+        [
+          "tort.actual_damage_occurred",
+          "eq",
+          true
+        ],
+        [
+          "tort.causation_established",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "tort.tortfeasor_must_compensate",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "tort.caused_by_force_majeure",
+        "eq",
+        true
+      ],
+      [
+        "tort.entirely_victim_fault",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D585_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D585_K2",
+        "note": "Xem xét giảm mức bồi thường thiệt hại khi người bồi thường không có lỗi hoặc có lỗi vô ý và thiệt hại quá lớn."
+      },
+      {
+        "rule_id": "BLDS_D585_K4_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D585_K4",
+        "note": "Xem xét trường hợp bên bị thiệt hại có lỗi một phần trong việc gây ra thiệt hại."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 1 và khoản 2 Điều 584 BLDS 2015: Người có hành vi xâm phạm tính mạng, sức khỏe, danh dự, tài sản... mà gây thiệt hại thì phải bồi thường; không phải bồi thường nếu thiệt hại phát sinh hoàn toàn do sự kiện bất khả kháng hoặc hoàn toàn do lỗi của bên bị thiệt hại."
+    },
+    "extensions": {
+      "article_label": "Khoản 1 và Khoản 2 Điều 584 Bộ luật Dân sự 2015 (Căn cứ phát sinh trách nhiệm bồi thường thiệt hại)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D585_K2_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D585_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "tort.is_tort_case",
+          "eq",
+          true
+        ],
+        [
+          "tort.tortfeasor_must_compensate",
+          "eq",
+          true
+        ],
+        {
+          "any": [
+            [
+              "tort.tortfeasor_has_no_fault",
+              "eq",
+              true
+            ],
+            [
+              "tort.tortfeasor_has_unintentional_fault",
+              "eq",
+              true
+            ]
+          ]
+        },
+        [
+          "tort.damage_too_large_for_economic_capacity",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "tort.entitled_to_reduction_of_compensation",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D584_K1_K2_01",
+        "relation": "PREREQUISITE_CONDITION",
+        "source_node_id": "BLDS_2015_D584_K1",
+        "note": "Căn cứ xác định trách nhiệm bồi thường thiệt hại ban đầu theo Điều 584."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 2 Điều 585 BLDS 2015: Người chịu trách nhiệm bồi thường thiệt hại có thể được giảm mức bồi thường nếu không có lỗi hoặc có lỗi vô ý và thiệt hại quá lớn so với khả năng kinh tế của mình."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 585 Bộ luật Dân sự 2015 (Giảm mức bồi thường thiệt hại)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D585_K4_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D585_K4"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "tort.is_tort_case",
+          "eq",
+          true
+        ],
+        [
+          "tort.victim_has_partial_fault",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "tort.victim_fault_portion_not_compensated",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D584_K1_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D584_K1",
+        "note": "Quy tắc xác định trách nhiệm bồi thường chung tại Điều 584."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 4 Điều 585 BLDS 2015: Khi bên bị thiệt hại có lỗi trong việc gây thiệt hại thì không được bồi thường phần thiệt hại do lỗi của mình gây ra."
+    },
+    "extensions": {
+      "article_label": "Khoản 4 Điều 585 Bộ luật Dân sự 2015 (Bên bị thiệt hại có một phần lỗi)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D600_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D600"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "LIABILITY",
+    "when": {
+      "all": [
+        [
+          "tort.is_tort_case",
+          "eq",
+          true
+        ],
+        [
+          "tort.caused_by_employee_or_apprentice",
+          "eq",
+          true
+        ],
+        [
+          "tort.occurred_during_assigned_work",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "employer.must_compensate_victim",
+        "value": true
+      },
+      {
+        "effect": "DERIVE",
+        "predicate": "employer.has_recourse_against_employee_at_fault",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D584_K1_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D584_K1",
+        "note": "Căn cứ trách nhiệm bồi thường chung tại Điều 584."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo Điều 600 BLDS 2015: Cá nhân, pháp nhân phải bồi thường thiệt hại do người làm công, người học nghề gây ra trong khi thực hiện công việc được giao và có quyền yêu cầu người làm công, người học nghề có lỗi phải hoàn trả."
+    },
+    "extensions": {
+      "article_label": "Điều 600 Bộ luật Dân sự 2015 (Bồi thường do người làm công, học nghề gây ra)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D601_K2_K3_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D601_K2",
+        "BLDS_2015_D601_K3"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "LIABILITY",
+    "when": {
+      "all": [
+        [
+          "tort.is_tort_case",
+          "eq",
+          true
+        ],
+        [
+          "tort.caused_by_high_danger_source",
+          "eq",
+          true
+        ],
+        [
+          "tort.is_lawful_possessor_or_owner_of_danger_source",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "tort.danger_source_possessor_must_compensate_strict_liability",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "tort.victim_has_intentional_fault_entirely",
+        "eq",
+        true
+      ],
+      [
+        "tort.caused_by_force_majeure",
+        "eq",
+        true
+      ],
+      [
+        "tort.caused_by_necessity",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D601_K4_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D601_K4",
+        "note": "Trường hợp nguồn nguy hiểm cao độ bị chiếm hữu, sử dụng trái pháp luật tại khoản 4 Điều 601."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 2 và khoản 3 Điều 601 BLDS 2015: Chủ sở hữu, người chiếm hữu nguồn nguy hiểm cao độ phải bồi thường thiệt hại cả khi không có lỗi, trừ trường hợp thiệt hại xảy ra hoàn toàn do lỗi cố ý của bên bị hại hoặc bất khả kháng, tình thế cấp thiết."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 và Khoản 3 Điều 601 Bộ luật Dân sự 2015 (Bồi thường thiệt hại do nguồn nguy hiểm cao độ)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D601_K4_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D601_K4"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "LIABILITY",
+    "when": {
+      "all": [
+        [
+          "tort.is_tort_case",
+          "eq",
+          true
+        ],
+        [
+          "tort.caused_by_high_danger_source",
+          "eq",
+          true
+        ],
+        [
+          "danger_source.unlawfully_possessed",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "unlawful_possessor.must_compensate_damage",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "BLDS_D601_K2_K3_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D601_K2",
+        "note": "Trách nhiệm của chủ sở hữu/người chiếm hữu hợp pháp nguồn nguy hiểm cao độ."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo đoạn 1 khoản 4 Điều 601 BLDS 2015: Trường hợp nguồn nguy hiểm cao độ bị chiếm hữu, sử dụng trái pháp luật thì người đang chiếm hữu, sử dụng nguồn nguy hiểm cao độ trái pháp luật phải bồi thường thiệt hại."
+    },
+    "extensions": {
+      "article_label": "Khoản 4 Điều 601 Bộ luật Dân sự 2015 (Nguồn nguy hiểm cao độ bị chiếm hữu trái pháp luật)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D603_K1_K2_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D603_K1",
+        "BLDS_2015_D603_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "LIABILITY",
+    "when": {
+      "all": [
+        [
+          "tort.is_tort_case",
+          "eq",
+          true
+        ],
+        [
+          "tort.caused_by_animal",
+          "eq",
+          true
+        ],
+        [
+          "animal.is_owner_or_possessor",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "animal_keeper.must_compensate_damage",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "third_party.entirely_at_fault_for_animal_damage",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D584_K1_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D584_K1",
+        "note": "Căn cứ trách nhiệm bồi thường thiệt hại chung theo Điều 584."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 1 và khoản 2 Điều 603 BLDS 2015: Chủ sở hữu hoặc người chiếm hữu, sử dụng súc vật phải bồi thường thiệt hại do súc vật gây ra, trừ trường hợp người thứ ba hoàn toàn có lỗi làm cho súc vật gây thiệt hại."
+    },
+    "extensions": {
+      "article_label": "Khoản 1 và Khoản 2 Điều 603 Bộ luật Dân sự 2015 (Bồi thường thiệt hại do súc vật gây ra)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D236_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D236"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "property.is_movable",
+          "eq",
+          true
+        ],
+        [
+          "possession.is_without_legal_basis",
+          "eq",
+          true
+        ],
+        [
+          "possession.is_bona_fide",
+          "eq",
+          true
+        ],
+        [
+          "possession.is_continuous",
+          "eq",
+          true
+        ],
+        [
+          "possession.is_overt",
+          "eq",
+          true
+        ],
+        [
+          "possession.duration_years",
+          "gte",
+          10
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "possessor.becomes_lawful_owner_by_prescription",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "property.statute_acquisition_excluded_by_law",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D236_02",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D236",
+        "note": "Quy tắc thời hiệu xác lập quyền sở hữu đối với bất động sản (30 năm)."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo Điều 236 BLDS 2015: Người chiếm hữu, người được lợi về tài sản không có căn cứ pháp luật nhưng ngay tình, liên tục, công khai trong thời hạn 10 năm đối với động sản thì trở thành chủ sở hữu tài sản đó kể từ thời điểm bắt đầu chiếm hữu."
+    },
+    "extensions": {
+      "article_label": "Điều 236 Bộ luật Dân sự 2015 (Xác lập quyền sở hữu theo thời hiệu - Động sản 10 năm)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D236_02",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D236"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "DERIVATION",
+    "when": {
+      "all": [
+        [
+          "property.is_real_estate",
+          "eq",
+          true
+        ],
+        [
+          "possession.is_without_legal_basis",
+          "eq",
+          true
+        ],
+        [
+          "possession.is_bona_fide",
+          "eq",
+          true
+        ],
+        [
+          "possession.is_continuous",
+          "eq",
+          true
+        ],
+        [
+          "possession.is_overt",
+          "eq",
+          true
+        ],
+        [
+          "possession.duration_years",
+          "gte",
+          30
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "possessor.becomes_lawful_owner_by_prescription",
+        "value": true
+      }
+    ],
+    "unless": [
+      [
+        "property.statute_acquisition_excluded_by_law",
+        "eq",
+        true
+      ]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D236_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "BLDS_2015_D236",
+        "note": "Quy tắc thời hiệu xác lập quyền sở hữu đối với động sản (10 năm)."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo Điều 236 BLDS 2015: Người chiếm hữu, người được lợi về tài sản không có căn cứ pháp luật nhưng ngay tình, liên tục, công khai trong thời hạn 30 năm đối với bất động sản thì trở thành chủ sở hữu tài sản đó kể từ thời điểm bắt đầu chiếm hữu."
+    },
+    "extensions": {
+      "article_label": "Điều 236 Bộ luật Dân sự 2015 (Xác lập quyền sở hữu theo thời hiệu - Bất động sản 30 năm)"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "BLDS_D254_K1_01",
+    "source": {
+      "node_ids": [
+        "BLDS_2015_D254_K1"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "REQUIREMENT",
+    "when": {
+      "all": [
+        [
+          "real_estate.is_landlocked",
+          "eq",
+          true
+        ],
+        [
+          "real_estate.lacks_adequate_access_to_public_road",
+          "eq",
+          true
+        ]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "owner.entitled_to_demand_reasonable_passage",
+        "value": true
+      },
+      {
+        "effect": "REQUIRE",
+        "predicate": "owner.must_compensate_adjacent_owner_for_passage",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Theo khoản 1 Điều 254 BLDS 2015: Chủ sở hữu có bất động sản bị vây bọc không có hoặc không đủ lối đi ra đường công cộng có quyền yêu cầu mở một lối đi hợp lý và phải đền bù cho chủ sở hữu bất động sản chịu hưởng quyền (trừ khi có thỏa thuận khác)."
+    },
+    "extensions": {
+      "article_label": "Khoản 1 Điều 254 Bộ luật Dân sự 2015 (Quyền về lối đi qua bất động sản liền kề)"
     }
   }
 ]

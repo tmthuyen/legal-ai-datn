@@ -4,13 +4,21 @@
   "predicates": {
     "asset.ownership": {
       "type": "enum",
-      "allowed_values": ["JOINT_SPOUSAL", "SEPARATE", "OTHER_CO_OWNERSHIP"],
+      "allowed_values": [
+        "JOINT_SPOUSAL",
+        "SEPARATE",
+        "OTHER_CO_OWNERSHIP"
+      ],
       "domain": "asset",
       "description": "Hình thức sở hữu tài sản (tài sản chung vợ chồng, tài sản riêng, hoặc đồng sở hữu khác)."
     },
     "asset.category": {
       "type": "enum",
-      "allowed_values": ["REAL_ESTATE", "MOVABLE", "OTHER"],
+      "allowed_values": [
+        "REAL_ESTATE",
+        "MOVABLE",
+        "OTHER"
+      ],
       "domain": "asset",
       "description": "Phân loại tài sản theo tính chất vật lý/pháp lý (bất động sản, động sản, loại khác)."
     },
@@ -36,7 +44,12 @@
     },
     "transaction.type": {
       "type": "enum",
-      "allowed_values": ["DISPOSAL", "MANAGEMENT", "USE", "ESTABLISHMENT"],
+      "allowed_values": [
+        "DISPOSAL",
+        "MANAGEMENT",
+        "USE",
+        "ESTABLISHMENT"
+      ],
       "domain": "transaction",
       "description": "Loại hành vi giao dịch đối với tài sản (định đoạt, quản lý, sử dụng, xác lập)."
     },
@@ -152,7 +165,10 @@
     },
     "marriage.couple_type": {
       "type": "enum",
-      "allowed_values": ["MALE_FEMALE", "SAME_SEX"],
+      "allowed_values": [
+        "MALE_FEMALE",
+        "SAME_SEX"
+      ],
       "domain": "marriage",
       "description": "Giới tính của hai bên kết hôn (nam và nữ hoặc cùng giới tính)."
     },
@@ -193,7 +209,12 @@
     },
     "marriage.act_type": {
       "type": "enum",
-      "allowed_values": ["MARRIAGE_REGISTRATION", "DIVORCE_REQUEST", "COHABITATION", "OTHER"],
+      "allowed_values": [
+        "MARRIAGE_REGISTRATION",
+        "DIVORCE_REQUEST",
+        "COHABITATION",
+        "OTHER"
+      ],
       "domain": "marriage",
       "description": "Loại hành vi pháp lý trong lĩnh vực hôn nhân và gia đình."
     },
@@ -276,7 +297,536 @@
       "type": "boolean",
       "domain": "tort",
       "description": "Hệ quả pháp lý theo đoạn 2 khoản 2 Điều 586 BLDS 2015: Cha mẹ phải bồi thường phần còn thiếu bằng tài sản của mình khi con từ đủ 15 đến chưa đủ 18 không đủ tài sản để bồi thường."
+    },
+    "deposit.is_deposit_transaction": {
+      "type": "boolean",
+      "domain": "deposit",
+      "description": "Giao dịch đang xét là việc một bên giao cho bên kia một khoản tiền hoặc tài sản có giá trị khác trong một thời hạn để bảo đảm giao kết hoặc thực hiện hợp đồng theo Điều 328 BLDS 2015."
+    },
+    "deposit.depositor_refused_to_conclude_or_perform": {
+      "type": "boolean",
+      "domain": "deposit",
+      "description": "Bên đặt cọc từ chối việc giao kết hoặc thực hiện hợp đồng theo Điều 328 BLDS 2015."
+    },
+    "deposit.recipient_refused_to_conclude_or_perform": {
+      "type": "boolean",
+      "domain": "deposit",
+      "description": "Bên nhận đặt cọc từ chối việc giao kết hoặc thực hiện hợp đồng theo Điều 328 BLDS 2015."
+    },
+    "deposit.contract_concluded_or_performed": {
+      "type": "boolean",
+      "domain": "deposit",
+      "description": "Hợp đồng được các bên giao kết hoặc thực hiện theo Điều 328 BLDS 2015."
+    },
+    "deposit.parties_have_other_agreement": {
+      "type": "boolean",
+      "domain": "deposit",
+      "description": "Các bên tham gia đặt cọc có thỏa thuận khác về việc xử lý tài sản đặt cọc."
+    },
+    "deposit.property_belongs_to_recipient": {
+      "type": "boolean",
+      "domain": "deposit",
+      "description": "Hệ quả pháp lý theo khoản 2 Điều 328 BLDS 2015: Tài sản đặt cọc thuộc về bên nhận đặt cọc."
+    },
+    "deposit.recipient_must_return_deposit_and_pay_penalty": {
+      "type": "boolean",
+      "domain": "deposit",
+      "description": "Hệ quả pháp lý theo khoản 2 Điều 328 BLDS 2015: Bên nhận đặt cọc phải trả cho bên đặt cọc tài sản đặt cọc và một khoản tiền tương đương giá trị tài sản đặt cọc (phạt cọc)."
+    },
+    "deposit.property_returned_or_deducted_from_payment_obligation": {
+      "type": "boolean",
+      "domain": "deposit",
+      "description": "Hệ quả pháp lý theo khoản 2 Điều 328 BLDS 2015: Tài sản đặt cọc được trả lại cho bên đặt cọc hoặc được trừ để thực hiện nghĩa vụ trả tiền."
+    },
+    "contract.penalty_clause_agreed": {
+      "type": "boolean",
+      "domain": "contract",
+      "description": "Các bên có thỏa thuận về phạt vi phạm trong hợp đồng theo Điều 418 BLDS 2015."
+    },
+    "contract.party_breached_obligation": {
+      "type": "boolean",
+      "domain": "contract",
+      "description": "Có bên vi phạm nghĩa vụ theo hợp đồng."
+    },
+    "contract.agreed_both_penalty_and_damages": {
+      "type": "boolean",
+      "domain": "contract",
+      "description": "Các bên có thỏa thuận về việc bên vi phạm nghĩa vụ vừa phải chịu phạt vi phạm vừa phải bồi thường thiệt hại theo khoản 3 Điều 418 BLDS 2015."
+    },
+    "contract.breaching_party_only_liable_for_penalty": {
+      "type": "boolean",
+      "domain": "contract",
+      "description": "Hệ quả pháp lý theo khoản 3 Điều 418 BLDS 2015: Bên vi phạm nghĩa vụ chỉ phải chịu phạt vi phạm mà không phải bồi thường thiệt hại."
+    },
+    "transaction.purpose_violates_prohibition_or_morals": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Mục đích của giao dịch dân sự vi phạm điều cấm của luật hoặc trái đạo đức xã hội theo Điều 123 BLDS 2015."
+    },
+    "transaction.content_violates_prohibition_or_morals": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Nội dung của giao dịch dân sự vi phạm điều cấm của luật hoặc trái đạo đức xã hội theo Điều 123 BLDS 2015."
+    },
+    "transaction.is_invalid": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Hệ quả pháp lý: Giao dịch dân sự bị vô hiệu theo quy định của Bộ luật Dân sự 2015."
+    },
+    "transaction.is_sham_to_conceal_another_transaction": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Các bên xác lập giao dịch dân sự một cách giả tạo nhằm che giấu một giao dịch dân sự khác theo khoản 1 Điều 124 BLDS 2015."
+    },
+    "transaction.sham_transaction_is_invalid": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Hệ quả pháp lý theo khoản 1 Điều 124 BLDS 2015: Giao dịch dân sự giả tạo vô hiệu."
+    },
+    "transaction.concealed_transaction_is_valid": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Hệ quả pháp lý theo khoản 1 Điều 124 BLDS 2015: Giao dịch dân sự bị che giấu vẫn có hiệu lực pháp luật."
+    },
+    "transaction.concealed_transaction_invalid_under_law": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Giao dịch dân sự bị che giấu cũng bị vô hiệu theo quy định của Bộ luật Dân sự hoặc luật khác có liên quan."
+    },
+    "transaction.is_sham_to_evade_third_party_obligations": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Giao dịch dân sự được xác lập một cách giả tạo nhằm trốn tránh nghĩa vụ với người thứ ba theo khoản 2 Điều 124 BLDS 2015."
+    },
+    "transaction.mistake_prevents_purpose": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Giao dịch dân sự được xác lập có sự nhầm lẫn làm cho một bên hoặc các bên không đạt được mục đích của việc xác lập giao dịch theo khoản 1 Điều 126 BLDS 2015."
+    },
+    "transaction.purpose_achieved_despite_mistake": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Mục đích xác lập giao dịch dân sự của các bên đã đạt được dù có sự nhầm lẫn theo khoản 2 Điều 126 BLDS 2015."
+    },
+    "transaction.mistake_immediately_remedied": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Các bên có thể khắc phục ngay được sự nhầm lẫn làm cho mục đích của việc xác lập giao dịch dân sự vẫn đạt được theo khoản 2 Điều 126 BLDS 2015."
+    },
+    "transaction.party_entitled_to_request_court_declaration_of_invalidity": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Hệ quả pháp lý theo Điều 126, Điều 127 BLDS 2015: Bên bị tác động có quyền yêu cầu Tòa án tuyên bố giao dịch dân sự vô hiệu."
+    },
+    "transaction.induced_by_deception": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Một bên tham gia giao dịch dân sự do bị lừa dối theo Điều 127 BLDS 2015."
+    },
+    "transaction.induced_by_threat_or_coercion": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Một bên tham gia giao dịch dân sự do bị đe dọa, cưỡng ép theo Điều 127 BLDS 2015."
+    },
+    "transaction.no_civil_rights_or_obligations_arise": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Hệ quả pháp lý theo khoản 1 Điều 131 BLDS 2015: Giao dịch vô hiệu không làm phát sinh, thay đổi, chấm dứt quyền, nghĩa vụ dân sự của các bên kể từ thời điểm xác lập."
+    },
+    "transaction.parties_must_restore_status_quo_ante_and_return_received": {
+      "type": "boolean",
+      "domain": "transaction",
+      "description": "Hệ quả pháp lý theo khoản 2 Điều 131 BLDS 2015: Các bên khôi phục lại tình trạng ban đầu, hoàn trả cho nhau những gì đã nhận."
+    },
+    "inheritance.is_inheritance_case": {
+      "type": "boolean",
+      "domain": "inheritance",
+      "description": "Vụ việc đang giải quyết liên quan đến quan hệ thừa kế di sản theo Phần thứ tư BLDS 2015."
+    },
+    "inheritance.estate_opening_time_established": {
+      "type": "boolean",
+      "domain": "inheritance",
+      "description": "Hệ quả pháp lý theo khoản 1 Điều 611 BLDS 2015: Thời điểm mở thừa kế được xác lập (thời điểm người có tài sản chết hoặc ngày được Tòa án tuyên bố là đã chết)."
+    },
+    "inheritance.has_valid_will": {
+      "type": "boolean",
+      "domain": "inheritance",
+      "description": "Người để lại di sản có di chúc hợp pháp theo quy định của pháp luật."
+    },
+    "inheritance.applies_statutory_inheritance": {
+      "type": "boolean",
+      "domain": "inheritance",
+      "description": "Việc phân chia di sản được thực hiện theo quy định về thừa kế theo pháp luật theo Điều 650 BLDS 2015."
+    },
+    "inheritance.prior_rank_has_no_eligible_heirs": {
+      "type": "boolean",
+      "domain": "inheritance",
+      "description": "Hàng thừa kế trước không còn ai do đã chết, không có quyền hưởng di sản, bị truất quyền hưởng di sản hoặc từ chối nhận di sản theo khoản 3 Điều 651 BLDS 2015."
+    },
+    "person.is_deceased": {
+      "type": "boolean",
+      "domain": "person",
+      "description": "Người có tài sản đã chết trên thực tế theo khoản 1 Điều 611 BLDS 2015."
+    },
+    "person.declared_dead_by_court": {
+      "type": "boolean",
+      "domain": "person",
+      "description": "Người có tài sản bị Tòa án tuyên bố là đã chết theo khoản 1 Điều 611 và Điều 71 BLDS 2015."
+    },
+    "decedent.knew_acts_and_still_bequeathed_in_will": {
+      "type": "boolean",
+      "domain": "decedent",
+      "description": "Người để lại di sản đã biết hành vi của người bị tước quyền tại khoản 1 Điều 621 nhưng vẫn cho họ hưởng di sản theo di chúc theo khoản 2 Điều 621 BLDS 2015."
+    },
+    "heir.is_legal_or_testamentary_heir": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Chủ thể là người thừa kế theo pháp luật hoặc người thừa kế theo di chúc."
+    },
+    "heir.declares_renunciation_of_estate": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế thể hiện việc từ chối nhận di sản bằng văn bản gửi người quản lý di sản, người thừa kế khác trước thời điểm phân chia di sản theo Điều 620 BLDS 2015."
+    },
+    "heir.renunciation_aims_to_evade_property_obligations": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Việc từ chối nhận di sản nhằm trốn tránh việc thực hiện nghĩa vụ tài sản của mình đối với người khác theo khoản 1 Điều 620 BLDS 2015."
+    },
+    "heir.estate_renunciation_is_valid": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Hệ quả pháp lý theo Điều 620 BLDS 2015: Việc từ chối nhận di sản của người thừa kế hợp lệ và có hiệu lực pháp luật."
+    },
+    "heir.convicted_intentional_infringement_of_decedent_life_health": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế bị kết án về hành vi cố ý xâm phạm tính mạng, sức khỏe của người để lại di sản theo điểm a khoản 1 Điều 621 BLDS 2015."
+    },
+    "heir.severely_mistreated_tortured_decedent": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế có hành vi ngược đãi nghiêm trọng, hành hạ người để lại di sản theo điểm a khoản 1 Điều 621 BLDS 2015."
+    },
+    "heir.severely_infringed_decedent_honor_dignity": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế có hành vi xâm phạm nghiêm trọng danh dự, nhân phẩm của người để lại di sản theo điểm a khoản 1 Điều 621 BLDS 2015."
+    },
+    "heir.severely_breached_support_obligation_to_decedent": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế vi phạm nghiêm trọng nghĩa vụ nuôi dưỡng người để lại di sản theo điểm b khoản 1 Điều 621 BLDS 2015."
+    },
+    "heir.convicted_killing_other_heir_for_estate": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế bị kết án về hành vi cố ý xâm phạm tính mạng người thừa kế khác nhằm hưởng di sản theo điểm c khoản 1 Điều 621 BLDS 2015."
+    },
+    "heir.deceived_coerced_obstructed_will_making": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế có hành vi lừa dối, cưỡng ép hoặc ngăn cản người để lại di sản trong việc lập di chúc theo điểm d khoản 1 Điều 621 BLDS 2015."
+    },
+    "heir.forged_altered_destroyed_concealed_will_for_estate": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế có hành vi giả mạo, sửa chữa, hủy, che giấu di chúc nhằm hưởng di sản trái ý chí theo điểm d khoản 1 Điều 621 BLDS 2015."
+    },
+    "heir.disqualified_from_inheriting": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Hệ quả pháp lý theo khoản 1 Điều 621 BLDS 2015: Người thừa kế không được quyền hưởng di sản."
+    },
+    "heir.is_minor_child": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế là con chưa thành niên của người để lại di sản theo điểm a khoản 1 Điều 644 BLDS 2015."
+    },
+    "heir.is_parent": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế là cha đẻ, mẹ đẻ, cha nuôi hoặc mẹ nuôi của người để lại di sản theo điểm a khoản 1 Điều 644 BLDS 2015."
+    },
+    "heir.is_spouse": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế là vợ hoặc chồng hợp pháp của người để lại di sản theo điểm a khoản 1 Điều 644 BLDS 2015."
+    },
+    "heir.is_adult_child": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế là con đã thành niên của người để lại di sản theo điểm b khoản 1 Điều 644 BLDS 2015."
+    },
+    "heir.lacks_working_capacity": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế không có khả năng lao động theo điểm b khoản 1 Điều 644 BLDS 2015."
+    },
+    "heir.omitted_from_will": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế không được người lập di chúc cho hưởng di sản trong di chúc theo khoản 1 Điều 644 BLDS 2015."
+    },
+    "heir.bequeathed_less_than_two_thirds_legal_share": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế chỉ được người lập di chúc cho hưởng phần di sản ít hơn hai phần ba suất của một người thừa kế theo pháp luật theo khoản 1 Điều 644 BLDS 2015."
+    },
+    "heir.entitled_to_two_thirds_statutory_share": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Hệ quả pháp lý theo khoản 1 Điều 644 BLDS 2015: Được hưởng phần di sản bằng hai phần ba suất của một người thừa kế theo pháp luật (thừa kế không phụ thuộc nội dung di chúc)."
+    },
+    "heir.belongs_to_first_heir_rank": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế thuộc hàng thừa kế thứ nhất theo điểm a khoản 1 Điều 651 BLDS 2015 (vợ, chồng, cha đẻ, mẹ đẻ, cha nuôi, mẹ nuôi, con đẻ, con nuôi)."
+    },
+    "heir.belongs_to_subsequent_heir_rank": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế thuộc hàng thừa kế thứ hai hoặc thứ ba theo điểm b, c khoản 1 Điều 651 BLDS 2015."
+    },
+    "heir.is_deceased_before_or_with_decedent": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế đã chết trước hoặc chết cùng một thời điểm với người để lại di sản theo khoản 3 Điều 651 BLDS 2015."
+    },
+    "heir.disinherited_by_decedent": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế bị người để lại di sản truất quyền hưởng di sản trong di chúc theo khoản 1 Điều 626 và khoản 3 Điều 651 BLDS 2015."
+    },
+    "heir.entitled_to_statutory_estate_share": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Hệ quả pháp lý theo Điều 651 BLDS 2015: Được quyền hưởng một suất di sản thừa kế theo pháp luật."
+    },
+    "heir.shares_equally_with_same_rank": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Hệ quả pháp lý theo khoản 2 Điều 651 BLDS 2015: Được hưởng phần di sản bằng nhau với những người thừa kế cùng hàng."
+    },
+    "heir.is_grandchild_or_great_grandchild": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Người thừa kế là cháu ruột hoặc chắt ruột của người để lại di sản theo Điều 652 BLDS 2015."
+    },
+    "heir.parent_died_before_or_with_decedent": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Cha hoặc mẹ của cháu/chắt chết trước hoặc chết cùng một thời điểm với người để lại di sản theo Điều 652 BLDS 2015."
+    },
+    "heir.entitled_to_substitute_inheritance": {
+      "type": "boolean",
+      "domain": "heir",
+      "description": "Hệ quả pháp lý theo Điều 652 BLDS 2015: Được hưởng thừa kế thế vị phần di sản mà cha hoặc mẹ được hưởng nếu còn sống."
+    },
+    "tort.is_tort_case": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Vụ việc đang giải quyết liên quan đến trách nhiệm bồi thường thiệt hại ngoài hợp đồng theo Chương XX BLDS 2015."
+    },
+    "tort.has_infringing_act": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Có hành vi xâm phạm tính mạng, sức khỏe, danh dự, nhân phẩm, uy tín, tài sản, quyền hoặc lợi ích hợp pháp khác của người khác theo khoản 1 Điều 584 BLDS 2015."
+    },
+    "tort.actual_damage_occurred": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Có thiệt hại thực tế xảy ra đối với người bị xâm phạm theo khoản 1 Điều 584 BLDS 2015."
+    },
+    "tort.causation_established": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Có mối quan hệ nhân quả giữa hành vi xâm phạm và thiệt hại thực tế phát sinh theo Điều 584 BLDS 2015."
+    },
+    "tort.caused_by_force_majeure": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Thiệt hại phát sinh hoàn toàn do sự kiện bất khả kháng theo khoản 2 Điều 584 BLDS 2015."
+    },
+    "tort.entirely_victim_fault": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Thiệt hại phát sinh hoàn toàn do lỗi của bên bị thiệt hại theo khoản 2 Điều 584 BLDS 2015."
+    },
+    "tort.tortfeasor_must_compensate": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo khoản 1 Điều 584 BLDS 2015: Người gây thiệt hại phát sinh trách nhiệm bồi thường thiệt hại."
+    },
+    "tort.tortfeasor_has_no_fault": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Người chịu trách nhiệm bồi thường thiệt hại không có lỗi theo khoản 2 Điều 585 BLDS 2015."
+    },
+    "tort.tortfeasor_has_unintentional_fault": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Người chịu trách nhiệm bồi thường thiệt hại có lỗi vô ý theo khoản 2 Điều 585 BLDS 2015."
+    },
+    "tort.damage_too_large_for_economic_capacity": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Thiệt hại quá lớn so với khả năng kinh tế của người chịu trách nhiệm bồi thường theo khoản 2 Điều 585 BLDS 2015."
+    },
+    "tort.entitled_to_reduction_of_compensation": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo khoản 2 Điều 585 BLDS 2015: Người chịu trách nhiệm bồi thường có thể được xem xét giảm mức bồi thường thiệt hại."
+    },
+    "tort.victim_has_partial_fault": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Bên bị thiệt hại có lỗi một phần trong việc gây ra thiệt hại theo khoản 4 Điều 585 BLDS 2015."
+    },
+    "tort.victim_fault_portion_not_compensated": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo khoản 4 Điều 585 BLDS 2015: Bên bị thiệt hại không được bồi thường phần thiệt hại do lỗi của mình gây ra."
+    },
+    "tort.caused_by_employee_or_apprentice": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Thiệt hại do người làm công hoặc người học nghề gây ra theo Điều 600 BLDS 2015."
+    },
+    "tort.occurred_during_assigned_work": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hành vi gây thiệt hại xảy ra trong khi người làm công, người học nghề thực hiện công việc được giao theo Điều 600 BLDS 2015."
+    },
+    "employer.must_compensate_victim": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo Điều 600 BLDS 2015: Cá nhân, pháp nhân sử dụng lao động phải bồi thường thiệt hại cho bên bị thiệt hại."
+    },
+    "employer.has_recourse_against_employee_at_fault": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo Điều 600 BLDS 2015: Người sử dụng lao động có quyền yêu cầu người làm công, người học nghề có lỗi phải hoàn trả một khoản tiền."
+    },
+    "tort.caused_by_high_danger_source": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Thiệt hại do nguồn nguy hiểm cao độ (xe cơ giới, hệ thống điện, chất nổ, thú dữ...) gây ra theo khoản 1 Điều 601 BLDS 2015."
+    },
+    "tort.is_lawful_possessor_or_owner_of_danger_source": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Chủ thể là chủ sở hữu hoặc người đang chiếm hữu, sử dụng hợp pháp nguồn nguy hiểm cao độ theo khoản 2 Điều 601 BLDS 2015."
+    },
+    "tort.victim_has_intentional_fault_entirely": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Thiệt hại do nguồn nguy hiểm cao độ xảy ra hoàn toàn do lỗi cố ý của người bị thiệt hại theo điểm a khoản 3 Điều 601 BLDS 2015."
+    },
+    "tort.caused_by_necessity": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Thiệt hại xảy ra trong tình thế cấp thiết theo điểm b khoản 3 Điều 601 BLDS 2015."
+    },
+    "tort.danger_source_possessor_must_compensate_strict_liability": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo khoản 3 Điều 601 BLDS 2015: Chủ sở hữu, người chiếm hữu nguồn nguy hiểm cao độ phải bồi thường thiệt hại ngay cả khi không có lỗi."
+    },
+    "danger_source.unlawfully_possessed": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Nguồn nguy hiểm cao độ đang bị chiếm hữu, sử dụng trái pháp luật theo khoản 4 Điều 601 BLDS 2015."
+    },
+    "unlawful_possessor.must_compensate_damage": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo khoản 4 Điều 601 BLDS 2015: Người đang chiếm hữu, sử dụng nguồn nguy hiểm cao độ trái pháp luật phải bồi thường thiệt hại."
+    },
+    "tort.caused_by_animal": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Thiệt hại do súc vật gây ra cho người khác theo khoản 1 Điều 603 BLDS 2015."
+    },
+    "animal.is_owner_or_possessor": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Chủ thể là chủ sở hữu hoặc người chiếm hữu, sử dụng súc vật trong thời gian súc vật gây thiệt hại theo khoản 1 Điều 603 BLDS 2015."
+    },
+    "third_party.entirely_at_fault_for_animal_damage": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Người thứ ba hoàn toàn có lỗi làm cho súc vật gây thiệt hại theo khoản 2 Điều 603 BLDS 2015."
+    },
+    "animal_keeper.must_compensate_damage": {
+      "type": "boolean",
+      "domain": "tort",
+      "description": "Hệ quả pháp lý theo khoản 1 Điều 603 BLDS 2015: Chủ sở hữu hoặc người chiếm hữu, sử dụng súc vật phải bồi thường thiệt hại."
+    },
+    "property.is_movable": {
+      "type": "boolean",
+      "domain": "property",
+      "description": "Tài sản đang xem xét là động sản theo quy định tại Điều 107 BLDS 2015."
+    },
+    "property.is_real_estate": {
+      "type": "boolean",
+      "domain": "property",
+      "description": "Tài sản đang xem xét là bất động sản theo quy định tại Điều 107 BLDS 2015."
+    },
+    "possession.is_without_legal_basis": {
+      "type": "boolean",
+      "domain": "possession",
+      "description": "Việc chiếm hữu hoặc được lợi về tài sản không có căn cứ pháp luật theo Điều 165 và Điều 236 BLDS 2015."
+    },
+    "possession.is_bona_fide": {
+      "type": "boolean",
+      "domain": "possession",
+      "description": "Việc chiếm hữu tài sản là ngay tình (người chiếm hữu có căn cứ tin rằng mình có quyền đối với tài sản) theo Điều 180 và Điều 236 BLDS 2015."
+    },
+    "possession.is_continuous": {
+      "type": "boolean",
+      "domain": "possession",
+      "description": "Việc chiếm hữu tài sản diễn ra liên tục, không ngắt quãng trong một khoảng thời gian theo Điều 182 và Điều 236 BLDS 2015."
+    },
+    "possession.is_overt": {
+      "type": "boolean",
+      "domain": "possession",
+      "description": "Việc chiếm hữu tài sản được thực hiện một cách công khai, minh bạch, không giấu giếm theo Điều 183 và Điều 236 BLDS 2015."
+    },
+    "possession.duration_years": {
+      "type": "integer",
+      "domain": "possession",
+      "description": "Thời hạn chiếm hữu tài sản liên tục tính theo số năm theo Điều 236 BLDS 2015."
+    },
+    "property.statute_acquisition_excluded_by_law": {
+      "type": "boolean",
+      "domain": "property",
+      "description": "Tài sản thuộc trường hợp pháp luật quy định không được xác lập quyền sở hữu theo thời hiệu chiếm hữu theo Điều 236 BLDS 2015."
+    },
+    "possessor.becomes_lawful_owner_by_prescription": {
+      "type": "boolean",
+      "domain": "possession",
+      "description": "Hệ quả pháp lý theo Điều 236 BLDS 2015: Người chiếm hữu trở thành chủ sở hữu hợp pháp của tài sản kể từ thời điểm bắt đầu chiếm hữu."
+    },
+    "real_estate.is_landlocked": {
+      "type": "boolean",
+      "domain": "real_estate",
+      "description": "Bất động sản bị vây bọc bởi các bất động sản của các chủ sở hữu khác theo khoản 1 Điều 254 BLDS 2015."
+    },
+    "real_estate.lacks_adequate_access_to_public_road": {
+      "type": "boolean",
+      "domain": "real_estate",
+      "description": "Bất động sản bị vây bọc không có hoặc không đủ lối đi ra đường công cộng theo khoản 1 Điều 254 BLDS 2015."
+    },
+    "owner.entitled_to_demand_reasonable_passage": {
+      "type": "boolean",
+      "domain": "real_estate",
+      "description": "Hệ quả pháp lý theo khoản 1 Điều 254 BLDS 2015: Chủ sở hữu có quyền yêu cầu chủ sở hữu bất động sản vây bọc dành cho mình một lối đi hợp lý."
+    },
+    "owner.must_compensate_adjacent_owner_for_passage": {
+      "type": "boolean",
+      "domain": "real_estate",
+      "description": "Nghĩa vụ pháp lý theo khoản 1 Điều 254 BLDS 2015: Chủ sở hữu bất động sản hưởng quyền lối đi qua phải đền bù cho chủ sở hữu bất động sản chịu hưởng quyền (trừ khi có thỏa thuận khác)."
     }
   }
 }
-
