@@ -569,8 +569,10 @@ def run_embedding_pipeline(args, client, embedder, store_factory):
         raise ValueError("--sample phải lớn hơn 0.")
     if args.dry_run and args.index_only:
         raise ValueError("Không kết hợp --dry-run và --index-only.")
-    if args.test and args.store == "chroma":
-        raise ValueError("Dùng scripts.check_chroma_migration để benchmark Chroma.")
+    if args.test and args.store in ("chroma", "qdrant"):
+        raise ValueError(
+            "Dùng scripts.check_chroma_migration hoặc eval suite để benchmark vector store."
+        )
     try:
         # 1. Lấy dữ liệu Article từ Neo4j
         print(">> [BƯỚC 1] Đọc corpus Article...")
@@ -592,7 +594,7 @@ def run_embedding_pipeline(args, client, embedder, store_factory):
 
         # Chế độ --index-only: chỉ kiểm tra hoặc tạo lại index
         if args.index_only:
-            if args.store == "chroma":
+            if args.store in ("chroma", "qdrant"):
                 raise ValueError("--index-only chỉ áp dụng cho Neo4j.")
             ensure_vector_index(client, embedder.dimension)
             if args.test:
@@ -699,9 +701,9 @@ def run_embedding_pipeline(args, client, embedder, store_factory):
                     corpus_hash=corpus_hash,
                 )
 
-        # 4. Ghi vào Neo4j
+        # 4. Ghi vào Vector Store
         print(f"\n>> [BƯỚC 4] Ghi embedding: {args.store}...")
-        if args.store in ("chroma", "dual"):
+        if args.store in ("chroma", "qdrant", "dual"):
             store = store_factory(embedder.model_name, vectors.shape[1])
             try:
                 metadata = [
@@ -726,7 +728,7 @@ def run_embedding_pipeline(args, client, embedder, store_factory):
                 store.collection.modify(
                     metadata={**existing, "corpus_hash": corpus_hash}
                 )
-                print(f"Chroma: {store.count()} records")
+                print(f"{store.__class__.__name__}: {store.count()} records")
             finally:
                 store.close()
         if args.store in ("neo4j", "dual"):

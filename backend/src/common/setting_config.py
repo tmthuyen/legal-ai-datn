@@ -1,9 +1,11 @@
 from functools import lru_cache
 from pathlib import Path
-from typing import Literal
+from typing import Literal, Optional
 
 from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+BACKEND_ROOT = Path(__file__).resolve().parents[2]
 
 
 class Settings(BaseSettings):
@@ -22,9 +24,12 @@ class Settings(BaseSettings):
     embedding_model_name: str = "darklethelong/vnlegal-lal"
     embedding_device: str = "cpu"
     embedding_batch_size: int = 4
-    chroma_path: Path = Path("data/chroma")
+    chroma_path: Path = BACKEND_ROOT / "data" / "chroma"
     chroma_collection: str = "legal_articles"
-    vector_backend: Literal["neo4j", "chroma"] = "chroma"
+    qdrant_path: Path = BACKEND_ROOT / "data" / "qdrant"
+    qdrant_url: Optional[str] = None
+    qdrant_collection: str = "legal_articles"
+    vector_backend: Literal["neo4j", "chroma", "qdrant"] = "qdrant"
     vector_index_name: str = "article_embeddings_idx"
 
     # Reasoning model (fine-tuned citation inference) configurations

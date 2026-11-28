@@ -8,6 +8,7 @@ requires-python = ">=3.10"
 dependencies = [
     "neo4j",           # graph DB client
     "chromadb>=1.5.9,<2",        # vector DB
+    "qdrant-client>=1.12.0",    # qdrant vector DB
     "sentence-transformers",  
     "transformers",    
     "peft",            

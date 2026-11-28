@@ -11,10 +11,7 @@ dist/
 build/
 
 # data
-data/*
-!data/processed/
-!data/metadata/
-!data/rules/
+# data/*
 
 # logs
 logs/*

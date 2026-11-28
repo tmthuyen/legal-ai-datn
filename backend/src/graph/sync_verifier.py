@@ -105,6 +105,13 @@ class KnowledgeGraphSyncVerifier:
                 self.expected_model_name, 1024
             )
             self.target_chroma_collection = settings.chroma_collection
+            self.target_qdrant_collection = getattr(
+                settings, "qdrant_collection", "legal_articles"
+            )
+            self.qdrant_path = self.backend_dir / getattr(
+                settings, "qdrant_path", Path("data/qdrant")
+            )
+            self.qdrant_url = getattr(settings, "qdrant_url", None)
             self.active_vector_backend = settings.vector_backend
             slug = self.expected_model_name.replace("/", "_")
             self.npz_path = (
@@ -117,6 +124,9 @@ class KnowledgeGraphSyncVerifier:
             self.expected_model_name = "darklethelong/vnlegal-lal"
             self.expected_dimension = 1024
             self.target_chroma_collection = "legal_articles"
+            self.target_qdrant_collection = "legal_articles"
+            self.qdrant_path = self.backend_dir / "data" / "qdrant"
+            self.qdrant_url = None
             self.active_vector_backend = "chroma"
             self.npz_path = (
                 self.backend_dir
@@ -610,6 +620,48 @@ class KnowledgeGraphSyncVerifier:
                 warnings.append(msg)
             sync_details["chroma_db"] = {"exists": False}
 
+        # 2.3b Kiểm tra Qdrant Collection
+        qdrant_id_set = set()
+        qdrant_hash = "UNKNOWN"
+        qdrant_model = "UNKNOWN"
+        qdrant_dim = "UNKNOWN"
+
+        if self.active_vector_backend == "qdrant":
+            try:
+                from src.vector.qdrant_store import QdrantVectorStore
+
+                q_loc = self.qdrant_url or self.qdrant_path
+                q_store = QdrantVectorStore(
+                    location=q_loc,
+                    collection_name=self.target_qdrant_collection,
+                    model_name=self.expected_model_name,
+                    dimension=self.expected_dimension,
+                    create=False,
+                )
+                q_data = q_store.get()
+                qdrant_ids = q_data.get("ids", [])
+                qdrant_id_set = set(qdrant_ids)
+                meta = q_store.metadata
+                qdrant_hash = str(meta.get("corpus_hash", "UNKNOWN"))
+                qdrant_model = str(meta.get("embedding_model", "UNKNOWN"))
+                qdrant_dim = meta.get("dimension", "UNKNOWN")
+                sync_details["qdrant_db"] = {
+                    "exists": True,
+                    "collection": self.target_qdrant_collection,
+                    "article_count": len(qdrant_ids),
+                    "corpus_hash": qdrant_hash,
+                    "model_name": qdrant_model,
+                    "dimension": qdrant_dim,
+                }
+                q_store.close()
+            except Exception as qe:
+                msg = f"Lỗi đọc Qdrant ({self.qdrant_path}): {qe}"
+                if strict:
+                    errors.append(msg)
+                else:
+                    warnings.append(msg)
+                sync_details["qdrant_db"] = {"exists": False, "error": str(qe)}
+
         # 2.4 Kiểm tra Neo4j (nếu yêu cầu)
         neo4j_id_set = set()
         if check_neo4j:
@@ -650,19 +702,34 @@ class KnowledgeGraphSyncVerifier:
         elif self.active_vector_backend == "npz" or strict:
             errors.append("NPZ cache không có dữ liệu Article IDs hoặc không tồn tại.")
 
-        if chroma_id_set:
-            missing_in_chroma = json_id_set - chroma_id_set
-            extra_in_chroma = chroma_id_set - json_id_set
-            if missing_in_chroma or extra_in_chroma:
+        if self.active_vector_backend == "qdrant":
+            if qdrant_id_set:
+                missing_in_qdrant = json_id_set - qdrant_id_set
+                extra_in_qdrant = qdrant_id_set - json_id_set
+                if missing_in_qdrant or extra_in_qdrant:
+                    errors.append(
+                        f"Lệch Article IDs giữa nodes.json và Qdrant: "
+                        f"nodes.json có {len(missing_in_qdrant)} node thiếu trong Qdrant; "
+                        f"Qdrant có {len(extra_in_qdrant)} node thừa."
+                    )
+            elif strict:
                 errors.append(
-                    f"Lệch Article IDs giữa nodes.json và ChromaDB: "
-                    f"nodes.json có {len(missing_in_chroma)} node thiếu trong Chroma; "
-                    f"Chroma có {len(extra_in_chroma)} node thừa."
+                    f"Qdrant collection '{self.target_qdrant_collection}' không có dữ liệu Article IDs."
                 )
-        elif self.active_vector_backend == "chroma" and strict:
-            errors.append(
-                f"ChromaDB collection '{target_coll_name}' không có dữ liệu Article IDs."
-            )
+        elif self.active_vector_backend == "chroma":
+            if chroma_id_set:
+                missing_in_chroma = json_id_set - chroma_id_set
+                extra_in_chroma = chroma_id_set - json_id_set
+                if missing_in_chroma or extra_in_chroma:
+                    errors.append(
+                        f"Lệch Article IDs giữa nodes.json và ChromaDB: "
+                        f"nodes.json có {len(missing_in_chroma)} node thiếu trong Chroma; "
+                        f"Chroma có {len(extra_in_chroma)} node thừa."
+                    )
+            elif strict:
+                errors.append(
+                    f"ChromaDB collection '{target_coll_name}' không có dữ liệu Article IDs."
+                )
 
         if neo4j_id_set:
             missing_in_neo = json_id_set - neo4j_id_set
@@ -682,7 +749,20 @@ class KnowledgeGraphSyncVerifier:
                 f"BM25 đang dùng dữ liệu mới nhưng Semantic đang dùng index cũ!"
             )
 
-        if chroma_hash != "UNKNOWN" and chroma_hash != expected_corpus_hash:
+        if (
+            self.active_vector_backend == "qdrant"
+            and qdrant_hash != "UNKNOWN"
+            and qdrant_hash != expected_corpus_hash
+        ):
+            errors.append(
+                f"STALE EMBEDDING INDEX trong Qdrant: Corpus hash trong Qdrant ({qdrant_hash[:12]}...) "
+                f"không khớp với nội dung hiện tại của nodes.json ({expected_corpus_hash[:12]}...). "
+            )
+        elif (
+            self.active_vector_backend == "chroma"
+            and chroma_hash != "UNKNOWN"
+            and chroma_hash != expected_corpus_hash
+        ):
             errors.append(
                 f"STALE EMBEDDING INDEX trong ChromaDB: Corpus hash trong Chroma ({chroma_hash[:12]}...) "
                 f"không khớp với nội dung hiện tại của nodes.json ({expected_corpus_hash[:12]}...). "
@@ -694,7 +774,17 @@ class KnowledgeGraphSyncVerifier:
             errors.append(
                 f"NPZ dimension sai lệch: {npz_dim} (kỳ vọng {self.expected_dimension})."
             )
-        if chroma_dim not in ("UNKNOWN", self.expected_dimension):
+        if self.active_vector_backend == "qdrant" and qdrant_dim not in (
+            "UNKNOWN",
+            self.expected_dimension,
+        ):
+            errors.append(
+                f"Qdrant dimension sai lệch: {qdrant_dim} (kỳ vọng {self.expected_dimension})."
+            )
+        elif self.active_vector_backend == "chroma" and chroma_dim not in (
+            "UNKNOWN",
+            self.expected_dimension,
+        ):
             errors.append(
                 f"Chroma dimension sai lệch: {chroma_dim} (kỳ vọng {self.expected_dimension})."
             )
@@ -1094,3 +1184,36 @@ class KnowledgeGraphSyncVerifier:
 
         output_path.write_text("\n".join(lines), encoding="utf-8")
         return output_path
+
+
+if __name__ == "__main__":
+    import pathlib
+    import sys
+
+    # Đảm bảo thư mục backend nằm trong sys.path khi chạy trực tiếp file này
+    backend_root = pathlib.Path(__file__).resolve().parents[2]
+    if str(backend_root) not in sys.path:
+        sys.path.insert(0, str(backend_root))
+
+    print("\n🔍 Đang kiểm tra tính đồng bộ Retrieval & Qdrant Vector Store...")
+    verifier = KnowledgeGraphSyncVerifier()
+    res = verifier.check_retrieval_sync()
+    print("\n" + "=" * 45)
+    print("        KẾT QUẢ KIỂM ĐỊNH RETRIEVAL")
+    print("=" * 45)
+    print(f"Trạng thái tổng thể : {res['status']}")
+    details = res.get("sync_details", {})
+    json_count = details.get("nodes_json", {}).get("article_count", 0)
+    qdrant_count = details.get("qdrant_db", {}).get("article_count", 0)
+    npz_count = details.get("npz_cache", {}).get("article_count", 0)
+    print(
+        f"Số lượng Điều luật  : {json_count} điều (nodes.json: {json_count}, Qdrant: {qdrant_count}, NPZ: {npz_count})"
+    )
+    print(f"Lỗi (Errors)        : {res['errors']}")
+    print(f"Cảnh báo (Warnings) : {res['warnings']}")
+    print("=" * 45)
+    if res["status"] in ("PASS", "WARN") and not res["errors"]:
+        print("✅ Qdrant và Đồ thị đạt chuẩn đồng bộ 100%!\n")
+    else:
+        print("❌ Có lỗi không đồng bộ!\n")
+        sys.exit(1)
