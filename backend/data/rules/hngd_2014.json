@@ -1,0 +1,290 @@
+[
+  {
+    "schema_version": "1.0",
+    "id": "HNGD_D35_K2_01",
+    "source": {
+      "node_ids": [
+        "LUAT_HNGD_2014_D35_K2",
+        "LUAT_HNGD_2014_D35_K2_DIEM_A",
+        "LUAT_HNGD_2014_D35_K2_DIEM_B",
+        "LUAT_HNGD_2014_D35_K2_DIEM_C"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "REQUIREMENT",
+    "when": {
+      "all": [
+        ["asset.ownership", "eq", "JOINT_SPOUSAL"],
+        ["transaction.type", "eq", "DISPOSAL"],
+        {
+          "any": [
+            ["asset.category", "eq", "REAL_ESTATE"],
+            ["asset.is_registered_movable", "eq", true],
+            ["asset.is_primary_family_income_source", "eq", true]
+          ]
+        }
+      ]
+    },
+    "then": [
+      {
+        "effect": "REQUIRE",
+        "predicate": "transaction.written_spousal_agreement",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "HNGD_D24_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "LUAT_HNGD_2014_D24_K2",
+        "note": "Liên hệ quy định về ủy quyền giữa vợ và chồng tại khoản 2 Điều 24; tuy nhiên không tự động coi ủy quyền là ngoại lệ loại trừ yêu cầu thỏa thuận bằng văn bản tại khoản 2 Điều 35."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Việc định đoạt tài sản chung của vợ chồng phải có sự thỏa thuận bằng văn bản trong trường hợp tài sản là bất động sản, động sản phải đăng ký quyền sở hữu hoặc nguồn tạo thu nhập chủ yếu của gia đình."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 35 Luật Hôn nhân và gia đình 2014"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "HNGD_D24_K2_01",
+    "source": {
+      "node_ids": [
+        "LUAT_HNGD_2014_D24_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "PERMISSION",
+    "when": {
+      "all": [
+        ["transaction.requires_both_spouses_consent", "eq", true],
+        ["transaction.spousal_authorization_established", "eq", true],
+        ["transaction.spousal_authorization_valid", "eq", true]
+      ]
+    },
+    "then": [
+      {
+        "effect": "PERMIT",
+        "predicate": "transaction.spousal_authorization_permitted",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "HNGD_D35_K2_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "LUAT_HNGD_2014_D35_K2",
+        "note": "Cơ chế ủy quyền giữa vợ và chồng đối với giao dịch cần sự đồng ý của cả hai vợ chồng."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Vợ, chồng có thể ủy quyền hợp lệ cho nhau xác lập, thực hiện và chấm dứt giao dịch mà theo quy định của pháp luật phải có sự đồng ý của cả hai vợ chồng."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 24 Luật Hôn nhân và gia đình 2014"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "HNGD_D8_K1_01",
+    "source": {
+      "node_ids": [
+        "LUAT_HNGD_2014_D8_K1",
+        "LUAT_HNGD_2014_D8_K1_DIEM_A",
+        "LUAT_HNGD_2014_D8_K1_DIEM_B",
+        "LUAT_HNGD_2014_D8_K1_DIEM_C",
+        "LUAT_HNGD_2014_D8_K1_DIEM_D"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "REQUIREMENT",
+    "when": {
+      "all": [
+        ["marriage.couple_type", "eq", "MALE_FEMALE"],
+        ["marriage.is_marriage_registration", "eq", true]
+      ]
+    },
+    "then": [
+      {
+        "effect": "REQUIRE",
+        "predicate": "person.male_age",
+        "operator": "gte",
+        "value": 20
+      },
+      {
+        "effect": "REQUIRE",
+        "predicate": "person.female_age",
+        "operator": "gte",
+        "value": 18
+      },
+      {
+        "effect": "REQUIRE",
+        "predicate": "marriage.is_voluntary",
+        "value": true
+      },
+      {
+        "effect": "REQUIRE",
+        "predicate": "marriage.parties_not_lost_civil_capacity",
+        "value": true
+      },
+      {
+        "effect": "REQUIRE",
+        "predicate": "marriage.violates_prohibited_cases_d5_k2_abcd",
+        "value": false
+      }
+    ],
+    "unless": [],
+    "links": [],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 2,
+      "description": "Nam, nữ kết hôn với nhau phải tuân theo đủ 4 nhóm điều kiện tại các điểm a đến d khoản 1 Điều 8 Luật HNGĐ 2014. Predicate tổng hợp về các trường hợp cấm kết hôn được kiểm tra như một dữ kiện đầu vào; các rule điểm b, c và d khoản 2 Điều 5 chưa được số hóa riêng trong V1."
+    },
+    "extensions": {
+      "article_label": "Khoản 1 Điều 8 Luật Hôn nhân và gia đình 2014"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "HNGD_D8_K2_01",
+    "source": {
+      "node_ids": [
+        "LUAT_HNGD_2014_D8_K2"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "NON_RECOGNITION",
+    "when": {
+      "all": [
+        ["marriage.couple_type", "eq", "SAME_SEX"],
+        ["marriage.is_marriage_registration", "eq", true]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DENY_RECOGNITION",
+        "predicate": "marriage.state_recognized",
+        "value": false
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "HNGD_D8_K1_01",
+        "relation": "RELATED_PROVISION",
+        "source_node_id": "LUAT_HNGD_2014_D8_K1",
+        "note": "Khoản 2 Điều 8 quy định chế độ không thừa nhận hôn nhân giữa những người cùng giới tính (không phải điều cấm hành vi tại khoản 2 Điều 5)."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Nhà nước không thừa nhận hôn nhân giữa những người cùng giới tính (biểu diễn đúng bản chất NON_RECOGNITION theo Luật HNGĐ 2014, phân biệt với quy phạm cấm trực tiếp)."
+    },
+    "extensions": {
+      "article_label": "Khoản 2 Điều 8 Luật Hôn nhân và gia đình 2014"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "HNGD_D5_K2_DIEM_A_01",
+    "source": {
+      "node_ids": [
+        "LUAT_HNGD_2014_D5_K2",
+        "LUAT_HNGD_2014_D5_K2_DIEM_A"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "PROHIBITION",
+    "when": {
+      "any": [
+        ["marriage.act_type", "eq", "MARRIAGE_REGISTRATION"],
+        ["marriage.act_type", "eq", "DIVORCE_REQUEST"]
+      ]
+    },
+    "then": [
+      {
+        "effect": "PROHIBIT",
+        "predicate": "marriage.is_sham_act",
+        "value": true
+      }
+    ],
+    "unless": [],
+    "links": [
+      {
+        "rule_id": "HNGD_D8_K1_01",
+        "relation": "CONSEQUENCE_OF_VIOLATION",
+        "source_node_id": "LUAT_HNGD_2014_D8_K1_DIEM_D",
+        "note": "Vi phạm điều cấm tại điểm a khoản 2 Điều 5 dẫn tới vi phạm điều kiện kết hôn tại điểm d khoản 1 Điều 8."
+      }
+    ],
+    "meta": {
+      "status": "VERIFIED",
+      "revision": 1,
+      "description": "Nghiêm cấm hành vi kết hôn giả tạo, ly hôn giả tạo theo điểm a khoản 2 Điều 5 Luật HNGĐ 2014."
+    },
+    "extensions": {
+      "article_label": "Điểm a Khoản 2 Điều 5 Luật Hôn nhân và gia đình 2014"
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "id": "HNGD_D74_01",
+    "source": {
+      "node_ids": [
+        "LUAT_HNGD_2014_D74"
+      ],
+      "document_version": "ORIGINAL"
+    },
+    "kind": "LIABILITY",
+    "when": {
+      "all": [
+        ["tort.caused_by_child", "eq", true],
+        {
+          "any": [
+            ["child.is_minor", "eq", true],
+            ["child.is_adult_lost_civil_capacity", "eq", true]
+          ]
+        },
+        ["tort.blds_parental_liability_grounds_satisfied", "eq", true]
+      ]
+    },
+    "then": [
+      {
+        "effect": "DERIVE",
+        "predicate": "parent.tort_compensation_liability",
+        "value": true
+      }
+    ],
+    "unless": [
+      ["tort.exempted_under_blds_d599", "eq", true]
+    ],
+    "links": [
+      {
+        "rule_id": "BLDS_D586_K2_01",
+        "relation": "REQUIRES_STATUTORY_GROUND",
+        "source_node_id": "BLDS_2015_D586_K2",
+        "note": "Điều 74 Luật HNGĐ 2014 là quy phạm viện dẫn ('theo quy định của Bộ luật dân sự'), chỉ xác lập trách nhiệm bồi thường khi đã kiểm tra đủ căn cứ cụ thể từ Bộ luật Dân sự."
+      }
+    ],
+    "meta": {
+      "status": "PENDING_REVIEW",
+      "revision": 1,
+      "description": "Cha mẹ phải bồi thường thiệt hại do con chưa thành niên, con đã thành niên mất năng lực hành vi dân sự gây ra khi có đủ căn cứ theo quy định của Bộ luật Dân sự."
+    },
+    "extensions": {
+      "article_label": "Điều 74 Luật Hôn nhân và gia đình 2014",
+      "requires_linked_rule": true,
+      "temporal_note": "Viện dẫn chung sang Bộ luật Dân sự; cần đối chiếu thời điểm xảy ra hành vi gây thiệt hại (trước hay từ ngày 01/01/2017 khi BLDS 2015 có hiệu lực)."
+    }
+  }
+]
+

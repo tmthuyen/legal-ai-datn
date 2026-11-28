@@ -72,3 +72,50 @@
   | Attribute | Value |
   | --------- | ----- |
   |
+
+## 2. Trích xuất facts, entity, events, object, subject, relation trong tinh huong cau hoi phap ly
+
+- TaskID: Chua co (HEHE)
+
+- Description: CHua co (HEHE)
+- Input:
+
+- Output:
+
+- Example:
+
+- Thông tin mô hình:
+
+  | Attribute           | Value                                                         |
+  | ------------------- | ------------------------------------------------------------- |
+  | Architecture        | Qwen2 (decoder-only, causal LM)                               |
+  | Parameters          | 1.54B                                                         |
+  | Base model          | [](https://huggingface.co/Qwen/Qwen2.5-1.5B)                  |
+  | VnLegal Base model  | [](https://huggingface.co/ntphuc149/ViLegalQwen2.5-1.5B-Base) |
+  | Max sequence length | 2048 tokens                                                   |
+  | Tokenizer           | Qwen2 tokenizer                                               |
+  | Training objective  | Causal Language Modeling (CLM)                                |
+  | Training domain     | Vietnamese legal text                                         |
+
+- Thông tin dữ liệu:
+
+  | Attribute       | Value                                                                 |
+  | --------------- | --------------------------------------------------------------------- |
+  | Dataset         | [chua-co](https://huggingface.co/datasets/tmtdev/vn-legal-extraction) |
+  | Train size      | X                                                                     |
+  | Validation size | X                                                                     |
+  | Test size       | X                                                                     |
+
+- Cấu hình huấn luyện
+
+  | Attribute     | Value |
+  | ------------- | ----- |
+  | Dataset       | X     |
+  | Epochs        | 1     |
+  | Learning rate | X     |
+  | Dropout       | X     |
+
+- Metric:
+  | Attribute | Value |
+  | --------- | ----- |
+  |
