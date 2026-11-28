@@ -1,6 +1,13 @@
 """CLI embedding: chọn neo4j/chroma/dual, wiring qua container."""
 
 import argparse
+import pathlib
+import sys
+
+# Đảm bảo import được module từ backend (src) khi chạy python scripts/embed_nodes.py
+BACKEND_DIR = pathlib.Path(__file__).resolve().parent.parent
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
 
 from src.common.container import build_embedding_pipeline
 
@@ -40,7 +47,9 @@ def main():
         default=None,
         help="Chỉ xử lý N Article đầu tiên (ghi Neo4j tập con để phát triển)",
     )
-    parser.add_argument("--store", choices=("neo4j", "chroma", "dual"), default="neo4j")
+    parser.add_argument(
+        "--store", choices=("neo4j", "chroma", "qdrant", "dual"), default="qdrant"
+    )
     args = parser.parse_args()
     run, client, embedder, store_factory = build_embedding_pipeline(args)
     run(args, client, embedder, store_factory)

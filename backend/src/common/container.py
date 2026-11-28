@@ -30,8 +30,7 @@ logger = setup_logger("container", "container.log")
 
 
 def build_embedding_pipeline(args):
-    """Wiring pipeline embedding; chế độ Chroma không cần kết nối Neo4j."""
-    from src.vector.chroma_store import ChromaVectorStore
+    """Wiring pipeline embedding; chế độ Chroma/Qdrant không cần kết nối Neo4j."""
     from src.vector.embedding_pipeline import run_embedding_pipeline
 
     settings = get_settings()
@@ -46,7 +45,34 @@ def build_embedding_pipeline(args):
     embedder = NodeEmbedder(batch_size=args.batch_size)
 
     def store_factory(model_name, dimension):
-        """Tạo persistent store theo cấu hình chung."""
+        """Tạo persistent store theo cấu hình chung hoặc theo tham số --store."""
+        target_store = getattr(args, "store", None)
+        if target_store == "qdrant" or (
+            target_store in ("dual", "vector") and settings.vector_backend == "qdrant"
+        ):
+            from src.vector.qdrant_store import QdrantVectorStore
+
+            location = settings.qdrant_url or settings.qdrant_path
+            return QdrantVectorStore(
+                location, settings.qdrant_collection, model_name, dimension
+            )
+        elif target_store == "chroma" or (
+            target_store in ("dual", "vector") and settings.vector_backend == "chroma"
+        ):
+            from src.vector.chroma_store import ChromaVectorStore
+
+            return ChromaVectorStore(
+                settings.chroma_path, settings.chroma_collection, model_name, dimension
+            )
+        if settings.vector_backend == "qdrant":
+            from src.vector.qdrant_store import QdrantVectorStore
+
+            location = settings.qdrant_url or settings.qdrant_path
+            return QdrantVectorStore(
+                location, settings.qdrant_collection, model_name, dimension
+            )
+        from src.vector.chroma_store import ChromaVectorStore
+
         return ChromaVectorStore(
             settings.chroma_path, settings.chroma_collection, model_name, dimension
         )
@@ -129,7 +155,22 @@ def build_services(settings: Optional[Settings] = None) -> AppServices:
     )
     embedder.load_model()
     vector_store = None
-    if settings.vector_backend == "chroma":
+    if settings.vector_backend == "qdrant":
+        from src.vector.qdrant_store import QdrantVectorStore
+
+        location = settings.qdrant_url or settings.qdrant_path
+        vector_store = QdrantVectorStore(
+            location,
+            settings.qdrant_collection,
+            embedder.model_name,
+            embedder.dimension,
+            create=False,
+        )
+        if not vector_store.count():
+            vector_store.close()
+            neo4j_client.close()
+            raise ValueError("Qdrant collection chưa được populate.")
+    elif settings.vector_backend == "chroma":
         from src.vector.chroma_store import ChromaVectorStore
 
         vector_store = ChromaVectorStore(

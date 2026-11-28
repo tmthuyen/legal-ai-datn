@@ -198,6 +198,35 @@ class RetrievalEvaluator:
         return embedder
 
     def _init_vector_store(self) -> Any:
+        # Thử mở QdrantVectorStore
+        qdrant_path = self.backend_dir / "data" / "qdrant"
+        settings = get_settings()
+        if settings.vector_backend == "qdrant" or (
+            qdrant_path.exists() and any(qdrant_path.iterdir())
+        ):
+            try:
+                from src.vector.qdrant_store import QdrantVectorStore
+
+                location = settings.qdrant_url or qdrant_path
+                store = QdrantVectorStore(
+                    location=location,
+                    collection_name="legal_articles",
+                    model_name=self.embedding_model,
+                    dimension=1024,
+                    create=False,
+                )
+                if store.count() > 0:
+                    self.backend_info["vector"] = "qdrant"
+                    logger.info(
+                        "Đã mở QdrantVectorStore: %d Article vectors.", store.count()
+                    )
+                    return store
+                store.close()
+            except Exception as e:
+                logger.warning(
+                    "Không thể mở QdrantVectorStore (%s). Thử các nguồn khác...", e
+                )
+
         # Thử mở ChromaVectorStore
         if self.chroma_path.exists():
             try:
@@ -617,10 +646,10 @@ def main():
     evaluator = RetrievalEvaluator(backend_dir=backend_dir, rrf_k=args.rrf_k)
     if args.strict and (
         evaluator.backend_info.get("graph") != "neo4j"
-        or evaluator.backend_info.get("vector") != "chroma"
+        or evaluator.backend_info.get("vector") not in ("chroma", "qdrant")
     ):
         raise RuntimeError(
-            f"Strict mode yêu cầu Neo4j và Chroma thực: {evaluator.backend_info}"
+            f"Strict mode yêu cầu Neo4j và Vector Store (Chroma/Qdrant) thực: {evaluator.backend_info}"
         )
     if args.top_k < 10:
         raise ValueError("Cần --top_k >= 10 vì báo cáo có Hit@10/Recall@10")

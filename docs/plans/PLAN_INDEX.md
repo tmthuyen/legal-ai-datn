@@ -28,13 +28,14 @@ Theo `AGENTS.md` (repo hiện tại):
 | 6 | backend | refactor-services-server-modular | [V6_backend_refactor-services-server-modular.md](./V6_backend_refactor-services-server-modular.md) | Hoàn thành | Refactor services/server sang cấu trúc modules/infra/shared | `services/server/*` |
 | 7 | backend | fast-retrieval-graph-traverse | [V7_backend_fast-retrieval-graph-traverse.md](./V7_backend_fast-retrieval-graph-traverse.md) | Hoàn thành code (chờ smoke live Neo4j) | `retrieve_hybrid_and_graph` không LLM, tách GraphTraverse, xoá dead code, API có type | `backend/src/retrieval/*`, `backend/src/api/*`, `backend/src/common/container.py` |
 | 8 | backend | rule-graph-context-export | [V8_backend_rule-graph-context-export.md](./V8_backend_rule-graph-context-export.md) | Hoàn thành; 14 node HNGĐ thiếu trong graph hiện tại | Một script: đọc toàn bộ rule hoặc một rule, map node Graph; chế độ đơn bổ sung predicates/catalogs | `backend/scripts/inspect_legal_rules.py` |
+| 9 | backend | migrate-chromadb-to-qdrant | [V9_backend_migrate-chromadb-to-qdrant.md](./V9_backend_migrate-chromadb-to-qdrant.md) | Hoàn thành (100% verified) | Di chuyển vector store từ ChromaDB sang Qdrant, đồng bộ 1.045 điều luật, UUID5 deterministic mapping | `backend/src/vector/*`, `backend/src/common/*`, `backend/scripts/*`, `backend/tests/*` |
 
 > **Ghi chú naming cần xác nhận:** `V4_services_frontend_integration.md` dùng `scope = services` (ngoài tập `backend|frontend|cicd|ai` trong AGENTS.md) và `task_name` có dấu `_` thay vì kebab-case. Đề xuất đổi thành `V4_frontend_services-integration.md` hoặc tách scope rõ ràng — **chỉ rename sau khi user xác nhận**, sau đó cập nhật lại dòng này.
 
 ## Next index
 
-- **Max index:** 8  
-- **next_index:** 9
+- **Max index:** 9  
+- **next_index:** 10
 
 ## Cách dùng bởi agent
 
